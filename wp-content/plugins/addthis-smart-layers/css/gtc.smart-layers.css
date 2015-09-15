@@ -1,0 +1,777 @@
+@import "modal.css";
+
+
+#smartlayers-getthecode {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue","open sans",arial,helvetica,sans-serif !important;
+}
+
+.smartlayer-header {
+  font-size: 40px;
+}
+
+.smartlayer-subheader {
+  margin-bottom: 40px;
+  font-family:"Open Sans",Helvetica,arial,sans-serif;
+  font-style:normal;
+  font-weight:300;
+  font-size: 22px;
+  line-height:1.5em;
+  color:#666;
+}
+
+.share-desktop-options {
+  padding: 0 0 10px 5px;
+}
+
+#smartlayers-tabs {
+  margin-bottom: 10px;
+}
+#smartlayers-tabs li {
+  list-style-type: none;
+}
+
+.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor {
+  background: #3dadfc;
+}
+
+.at40-accordion, .at40-restore-default-options, .at40-preview {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.at40-accordion .at40-accordion-row {
+  list-style: none;
+  border-bottom: 1px solid #CCC;
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
+  text-align: left;
+  position: relative;
+  background: #F6F6F6;
+  width: 360px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid #CCC;
+  overflow: hidden;
+}
+
+.at40-accordion .at40-accordion-row:hover {
+  cursor: pointer;
+  background-color: #FFF;
+}
+
+.at40-accordion .at40-accordion-generate-code:hover {
+  cursor: default;
+  background-color: #F6F6F6;
+}
+
+.at40-accordion .at40-accordion-row.first {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.at40-accordion .at40-accordion-row.last {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.at40-accordion .at40-accordion-row .at40-accordion-text {
+  padding: 0 5px;
+  font-size: 15px;
+}
+
+.at40-accordion .at40-accordion-row .at40-accordion-icon {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.at40-accordion-checkbox {
+  display: none;
+}
+
+.at40-accordion-icon-and-text, .at40-accordion-more-icon-and-text, .at40-accordion-follow-icon-and-text {
+  display: block;
+  float: left;
+  width: 260px;
+}
+
+.at40-accordion-checkbox-container {
+  display: block;
+  float: left;
+  padding-right: 10px;
+}
+
+.at40-accordion .ibutton-label-on label{
+  color: #fff;
+}
+
+.at40-accordion .ibutton-container label {
+  font-size: 12px;
+  padding: 1px 10px;
+  line-height: 1.8em;
+}
+
+.at40-accordion-hidden {
+  width: 340px;
+  margin-left: 10px;
+  background: #E3E3E3;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  display: none;
+}
+
+.at40-accordion-more-hidden {
+  display: block;
+}
+
+.at40-accordion-hidden-inner {
+  padding: 20px 0 10px 10px;
+  border-bottom: 1px solid #D2D2D2;
+}
+
+.at40-accordion-follow-service .at300bs {
+  display: inline-block;
+}
+
+.at40-accordion .row .row-right {
+  font-size: 13px;
+}
+
+.show-more-follow-options {
+  display: none;
+}
+
+.at40-accordion-radio-group {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.at40-accordion-radio-label {
+  display: block;
+  float: left;
+  padding-right: 5px;
+}
+
+.ui-state-disabled {
+  cursor: not-allowed !important;
+}
+
+input[type=radio]:hover, label:hover {
+  cursor: pointer;
+}
+
+.at40-accordion-share-hidden label {
+  padding-right: 10px;
+}
+
+.clearBoth {
+  clear: both;
+}
+
+.floatLeft {
+  float: left;
+}
+
+#at40-accordion-share-buttonsSelectBoxIt {
+  width: 60px;
+}
+
+.padding-small {
+  padding-top: 10px;
+}
+
+.share-buttons-label {
+  line-height: 32px;
+  padding-right: 5px;
+}
+
+.at40-accordion .fade.in {
+  opacity: 1.0;
+  filter: alpha(opacity=100);
+}
+
+.at40-accordion .row {
+  border-bottom: none;
+}
+
+.at40-accordion textarea {
+  resize: none;
+  border-radius: 6px;
+  -ms-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -khtml-border-radius: 6px;
+}
+
+.at40-accordion input, .at40-accordion textarea {
+  color: #000;
+}
+
+.at40-accordion textarea {
+  width: 200px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue","open sans",arial,helvetica,sans-serif !important;
+}
+
+#at40-accordion-more-themesSelectBoxIt {
+  width: 200px;
+}
+
+.no-selection {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.at40-preview {
+  position: relative;
+  top: 0;
+  left: 0;
+  min-height: 520px;
+}
+
+.at40-browser-img {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.at40-toaster-img {
+  position: absolute;
+  top: 260px;
+  right: 0px;
+}
+
+.at40-preview-trending-img {
+  position: relative;
+}
+
+.at40-trending-img {
+  position: absolute;
+  top: 370px;
+  left: 35px;
+}
+
+.at40-accordion-share-hidden label {
+  padding-left: 5px;
+}
+
+.at40-trending-text {
+  position: absolute;
+  top: 340px;
+  width: 100%;
+  text-align: center;
+  overflow: hide;
+  text-overflow: no-wrap;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* AT 4.0 Follow Icons */
+/* ------------------- */
+
+.at40-follow-icon {
+  background: url(../img/follow_sprite_16.png);
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.at40-follow-horizontal .at40-follow-icon {
+  display: none;
+}
+
+.at40-follow-icon-facebook {
+  background-position: 0 0;
+}
+
+.at40-follow-icon-rss {
+  background-position: 16px 0;
+}
+
+.at40-follow-icon-tumblr {
+  background-position: 32px 0;
+}
+
+.at40-follow-icon-foursquare {
+  background-position: 48px 0;
+}
+
+.at40-follow-icon-instagram {
+  background-position: 64px 0;
+}
+
+.at40-follow-icon-pinterest {
+  background-position: 80px 0;
+}
+
+.at40-follow-icon-vimeo {
+  background-position: 96px 0;
+}
+
+.at40-follow-icon-flickr {
+  background-position: 112px 0;
+}
+
+.at40-follow-icon-youtube {
+  background-position: 128px 0;
+}
+
+.at40-follow-icon-gplus {
+  background-position: 144px 0;
+}
+
+.at40-follow-icon-linkedin {
+  background-position: 160px 0;
+}
+
+.at40-follow-icon-linkedin-company {
+  background-position: 160px 0;
+}
+
+.at40-follow-icon-twitter {
+  background-position: 176px 0;
+}
+
+.at40-follow-icon-label {
+  display: inline-block !important;
+}
+
+/* AT 4.0 Share Icons */
+/* ------------------- */
+
+.at40-sharing-vertical {
+  position: absolute;
+  top: 100px;
+}
+
+.at40-share-icon {
+  background: url(../img/share_sprite_20.png);
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  display: none;
+  border-radius: 2px;
+  -ms-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -khtml-border-radius: 2px;
+}
+
+.at40-share-icon-facebook {
+  background-position: 0 0;
+}
+
+.at40-share-icon-addthis {
+  background-position: 0 20px;
+}
+
+.at40-share-icon-favorite {
+  background-position: 0 40px;
+}
+
+.at40-share-icon-gplus {
+  background-position: 0 60px;
+}
+
+.at40-share-icon-email {
+  background-position: 0 80px;
+}
+
+.at40-share-icon-pinterest {
+  background-position: 0 100px;
+}
+
+.at40-share-icon-gmail {
+  background-position: 0 120px;
+}
+
+.at40-share-icon-linkedin {
+  background-position: 0 140px;
+}
+
+.at40-share-icon-email {
+  background-position: 0 160px;
+}
+
+.at40-share-icon-print {
+  background-position: 0 180px;
+}
+
+.at40-share-icon-twitter {
+  background-position: 0 200px;
+}
+
+.at40-follow-horizontal {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  padding: 1px 5px;
+  display: none;
+}
+
+.light-theme {
+  border: 1px solid #c5c5c5;
+  background: #fff;
+}
+
+.gray-theme {
+  border: 1px solid #c5c5c5;
+  background: #f2f2f2;
+}
+
+.dark-theme {
+  border: 1px solid #c5c5c5;
+  background: #262b30;
+}
+
+.at40-accordion-more-icon-and-text .at40-accordion-text, .at40-accordion-follow-icon-and-text .at40-accordion-text {
+  padding-left: 20px !important;
+}
+
+.generate-code {
+  color: white !important;
+  width: 250px;
+  height: 50px;
+  margin: 15px 45px;
+  font-size: 18px;
+}
+
+.at40-accordion .at40-generate-code-row {
+  height: 80px;
+}
+
+.tooltip-inner {
+  min-width: 100px;
+}
+
+.at40-trending-img[data-previewService=trending] + .tooltip .tooltip-inner {
+  min-width: 130px;
+}
+
+.at40-accordion-follow-popover {
+  width: 360px;
+}
+
+#header-fade {
+  top: 0;
+}
+
+.mt20 {
+  margin-top: 0 !important;
+}
+
+.at40-accordion-more .at40-accordion-icon-and-text {
+  width: 100%;
+}
+
+.toaster-text {
+  margin: 0;
+  padding: 0 15px;
+  text-align: left;
+}
+
+.recommended-text {
+  margin: 0;
+  padding: 0 15px 0 0;
+  text-align: left; 
+}
+
+.at40-restore-default-options {
+  cursor: pointer;
+}
+
+.at40-accordion-follow-checkbox {
+  vertical-align: top;
+  margin: 3px 0;
+  padding: 0;
+  width: 20px;
+}
+
+.at40-accordion .at40-follow-icon {
+  vertical-align: top;
+}
+
+.show-more-follow-options-link, .show-less-follow-options-link {
+  font-size: 12px;
+}
+
+.popover {
+  max-width: 340px;
+  z-index: 99999999;
+}
+
+.preview-headers {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.preview-header {
+  display: inline-block;
+}
+
+.preview-header {
+  margin: 0.5em;
+}
+
+.at40-device-type-buttons {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.at40-device-type-buttons .btn {
+  margin: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.tablet-device, .phone-device {
+  position: absolute;
+}
+
+.at40-tablet-background {
+  top: 55px;
+  left: 120px;
+  width: 300px;
+  height: 290px;
+}
+
+.at40-tablet-trending {
+  top: 365px;
+  width: 300px;
+  left: 120px;
+}
+
+.at40-tablet-follow {
+  top: 490px;
+  left: 93px;
+}
+
+.at40-tablet-share {
+  top: 490px;
+  left: 257px;
+}
+
+.at40-phone-follow {
+  top: 335px;
+  left: 174px;
+}
+
+.at40-phone-share {
+  top: 335px;
+  left: 264px;
+}
+
+.at40-tablet-follow-divider {
+  top: 491px;
+  left: 255px;
+  width: 2px;
+  height: 34px;
+}
+
+.at40-tablet-share-divider {
+  top: 491px;
+  left: 419px;
+  width: 2px;
+  height: 34px;
+}
+
+.at40-phone-follow-divider {
+  top: 336px;
+  left: 262px;
+  width: 2px;
+  height: 28px;
+}
+
+.at40-phone-share-divider {
+  top: 336px;
+  left: 351px;
+  width: 2px;
+  height: 28px;
+}
+
+.at40-tablet-follow-full {
+  left: 92px;
+}
+
+.at40-phone-follow-full, .at40-phone-share-full {
+  left: 174px;
+}
+
+.transparent-divider {
+  background: #e3e3e3;
+}
+
+.light-divider {
+  background: #d9d9d9;
+}
+
+.dark-divider {
+  background: #494c50;
+}
+
+.at40-trending-text-tablet {
+  top: 340px;
+  font-size: 12px;
+  width: 350px;
+  left: 93px;
+}
+
+.at40-trending-text-phone {
+  top: 82px;
+  font-size: 11px;
+  width: 180px;
+  left: 178px;
+}
+
+.at40-phone-trending {
+  top: 119px;
+  left: 174px;
+}
+
+.at40-tablet-arrow {
+  top: 490px;
+  left: 421px;
+}
+
+.at40-phone-arrow {
+  top: 335px;
+  left: 353px;
+}
+
+.at40-tablet-share.at40-tablet-share-full {
+  left: 93px;
+}
+
+.at40-phone-background {
+  top: 90px;
+  left: 195px;
+  height: 270px;
+  width: 150px;
+}
+
+.tooltip {
+  z-index: 999999999;
+}
+
+.alert.alert-error {
+  margin: 0;
+  display: block;
+}
+
+.btn.btn-primary:hover {
+  background: #0780df;
+}
+
+.gtc-web-code-instructions {
+  font-size: 14px;
+  margin-bottom: 10px !important;
+}
+
+.at40-accordion input[type=text] {
+  background: #ffffff;
+}
+
+.smartlayers-hidden {
+  visibility: hidden;
+}
+
+.smartlayers-visible {
+  visibility: visible;
+}
+
+.hidden-off-screen {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+}
+
+.animate-background {
+  -webkit-transition: background-color 250ms linear;
+  -moz-transition: background-color 250ms linear;
+  -o-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
+.animate-pulse-speed {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 0s;
+  -moz-animation-duration: 2s;
+  -moz-animation-delay: 0s;
+  -o-animation-duration: 2s;
+  -o-animation-delay: 0s;
+  -ms-animation-duration: 2s;
+  -ms-animation-delay: 0s;
+}
+
+.animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;}.animated.hinge{-webkit-animation-duration:2s;-moz-animation-duration:2s;-ms-animation-duration:2s;-o-animation-duration:2s;animation-duration:2s;}@-webkit-keyframes tada {
+  0% {-webkit-transform: scale(1);} 10%, 20% {-webkit-transform: scale(0.9) rotate(-3deg);}
+  30%, 50%, 70%, 90% {-webkit-transform: scale(1.1) rotate(3deg);}
+  40%, 60%, 80% {-webkit-transform: scale(1.1) rotate(-3deg);}
+  100% {-webkit-transform: scale(1) rotate(0);}
+}
+
+@-moz-keyframes tada {
+  0% {-moz-transform: scale(1);}
+  10%, 20% {-moz-transform: scale(0.9) rotate(-3deg);}
+  30%, 50%, 70%, 90% {-moz-transform: scale(1.1) rotate(3deg);}
+  40%, 60%, 80% {-moz-transform: scale(1.1) rotate(-3deg);}
+  100% {-moz-transform: scale(1) rotate(0);}
+}
+
+@-o-keyframes tada {
+  0% {-o-transform: scale(1);}
+  10%, 20% {-o-transform: scale(0.9) rotate(-3deg);}
+  30%, 50%, 70%, 90% {-o-transform: scale(1.1) rotate(3deg);}
+  40%, 60%, 80% {-o-transform: scale(1.1) rotate(-3deg);}
+  100% {-o-transform: scale(1) rotate(0);}
+}
+
+@keyframes tada {
+  0% {transform: scale(1);}
+  10%, 20% {transform: scale(0.9) rotate(-3deg);}
+  30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);}
+  40%, 60%, 80% {transform: scale(1.1) rotate(-3deg);}
+  100% {transform: scale(1) rotate(0);}
+}
+
+.tada {
+  -webkit-animation-name: tada;
+  -moz-animation-name: tada;
+  -o-animation-name: tada;
+  animation-name: tada;
+}
+
+.ui-icon, .ui-widget-content .ui-icon {
+	background-image: url(../img/ui-icons_222222_256x240.png);
+}
+
+.ui-icon-triangle-1-e {
+	background-position: -32px -16px;
+}
+
+.ui-icon-triangle-1-s {
+	background-position: -64px -16px;
+}
+
+.ui-icon {
+	width: 16px;
+	height: 16px;
+}
+
+.ui-icon {
+	display: block;
+	text-indent: -99999px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+}

@@ -1,0 +1,357 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gdlr Portfolio\n"
+"POT-Creation-Date: 2014-05-30 14:32+0700\n"
+"PO-Revision-Date: 2014-05-30 14:32+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: C:\\AppServ\\www\\versatile\\wp-content\\plugins\\gdlr-"
+"portfolio\\\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: gdlr-portfolio-item.php:81
+msgid "All"
+msgstr ""
+
+#: gdlr-portfolio-item.php:197
+msgid "Client"
+msgstr ""
+
+#: gdlr-portfolio-item.php:206 gdlr-portfolio-option.php:76
+msgid "Skills"
+msgstr ""
+
+#: gdlr-portfolio-item.php:215 gdlr-portfolio-option.php:80
+msgid "Website"
+msgstr ""
+
+#: gdlr-portfolio-item.php:225
+msgid "Tags"
+msgstr ""
+
+#: gdlr-portfolio-option.php:22
+msgid "Goodlayers Portfolio Option"
+msgstr ""
+
+#: gdlr-portfolio-option.php:32
+msgid "Page Layout"
+msgstr ""
+
+#: gdlr-portfolio-option.php:45
+msgid "Left Sidebar"
+msgstr ""
+
+#: gdlr-portfolio-option.php:51
+msgid "Right Sidebar"
+msgstr ""
+
+#: gdlr-portfolio-option.php:60
+msgid "Page Option"
+msgstr ""
+
+#: gdlr-portfolio-option.php:63
+msgid "Page Caption"
+msgstr ""
+
+#: gdlr-portfolio-option.php:67
+msgid "Header Background Image"
+msgstr ""
+
+#: gdlr-portfolio-option.php:68
+msgid "Upload"
+msgstr ""
+
+#: gdlr-portfolio-option.php:72
+msgid "Clients"
+msgstr ""
+
+#: gdlr-portfolio-option.php:84
+msgid "Thumbnail Type"
+msgstr ""
+
+#: gdlr-portfolio-option.php:87
+msgid "Feature Image"
+msgstr ""
+
+#: gdlr-portfolio-option.php:88 gdlr-portfolio-option.php:131
+msgid "Video"
+msgstr ""
+
+#: gdlr-portfolio-option.php:89 gdlr-portfolio-option.php:121
+#: gdlr-portfolio-option.php:132 gdlr-portfolio-option.php:148
+msgid "Slider"
+msgstr ""
+
+#: gdlr-portfolio-option.php:94
+msgid "Thumbnail Link"
+msgstr ""
+
+#: gdlr-portfolio-option.php:97
+msgid "Link to Portfolio"
+msgstr ""
+
+#: gdlr-portfolio-option.php:98
+msgid "Lightbox to Full Image"
+msgstr ""
+
+#: gdlr-portfolio-option.php:99
+msgid "Link to URL"
+msgstr ""
+
+#: gdlr-portfolio-option.php:100
+msgid "Lightbox Image"
+msgstr ""
+
+#: gdlr-portfolio-option.php:101
+msgid "Lightbox Video"
+msgstr ""
+
+#: gdlr-portfolio-option.php:106
+msgid "Specify Url"
+msgstr ""
+
+#: gdlr-portfolio-option.php:111
+msgid "Open In New Tab"
+msgstr ""
+
+#: gdlr-portfolio-option.php:116 gdlr-portfolio-option.php:143
+msgid "Video Url"
+msgstr ""
+
+#: gdlr-portfolio-option.php:126
+msgid "Inside Portfolio Thumbnail Type"
+msgstr ""
+
+#: gdlr-portfolio-option.php:129
+msgid "Same As Thumbnail Type"
+msgstr ""
+
+#: gdlr-portfolio-option.php:130
+msgid "Image"
+msgstr ""
+
+#: gdlr-portfolio-option.php:133
+msgid "Stack Images"
+msgstr ""
+
+#: gdlr-portfolio-option.php:138
+msgid "Image Url"
+msgstr ""
+
+#: gdlr-portfolio-option.php:168 gdlr-portfolio.php:42
+msgid "Portfolio"
+msgstr ""
+
+#: gdlr-portfolio-option.php:172
+msgid "Category"
+msgstr ""
+
+#: gdlr-portfolio-option.php:175
+msgid ""
+"You can use Ctrl/Command button to select multiple categories or remove the "
+"selected category. <br><br> Leave this field blank to select all categories."
+msgstr ""
+
+#: gdlr-portfolio-option.php:178
+msgid "Tag"
+msgstr ""
+
+#: gdlr-portfolio-option.php:181
+msgid "Will be ignored when the portfolio filter option is enabled."
+msgstr ""
+
+#: gdlr-portfolio-option.php:184
+msgid "Portfolio Style"
+msgstr ""
+
+#: gdlr-portfolio-option.php:187
+msgid "Classic Style"
+msgstr ""
+
+#: gdlr-portfolio-option.php:188
+msgid "Classic No Space Style"
+msgstr ""
+
+#: gdlr-portfolio-option.php:189
+msgid "Modern Style"
+msgstr ""
+
+#: gdlr-portfolio-option.php:190
+msgid "Modern No Space Style"
+msgstr ""
+
+#: gdlr-portfolio-option.php:194
+msgid "Num Fetch"
+msgstr ""
+
+#: gdlr-portfolio-option.php:197
+msgid "Specify the number of portfolios you want to pull out."
+msgstr ""
+
+#: gdlr-portfolio-option.php:200
+msgid "Num Excerpt"
+msgstr ""
+
+#: gdlr-portfolio-option.php:206
+msgid "Portfolio Size"
+msgstr ""
+
+#: gdlr-portfolio-option.php:217
+msgid "Portfolio Layout Order"
+msgstr ""
+
+#: gdlr-portfolio-option.php:220
+msgid "FitRows ( Order items by row )"
+msgstr ""
+
+#: gdlr-portfolio-option.php:221
+msgid "Masonry ( Order items by spaces )"
+msgstr ""
+
+#: gdlr-portfolio-option.php:222
+msgid "Carousel ( Only For Grid And Modern Style )"
+msgstr ""
+
+#: gdlr-portfolio-option.php:224
+msgid "You can see an example of these two layout here"
+msgstr ""
+
+#: gdlr-portfolio-option.php:228
+msgid "Enable Portfolio filter"
+msgstr ""
+
+#: gdlr-portfolio-option.php:231
+msgid ""
+"*** You have to select only 1 ( or none ) portfolio category when enable "
+"this option"
+msgstr ""
+
+#: gdlr-portfolio-option.php:234
+msgid "Thumbnail Size"
+msgstr ""
+
+#: gdlr-portfolio-option.php:237
+msgid "Only effects to <strong>standard and gallery post format</strong>"
+msgstr ""
+
+#: gdlr-portfolio-option.php:240
+msgid "Order By"
+msgstr ""
+
+#: gdlr-portfolio-option.php:243
+msgid "Publish Date"
+msgstr ""
+
+#: gdlr-portfolio-option.php:244
+msgid "Title"
+msgstr ""
+
+#: gdlr-portfolio-option.php:245
+msgid "Random"
+msgstr ""
+
+#: gdlr-portfolio-option.php:249
+msgid "Order"
+msgstr ""
+
+#: gdlr-portfolio-option.php:252
+msgid "Descending Order"
+msgstr ""
+
+#: gdlr-portfolio-option.php:253
+msgid "Ascending Order"
+msgstr ""
+
+#: gdlr-portfolio-option.php:257
+msgid "Enable Pagination"
+msgstr ""
+
+#: gdlr-portfolio-option.php:261
+msgid "Margin Bottom"
+msgstr ""
+
+#: gdlr-portfolio-option.php:264
+msgid "Spaces after ending of this item"
+msgstr ""
+
+#: gdlr-portfolio.php:41 gdlr-portfolio.php:53
+msgid "Portfolios"
+msgstr ""
+
+#: gdlr-portfolio.php:43
+msgid "Add New"
+msgstr ""
+
+#: gdlr-portfolio.php:44
+msgid "Add New Portfolio"
+msgstr ""
+
+#: gdlr-portfolio.php:45
+msgid "Edit Portfolio"
+msgstr ""
+
+#: gdlr-portfolio.php:46
+msgid "New Portfolio"
+msgstr ""
+
+#: gdlr-portfolio.php:47
+msgid "All Portfolios"
+msgstr ""
+
+#: gdlr-portfolio.php:48
+msgid "View Portfolio"
+msgstr ""
+
+#: gdlr-portfolio.php:49
+msgid "Search Portfolio"
+msgstr ""
+
+#: gdlr-portfolio.php:50
+msgid "No portfolios found"
+msgstr ""
+
+#: gdlr-portfolio.php:51
+msgid "No portfolios found in Trash"
+msgstr ""
+
+#: gdlr-portfolio.php:74
+msgid "Portfolio Categories"
+msgstr ""
+
+#: gdlr-portfolio.php:75
+msgid "Portfolio Category"
+msgstr ""
+
+#: gdlr-portfolio.php:84
+msgid "Portfolio Tags"
+msgstr ""
+
+#: gdlr-portfolio.php:85
+msgid "Portfolio Tag"
+msgstr ""
+
+#: single-portfolio-blog.php:46 single-portfolio.php:81
+msgid "Pages:"
+msgstr ""
+
+#: single-portfolio-blog.php:67
+msgid "About Post Author"
+msgstr ""
+
+#: single-portfolio.php:42
+msgid "Project Info"
+msgstr ""
+
+#: single-portfolio.php:76
+msgid "Project Description"
+msgstr ""
+
+#: single-portfolio.php:123
+msgid "Related Projects"
+msgstr ""

@@ -1,0 +1,226 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: goodlayers-importer\n"
+"POT-Creation-Date: 2013-12-27 16:14+0700\n"
+"PO-Revision-Date: 2013-12-27 16:14+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: C:\\AppServ\\www\\goodlayers\\wp-content\\plugins"
+"\\goodlayers-importer\\\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: goodlayers-importer.php:120 goodlayers-importer.php:128
+#: goodlayers-importer.php:178
+msgid "Sorry, there has been an error."
+msgstr ""
+
+#: goodlayers-importer.php:121
+msgid "The file does not exist, please try again."
+msgstr ""
+
+#: goodlayers-importer.php:161
+msgid "All done."
+msgstr ""
+
+#: goodlayers-importer.php:161
+msgid "Have fun!"
+msgstr ""
+
+#: goodlayers-importer.php:162
+msgid "Remember to update the passwords and roles of imported users."
+msgstr ""
+
+#: goodlayers-importer.php:179
+msgid "File could not be found"
+msgstr ""
+
+#: goodlayers-importer.php:187
+msgid "Sorry, there has been an error when parsing the file."
+msgstr ""
+
+#: goodlayers-importer.php:195
+#, php-format
+msgid ""
+"This WXR file (version %s) may not be supported by this version of the "
+"importer. Please consider updating."
+msgstr ""
+
+#: goodlayers-importer.php:221
+#, php-format
+msgid ""
+"Failed to import author %s. Their posts will be attributed to the current "
+"user."
+msgstr ""
+
+#: goodlayers-importer.php:247
+msgid "Assign Authors"
+msgstr ""
+
+#: goodlayers-importer.php:248
+msgid ""
+"To make it easier for you to edit and save the imported content, you may "
+"want to reassign the author of the imported item to an existing user of this "
+"site. For example, you may want to import all the entries as <code>admin</"
+"code>s entries."
+msgstr ""
+
+#: goodlayers-importer.php:250
+#, php-format
+msgid ""
+"If a new user is created by WordPress, a new password will be randomly "
+"generated and the new user&#8217;s role will be set as %s. Manually changing "
+"the new user&#8217;s details will be necessary."
+msgstr ""
+
+#: goodlayers-importer.php:260
+msgid "Import Attachments"
+msgstr ""
+
+#: goodlayers-importer.php:263
+msgid ""
+"Include attachments ( Most Photo is licensed and it will be imported as "
+"black image instead )"
+msgstr ""
+
+#: goodlayers-importer.php:280
+msgid "Import author:"
+msgstr ""
+
+#: goodlayers-importer.php:292
+msgid "or create new user with login name:"
+msgstr ""
+
+#: goodlayers-importer.php:295
+msgid "as a new user:"
+msgstr ""
+
+#: goodlayers-importer.php:303
+msgid "assign posts to an existing user:"
+msgstr ""
+
+#: goodlayers-importer.php:305
+msgid "or assign posts to an existing user:"
+msgstr ""
+
+#: goodlayers-importer.php:306
+msgid "- Select -"
+msgstr ""
+
+#: goodlayers-importer.php:356
+#, php-format
+msgid ""
+"Failed to create new user for %s. Their posts will be attributed to the "
+"current user."
+msgstr ""
+
+#: goodlayers-importer.php:407
+#, php-format
+msgid "Failed to import category %s"
+msgstr ""
+
+#: goodlayers-importer.php:447
+#, php-format
+msgid "Failed to import post tag %s"
+msgstr ""
+
+#: goodlayers-importer.php:493 goodlayers-importer.php:634
+#, php-format
+msgid "Failed to import %s %s"
+msgstr ""
+
+#: goodlayers-importer.php:519
+#, php-format
+msgid "Failed to import &#8220;%s&#8221;: Invalid post type %s"
+msgstr ""
+
+#: goodlayers-importer.php:541
+#, php-format
+msgid "%s &#8220;%s&#8221; already exists."
+msgstr ""
+
+#: goodlayers-importer.php:600
+#, php-format
+msgid "Failed to import %s &#8220;%s&#8221;"
+msgstr ""
+
+#: goodlayers-importer.php:765
+msgid "Menu item skipped due to missing menu slug"
+msgstr ""
+
+#: goodlayers-importer.php:772
+#, php-format
+msgid "Menu item skipped due to invalid menu slug: %s"
+msgstr ""
+
+#: goodlayers-importer.php:844
+msgid "Fetching attachments is not enabled"
+msgstr ""
+
+#: goodlayers-importer.php:857
+msgid "Invalid file type"
+msgstr ""
+
+#: goodlayers-importer.php:901
+msgid "Audio / Video file is omitted"
+msgstr ""
+
+#: goodlayers-importer.php:908
+msgid "Zero size file downloaded"
+msgstr ""
+
+#: goodlayers-importer.php:914
+#, php-format
+msgid "Remote file is too large, limit is %s"
+msgstr ""
+
+#: goodlayers-importer.php:1038
+msgid "Goodlayers Import"
+msgstr ""
+
+#: goodlayers-importer.php:1047
+msgid ""
+"* Don't forget to activate the 'Goodlayers Portfolio', 'Contact Form 7' and "
+"'Woocommerce' plugins or else, those data will not be manipulate to your "
+"site."
+msgstr ""
+
+#: goodlayers-importer.php:1048
+msgid ""
+"It would be best to import the data when there're no information on your "
+"site. "
+msgstr ""
+
+#: goodlayers-importer.php:1049
+msgid ""
+"You can use 'wordpress reset' plugin to revert your site to the initial "
+"state as well."
+msgstr ""
+
+#: goodlayers-importer.php:1061
+msgid "Import The Demo"
+msgstr ""
+
+#: goodlayers-importer.php:1120
+msgid "Import everything shown in the theme demo site"
+msgstr ""
+
+#: parsers.php:42 parsers.php:72 parsers.php:80
+msgid "There was an error when reading this WXR file"
+msgstr ""
+
+#: parsers.php:43
+msgid ""
+"Details are shown above. The importer will now try again with a different "
+"parser..."
+msgstr ""
+
+#: parsers.php:84 parsers.php:89 parsers.php:279 parsers.php:468
+msgid ""
+"This does not appear to be a WXR file, missing/invalid WXR version number"
+msgstr ""

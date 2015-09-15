@@ -1,0 +1,96 @@
+.popmake-ajax-form .message {
+	display: none;
+	text-align: center;
+	border: 1px solid #000;
+	margin-bottom: .5em;
+}
+.popmake-ajax-form .message.error {
+	color: red!important;
+	border-color: red;
+}
+.popmake-ajax-form .message.success {
+	color: green!important;
+	border-color: green;
+}
+.popmake-ajax-form input.error {
+	border-color: red!important;
+}
+.popmake-ajax-form p.submit {
+	text-align: right;
+	clear: both;
+	overflow: auto;
+}
+
+.popmake-ajax-form p.login-username,
+.popmake-ajax-form p.login-password,
+.popmake-ajax-form p.registration-username,
+.popmake-ajax-form p.registration-email,
+.popmake-ajax-form p.registration-password,
+.popmake-ajax-form p.registration-confirm {
+	display: inline-block;
+	width: 49%;
+	margin-right: 2%;
+}
+.popmake-ajax-form p.login-password,
+.popmake-ajax-form p.registration-email,
+.popmake-ajax-form p.registration-confirm {
+	float: right;
+	margin-right: 0;
+}
+.popmake-ajax-form p.login-remember {
+	float: left;
+	display: inline-block;
+	line-height: 2em;
+}
+.popmake-ajax-form p.login-remember label {
+	display: inline;
+}
+
+.popmake-ajax-form p.login-submit,
+.popmake-ajax-form p.registration-submit,
+.popmake-ajax-form p.recovery-submit {
+	text-align: right;
+}
+
+
+.popmake.size-nano .popmake-ajax-form p.login-username,
+.popmake.size-nano .popmake-ajax-form p.login-password,
+.popmake.size-nano .popmake-ajax-form p.registration-username,
+.popmake.size-nano .popmake-ajax-form p.registration-email,
+.popmake.size-nano .popmake-ajax-form p.registration-password,
+.popmake.size-nano .popmake-ajax-form p.registration-confirm,
+.popmake.size-micro .popmake-ajax-form p.login-username,
+.popmake.size-micro .popmake-ajax-form p.login-password,
+.popmake.size-micro .popmake-ajax-form p.registration-username,
+.popmake.size-micro .popmake-ajax-form p.registration-email,
+.popmake.size-micro .popmake-ajax-form p.registration-password,
+.popmake.size-micro .popmake-ajax-form p.registration-confirm {
+	width: 100%;
+	display: block;
+	margin-right: 0;
+}
+
+
+.popmake-alm-footer-links {
+	clear: both;
+	margin:0;
+	padding:.5em 0 0;
+	border-top:1px solid #000;
+	list-style:inside circle;
+}
+
+
+@media only screen and (max-width: 480px) {
+
+	.popmake.responsive .popmake-ajax-form p.login-username,
+	.popmake.responsive .popmake-ajax-form p.login-password,
+	.popmake.responsive .popmake-ajax-form p.registration-username,
+	.popmake.responsive .popmake-ajax-form p.registration-email,
+	.popmake.responsive .popmake-ajax-form p.registration-password,
+	.popmake.responsive .popmake-ajax-form p.registration-confirm {
+		width: 100%;
+		display: block;
+		margin-right: 0;
+	}
+
+}

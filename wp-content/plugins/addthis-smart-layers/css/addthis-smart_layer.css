@@ -1,0 +1,138 @@
+.smart-layer-wrap {
+	position:relative;
+	margin: 20px;
+}
+.smart-layer-title {
+	color: black;
+	font-size: 36px;
+	padding-left: 3px;
+	font-family: "HelveticaNeueBold","HelveticaNeue-Bold","Helvetica Neue", Helvetica, "open sans",arial,sans-serif;
+	font-weight: normal;
+}
+.smart-layer-name {
+	color: gray;
+	font-size: 36px;
+	font-weight: normal;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "open sans",arial,sans-serif;
+}
+.smart-layer-tab {
+	position:absolute;
+	top:0;
+	right:0;
+}
+.smart-layer-tab a {
+	background-color: #BBB;
+	padding: 10px;
+	border-radius: 4px;
+	width: auto;
+	overflow: auto;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	cursor: pointer;
+	user-select: none;
+	margin-right: 5px;
+	font-size: 12px;
+}
+.smart-layer-tab a:active {
+	background-color: #BBB;
+}
+.smart-layer-tab a:hover{
+	background-color:#aaa;
+	color: #fff;
+}
+.smart-layer-dialog {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -150px;
+	background: white;
+	width: 300px;
+	border: 1px solid #D7D7D7;
+	padding: 20px 30px;
+	box-shadow: 1px 1px 6px rgba(204,204,204,.8);
+	-webkit-box-shadow: 1px 1px 6px rgba(204,204,204,.8);
+	-moz-box-shadow: 1px 1px 6px rgba(204,204,204,.8);
+	z-index: 600000;
+}
+.smart-layer-dialog .smart-layer-dialog-buttons .button {
+	margin: 0 10px;
+}
+h3.helv {
+	font-family: "Open Sans",Helvetica,arial,sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 24px;
+	letter-spacing: -1px;
+}
+.org {
+	color: #FE6D4C!important;
+}
+.instructions {
+	font-size: 14px;
+	color: #424242;
+}
+.copyCode {
+	float: left;
+	width: 500px;
+}
+#smart-layer-dialog-cancel {
+	margin-top: 2px;
+}
+.bigtext {
+	width: 60%;
+	color: grey;
+	font-size: 15px;
+	line-height: 20px;
+	margin: 15px 0;
+	padding: 0;
+	float: left;
+}
+.container_12 .grid_5 {
+	width: 380px;
+}
+.container_12 .grid_7 {
+	width: 540px;
+}
+.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12, .grid_13, .grid_14, .grid_15, .grid_16 {
+	display: inline;
+	float: left;
+	margin-right: 10px;
+}
+#addthis-credential-validation-message, .addthis-admin-loader{
+	line-height: 1em;
+}
+.grid_2 {
+	width: 100%;
+}
+.smart-layer-container .button-primary {
+	background: #0295ff;
+	border: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 -3px rgba(0,0,0,0.1) inset;
+	-moz-box-shadow: 0 -3px rgba(0,0,0,0.1) inset;
+	box-shadow: 0 -3px rgba(0,0,0,0.1) inset;
+	-webkit-transition: all .25s ease-in-out;
+	-moz-transition: all .25s ease-in-out;
+	transition: all .25s ease-in-out;
+	padding: 10px;
+	font-weight: 400;
+	font-size: 14px;
+	color: #fff;
+}
+.smart-layer-container .button {
+	color: white!important;
+	width: 147px;
+	height: 50px;
+	font-size: 18px;
+}
+.stick {
+	position: fixed;
+	top: 50px;
+	width: 500px;
+	right: -330px;
+	z-index: 10000;
+}

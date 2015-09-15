@@ -1,0 +1,504 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gdlr-conference\n"
+"POT-Creation-Date: 2014-12-19 10:56+0700\n"
+"PO-Revision-Date: 2014-12-19 10:57+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-Basepath: C:\\AppServ\\www\\thekeynote\\wp-content\\plugins\\gdlr-"
+"conference\\\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: framework/session-option.php:12 framework/session-option.php:24
+msgid "Sessions"
+msgstr ""
+
+#: framework/session-option.php:13 framework/session-option.php:156
+msgid "Session"
+msgstr ""
+
+#: framework/session-option.php:14 framework/speaker-option.php:14
+#: framework/ticket-option.php:14
+msgid "Add New"
+msgstr ""
+
+#: framework/session-option.php:15
+msgid "Add New session"
+msgstr ""
+
+#: framework/session-option.php:16
+msgid "Edit session"
+msgstr ""
+
+#: framework/session-option.php:17
+msgid "New session"
+msgstr ""
+
+#: framework/session-option.php:18
+msgid "All sessions"
+msgstr ""
+
+#: framework/session-option.php:19
+msgid "View session"
+msgstr ""
+
+#: framework/session-option.php:20
+msgid "Search sessions"
+msgstr ""
+
+#: framework/session-option.php:21
+msgid "No sessions found"
+msgstr ""
+
+#: framework/session-option.php:22
+msgid "No sessions found in Trash"
+msgstr ""
+
+#: framework/session-option.php:43
+msgid "Session Categories"
+msgstr ""
+
+#: framework/session-option.php:44
+msgid "Session Category"
+msgstr ""
+
+#: framework/session-option.php:75
+msgid "Goodlayers Session Option"
+msgstr ""
+
+#: framework/session-option.php:85
+msgid "Page Option"
+msgstr ""
+
+#: framework/session-option.php:88
+msgid "Page Caption"
+msgstr ""
+
+#: framework/session-option.php:92
+msgid "Session Type"
+msgstr ""
+
+#: framework/session-option.php:95
+msgid "Conference"
+msgstr ""
+
+#: framework/session-option.php:96
+msgid "Break"
+msgstr ""
+
+#: framework/session-option.php:100
+msgid "Session Speaker"
+msgstr ""
+
+#: framework/session-option.php:105
+msgid "Session Date"
+msgstr ""
+
+#: framework/session-option.php:109
+msgid "Session Time"
+msgstr ""
+
+#: framework/session-option.php:111
+msgid "Please fill this field in hh:mm - hh:mm format"
+msgstr ""
+
+#: framework/session-option.php:114
+msgid "Location"
+msgstr ""
+
+#: framework/session-option.php:119
+msgid "Document Download Link"
+msgstr ""
+
+#: framework/session-option.php:160 framework/speaker-option.php:161
+#: framework/ticket-option.php:128
+msgid "Category"
+msgstr ""
+
+#: framework/session-option.php:163 framework/speaker-option.php:164
+#: framework/ticket-option.php:131
+msgid ""
+"You can use Ctrl/Command button to select multiple categories or remove the "
+"selected category. <br><br> Leave this field blank to select all categories."
+msgstr ""
+
+#: framework/session-option.php:166
+msgid "Item Style"
+msgstr ""
+
+#: framework/session-option.php:169
+msgid "Small Style"
+msgstr ""
+
+#: framework/session-option.php:170
+msgid "Tab Style"
+msgstr ""
+
+#: framework/session-option.php:171
+msgid "Full Style"
+msgstr ""
+
+#: framework/session-option.php:175
+msgid "Excerpt Number"
+msgstr ""
+
+#: framework/session-option.php:180 framework/session-option.php:198
+#: framework/speaker-option.php:226 framework/ticket-option.php:162
+msgid "Margin Bottom"
+msgstr ""
+
+#: framework/session-option.php:183 framework/session-option.php:201
+#: framework/speaker-option.php:229 framework/ticket-option.php:165
+msgid "Spaces after ending of this item"
+msgstr ""
+
+#: framework/session-option.php:189
+msgid "Session Counter"
+msgstr ""
+
+#: framework/session-option.php:193
+msgid "Select Session"
+msgstr ""
+
+#: framework/speaker-option.php:12 framework/speaker-option.php:24
+msgid "Speakers"
+msgstr ""
+
+#: framework/speaker-option.php:13 framework/speaker-option.php:157
+msgid "Speaker"
+msgstr ""
+
+#: framework/speaker-option.php:15
+msgid "Add New speaker"
+msgstr ""
+
+#: framework/speaker-option.php:16
+msgid "Edit speaker"
+msgstr ""
+
+#: framework/speaker-option.php:17
+msgid "New speaker"
+msgstr ""
+
+#: framework/speaker-option.php:18
+msgid "All speakers"
+msgstr ""
+
+#: framework/speaker-option.php:19
+msgid "View speaker"
+msgstr ""
+
+#: framework/speaker-option.php:20
+msgid "Search speakers"
+msgstr ""
+
+#: framework/speaker-option.php:21
+msgid "No speakers found"
+msgstr ""
+
+#: framework/speaker-option.php:22
+msgid "No speakers found in Trash"
+msgstr ""
+
+#: framework/speaker-option.php:44
+msgid "Speaker Categories"
+msgstr ""
+
+#: framework/speaker-option.php:45
+msgid "Speaker Category"
+msgstr ""
+
+#: framework/speaker-option.php:76
+msgid "Goodlayers Speaker Option"
+msgstr ""
+
+#: framework/speaker-option.php:86
+msgid "Speaker Info"
+msgstr ""
+
+#: framework/speaker-option.php:89
+msgid "Speaker Position"
+msgstr ""
+
+#: framework/speaker-option.php:93
+msgid "Speaker Social Shortcode"
+msgstr ""
+
+#: framework/speaker-option.php:96
+msgid "Here's the list of the avialable social type : "
+msgstr ""
+
+#: framework/speaker-option.php:100
+msgid "Telephone"
+msgstr ""
+
+#: framework/speaker-option.php:104
+msgid "E-Mail"
+msgstr ""
+
+#: framework/speaker-option.php:108
+msgid "Website"
+msgstr ""
+
+#: framework/speaker-option.php:115
+msgid "Social Thumbnail Hover"
+msgstr ""
+
+#: framework/speaker-option.php:118
+msgid "Icon 1"
+msgstr ""
+
+#: framework/speaker-option.php:123
+msgid "Icon 1 Link"
+msgstr ""
+
+#: framework/speaker-option.php:127
+msgid "Icon 2"
+msgstr ""
+
+#: framework/speaker-option.php:131
+msgid "Icon 2 Link"
+msgstr ""
+
+#: framework/speaker-option.php:135
+msgid "Icon 3"
+msgstr ""
+
+#: framework/speaker-option.php:139
+msgid "Icon 3 Link"
+msgstr ""
+
+#: framework/speaker-option.php:167
+msgid "Speaker Style"
+msgstr ""
+
+#: framework/speaker-option.php:170
+msgid "Round Thumbnail Style"
+msgstr ""
+
+#: framework/speaker-option.php:171
+msgid "Circle Thumbnail Style"
+msgstr ""
+
+#: framework/speaker-option.php:175
+msgid "Num Fetch"
+msgstr ""
+
+#: framework/speaker-option.php:178
+msgid "Specify the number of speaker items you want to pull out."
+msgstr ""
+
+#: framework/speaker-option.php:181
+msgid "Speaker Item Size"
+msgstr ""
+
+#: framework/speaker-option.php:192
+msgid "Speaker Layout Order"
+msgstr ""
+
+#: framework/speaker-option.php:195
+msgid "FitRows ( Order items by row )"
+msgstr ""
+
+#: framework/speaker-option.php:196
+msgid "Carousel"
+msgstr ""
+
+#: framework/speaker-option.php:200
+msgid "Thumbnail Size"
+msgstr ""
+
+#: framework/speaker-option.php:205 framework/ticket-option.php:145
+msgid "Order By"
+msgstr ""
+
+#: framework/speaker-option.php:208 framework/ticket-option.php:148
+msgid "Publish Date"
+msgstr ""
+
+#: framework/speaker-option.php:209 framework/ticket-option.php:149
+msgid "Title"
+msgstr ""
+
+#: framework/speaker-option.php:210 framework/ticket-option.php:150
+msgid "Random"
+msgstr ""
+
+#: framework/speaker-option.php:214 framework/ticket-option.php:154
+msgid "Order"
+msgstr ""
+
+#: framework/speaker-option.php:217 framework/ticket-option.php:157
+msgid "Descending Order"
+msgstr ""
+
+#: framework/speaker-option.php:218 framework/ticket-option.php:158
+msgid "Ascending Order"
+msgstr ""
+
+#: framework/speaker-option.php:222
+msgid "Enable Pagination"
+msgstr ""
+
+#: framework/ticket-option.php:12 framework/ticket-option.php:24
+msgid "Tickets"
+msgstr ""
+
+#: framework/ticket-option.php:13 framework/ticket-option.php:124
+msgid "Ticket"
+msgstr ""
+
+#: framework/ticket-option.php:15
+msgid "Add New ticket"
+msgstr ""
+
+#: framework/ticket-option.php:16
+msgid "Edit ticket"
+msgstr ""
+
+#: framework/ticket-option.php:17
+msgid "New ticket"
+msgstr ""
+
+#: framework/ticket-option.php:18
+msgid "All tickets"
+msgstr ""
+
+#: framework/ticket-option.php:19
+msgid "View ticket"
+msgstr ""
+
+#: framework/ticket-option.php:20
+msgid "Search tickets"
+msgstr ""
+
+#: framework/ticket-option.php:21
+msgid "No tickets found"
+msgstr ""
+
+#: framework/ticket-option.php:22
+msgid "No tickets found in Trash"
+msgstr ""
+
+#: framework/ticket-option.php:44
+msgid "Ticket Categories"
+msgstr ""
+
+#: framework/ticket-option.php:45
+msgid "Ticket Category"
+msgstr ""
+
+#: framework/ticket-option.php:80
+msgid "Goodlayers Ticket Option"
+msgstr ""
+
+#: framework/ticket-option.php:90
+msgid "Ticket Info"
+msgstr ""
+
+#: framework/ticket-option.php:93
+msgid "Ticket Price"
+msgstr ""
+
+#: framework/ticket-option.php:95
+msgid ""
+"Please only fill number here. Leaving this field blank for free tickets."
+msgstr ""
+
+#: framework/ticket-option.php:98
+msgid "Book Button Link"
+msgstr ""
+
+#: framework/ticket-option.php:100
+msgid ""
+"Leaving this field blank will display the contact form when button is "
+"clicked."
+msgstr ""
+
+#: framework/ticket-option.php:103
+msgid "Featured Ticket"
+msgstr ""
+
+#: framework/ticket-option.php:106
+msgid "No"
+msgstr ""
+
+#: framework/ticket-option.php:107
+msgid "Yes"
+msgstr ""
+
+#: framework/ticket-option.php:134
+msgid "Ticket Item Size"
+msgstr ""
+
+#: include/session-item.php:99
+msgid "Download Document"
+msgstr ""
+
+#: include/session-item.php:153
+msgid "Days"
+msgstr ""
+
+#: include/session-item.php:158
+msgid "Hours"
+msgstr ""
+
+#: include/session-item.php:163
+msgid "Mins"
+msgstr ""
+
+#: include/session-item.php:168
+msgid "Secs"
+msgstr ""
+
+#: include/session-item.php:246 include/session-item.php:313
+#: include/session-item.php:403
+#, php-format
+msgid "Day %d"
+msgstr ""
+
+#: include/ticket-item.php:64
+msgid "Free"
+msgstr ""
+
+#: include/ticket-item.php:67
+msgid "Featured!"
+msgstr ""
+
+#: include/ticket-item.php:76 include/ticket-item.php:82
+msgid "Book Now"
+msgstr ""
+
+#: include/ticket-item.php:78
+msgid "Sold Out"
+msgstr ""
+
+#: single-session.php:41 single-speaker.php:47
+msgid "Pages:"
+msgstr ""
+
+#: single-speaker.php:42
+msgid "Biography"
+msgstr ""
+
+#: single-speaker.php:73
+#, php-format
+msgid "All session by %s"
+msgstr ""
+
+#: single-ticket.php:23
+msgid ""
+"This post type has no single page, you can create it using page builder item."
+msgstr ""
+
+#: single-ticket.php:24
+msgid "This page will showing up as 404 not found page to logged out user."
+msgstr ""

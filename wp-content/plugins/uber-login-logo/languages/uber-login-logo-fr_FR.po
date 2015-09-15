@@ -1,0 +1,88 @@
+# Copyright (C) 2013 Uber Login Logo
+# This file is distributed under the same license as the Uber Login Logo package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Uber Login Logo 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/uber-login-logo\n"
+"POT-Creation-Date: 2013-05-12 13:07:08+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-05-12 23:17+1000\n"
+"Last-Translator: NumidWasNotAvailable\n"
+"Language-Team: NumidWasNotAvailable\n"
+"Language: fr_FR\n"
+
+#: uber-login-logo.php:105
+msgid "Uber Login Logo Settings"
+msgstr "Paramètres Uber Login Logo"
+
+#: uber-login-logo.php:127
+msgid "Settings"
+msgstr "Paramètres"
+
+#: uber-login-logo.php:148
+msgid "Settings Saved"
+msgstr "Paramètres sauvegardés"
+
+#: uber-login-logo.php:151
+msgid "by %1$s from %2$s"
+msgstr "Par %1$s du site %2$s"
+
+#: uber-login-logo.php:153
+msgid "How it Works"
+msgstr "Mode de fonctionnement"
+
+#: uber-login-logo.php:155
+msgid ""
+"Use the WordPress media uploader to upload an image, or select one from the "
+"media library."
+msgstr ""
+"Utilisez l'outil de mise en ligne de médias de Wordpress pour télécharger "
+"une image, ou sélectionnez en une depuis la bibliothèque des médias."
+
+#: uber-login-logo.php:156
+msgid ""
+"It is highly recommended that you select an image with a width less than "
+"320px."
+msgstr ""
+"Il est hautement recommandé que vous sélectionniez une image avec une "
+"largeur inférieure à 320 pixels."
+
+#: uber-login-logo.php:157
+msgid "Select your desired image size and click \"insert into post\"."
+msgstr ""
+"Sélectionnez l'image de votre choix et cliquez sur \"Insérer dans l'article"
+"\"."
+
+#: uber-login-logo.php:158
+msgid "Finished!"
+msgstr "C'est terminé !"
+
+#: uber-login-logo.php:162
+msgid "Upload Image"
+msgstr "Télécharger une image"
+
+#: uber-login-logo.php:166
+msgid "Here is a preview of your selected image at actual size"
+msgstr "Voici un aperçu de l'image que vous avez sélectionnée (taille réelle)"
+
+#. Plugin Name of the plugin/theme
+msgid "Uber Login Logo"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.uberweb.com.au/uber-login-logo-wordpress-plugin/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Change your login logo."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "UberWeb"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.uberweb.com.au/"
+msgstr ""

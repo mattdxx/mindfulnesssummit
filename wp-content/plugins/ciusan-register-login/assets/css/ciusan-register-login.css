@@ -1,0 +1,122 @@
+form.crl-ajax-auth{
+    display:none;
+    z-index:999999;
+	position:fixed;
+    top:25px;
+	left:50%;
+	width:350px;
+	margin-left:-200px;
+    padding:40px 25px 25px 25px;
+	background-color:#FFFFFF;
+    border-radius:8px;
+    font-family:Arial, Helvetica, sans-serif;
+    box-shadow:0 0 6px rgba(0, 0, 0, 0.2);   
+    color:#878787;
+    font-size:11px;
+}
+.crl-ajax-auth h1, .crl-ajax-auth h3, .crl-ajax-auth h5{
+    font-family:'Georgia', 'Times New Roman', Times, serif;
+    font-weight:100;
+    color:#333333;    
+	line-height:0;  
+}
+.crl-ajax-auth h1{
+    font-size:27px;
+    left:15px;
+	margin-top:-10px;
+}
+.crl-ajax-auth h3{
+    font-size:18px;
+    text-align:left;
+    margin:0;
+}
+.crl-ajax-auth h5{
+    font-size:12px;
+    text-align:left;
+    margin:0;
+}
+.crl-ajax-auth hr {
+    background-color:rgba(0, 0, 0, 0.1);
+    border:0 none;
+    height:1px;
+    margin:20px 0;
+}
+.crl-ajax-auth input#username,
+.crl-ajax-auth input#password,
+.crl-ajax-auth input#signonname,
+.crl-ajax-auth input#email,
+.crl-ajax-auth input#signonpassword,
+.crl-ajax-auth input#password2,
+.crl-ajax-auth input#user_login{
+    border:1px solid #EDEDED;
+    border-radius:3px 3px 3px 3px;
+    box-shadow:0 0 3px rgba(0, 0, 0, 0.1) inset;
+    color:#333333;
+    font-size:15px;
+    padding:10px 10px 10px 13px;
+    width:300px;
+    margin-bottom:5px;
+    background-color:#F9F9F9;
+    font-family:'Georgia', 'Times New Roman', Times, serif;
+}
+.crl-ajax-auth input#username:focus,
+.crl-ajax-auth input#password:focus,
+.crl-ajax-auth input#signonname:focus,
+.crl-ajax-auth input#email:focus,
+.crl-ajax-auth input#signonpassword:focus,
+.crl-ajax-auth input#password2:focus,
+.crl-ajax-auth input#user_login:focus{
+    background-color:#FFF;
+}
+.crl-ajax-auth label.error{
+	display:none !important;
+}
+.crl-ajax-auth ::-webkit-input-placeholder{
+	display:none !important;
+}
+.crl-ajax-auth :-moz-placeholder { /* Firefox 18- */
+   color:#bbb;  
+}
+.crl-ajax-auth ::-moz-placeholder {  /* Firefox 19+ */
+   color:#bbb;  
+}
+.crl-ajax-auth :-ms-input-placeholder {  
+   color:#bbb;  
+}
+.crl-ajax-auth input.error{
+	border:1px solid #FF0000 !important;
+}
+.crl-ajax-auth input.button{
+    float:right;
+}
+.crl-ajax-auth a{
+    text-decoration:none;
+}
+.crl-ajax-auth a.close{
+    color:#DCDCDC;
+    position:absolute;
+    right:25px;
+    top:25px;
+}
+.crl-ajax-auth a.text-link{
+    color:#B4B2B2;
+    float:left;
+}
+.crl-ajax-auth p.status{
+    text-align:center;
+    margin:-15px 0 20px 0;
+	font-size:xx-small !important;
+    display:none;
+	color:#FF0000;
+}
+.crl-ajax-auth span{
+	display:inline-block;
+}
+.crl_overlay{
+    height:100%;
+    width:100%;
+    background-color:#F6F6F6;
+    opacity:0.9;
+    position:fixed;
+    z-index:999998;
+}

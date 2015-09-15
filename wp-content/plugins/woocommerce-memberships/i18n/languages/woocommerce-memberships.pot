@@ -1,0 +1,1762 @@
+# Copyright (C) 2015 WooThemes / SkyVerge
+# This file is distributed under the GNU General Public License v3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Memberships 1.3.0\n"
+"Report-Msgid-Bugs-To: https://support.woothemes.com/hc/\n"
+"POT-Creation-Date: 2014-11-27 15:13:06+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:84
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:282
+msgid "Slug"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:85
+msgid "Access from"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:86
+#: includes/admin/class-wc-memberships-admin.php:62
+#: includes/class-wc-memberships-post-types.php:141
+msgid "Members"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:110
+msgid "This item cannot be restored because it has active members."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:113
+msgid "This item cannot be moved to trash because it has active members."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:116
+msgid "This item cannot be permanently deleted because it has active members."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:123
+msgid "Make a duplicate from this membership plan"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:124
+msgid "Duplicate"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:194
+msgid "Existing purchases:"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:195
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:215
+msgid "Grant Access"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:206
+msgid ""
+"This action adds a membership for anyone who has purchased one of the "
+"products that grants access to this plan. If the customer already has this "
+"membership, the original membership status and dates are preserved.\\r\\n"
+"\\r\\n"
+"Subscriptions: Only active subscribers will gain a membership."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:240
+msgid "Make a copy"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:282
+msgid "Membership plan copied."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:289
+msgid "Membership plan creation failed, could not find original product:"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:393
+msgid "%d customer was granted access from existing purchases."
+msgid_plural "%d customers were granted access from existing purchases"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:395
+msgid "No customers were granted access from existing purchases."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-membership-plans.php:453
+msgid "(Copy)"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:101
+msgid "Name"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:102
+msgid "Email"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:103
+#: includes/admin/meta-boxes/views/html-content-restriction-rule.php:121
+#: includes/admin/meta-boxes/views/html-content-restriction-rules.php:59
+#: includes/admin/meta-boxes/views/html-product-restriction-rule.php:117
+#: includes/admin/meta-boxes/views/html-product-restriction-rules.php:60
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rule.php:118
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rules.php:59
+#: templates/myaccount/my-memberships.php:35
+#: templates/myaccount/my-memberships.php:55
+msgid "Plan"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:104
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:218
+#: templates/myaccount/my-memberships.php:37
+#: templates/myaccount/my-memberships.php:67
+msgid "Status"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:105
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:531
+msgid "Expires"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:151
+msgid "Resume"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:156
+msgid "Pause"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:162
+#: includes/admin/class-wc-memberships-admin.php:314
+#: templates/myaccount/my-memberships.php:95
+msgid "Cancel"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:166
+msgid "Delete this membership permanently"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:166
+msgid "Delete"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:220
+msgid "&mdash; No Change &mdash;"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:272
+#: includes/admin/class-wc-memberships-settings.php:241
+msgid "Never"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:501
+msgid "Today"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:502
+msgid "This week"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:503
+msgid "This month"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:509
+msgid "All plans"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:520
+msgid "All statuses"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:686
+msgid "User membership paused."
+msgid_plural "%s user memberships paused."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:690
+msgid "User membership cancelled."
+msgid_plural "%s user memberships cancelled."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:694
+msgid "User membership resumed."
+msgid_plural "%s user memberships resumed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:727
+msgid "Please select a membership plan."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:752
+msgid "Please select a user to add as a member."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:764
+msgid "This user is already a member of every plan."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin-user-memberships.php:781
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:300
+msgid "Are you sure you want to permanently delete this membership?"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin.php:66
+#: includes/class-wc-memberships-post-types.php:108
+msgid "Membership Plans"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin.php:312
+msgid "Select user"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin.php:313
+#: includes/class-wc-memberships-post-types.php:144
+msgid "Add Member"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin.php:315
+msgid "Search for a user&hellip;"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin.php:606
+msgid "User memberships"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin.php:616
+msgid "This user is a member of %s. %sAdd another membership%s."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-admin.php:619
+msgid "This user has no memberships yet. %sAdd a membership manually%s."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:46
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:60
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:50
+msgid "Memberships"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:63
+#: includes/admin/class-wc-memberships-settings.php:197
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:242
+msgid "General"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:64
+#: includes/admin/class-wc-memberships-settings.php:91
+msgid "Products"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:100
+msgid "Hide restricted products"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:101
+msgid ""
+"If enabled, products with viewing restricted will be hidden from the shop "
+"catalog. Products will still be accessible directly, unless Content "
+"Restriction Mode is \"Hide completely\"."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:111
+msgid "Product Restriction Messages"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:113
+#: includes/admin/class-wc-memberships-settings.php:259
+msgid ""
+"%s automatically inserts the product(s) needed to gain access. %s inserts "
+"the URL to my account page with the login form. HTML is allowed."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:121
+msgid "Product Viewing Restricted - Purchase Required"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:122
+msgid "Displays when purchase is required to view the product."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:123
+msgid ""
+"This product can only be viewed by members. To view or purchase this "
+"product, sign up by purchasing {products}."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:124
+msgid ""
+"Message displayed if viewing is restricted to members but access can be "
+"purchased."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:131
+msgid "Product Viewing Restricted - Membership Required"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:132
+msgid "Displays if viewing is restricted to a membership that cannot be purchased."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:133
+msgid "This product can only be viewed by members."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:134
+msgid ""
+"Message displayed if viewing is restricted to members and no products can "
+"grant access."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:141
+msgid "Product Buying Restricted - Purchase Required"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:142
+msgid "Displays when purchase is required to buy the product."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:143
+msgid ""
+"This product can only be purchased by members. To purchase this product, "
+"sign up by purchasing {products}."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:144
+msgid ""
+"Message displayed if purchasing is restricted to members but access can be "
+"purchased."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:151
+msgid "Product Buying Restricted - Membership Required"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:152
+msgid ""
+"Displays if purchasing is restricted to a membership that cannot be "
+"purchased."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:153
+msgid "This product can only be purchased by members."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:154
+msgid ""
+"Message displayed if purchasing is restricted to members and no products "
+"can grant access."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:161
+msgid "Product Discounted - Purchase Required"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:162
+msgid "Message displayed to non-members if the product has a member discount."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:163
+msgid "Want a discount? Become a member by purchasing {products}."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:164
+#: includes/admin/class-wc-memberships-settings.php:174
+msgid "Displays below add to cart buttons. Leave blank to disable."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:171
+msgid "Product Discounted - Membership Required"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:172
+msgid ""
+"Message displayed to non-members if the product has a member discount, but "
+"no products can grant access."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:173
+msgid "Want a discount? Become a member."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:206
+msgid "Content Restriction Mode"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:208
+msgid "Hide completely"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:209
+msgid "Hide content only"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:210
+msgid "Redirect to page"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:213
+msgid ""
+"Specifies the way content is restricted: whether to show nothing, excerpts, "
+"or send to a landing page."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:214
+msgid ""
+"\"Hide completely\" removes all traces of content for non-members and "
+"search engines and 404s restricted pages.<br />\"Hide content only\" will "
+"show items in archives, but protect page or post content and comments."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:219
+msgid "Redirect Page"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:220
+msgid ""
+"Select the page to redirect non-members to - should contain the "
+"[wcm_content_restricted] shortcode."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:231
+msgid "Show Excerpts"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:232
+msgid ""
+"If enabled, an excerpt of the protected content will be displayed to "
+"non-members & search engines."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:239
+msgid "Show Member Login Notice"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:242
+msgid "On Cart Page"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:243
+msgid "On Checkout Page"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:244
+msgid "On both Cart & Checkout Page"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:247
+msgid ""
+"Select when & where to display login reminder notice for guests if products "
+"in cart have member discounts."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:257
+msgid "Content Restricted Messages"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:267
+msgid "Content Restricted - Purchase Required"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:268
+msgid "Displays when purchase is required to view the content."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:269
+msgid "To access this content, you must purchase {products}."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:270
+msgid ""
+"Message displayed if visitor does not have access to content, but can "
+"purchase it."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:277
+msgid "Content Restricted - Membership Required"
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:278
+msgid ""
+"Displays if the content is restricted to a membership that cannot be "
+"purchased."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:279
+msgid "This content is only available to members."
+msgstr ""
+
+#: includes/admin/class-wc-memberships-settings.php:280
+msgid ""
+"Message displayed if visitor does not have access to content and no "
+"products can grant access."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:59
+msgid ""
+"When you add a restriction rule for content, it will no longer be public on "
+"your site. By adding a rule for a page, post, or taxonomy, it will become "
+"restricted, and can only be accessed by members of this plan, or by members "
+"of another plan that grants access to the content.%sLearn more about "
+"%srestriction rules in the documentation%s."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:70
+msgid ""
+"When you add a %sviewing%s restriction rule for a product, it will no "
+"longer be public on your site, and can only be accessed by members of this "
+"plan, or by members of another plan that grants access to the product. By "
+"adding a %spurchasing%s restriction rule, the product can be viewed "
+"publicly, but only purchased by members."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:91
+msgid "Membership Plan Data"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:127
+msgid "unlimited"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:128
+msgid "specify a length"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:133
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:93
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:128
+msgid "immediately"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:134
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:94
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:129
+msgid "specify a time"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:138
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:98
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:133
+msgid "day(s)"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:139
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:99
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:134
+msgid "week(s)"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:140
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:100
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:135
+msgid "month(s)"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:141
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:101
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:136
+msgid "year(s)"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:173
+msgid "View"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:174
+msgid "Purchase"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:247
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:210
+msgid "Restrict Content"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:251
+msgid "Restrict Products"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:255
+msgid "Purchasing Discounts"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:289
+msgid "Grant Access to people who purchase:"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:292
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:306
+msgid "Search for a product&hellip;"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:323
+msgid "Leave empty to only allow members you manually assign."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:328
+msgid "Membership Length"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:338
+msgid "When does the membership expire?"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:376
+msgid "These posts are public, and will be excluded from all restriction rules: %s"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-membership-plan-data.php:397
+msgid ""
+"These products are public, and will be excluded from all restriction rules: "
+"%s"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:84
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:113
+msgid "(inactive)"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:126
+msgid "Content Restriction"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:131
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:250
+msgid "Disable restrictions"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:132
+msgid ""
+"Check this box if you want to force the content to be public regardless of "
+"any restriction rules that may apply now or in the future."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:141
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:264
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:372
+msgid "Need to add or edit a plan?"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:141
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:264
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:372
+msgid "Manage Membership Plans"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:145
+msgid "Custom Restriction Message"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:150
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:273
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:295
+msgid "Use custom message"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:151
+msgid ""
+"Check this box if you want to customize the content restricted message for "
+"this content."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-post-memberships-data.php:157
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:280
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:302
+msgid ""
+"<code>%s</code> automatically inserts the product(s) needed to gain access. "
+"<code>%s</code> inserts the URL to my account page. HTML is allowed."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:122
+msgid "view"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:123
+msgid "purchase"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:190
+msgid "Memberships do not support grouped products."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:219
+msgid "Discounts"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:244
+msgid ""
+"These rules affect all variations. For variation-level control use the "
+"membership plan screen."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:251
+msgid ""
+"Check this box if you want to force this product to be public regardless of "
+"any restriction rules that may apply now or in the future."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:274
+msgid ""
+"Check this box if you want to customize the <strong>viewing restricted "
+"message</strong> for this product."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:296
+msgid ""
+"Check this box if you want to customize the <strong>purchasing restricted "
+"message</strong> for this product."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:327
+msgid ""
+"These settings affect all variations. For variation-level control use the "
+"membership plan screen."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:335
+msgid "To grant membership access, please"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:335
+#: includes/admin/meta-boxes/views/html-content-restriction-rules.php:89
+#: includes/admin/meta-boxes/views/html-product-restriction-rules.php:92
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rules.php:89
+msgid "Add a Membership Plan"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:339
+msgid "Purchasing grants access to"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:342
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:358
+msgid "Search for a membership plan&hellip;"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:369
+msgid "Select which membership plans does purchasing this product grant access tp."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-product-memberships-data.php:393
+msgid ""
+"These rules affect all variations. For variation-level control use the "
+"membership plan screen"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:53
+msgid "User Membership Data"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:141
+msgid "Add a plan..."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:147
+msgid "Membership Details"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:163
+msgid "Plan:"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:172
+msgid "Status:"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:180
+msgid "Member since:"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:182
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:190
+msgid "YYYY-MM-DD"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:188
+msgid "Expires:"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:195
+msgid "Paused since %s"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:213
+msgid "Billing Details"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:228
+msgid "Purchased in:"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:229
+msgid "Order %s"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:232
+msgid "Order Date:"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:236
+msgid "Order Total:"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:241
+msgid "No billing details - this membership was created manually."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:274
+msgid "Delete User Membership"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:279
+msgid "Save Membership"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-data.php:279
+msgid "Save/update the membership"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-member-details.php:56
+msgid "Member Details"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-member-details.php:113
+msgid "Member since %s"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-member-details.php:134
+msgid "User has not set up their billing address yet."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-notes.php:50
+msgid "Membership Notes"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-notes.php:103
+msgid "Add note"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-notes.php:103
+msgid ""
+"Add a note for your reference, or add a customer note (the user will be "
+"notified)."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-notes.php:110
+msgid "Notify Member"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-notes.php:112
+msgid "Add Note"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-notes.php:129
+msgid "There are no notes yet."
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-recent-activity.php:53
+msgid "Recent Activity"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-recent-activity.php:109
+#: includes/class-wc-memberships-ajax.php:189
+#. translators: Placeholder for plan name if a plan has been removed
+msgid "[Plan removed]"
+msgstr ""
+
+#: includes/admin/meta-boxes/class-wc-memberships-meta-box-user-membership-recent-activity.php:116
+msgid "It's been quiet here. No activity yet."
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rule.php:40
+#: includes/admin/meta-boxes/views/html-product-restriction-rule.php:40
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rule.php:41
+msgid "Select"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rule.php:62
+#: includes/admin/meta-boxes/views/html-content-restriction-rules.php:48
+#: includes/admin/meta-boxes/views/html-product-restriction-rule.php:62
+#: includes/admin/meta-boxes/views/html-product-restriction-rules.php:49
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rule.php:131
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rules.php:65
+msgid "Type"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rule.php:64
+msgid "Post types"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rule.php:69
+msgid "Taxonomies"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rule.php:83
+#: includes/admin/meta-boxes/views/html-content-restriction-rules.php:52
+#: includes/admin/meta-boxes/views/html-product-restriction-rule.php:79
+#: includes/admin/meta-boxes/views/html-product-restriction-rules.php:53
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rule.php:80
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rules.php:52
+msgid "Title"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rule.php:85
+#: includes/admin/meta-boxes/views/html-content-restriction-rule.php:100
+#: includes/admin/meta-boxes/views/html-content-restriction-rules.php:53
+#: includes/admin/meta-boxes/views/html-product-restriction-rule.php:81
+#: includes/admin/meta-boxes/views/html-product-restriction-rule.php:96
+#: includes/admin/meta-boxes/views/html-product-restriction-rules.php:54
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rule.php:82
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rule.php:97
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rules.php:53
+msgid "Search&hellip; or leave blank to apply to all"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rule.php:134
+#: includes/admin/meta-boxes/views/html-content-restriction-rules.php:65
+#: includes/admin/meta-boxes/views/html-product-restriction-rule.php:141
+#: includes/admin/meta-boxes/views/html-product-restriction-rules.php:70
+msgid "Accessible"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rule.php:170
+#: includes/admin/meta-boxes/views/html-product-restriction-rule.php:168
+#. Translators: the variables represent following values:
+#. * %1$s - an opening HTML tag
+#. * %2$s - a closing HTML tag
+#. * %3$s - a numeric value
+#. * %4$s - a period, such as day(s), month(s), etc
+#. *
+#. * The result will look something like: "after 3 day(s)"
+msgid "%1$safter%2$s %3$s %4$s"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rule.php:200
+msgid ""
+"This rule applies to a content type created by a plugin or theme that has "
+"been deactivated or deleted."
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rule.php:202
+msgid "You are not allowed to edit this rule."
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rule.php:204
+msgid ""
+"This rule cannot be edited here because it applies to multiple content "
+"objects. You can %sedit this rule on the membership plan screen%s."
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rules.php:42
+#: includes/admin/meta-boxes/views/html-product-restriction-rules.php:43
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rules.php:42
+msgid "Select all"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rules.php:66
+msgid "When will members gain access to content?"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rules.php:86
+#: includes/admin/meta-boxes/views/html-product-restriction-rules.php:89
+msgid "There are no rules yet. Click below to add one."
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rules.php:89
+#: includes/admin/meta-boxes/views/html-product-restriction-rules.php:92
+msgid "To create restriction rules, please"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rules.php:91
+msgid ""
+"This content can be viewed by all visitors. Add a rule to restrict it to "
+"members."
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rules.php:102
+#: includes/admin/meta-boxes/views/html-product-restriction-rules.php:105
+msgid "Add New Rule"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-content-restriction-rules.php:103
+#: includes/admin/meta-boxes/views/html-product-restriction-rules.php:106
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rules.php:100
+msgid "Delete Selected"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-membership-note.php:43
+msgid "added on %1$s at %2$s"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-membership-note.php:44
+#: includes/admin/meta-boxes/views/html-membership-recent-activity-note.php:47
+#: includes/class-wc-memberships-user-membership.php:459
+#: includes/class-wc-memberships-user-membership.php:460
+msgid "WooCommerce"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-membership-note.php:44
+#: includes/admin/meta-boxes/views/html-membership-recent-activity-note.php:47
+msgid "by %s"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-membership-note.php:45
+msgid "Delete note"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-membership-recent-activity-note.php:41
+#. translators: Placeholders represent membership plan name and a note. Example
+#. "Gold: Membership cancelled"
+msgid "%s: %s"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-membership-recent-activity-note.php:46
+msgid "On %1$s at %2$s"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-product-restriction-rule.php:130
+#: includes/admin/meta-boxes/views/html-product-restriction-rules.php:66
+msgid "Only Members Can"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-product-restriction-rule.php:191
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rule.php:161
+msgid ""
+"This rule applies to content generated by a plugin or theme that has been "
+"deactivated or deleted."
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-product-restriction-rule.php:193
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rule.php:163
+msgid "You are not allowed to edit this rule"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-product-restriction-rule.php:195
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rule.php:165
+msgid ""
+"This rule cannot be edited here because it applies to multiple products. "
+"You can %sedit this rule on the membership plan screen%s."
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-product-restriction-rules.php:71
+msgid "When will members gain access to products?"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-product-restriction-rules.php:94
+msgid ""
+"This product can be viewed & purchased by all customers. Add a rule to "
+"restrict viewing and/or purchasing to members."
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rule.php:63
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rules.php:48
+msgid "Discount"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rule.php:142
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rules.php:69
+msgid "Amount"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rule.php:149
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rules.php:73
+msgid "Active"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rules.php:87
+msgid "There are no discounts yet. Click below to add one."
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rules.php:89
+msgid "To create member discounts, please"
+msgstr ""
+
+#: includes/admin/meta-boxes/views/html-purchasing-discount-rules.php:99
+msgid "Add New Discount"
+msgstr ""
+
+#: includes/class-wc-memberships-membership-note-email.php:47
+msgid "Membership note"
+msgstr ""
+
+#: includes/class-wc-memberships-membership-note-email.php:48
+msgid ""
+"Membership note emails are sent when you add a membership note and notify "
+"member."
+msgstr ""
+
+#: includes/class-wc-memberships-membership-note-email.php:53
+msgid "Note added to your {site_title} membership"
+msgstr ""
+
+#: includes/class-wc-memberships-membership-note-email.php:54
+msgid "A note has been added about your membership"
+msgstr ""
+
+#: includes/class-wc-memberships-membership-plan.php:413
+msgid "Membership access granted from purchasing %s (Order %s)"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:109
+msgid "Membership Plan"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:111
+msgid "Add Membership Plan"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:112
+msgid "Add New Membership Plan"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:113
+#: includes/class-wc-memberships-post-types.php:146
+msgid "Edit"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:114
+msgid "Edit Membership Plan"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:115
+msgid "New Membership Plan"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:116
+msgid "View Membership Plans"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:117
+msgid "View Membership Plan"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:118
+msgid "Search Membership Plans"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:119
+msgid "No Membership Plans found"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:120
+msgid "No Membership Plans found in trash"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:122
+msgid "This is where you can add new Membership Plans."
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:142
+msgid "User Membership"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:145
+msgid "Add New User Membership"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:147
+msgid "Edit User Membership"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:148
+msgid "New User Membership"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:149
+msgid "View User Memberships"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:150
+msgid "View User Membership"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:151
+msgid "Search Members"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:152
+msgid "No User Memberships found"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:153
+msgid "No User Memberships found in trash"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:155
+msgid "This is where you can add new User Memberships."
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:212
+#: includes/class-wc-memberships-post-types.php:215
+#: includes/class-wc-memberships-post-types.php:217
+#: includes/class-wc-memberships-post-types.php:218
+msgid "Membership Plan saved."
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:213
+#: includes/class-wc-memberships-post-types.php:227
+msgid "Custom field updated."
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:214
+#: includes/class-wc-memberships-post-types.php:228
+msgid "Custom field deleted."
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:221
+msgid "Membership Plan draft updated."
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:226
+#: includes/class-wc-memberships-post-types.php:229
+#: includes/class-wc-memberships-post-types.php:231
+#: includes/class-wc-memberships-post-types.php:232
+#: includes/class-wc-memberships-post-types.php:235
+msgid "User Membership saved."
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:253
+msgid "%s membership plan updated."
+msgid_plural "%s membership plans updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-post-types.php:254
+msgid "%s membership plan not updated, somebody is editing it."
+msgid_plural "%s membership plans not updated, somebody is editing them."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-post-types.php:255
+msgid "%s membership plan permanently deleted."
+msgid_plural "%s membership plans permanently deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-post-types.php:256
+msgid "%s membership plan moved to the Trash."
+msgid_plural "%s membership plans moved to the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-post-types.php:257
+msgid "%s membership plan restored from the Trash."
+msgid_plural "%s membership plans restored from the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-post-types.php:261
+msgid "%s user membership updated."
+msgid_plural "%s user memberships updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-post-types.php:262
+msgid "%s user membership not updated, somebody is editing it."
+msgid_plural "%s user memberships not updated, somebody is editing them."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-post-types.php:263
+msgid "%s user membership permanently deleted."
+msgid_plural "%s user memberships permanently deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-post-types.php:264
+msgid "%s user membership moved to the Trash."
+msgid_plural "%s user memberships moved to the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-post-types.php:265
+msgid "%s user membership restored from the Trash."
+msgid_plural "%s user memberships restored from the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-user-membership.php:510
+msgid "Membership paused."
+msgstr ""
+
+#: includes/class-wc-memberships-user-membership.php:522
+msgid "Membership cancelled."
+msgstr ""
+
+#: includes/class-wc-memberships-user-membership.php:536
+msgid "Membership resumed."
+msgstr ""
+
+#: includes/class-wc-memberships-user-membership.php:537
+msgid "Membership activated."
+msgstr ""
+
+#: includes/class-wc-memberships-user-memberships.php:252
+msgid "Active <span class=\"count\">(%s)</span>"
+msgid_plural "Active <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-user-memberships.php:256
+msgid "Complimentary <span class=\"count\">(%s)</span>"
+msgid_plural "Complimentary <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-user-memberships.php:260
+msgid "Pending Cancellation <span class=\"count\">(%s)</span>"
+msgid_plural "Pending Cancellation <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-user-memberships.php:264
+msgid "Paused <span class=\"count\">(%s)</span>"
+msgid_plural "Paused <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-user-memberships.php:268
+msgid "Expired <span class=\"count\">(%s)</span>"
+msgid_plural "Expired <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-user-memberships.php:272
+msgid "Cancelled <span class=\"count\">(%s)</span>"
+msgid_plural "Cancelled <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wc-memberships-user-memberships.php:337
+msgid "Membership status changed from %s to %s."
+msgstr ""
+
+#: includes/class-wc-memberships-user-memberships.php:428
+msgid "Membership expired."
+msgstr ""
+
+#: includes/class-wc-memberships-user-memberships.php:466
+msgid "Membership cancelled because the associated order was trashed."
+msgstr ""
+
+#: includes/class-wc-memberships-user-memberships.php:486
+msgid "Membership cancelled because the associated order was refunded."
+msgstr ""
+
+#: includes/frontend/class-wc-memberships-frontend.php:112
+#: includes/frontend/class-wc-memberships-frontend.php:178
+msgid "Invalid membership."
+msgstr ""
+
+#: includes/frontend/class-wc-memberships-frontend.php:127
+msgid "Membership cancelled by customer."
+msgstr ""
+
+#: includes/frontend/class-wc-memberships-frontend.php:137
+msgid "Your membership was cancelled."
+msgstr ""
+
+#: includes/frontend/class-wc-memberships-frontend.php:150
+msgid "Cannot cancel this membership."
+msgstr ""
+
+#: includes/frontend/class-wc-memberships-frontend.php:217
+msgid "Renew your membership by purchasing %s."
+msgstr ""
+
+#: includes/frontend/class-wc-memberships-frontend.php:224
+msgid "Cannot renew this membership. Please contact us if you need assistance."
+msgstr ""
+
+#: includes/frontend/class-wc-memberships-frontend.php:283
+msgid "Some items in you cart are discounted for members. %sLog in%s to claim them."
+msgstr ""
+
+#: includes/frontend/class-wc-memberships-frontend.php:285
+msgid "An item in your cart is discounted for members. %sLog in%s to claim it."
+msgstr ""
+
+#: includes/frontend/class-wc-memberships-frontend.php:287
+msgid "This item is discounted for members. %sLog in%s to claim it."
+msgstr ""
+
+#: includes/frontend/class-wc-memberships-frontend.php:568
+msgid ""
+"This product is part of your membership, but not yet! You will gain access "
+"on {date}"
+msgstr ""
+
+#: includes/frontend/class-wc-memberships-frontend.php:570
+msgid ""
+"This product is part of your membership, but not yet! You can purchase it "
+"on {date}"
+msgstr ""
+
+#: includes/frontend/class-wc-memberships-frontend.php:575
+msgid ""
+"This page is part of your membership, but not yet! You will gain access on "
+"{date}"
+msgstr ""
+
+#: includes/frontend/class-wc-memberships-frontend.php:579
+msgid ""
+"This post is part of your membership, but not yet! You will gain access on "
+"{date}"
+msgstr ""
+
+#: includes/frontend/class-wc-memberships-frontend.php:583
+#: includes/wc-memberships-template-functions.php:134
+msgid ""
+"This content is part of your membership, but not yet! You will gain access "
+"on {date}"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:69
+msgid "Groups Integration"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:80
+msgid "Groups Import"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:82
+msgid "Click this button to import memberships from WordPress Groups plugin."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:83
+#: includes/integrations/class-wc-memberships-integration-groups.php:158
+msgid "Import Members from Groups"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:146
+msgid "There are no groups to import."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:159
+msgid "For each group, specify which plan should we import members to."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:164
+msgid "Group: %s (ID #%d) "
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:166
+msgid "What should be done with members of this group?"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:172
+msgid "Skip"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:179
+msgid "Import all members to:"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:198
+msgid "Confirm Import"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:283
+msgid "%d member imported from Groups."
+msgid_plural "%d members imported from Groups"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:285
+msgid "No members were imported from Groups."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:366
+msgid "Membership imported from Group \"%s\" (ID #%d)"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:253
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:366
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:430
+msgid "Membership cancelled because subscription was trashed."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:257
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:434
+msgid "Membership cancelled because subscription was deleted."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:314
+msgid "Membership free trial activated because subscription was re-activated."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:321
+msgid "Membership activated because subscription was re-activated."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:330
+msgid "Membership paused because subscription was put on-hold."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:339
+msgid "Membership expired because subscription expired."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:348
+msgid ""
+"Membership marked as pending cancellation because subscription is pending "
+"cancellation."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:357
+msgid "Membership cancelled because subscription was cancelled."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:967
+msgid "Free Trial <span class=\"count\">(%s)</span>"
+msgid_plural "Free Trial <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:1063
+msgid "Subscription not yet ended"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:1067
+msgid "Subscription:"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:1071
+msgid "Next Bill On:"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:1072
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:1120
+#: templates/myaccount/my-memberships.php:63
+msgid "N/A"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:1091
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:1116
+msgid "Next Bill On"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:1158
+msgid "Membership will be active while the purchased subscription is active."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:1159
+msgid ""
+"If membership access is granted via the purchase of a subscription, then "
+"membership length will be automatically equal to the length of the "
+"subscription, regardless of the membership length setting above."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:1233
+msgid "Start after trial"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:1335
+msgid "Membership activated because WooCommerce Subscriptions was activated."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:1339
+msgid ""
+"Membership free trial activated because WooCommerce Subscriptions was "
+"activated."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:1386
+msgid "Membership paused because WooCommerce Subscriptions was deactivated."
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-user-switching.php:74
+msgid "View site as a member of this plan"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-user-switching.php:75
+msgid "View site as member"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-user-switching.php:123
+msgid "%s Plan"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-user-switching.php:124
+msgid "Test User"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-user-switching.php:125
+msgid ""
+"A temporary user created for testing the %s plan membership. If you don't "
+"use it, feel free to delete this user."
+msgstr ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-admin-notice-handler.php:196
+msgid "Dismiss"
+msgstr ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:192
+msgid "You cannot clone instances of %s."
+msgstr ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:201
+msgid "You cannot unserialize instances of %s."
+msgstr ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:321
+msgid ""
+"%s requires the %s PHP extension to function.  Contact your host or server "
+"administrator to configure and install the missing extension."
+msgid_plural ""
+"%s requires the following PHP extensions to function: %s.  Contact your "
+"host or server administrator to configure and install the missing "
+"extensions."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:341
+msgid ""
+"%s requires the %s PHP function to exist.  Contact your host or server "
+"administrator to configure and install the missing function."
+msgid_plural ""
+"%s requires the following PHP functions to exist: %s.  Contact your host or "
+"server administrator to configure and install the missing functions."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:376
+msgid "Docs"
+msgstr ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:381
+msgid "Support"
+msgstr ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:631
+msgid "Configure"
+msgstr ""
+
+#: templates/emails/membership-note.php:36
+#: templates/emails/plain/membership-note.php:35
+msgid "Hello, a note has just been added to your membership:"
+msgstr ""
+
+#: templates/loop/member-discount-badge.php:37
+#: templates/single-product/member-discount-badge.php:37
+msgid "Member discount!"
+msgstr ""
+
+#: templates/myaccount/my-memberships.php:29
+msgid "My Memberships"
+msgstr ""
+
+#: templates/myaccount/my-memberships.php:36
+msgid "Signup date"
+msgstr ""
+
+#: templates/myaccount/my-memberships.php:59
+msgid "Signup Date"
+msgstr ""
+
+#: templates/myaccount/my-memberships.php:81
+msgid "Actions"
+msgstr ""
+
+#: templates/myaccount/my-memberships.php:88
+msgid "Renew"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WooCommerce Memberships"
+msgstr ""
+
+#: woocommerce-memberships.php:445
+msgid ""
+"Thanks for installing Memberships! To get started, take a minute to %sread "
+"the documentation%s and then %ssetup a membership plan%s :)"
+msgstr ""
+
+#: woocommerce-memberships.php:585
+msgid "or"
+msgstr ""
+
+#: woocommerce-memberships.php:612
+msgid "and"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.woothemes.com/products/woocommerce-memberships/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Sell memberships that provide access to restricted content, products, "
+"discounts, and more!"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "WooThemes / SkyVerge"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.woothemes.com/"
+msgstr ""
+
+#: includes/class-wc-memberships-post-types.php:110
+#: includes/class-wc-memberships-post-types.php:143
+msgctxt "Admin menu name"
+msgid "Memberships"
+msgstr ""
+
+#: includes/class-wc-memberships-user-memberships.php:251
+msgctxt "Membership Status"
+msgid "Active"
+msgstr ""
+
+#: includes/class-wc-memberships-user-memberships.php:255
+msgctxt "Membership Status"
+msgid "Complimentary"
+msgstr ""
+
+#: includes/class-wc-memberships-user-memberships.php:259
+msgctxt "Membership Status"
+msgid "Pending Cancellation"
+msgstr ""
+
+#: includes/class-wc-memberships-user-memberships.php:263
+msgctxt "Membership Status"
+msgid "Paused"
+msgstr ""
+
+#: includes/class-wc-memberships-user-memberships.php:267
+msgctxt "Membership Status"
+msgid "Expired"
+msgstr ""
+
+#: includes/class-wc-memberships-user-memberships.php:271
+msgctxt "Membership Status"
+msgid "Cancelled"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-subscriptions.php:966
+msgctxt "Membership Status"
+msgid "Free Trial"
+msgstr ""
+
+#: includes/integrations/class-wc-memberships-integration-groups.php:125
+msgctxt "page title"
+msgid "Import members from Groups"
+msgstr ""
+
+#: woocommerce-memberships.php:762
+msgctxt "Page title"
+msgid "Content restricted"
+msgstr ""
+
+#: woocommerce-memberships.php:763
+msgctxt "Page slug"
+msgid "content-restricted"
+msgstr ""

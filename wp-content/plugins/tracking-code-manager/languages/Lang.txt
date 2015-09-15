@@ -1,0 +1,122 @@
+#en_US
+PluginLimit.Line1=In this FREE version you can insert up to N.{0} different codes/locations (remaining N.{1})
+PluginLimit.Line2=If you need more Tracking Code or more features please buy our PREMIUM version <a href="{0}" target="_blank"><b>HERE</b></a>
+Editor.Add=Tracking Code "#{0} ({1})" successfully stored.
+Button.Add=Add new Tracking Code
+Button.BuyPRO=UPGRADE TO PREMIUM NOW ››
+
+Feedback.email=Contact email
+Feedback.email.check=Please specify a valid email
+Feedback.body=Feedback
+Feedback.body.check=Please specify your feedback
+Feedback.track=Send also track information (this can be very useful for us to solve your issue)
+FeedbackSuccess=Feedback successfully sent. We will reply you ASAP.
+FeedbackError=Errors sending feedback. Please email us at aleste@intellywp.com
+
+AboutNotice=Thank you for trying our amazing plugin. Now you are able to quickly track what you need. Feel free to contact us using our feedback form or our email <a href="mailto:aleste@intellywp.com">aleste@intellywp.com</a>
+AboutTitle=We are crazy! But...
+ManagerTitle=Tracking Code Manager (v.{0})
+ManagerSubtitle=<b>WARNING</b> This does not filter your HTML code for errors or for malicious scripts. Use it at your own risk.
+SettingsTitle=Plugin settings
+FeedbackHeader=Are you looking for new features? Send us a feedback
+AboutText1=We are Stefan and Alex, two guys in love with Wordpress, coding and marketing! Our company IntellyWP is an idea to bring Intelly ideas to your Intelly site ;)
+AboutText2=Feel free to reach us by the feedback form below.
+WhatsNewTitle=Introducing Ecommerce Conversion Tracking
+
+CodeDeleteNotice=Tracking code "#{0} ({1})" successfully deleted
+CodeUpdateNotice=Tracking code "#{0} ({1})" successfully updated
+CodeAddNotice=Tracking code "#{0} ({1})" successfully added
+
+FreeLicenseReached=You have reached the FREE version limit. Please upgrade the PREMIUM version or delete unused tracking code and create new ones.
+EditTitle=Edit tracking code
+EditSubtitle=Edit the information that you need and click "Save"
+AddTitle=New tracking code
+AddSubtitle=Fill in the information and click "Save"
+EnableAllowTrackingNotice1=Currently we receive plugin usage information. It allows us to have a BETTER development so many many thanks from the development team.
+EnableAllowTrackingNotice2=If you want to stop tracking please click <a href="{0}">HERE :(</a>
+DisableAllowTrackingNotice1=Ooops... Seems that you are not allowing us to receive plugin usage information. It allows us to have a BETTER development without collecting any sensitive-data.
+DisableAllowTrackingNotice2=Please allow us to receive this information click <a href="{0}">HERE :)</a>
+
+Editor.active=Active?
+Editor.name=Name
+Editor.code=Paste your Tracking Code here
+Editor.position.0=Before &lt;/HEAD&gt;
+Editor.position.1=After &lt;BODY&gt;
+Editor.position.2=Before &lt;/BODY&gt;
+Editor.position=Position inside the code
+Editor.includeEverywhereActive=Include in the whole website (pages, posts and archives)
+Editor.includeCategoriesActive=Include in posts with specific categories
+Editor.includeTagsActive=Include in posts with specific tags
+Editor.includePostsOfTypeActive=Include in "<b>{0}</b>"
+Editor.exceptCategoriesActive=Exclude in posts with specific categories
+Editor.exceptTagsActive=Exclude in posts with specific tags
+Editor.exceptPostsOfTypeActive=Exclude in "<b>{0}</b>"
+Editor.includeLastPostsActive=Include in latest posts (specify the number of posts)
+Editor.trackMode_0=Standard code tracking in your Wordpress
+Editor.trackMode_1=Track conversion in your {0}
+Editor.trackPage_0=In the whole website (pages, posts and archives)
+Editor.trackPage_1=In specific pages or posts
+Editor.EcommerceCheck=In {0} (v.{1})
+Editor.PositionBlocked1=*** Position inside the code is set to "Before &lt;/BODY&gt;" to works properly.
+Editor.PositionBlocked2=Don't worry, your conversion tracking will works as well! ***
+
+DeactivateSuccess=License key "{0}" successfully deactivated
+DeactivateError=Errors deactivating key. Network problem??
+ActivateSuccess1=License key "{0}" successfully activated
+ActivateSuccess2=CONGRATS...YOU ARE NOW A PREMIUM MEMBER! :)
+ActivateError=Errors activating key. Network problem or wrong password
+
+LicenseSection=License information
+LicenseSectionSubtitle=Insert the activation key received by email in the text below to see all the settings
+MetaboxSection=Metabox information
+MetaboxSectionSubtitle=Check in which post type do you want integrate our metabox widget
+License.metabox=In "<b>{0}</b>"
+License.key=Activation key
+EmptyTrackingList=Your tracking code list is empty, please <a href="{0}">CLICK HERE</a> to create new ones.
+
+Notice.ProHeader1=Do you like this plugin?
+Notice.ProHeader2=With <b>PREMIUM</b> version you can have <b>UNLIMITED</b> tracking codes and also other awesome features:
+Notice.ProFeature1=Include code in latest posts (usefull for remarketing and Facebook Custom Audience)
+Notice.ProFeature2=Include code in your custom post type {0}
+Notice.ProFeature3=Include code in specific categories or tags
+Notice.ProCTA=Check all premium features now ››
+
+QuestionActiveOn=Do you want to activate this code?
+QuestionActiveOff=Do you want to deactivate this code?
+Error.IncludeExcludeAll=You cannot choose to include/exclude [All] in <b>{0}</b> configuration
+Error.IncludeSelectAtLeastOne=Include at least one item of <b>{0}</b> or select [All]
+Error.ExcludeSelectAtLeastOne=Exclude at least one item of <b>{0}</b>
+Question.DeleteQuestion=Do you want to delete this code?
+
+FirstTimeActivation=Thank you for activating our plugin. This is the manager where you need to start to configure your tracking codes. Thanks for choosing <a href="http://intellywp.com/" target="_blank">IntellyWP</a>! :)
+FaqTitle=F.A.Q. Frequently Asked Question
+Faq.Question1=Do you have a video that show me the plugin working?
+Faq.Response1=Sure! Click on the link <a href="http://intellywp.com/tracking-code-manager/" target="_blank">http://intellywp.com/tracking-code-manager</a> for a full explanation. This is our official webpage, you will see the plugin in action, with the possibility to BUY PREMIUM version and have full support.
+Faq.Question2=Will this plugin slow my website?
+Faq.Response2=Absolutely not! Since this plugin is built with lightweight code, you won’t notice any difference in speed.
+Faq.Question3=Can I put a tracking code or a script in ONE (maybe TWO?) specific page?
+Faq.Response3=Of course you can! You can choose to put the code in a single page, in some posts, or in the whole website (more features in PREMIUM version).
+Faq.Question4=Can I track conversions?
+Faq.Response4=Yeap! This is one of the main reason to use this plugin! You can track your conversions by putting the conversion pixel or code ONLY inside the thank you page.
+Faq.Question5=Can I manage Facebook Retargeting and Custom Audiences?
+Faq.Response5=Yes! For example you can put Facebook Pixel inside a certain posts of your blog to retarget those users who have already visited that posts on Facebook.
+Faq.Question6=Will this plugin interferes with my Google Analytics plugin?
+Faq.Response6=Nope! We tested the most famous Google Analytics plugins and it will not brake any of them.
+Faq.Question7=Can I use unlimited tracking codes and conversion pixels?
+Faq.Response7=You have 6 slots to use. Which means six different locations with unlimited tracking codes (enough for 99% of users).
+Faq.Question8=How to verify that a tracking code is properly working?
+Faq.Response8=Have a look at the source code of your page (search for: Tracking Code Manager) or you can install Google Chrome Addons. We suggest <a href="https://chrome.google.com/webstore/detail/fb-pixel-helper/fdgfkebogiimcoedlicjlajpkdmockpc">FB Pixel Helper</a> for Facebook codes and <a href="https://chrome.google.com/webstore/detail/tag-assistant-by-google/kejbdjndbnbjgmefkgdddjlbokphdefk">Tag Assistant (by Google)</a> for Google codes.
+
+YouTubeVideo.Title=Our plugin in few videos..
+YouTubeVideo.URL1=TDgoefbdtSI
+YouTubeVideo.Description1=Track Conversion in Woocommerce
+YouTubeVideo.URL2=jgmmMlerFRg
+YouTubeVideo.Description2=Track Conversion in Easy Digital Download
+YouTubeVideo.URL3=vBjDeb4Ej-I
+YouTubeVideo.Description3=Track Conversion in WP eCommerce
+
+Editor.NoEcommerceFound1=No compatible ecommerce found!
+Editor.NoEcommerceFound2=Currently we are compatible with <b>{0}</b>
+YouHaveThePremiumVersion1=You have installed the PREMIUM version of this plugin.
+YouHaveThePremiumVersion2=Please click <a href="{0}">here</a> to have all the features.
+YouHaveThePremiumVersion3=You can deactivate the "<b>Tracking Code Manager</b>" plugin and only still active the "<b>Tracking Code Manager PRO</b>" plugin

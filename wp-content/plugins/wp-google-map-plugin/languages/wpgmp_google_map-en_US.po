@@ -1,0 +1,1121 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp google map version 2.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-19 11:28+0530\n"
+"PO-Revision-Date: 2014-03-19 11:30+0530\n"
+"Last-Translator: Flipper Code <hello@flippercode.com>\n"
+"Language-Team: Flipper Code <hello@flippercode.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: INDIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin\n"
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:15
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:188
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:167
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:15
+msgid "Please enter title."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:19
+msgid "Please enter address."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:23
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:177
+msgid "Please enter latitude."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:27
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:182
+msgid "Please enter longitude."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:80
+msgid "Locations Added Successfully."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:90
+msgid "Address already exists."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:101
+msgid "Add Location"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:120
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:242
+msgid "Location Title"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:126
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:244
+msgid "Enter here the location title"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:133
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:85
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:248
+msgid "Address"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:142
+msgid "Geocode"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:146
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:254
+msgid "Enter here the address. Google auto suggest helps you to choose one."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:150
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:86
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:256
+msgid "Latitude"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:152
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:256
+msgid "Enter here the latitude."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:156
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:88
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:258
+msgid "Longitude"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:158
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:260
+msgid "Enter here the longitude."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:170
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:269
+msgid "Message"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:176
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:271
+msgid "Enter here the infoWindow message."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:183
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:276
+msgid "Draggable"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:189
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:278
+msgid "Do you want to allow visitors to drag the marker?."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:196
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-group-map.php:68
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:282
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:222
+msgid "Choose Marker Image"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:229
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:319
+msgid "You don't have any marker group yet."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:231
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:319
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:363
+msgid "Click here"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:233
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:319
+msgid "to add a group marker now"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:241
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:330
+msgid "Assign a marker group to this location."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-add-location.php:249
+msgid "Save Location"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-group-map.php:15
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:163
+msgid "Please enter group title."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-group-map.php:19
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:167
+msgid "Please upload marker image."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-group-map.php:34
+msgid "Group Created Successfully."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-group-map.php:43
+msgid "Create Marker Groups"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-group-map.php:61
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:211
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:210
+msgid "General Settings"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-group-map.php:63
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:75
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:214
+msgid "Group Title"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-group-map.php:66
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:219
+msgid "Enter here the group title."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-group-map.php:75
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:231
+msgid "Upload Marker Image"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-group-map.php:76
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:233
+msgid "Remove Marker Image"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-group-map.php:78
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:237
+msgid "Upload marker image."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-group-map.php:80
+msgid "Save Group Marker"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:14
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:13
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:13
+msgid "googlemap"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:15
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:14
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:14
+msgid "googlemaps"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:46
+msgid "No Records for Maps."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:91
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:84
+msgid "Title"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:93
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:449
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:219
+msgid "Map Width"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:95
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:455
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:226
+msgid "Map Height"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:97
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:461
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:234
+msgid "Map Zoom Level"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:99
+msgid "Map Type"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:101
+msgid "Shortcodes"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:172
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:180
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:156
+msgid "Selected Records Deleted Successfully."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:192
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:19
+msgid "Please enter Integer value in map width."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:196
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:23
+msgid "Please enter map height."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:200
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:27
+msgid "Please enter Integer value in map height."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:213
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:40
+msgid "please add two locations for route directions."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:344
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:153
+msgid "Please check any one location."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:350
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:159
+msgid "Please check at least one group map."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:355
+msgid "Please insert KML link."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:359
+msgid "Please insert Fusion Select."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:363
+msgid "Please insert Fusion From."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:393
+msgid "Map Updated Successfully."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:422
+msgid "Edit Map"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:441
+msgid "General Setting"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:443
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:212
+msgid "Map Title"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:446
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:215
+msgid "Enter here the title"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:452
+msgid "Enter here the map width in pixel. Leave it blank for 100% width."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:458
+msgid "Enter here the map height in px."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:470
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:243
+msgid "(Available options - 1,2,3,4,5,6,8,9,10,11,12,13,14,15,16,17,18,19)."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:474
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:248
+msgid "Choose Map Type"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:477
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:251
+msgid "ROADMAP"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:478
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:252
+msgid "SATELLITE"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:479
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:253
+msgid "HYBRID"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:480
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:254
+msgid "TERRAIN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:482
+msgid "(Available options - ROADMAP,SATELLITE,HYBRID,TERRAIN {Default is roadmap type})."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:487
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:261
+msgid "Turn Off Scrolling Wheel"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:490
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:264
+msgid "Please check to disable scroll wheel zooms."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:495
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:269
+msgid "Enable Visual Refresh"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:498
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:273
+msgid "Please check to enable visual refresh."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:502
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:278
+msgid "45&deg; Imagery"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:505
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:282
+msgid "Apply 45&deg; Imagery ? (only available for map type SATELLITE and HYBRID)."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:509
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:287
+msgid "Choose Locations"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:555
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:372
+msgid "Layers"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:557
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:560
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:375
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:378
+msgid "Select Layers"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:561
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:379
+msgid "Traffic Layers"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:562
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:380
+msgid "Transit Layers"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:563
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:381
+msgid "Bicycling Layers"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:564
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:382
+msgid "Panoramio Layers"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:566
+msgid "(Available options - Traffic Layers,Transit Layers,Bicycling Layers,Panoramio Layers)."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:572
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:388
+msgid "Control Setting"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:575
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:390
+msgid "Turn Off Pan Control"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:578
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:393
+msgid "Please check to disable pan control."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:581
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:394
+msgid "Turn Off Zoom Control"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:584
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:397
+msgid "Please check to disable zoom control."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:587
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:398
+msgid "Turn Off Map Type Control"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:590
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:401
+msgid "Please check to disable map type control."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:593
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:402
+msgid "Turn Off Scale Control"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:596
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:405
+msgid "Please check to disable scale control."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:599
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:406
+msgid "Turn Off Street View Control"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:602
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:409
+msgid "Please check to disable street view control."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:605
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:410
+msgid "Turn Off Overview Map Control"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:608
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:413
+msgid "Please check to disable overview map control."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:615
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:418
+msgid "Street View Setting"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:617
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:419
+msgid "Turn On Street View"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:620
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:422
+msgid "Please check to enable Street View control."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:628
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:653
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:425
+msgid "Turn On Close Button"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:631
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:656
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:428
+msgid "Please check to enable Close button."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:634
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:659
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:429
+msgid "Turn Off links Control"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:637
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:662
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:432
+msgid "Please check to disable links control."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:640
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:665
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:433
+msgid "Turn Off Street View Pan Control"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:643
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:668
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:436
+msgid "Please check to disable Street View Pan control."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:678
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:442
+msgid "Map Style Settings"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:679
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:684
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:688
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:693
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:698
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:444
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:450
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:454
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:459
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:464
+msgid "Available in Pro Version. <a target=\"_blank\" href=\"http://codecanyon.net/item/advanced-google-maps/5211638\">Buy Now</a>"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:683
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:449
+msgid "Polygon Settings"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:687
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:453
+msgid "Polyline Settings"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:692
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:458
+msgid "Marker Cluster Settings"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:697
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:463
+msgid "Overlay Settings"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:702
+msgid "Update Map"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-map.php:715
+msgid "Manage Maps"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:118
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:119
+msgid "WP Google Map"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:126
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:127
+msgid "Add Locations"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:134
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:135
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:353
+msgid "Manage Locations"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:143
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:144
+msgid "Create Map"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:151
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:152
+msgid "Manage Map"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:160
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:161
+msgid "Create Marker Group"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:169
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:170
+msgid "Manage Marker Groups"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:177
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:178
+msgid "Settings"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:426
+msgid "Google WP Map Pro Settings"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:431
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:771
+msgid "Click Here"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:431
+msgid "to add a new location or"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:431
+msgid "Browse"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:431
+msgid "your existings locations."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:435
+msgid "Zoom Level"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:437
+msgid "Choose Zoom Level between 1 to 14. Default is 4."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:439
+msgid "Center Latitude"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:441
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:446
+msgid "Write down center location on the map."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:444
+msgid "Center Longitude"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:449
+msgid "Select Language"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:452
+msgid "ENGLISH"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:453
+msgid "ARABIC"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:454
+msgid "BASQUE"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:455
+msgid "BULGARIAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:456
+msgid "BENGALI"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:457
+msgid "CATALAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:458
+msgid "CZECH"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:459
+msgid "DANISH"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:460
+msgid "GERMAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:461
+msgid "GREEK"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:462
+msgid "ENGLISH (AUSTRALIAN)"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:463
+msgid "ENGLISH (GREAT BRITAIN)"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:464
+msgid "SPANISH"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:465
+msgid "FARSI"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:466
+msgid "FINNISH"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:467
+msgid "FILIPINO"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:468
+msgid "FRENCH"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:469
+msgid "GALICIAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:470
+msgid "GUJARATI"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:471
+msgid "HINDI"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:472
+msgid "CROATIAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:473
+msgid "HUNGARIAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:474
+msgid "INDONESIAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:475
+msgid "ITALIAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:476
+msgid "HEBREW"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:477
+msgid "JAPANESE"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:478
+msgid "KANNADA"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:479
+msgid "KOREAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:480
+msgid "LITHUANIAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:481
+msgid "LATVIAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:482
+msgid "MALAYALAM"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:483
+msgid "MARATHI"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:484
+msgid "DUTCH"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:485
+msgid "NORWEGIAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:486
+msgid "POLISH"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:487
+msgid "PORTUGUESE"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:488
+msgid "PORTUGUESE (BRAZIL)"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:489
+msgid "PORTUGUESE (PORTUGAL)"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:490
+msgid "ROMANIAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:491
+msgid "RUSSIAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:492
+msgid "SLOVAK"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:493
+msgid "SLOVENIAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:494
+msgid "SERBIAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:495
+msgid "SWEDISH"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:496
+msgid "TAGALOG"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:497
+msgid "TAMIL"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:498
+msgid "TELUGU"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:499
+msgid "THAI"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:500
+msgid "TURKISH"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:501
+msgid "UKRAINIAN"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:502
+msgid "VIETNAMESE"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:503
+msgid "CHINESE (SIMPLIFIED)"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:504
+msgid "CHINESE (TRADITIONAL)"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:506
+msgid "Default is English."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:511
+msgid "Save Changes"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:538
+msgid "A widget that displays the google map"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:570
+msgid "Select Your Map:"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:573
+msgid "Select map"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:623
+msgid "Choose Icons"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:655
+msgid "Select Icons"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:679
+msgid "Insert into Post"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:758
+msgid "How to Use"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:764
+msgid "Go through the steps below to create your first map:"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:767
+msgid "Step 1"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:767
+msgid "Use our auto suggestion enabled location box to add your location"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:767
+msgid "Here"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:767
+msgid "You can add multiple locations. All those locations will be available to choose when you create your map."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:771
+msgid "Step 2"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:771
+msgid "Now"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:771
+msgid " to create a map. You can create as many maps you want to add. Using shortcode, you can add maps on posts/pages."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:774
+msgid "Step 3"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:774
+msgid "When done with administrative tasks, you can display map on posts/pages using"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:774
+msgid "Shortcode"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:774
+msgid " enable map in the widgets section to display in sidebar. "
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:784
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:790
+msgid "Pro Version"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:790
+msgid "Explore countless other customizable features in the pro version of this most advanced Google Maps plugin."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:801
+msgid "Online Documentation"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:807
+msgid "Documentation is available with the zipped package of the purchased plugin or visit our "
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:807
+msgid "Official Website"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:807
+msgid "online documentation"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:864
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:903
+msgid "No location found for the entered address."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:866
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:905
+msgid "Invalid request. Did you enter an address?"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:868
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:907
+msgid "Something went wrong while retrieving your map, please ensure you have entered the short code correctly."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:871
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wp-google-map-plugin.php:910
+msgid "Unable to contact Google API service."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:45
+msgid "No Records for Map Locations."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:89
+msgid "When Added"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:172
+msgid "Please enter Address."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:210
+msgid "Locations Updated Successfully."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:221
+msgid "Edit Location"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:296
+msgid "Select group"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-location.php:338
+msgid "Update Locations"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:42
+msgid "No Records for Group Maps."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:76
+msgid "Group Marker"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:77
+msgid "Group Added"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:147
+msgid "Selected Record Deleted Successfully."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:181
+msgid "Group Map Updated Successfully."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:193
+msgid "Edit Marker Groups"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:240
+msgid "Update Group Marker"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-manage-group-map.php:251
+msgid "Manage Marker Group"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:184
+msgid "Maps created Successfully."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:192
+msgid "Create a Map"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:222
+msgid "Enter here the map width in pixel. Leave it blank for 100% width"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:229
+msgid "Enter here the map height in pixel."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:256
+msgid "Available options - ROADMAP,SATELLITE,HYBRID,TERRAIN. Default is roadmap type."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:363
+msgid "Seems you don't have any location right now."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:363
+msgid "to add a location now"
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:384
+msgid "Available options - Traffic Layers,Transit Layers,Bicycling Layers,Panoramio Layers."
+msgstr ""
+
+#: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-google-map-plugin/wpgmp-create-map.php:468
+msgid "Save Map"
+msgstr ""
+

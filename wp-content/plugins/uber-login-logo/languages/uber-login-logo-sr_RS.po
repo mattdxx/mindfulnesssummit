@@ -1,0 +1,84 @@
+# Copyright (C) 2013 Uber Login Logo
+# This file is distributed under the same license as the Uber Login Logo package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Uber Login Logo 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/uber-login-logo\n"
+"POT-Creation-Date: 2013-05-12 13:07:08+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-01-31 11:08+0100\n"
+"Last-Translator: Borisa Djuraskovic <borisad@webhostinghub.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: uber-login-logo.php:105
+msgid "Uber Login Logo Settings"
+msgstr "Uber Login Logo Postavke"
+
+#: uber-login-logo.php:127
+msgid "Settings"
+msgstr "Postavke"
+
+#: uber-login-logo.php:148
+msgid "Settings Saved"
+msgstr "Postavke sačuvane"
+
+#: uber-login-logo.php:151
+msgid "by %1$s from %2$s"
+msgstr "od %1$s za %2$s"
+
+#: uber-login-logo.php:153
+msgid "How it Works"
+msgstr "Kako radi"
+
+#: uber-login-logo.php:155
+msgid ""
+"Use the WordPress media uploader to upload an image, or select one from the "
+"media library."
+msgstr ""
+"Koristite WordPress medijsku uploader da uploadujete  sliku , ili izaberite "
+"neki iz biblioteke medija ."
+
+#: uber-login-logo.php:156
+msgid ""
+"It is highly recommended that you select an image with a width less than "
+"320px."
+msgstr "Preporučuje se da izaberete neku sliku sa širinom manjom od 320px ."
+
+#: uber-login-logo.php:157
+msgid "Select your desired image size and click \"insert into post\"."
+msgstr "Izaberite željenu veličinu slike i kliknite na \"insert into post\"."
+
+#: uber-login-logo.php:158
+msgid "Finished!"
+msgstr "Gotovo!"
+
+#: uber-login-logo.php:162
+msgid "Upload Image"
+msgstr "Uploaduj sliku"
+
+#: uber-login-logo.php:166
+msgid "Here is a preview of your selected image at actual size"
+msgstr "Pregled izabrane slike u stvarnoj veličini"
+
+#. Plugin Name of the plugin/theme
+msgid "Uber Login Logo"
+msgstr "Uber Login Logo"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.uberweb.com.au/uber-login-logo-wordpress-plugin/"
+msgstr "http://www.uberweb.com.au/uber-login-logo-wordpress-plugin/"
+
+#. Description of the plugin/theme
+msgid "Change your login logo."
+msgstr "Promeniti login logo."
+
+#. Author of the plugin/theme
+msgid "UberWeb"
+msgstr "UberWeb"
+
+#. Author URI of the plugin/theme
+msgid "http://www.uberweb.com.au/"
+msgstr "http://www.uberweb.com.au/"

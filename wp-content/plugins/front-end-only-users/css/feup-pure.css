@@ -1,0 +1,137 @@
+/*!
+Pure v0.5.0
+Copyright 2014 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+https://github.com/yui/pure/blob/master/LICENSE.md
+*/
+/*!
+normalize.css v1.1.3 | MIT License | git.io/normalize
+Copyright (c) Nicolas Gallagher and Jonathan Neal
+*/
+/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
+
+[hidden] {
+    display: none
+}
+
+html {
+    font-size: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle;
+    line-height: normal;
+}
+
+.feup-pure-button {
+    display: inline-block;
+    *display: inline;
+    line-height: 0.5;
+    white-space: nowrap;
+    vertical-align: baseline;
+    text-align: center;
+    cursor: pointer;
+        
+    font-family: inherit;
+    font-size: 100%;
+    *font-size: 90%;
+    *overflow: visible;
+    padding: .5em 1em;
+    border-radius: 1px
+}
+
+.feup-pure-button-primary,
+.feup-pure-button-selected,
+a.feup-pure-button-primary,
+a.feup-pure-button-selected {
+    background-color: #0078e7;
+    color: #fff
+}
+.feup-pure-form input[type=text],
+.feup-pure-form input[type=password],
+.feup-pure-form input[type=email],
+.feup-pure-form input[type=date],
+.feup-pure-form input[type=datetime-local],
+.feup-pure-form input[type=number],
+.feup-pure-form input[type=file],
+.feup-pure-form select,
+.feup-pure-form textarea {
+    width: 45%;
+    padding: .5em .6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.feup-pure-form-aligned textarea {
+    vertical-align: text-top;
+}
+
+.feup-pure-form-aligned .feup-pure-control-group {
+    margin-bottom: .4em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+.feup-pure-form-aligned .feup-pure-control-group label {
+    text-align: right;
+    display: inline-block;
+    vertical-align: middle;
+    width: 10em;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 550px) {
+    .feup-pure-form button[type=submit] {
+        margin: .7em 0 0
+    }
+    .feup-pure-form input:not([type]),
+    .feup-pure-form input[type=text],
+    .feup-pure-form input[type=password],
+    .feup-pure-form input[type=email],
+    .feup-pure-form input[type=date],
+    .feup-pure-form input[type=datetime-local],
+    .feup-pure-form input[type=number],
+    .feup-pure-form input[type=file]{
+        margin-bottom: .3em;
+        display: inline-block;
+        width: 75%;
+    }
+    .feup-pure-form-aligned .feup-pure-control-group label {
+        margin-bottom: .3em;
+        text-align: left;
+        display: block;
+        width: 100%
+    }
+    .feup-pure-form-aligned .feup-pure-controls {
+        margin: 1.5em 0 0
+    }
+    .feup-pure-form .feup-pure-help-inline,
+    .feup-pure-form-message-inline,
+    .feup-pure-form-message {
+        display: block;
+        font-size: .80em;
+        padding: .2em 0 .8em
+    }
+}

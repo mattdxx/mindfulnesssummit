@@ -1,0 +1,45 @@
+.ewd-feup-field-label {
+  padding:10px;
+  width:200px;
+}
+
+.ewd-feup-text-input {
+    margin-bottom: .4em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.ewd-feup-submit {
+
+}
+.ewd-feup-textarea {
+  
+}
+.ewd-feup-select {
+  
+}
+.ewd-feup-radio {
+  
+}
+.ewd-feup-checkbox {
+  
+}
+.ewd-feup-error {
+  
+}
+.ewd-feup-user-data {
+  
+}
+.ewd-feup-clear {
+  
+}
+.ewd-feup-negative-top {
+    margin-top: -8px;
+}
+.ewd-feup-date-input {
+    font-family: inherit;
+    font-size: 1.5rem;
+    width: 215px;
+}
