@@ -3,7 +3,7 @@ Contributors: abramsm, srijith.v, vipinss, dnrahamim, jgrodel, bradaddthiscom, m
 Tags: AddThis, addtoany, bookmark, bookmarking, email, e-mail, sharing buttons, share, share this, facebook, google+, pinterest, instagram, linkedin, whatsapp, social tools, website tools, twitter, content marketing, recommended content, conversion tool, subscription button, conversion tools, email tools, ecommerce tools, social marketing, personalization tools
 Requires at least: 3.0
 Tested up to: 4.3
-Stable tag: 5.1.1
+Stable tag: 5.1.2
 
 AddThis provides the best sharing tools to help you make your website smarter.
 
@@ -76,13 +76,17 @@ In the screen options you can enable the AddThis meta box. Check the box and sav
 
 == Changelog ==
 
+= 5.1.2 =
+* Resolves a bug where above excerpt sharing buttons would be added whenever below excerpt sharing buttons were enabled
+* Adding back in the addthis_post_exclude filter
+
 = 5.1.1 =
 * PHP notice at addthis_social_widget.php:1337
 * PHP error for older versions of PHP (< 5.3.0) at addthis_settings_functions.php:476
 * Adding select configs and page info into addthis_plugin_info to aide <a href="http://support.addthis.com/">the AddThis Support Team</a> with troubleshooting
 
 = 5.1.0 =
-* New feature: set your own addthis.layers() paramaters to customize further using our API (in WordPress mode only)
+* New feature: set your own addthis.layers() paramaters to customize further using our <a href="http://support.addthis.com/customer/portal/articles/1200473-smart-layers-api">Smart Layers API</a> (in WordPress mode only)
 * Fixing a bug with the AddThis Sharing Buttons meta box not showing up for users in AddThis mode when editing posts
 * Fixing a bug with addthis_config where the JSON wasn't always checked before submitting the settings form
 * Fixing a bug with the sharing sidebar, where the theme for the sidebar was used for all AddThis layers tools (in WordPress mode)
@@ -381,13 +385,17 @@ Fixed nondeterministic bug with the_title(), causing the title to occasionally a
 
 == Upgrade Notice ==
 
+= 5.1.2=
+* Resolves a bug where above excerpt sharing buttons would be added whenever below excerpt sharing buttons were enabled
+* Adding back in the addthis_post_exclude filter
+
 = 5.1.1 =
 * PHP notice at addthis_social_widget.php:1337
 * PHP error for older versions of PHP (< 5.3.0) at addthis_settings_functions.php:476
 * Adding select configs and page info into addthis_plugin_info to aide <a href="http://support.addthis.com/">the AddThis Support Team</a> with troubleshooting
 
 = 5.1.0 =
-* New feature: set your own addthis.layers() paramaters to customize further using our API (in WordPress mode only)
+* New feature: set your own addthis.layers() paramaters to customize further using our <a href="http://support.addthis.com/customer/portal/articles/1200473-smart-layers-api">Smart Layers API</a> (in WordPress mode only)
 * Fixing a bug with the AddThis Sharing Buttons meta box not showing up for users in AddThis mode when editing posts
 * Fixing a bug with addthis_config where the JSON wasn't always checked before submitting the settings form
 * Fixing a bug with the sharing sidebar, where the theme for the sidebar was used for all AddThis layers tools (in WordPress mode)
