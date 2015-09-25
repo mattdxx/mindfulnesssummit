@@ -7,7 +7,7 @@
  * contribute to the localization, please see https://github.com/sheabunge/code-snippets
  *
  * @package   Code_Snippets
- * @version   2.3.0
+ * @version   2.4.1
  * @author    Shea Bunge <http://bungeshea.com/>
  * @copyright Copyright (c) 2012-2015, Shea Bunge
  * @link      http://bungeshea.com/plugins/code-snippets/
@@ -20,7 +20,7 @@ Plugin URI:  http://bungeshea.com/plugins/code-snippets/
 Description: An easy, clean and simple way to add code snippets to your site. No need to edit to your theme's functions.php file again!
 Author:      Shea Bunge
 Author URI:  http://bungeshea.com
-Version:     2.3.0
+Version:     2.4.1
 License:     MIT
 License URI: license.txt
 Text Domain: code-snippets
@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * The version number for this release of the plugin.
- * This will later be used for upgrades and enqueueing files
+ * This will later be used for upgrades and enqueuing files
  *
  * This should be set to the 'Plugin Version' value,
  * as defined above in the plugin header
@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 2.0
  * @var string A PHP-standardized version number string
  */
-define( 'CODE_SNIPPETS_VERSION', '2.3.0' );
+define( 'CODE_SNIPPETS_VERSION', '2.4.1' );
 
 /**
  * The full path to the main file of this plugin
@@ -61,6 +61,9 @@ define( 'CODE_SNIPPETS_FILE', __FILE__ );
  */
 foreach ( array(
 
+	/* Snippet class */
+	'class-snippet.php',
+
 	/* Database operations functions */
 	'db.php',
 
@@ -73,30 +76,24 @@ foreach ( array(
 	/* Upgrade function */
 	'upgrade.php',
 
-	/* General Administration functions */
-	'admin.php',
-
 	/* CodeMirror editor functions */
 	'editor.php',
 
-	/* Manage snippets component */
-	'manage/manage.php',
+	/* General functions */
+	'functions.php',
 
-	/* Edit snippet component */
-	'edit/edit.php',
-
-	/* Import snippets component */
-	'import/import.php',
+	/* General Administration functions */
+	'contextual-help.php',
+	'admin.php',
 
 	/* Settings component */
 	'settings/editor-preview.php',
 	'settings/settings-fields.php',
 	'settings/settings.php',
-	'settings/admin.php',
 
 	) as $include ) {
 
-	require plugin_dir_path( __FILE__ ) . "includes/$include";
+	require plugin_dir_path( __FILE__ ) . "php/$include";
 }
 
 /* Initialize database table variables */
