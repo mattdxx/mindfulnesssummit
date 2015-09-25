@@ -14,12 +14,17 @@ class MC4WP_Lite_Admin
 	private $plugin_file;
 
 	/**
+	 * @var MC4WP_MailChimp
+	 */
+	protected $mailchimp;
+
+	/**
 	 * Constructor
 	 */
 	public function __construct() {
 
 		$this->plugin_file = plugin_basename( MC4WP_LITE_PLUGIN_FILE );
-
+		$this->mailchimp = new MC4WP_MailChimp();
 		$this->load_translations();
 		$this->setup_hooks();
 		$this->listen();
@@ -52,6 +57,7 @@ class MC4WP_Lite_Admin
 		add_action( 'admin_init', array( $this, 'initialize' ) );
 		add_action( 'admin_menu', array( $this, 'build_menu' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_css_and_js' ) );
+		add_action( 'admin_footer_text', array( $this, 'footer_text' ) );
 
 		// Hooks for Plugins overview page
 		if( $current_page === 'plugins.php' ) {
@@ -66,6 +72,26 @@ class MC4WP_Lite_Admin
 			add_filter( 'quicktags_settings', array( $this, 'set_quicktags_buttons' ), 10, 2 );
 		}
 
+		// hide major plugin updates for everyone
+		add_filter( 'site_transient_update_plugins', array( $this, 'hide_major_plugin_updates' ) );
+	}
+
+	/**
+	 * Prevents v3.x updates from showing
+	 */
+	public function hide_major_plugin_updates( $data ) {
+
+		// do we have an update for this plugin?
+		if( isset( $data->response[ $this->plugin_file ]->new_version ) ) {
+
+			// check if this is a major update and if so, remove it from the response object
+			if( version_compare( $data->response[ $this->plugin_file ]->new_version, '3.0.0', '>=' ) ) {
+				unset( $data->response[ $this->plugin_file ] );
+			}
+		}
+
+		// return modified updates data
+		return $data;
 	}
 
 	/**
@@ -196,6 +222,7 @@ class MC4WP_Lite_Admin
 				'title' => __( 'Upgrade to Pro', 'mailchimp-for-wp' ),
 				'text' => '<span style="line-height: 20px;"><span class="dashicons dashicons-external"></span> ' .__( 'Upgrade to Pro', 'mailchimp-for-wp' ),
 				'slug' => 'upgrade',
+
 				'callback' => array( $this, 'redirect_to_pro' ),
 			),
 		);
@@ -203,7 +230,7 @@ class MC4WP_Lite_Admin
 		$menu_items = apply_filters( 'mc4wp_menu_items', $menu_items );
 
 		// add top menu item
-		add_menu_page( 'MailChimp for WP Lite', 'MailChimp for WP', $required_cap, 'mailchimp-for-wp', array( $this, 'show_api_settings' ), MC4WP_LITE_PLUGIN_URL . 'assets/img/menu-icon.png', '99.68491' );
+		add_menu_page( 'MailChimp for WP Lite', 'MailChimp for WP', $required_cap, 'mailchimp-for-wp', array( $this, 'show_api_settings' ), MC4WP_LITE_PLUGIN_URL . 'assets/img/icon.png', '99.68491' );
 
 		// add submenu pages
 		foreach( $menu_items as $item ) {
@@ -222,12 +249,19 @@ class MC4WP_Lite_Admin
 	*/
 	public function validate_settings( array $settings ) {
 
+		$current = mc4wp_get_options();
+
 		// sanitize simple text fields (no HTML, just chars & numbers)
 		$simple_text_fields = array( 'api_key', 'redirect', 'css' );
 		foreach( $simple_text_fields as $field ) {
 			if( isset( $settings[ $field ] ) ) {
 				$settings[ $field ] = sanitize_text_field( $settings[ $field ] );
 			}
+		}
+
+		// if api key changed, empty cache
+		if( isset( $settings['api_key'] ) && $settings['api_key'] !== $current['general']['api_key'] ) {
+			$this->mailchimp->empty_cache();
 		}
 
 		// validate woocommerce checkbox position
@@ -267,7 +301,6 @@ class MC4WP_Lite_Admin
 		}
 
 		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-		$mailchimp = new MC4WP_MailChimp();
 
 		// css
 		wp_enqueue_style( 'mc4wp-admin-css', MC4WP_LITE_PLUGIN_URL . 'assets/css/admin' . $suffix . '.css' );
@@ -292,7 +325,7 @@ class MC4WP_Lite_Admin
 						'unsubscribe' => __( 'Unsubscribe', 'mailchimp-for-wp' ),
 					)
 				),
-				'mailchimpLists' => $mailchimp->get_lists()
+				'mailchimpLists' => $this->mailchimp->get_lists()
 			)
 		);
 
@@ -358,19 +391,20 @@ class MC4WP_Lite_Admin
 
 		// cache renewal triggered manually?
 		$force_cache_refresh = isset( $_POST['mc4wp-renew-cache'] ) && $_POST['mc4wp-renew-cache'] == 1;
-		$mailchimp = new MC4WP_MailChimp();
-		$lists = $mailchimp->get_lists( $force_cache_refresh );
-
-		if( $lists && count( $lists ) === 100 ) {
-			add_settings_error( 'mc4wp', 'mc4wp-lists-at-limit', __( 'The plugin can only fetch a maximum of 100 lists from MailChimp, only your first 100 lists are shown.', 'mailchimp-for-wp' ) );
-		}
+		$lists = $this->mailchimp->get_lists( $force_cache_refresh );
 
 		if ( $force_cache_refresh ) {
-			if ( false === empty ( $lists ) ) {
-				add_settings_error( 'mc4wp', 'mc4wp-cache-success', __( 'Renewed MailChimp cache.', 'mailchimp-for-wp' ), 'updated' );
+
+			if( is_array( $lists ) ) {
+				if( count( $lists ) === 100 ) {
+					add_settings_error( 'mc4wp', 'mc4wp-lists-at-limit', __( 'The plugin can only fetch a maximum of 100 lists from MailChimp, only your first 100 lists are shown.', 'mailchimp-for-wp' ) );
+				} else {
+					add_settings_error( 'mc4wp', 'mc4wp-cache-success', __( 'Renewed MailChimp cache.', 'mailchimp-for-wp' ), 'updated' );
+				}
 			} else {
 				add_settings_error( 'mc4wp', 'mc4wp-cache-error', __( 'Failed to renew MailChimp cache - please try again later.', 'mailchimp-for-wp' ) );
 			}
+
 		}
 
 		require MC4WP_LITE_PLUGIN_DIR . 'includes/views/api-settings.php';
@@ -381,9 +415,8 @@ class MC4WP_Lite_Admin
 	*/
 	public function show_checkbox_settings()
 	{
-		$mailchimp = new MC4WP_MailChimp();
 		$opts = mc4wp_get_options( 'checkbox' );
-		$lists = $mailchimp->get_lists();
+		$lists = $this->mailchimp->get_lists();
 		require MC4WP_LITE_PLUGIN_DIR . 'includes/views/checkbox-settings.php';
 	}
 
@@ -393,8 +426,7 @@ class MC4WP_Lite_Admin
 	public function show_form_settings()
 	{
 		$opts = mc4wp_get_options( 'form' );
-		$mailchimp = new MC4WP_MailChimp();
-		$lists = $mailchimp->get_lists();
+		$lists = $this->mailchimp->get_lists();
 
 		require MC4WP_LITE_PLUGIN_DIR . 'includes/views/form-settings.php';
 	}
@@ -404,6 +436,22 @@ class MC4WP_Lite_Admin
 	 */
 	protected function get_current_page() {
 		return isset( $_GET['page'] ) ? $_GET['page'] : '';
+	}
+
+	/**
+	 * Ask for a plugin review in the WP Admin footer, if this is one of the plugin pages.
+	 *
+	 * @param $text
+	 *
+	 * @return string
+	 */
+	public function footer_text( $text ) {
+
+		if( isset( $_GET['page'] ) && strpos( $_GET['page'], 'mailchimp-for-wp' ) === 0 ) {
+			$text = sprintf( 'If you enjoy using <strong>MailChimp for WordPress</strong>, please <a href="%s" target="_blank">leave us a ★★★★★ rating</a>. A <strong style="text-decoration: underline;">huge</strong> thank you in advance!', 'https://wordpress.org/support/view/plugin-reviews/mailchimp-for-wp?rate=5#postform' );
+		}
+
+		return $text;
 	}
 
 }
