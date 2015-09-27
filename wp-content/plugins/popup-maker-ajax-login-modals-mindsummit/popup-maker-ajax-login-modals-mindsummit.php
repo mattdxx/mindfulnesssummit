@@ -10,37 +10,53 @@
 */
 
 
-    # Exit if accessed directly
-    if (!defined('ABSPATH'))
-      exit;
-    
-    if (!class_exists('PopMake_Ajax_Login_Modals_MindSummit'))
-    {
-        class PopMake_Ajax_Login_Modals_MindSummit
-        {
-            private static $instance;
-            
-            public static function instance()
-            {
-                if (!self::$instance)
-                {
-                    self::$instance = new PopMake_Ajax_Login_Modals_MindSummit();
-                    self::$instance->hooks();
-                }
-                return self::$instance;
-            }
-            
-            private function hooks()
-            {
-                //add_action('user_register', array($this, 'add_cookie'));
-                add_filter('registration_errors', array($this, 'check_login'));
-                add_action('wp_enqueue_scripts', array($this, 'fix_js'));
-            }
+	# Exit if accessed directly
+	if (!defined('ABSPATH'))
+		exit;
+	
+	if (!class_exists('PopMake_Ajax_Login_Modals_MindSummit'))
+	{
+		class PopMake_Ajax_Login_Modals_MindSummit
+		{
+			private static $instance;
 			
-            public function add_cookie($user_id)
-            {
-            	setcookie('mindsummitreg', '1');
-            }
+			public static function instance()
+			{
+				if (!self::$instance)
+				{
+					self::$instance = new PopMake_Ajax_Login_Modals_MindSummit();
+					self::$instance->hooks();
+				}
+				return self::$instance;
+			}
+			
+			private function hooks()
+			{
+				add_action('user_register', array($this, 'update_user'));
+				add_filter('registration_errors', array($this, 'check_login'));
+				add_action('wp_enqueue_scripts', array($this, 'fix_js'));
+			}
+			
+			public function update_user($user_id)
+			{
+				setcookie('mindsummitreg', '1');
+				
+				if ($_POST['popmake_reg']) // identifying registration process through ajax popup-window
+				{
+					$user_meta_data = array('ID' => $user_id);
+					
+					$display_name = array();
+					if ($_POST['fname'])
+						array_push($display_name, ($user_meta_data['first_name'] = $_POST['fname']));
+					if ($_POST['lname'])
+						array_push($display_name, ($user_meta_data['last_name'] = $_POST['lname']));
+					if (count($display_name))
+						$user_meta_data['display_name'] = join(' ', $display_name);
+					
+					if (count($user_meta_data) > 1)
+						@wp_update_user($user_meta_data);
+				}
+			}
 			
 			public function check_login($errors, $uname, $email)
 			{
@@ -50,25 +66,25 @@
 				}
 				return $errors;
 			}
-
-            public function fix_js()
-            {
-                wp_enqueue_script(
-                    'popmake-ajax-login-modals-mindsummit-js',
-                    plugin_dir_url(__FILE__).'fix.js?defer',
-                    array('popmake-ajax-login-modals-js')
-                    );
-            }
-            
-        } # class PopMake_Ajax_Login_Modals_MindSummit
-        
-    } # if class_exists
-    
-    function PopMake_Ajax_Login_Modals_MindSummit_Load()
-    {
-        if (class_exists('PopMake_Ajax_Login_Modals'))
-            PopMake_Ajax_Login_Modals_MindSummit::instance();
-    }
-    add_action('plugins_loaded', 'PopMake_Ajax_Login_Modals_MindSummit_Load');
-
+			
+			public function fix_js()
+			{
+				wp_enqueue_script(
+					'popmake-ajax-login-modals-mindsummit-js',
+					plugin_dir_url(__FILE__).'fix.js?defer',
+					array('popmake-ajax-login-modals-js')
+					);
+			}
+			
+		} # class PopMake_Ajax_Login_Modals_MindSummit
+		
+	} # if class_exists
+	
+	function PopMake_Ajax_Login_Modals_MindSummit_Load()
+	{
+		if (class_exists('PopMake_Ajax_Login_Modals'))
+			PopMake_Ajax_Login_Modals_MindSummit::instance();
+	}
+	add_action('plugins_loaded', 'PopMake_Ajax_Login_Modals_MindSummit_Load');
+	
 ?>

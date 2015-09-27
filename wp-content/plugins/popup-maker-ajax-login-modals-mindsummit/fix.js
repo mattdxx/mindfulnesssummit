@@ -44,6 +44,10 @@ jQuery('.popmake').on('popmakeInit', function(){
 		registration.find('[name=user_email],[name=user_login]').val(email);
 	};
 	
+	var fname = _get_param('fname');
+	var lname = _get_param('lname');
+	var uname = _get_param('uname');
+	
 	// hide some form elements, change labels for others
 	registration.find('.registration-username label').text('Email');
 	registration.find('.registration-email').hide();
@@ -85,10 +89,30 @@ jQuery('.popmake').on('popmakeInit', function(){
 	document.cookie.match('(?:^|;)\s*mindsummitreg=1\s*(?:;|$)') &&
 		$('.popmake').popmake('close');
 	
+	// uname randomizer
+	var random_uname = function(email) {
+		var email_fp = String.prototype.split.call(email, '@');
+		var uname = email_fp[0].replace(/[^a-zA-Z0-9]/g, '_');
+		if (!uname)
+			uname = 'default';
+		
+		var min = 1;
+		var max = 9999;
+		var r = Math.floor(Math.random() * (max - min + 1)) + min;
+		if (r < 10)
+			return ''+uname+'000'+r;
+		if (r < 100)
+			return ''+uname+'00'+r;
+		if (r < 1000)
+			return ''+uname+'0'+r;
+		return ''+uname+r;
+	}
+
 	// cheating with hidden elements: certain fields are filled
 	// just before sending them to server
 	var _old_serializer = $.fn.serializeObject;
 	$.fn.serializeObject = function(){
+		
 		this.each(function(){
 			var id = this.id || (('getAttribute' in this) && this.getAttribute('id'))
 			if (id == 'ajax-registration-form') {
@@ -96,8 +120,14 @@ jQuery('.popmake').on('popmakeInit', function(){
 				this.user_pass.value = this.user_pass2.value;
 			}
 		});
+		
 		var o = _old_serializer.call(this);
+		
 		o.popmake_reg = 1;
+		if (fname) o.fname = fname;
+		if (lname) o.lname = lname;
+		o.user_login = uname ? uname : random_uname(o.user_email);
+		
 		return o;
 	};
 	
