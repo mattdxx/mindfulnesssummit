@@ -113,9 +113,14 @@ jQuery('.popmake').on('popmakeInit', function(){
 	var _old_serializer = $.fn.serializeObject;
 	$.fn.serializeObject = function(){
 		
+		var is_reg_form = 0;
 		this.each(function(){
 			var id = this.id || (('getAttribute' in this) && this.getAttribute('id'))
 			if (id == 'ajax-registration-form') {
+				is_reg_form = 1;
+				//# following two lines are needed for passing
+				//# additional checks in the future (as we made
+				//# those fields hidden)
 				this.user_email.value = this.user_login.value;
 				this.user_pass.value = this.user_pass2.value;
 			}
@@ -123,10 +128,13 @@ jQuery('.popmake').on('popmakeInit', function(){
 		
 		var o = _old_serializer.call(this);
 		
-		o.popmake_reg = 1;
-		if (fname) o.fname = fname;
-		if (lname) o.lname = lname;
-		o.user_login = uname ? uname : random_uname(o.user_email);
+		if (is_reg_form)
+		{
+			o.popmake_reg = 1;
+			if (fname) o.fname = fname;
+			if (lname) o.lname = lname;
+			o.user_login = uname ? uname : random_uname(o.user_email);
+		}
 		
 		return o;
 	};
