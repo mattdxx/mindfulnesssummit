@@ -55,7 +55,7 @@
     
     function MindSummit_MobileMockup_ReadMore_Load()
     {
-		preg_match('~^/sessions/~', $_SERVER['REQUEST_URI']) and
+		preg_match('~^/sessions/\w~', $_SERVER['REQUEST_URI']) and
 			MindSummit_MobileMockup_ReadMore::instance();
     }
     add_action('plugins_loaded', 'MindSummit_MobileMockup_ReadMore_Load');
