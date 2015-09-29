@@ -1,10 +1,10 @@
-@media only screen and (max-width: 419px) {
+@media only screen and (max-width: 739px) {
 	.sidebar-right-item {
 		display: none;
 	}
 }
 
-@media only screen and (min-width: 420px) {
+@media only screen and (min-width: 740px) {
 	.speaker-menu,
 	.buynow-link {
 		display: none;

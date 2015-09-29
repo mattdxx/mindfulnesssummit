@@ -1,7 +1,7 @@
 /*@media only screen and (max-width: 419px) {*/
 @media only screen and (max-width: 739px) {
 	
-	.container{ max-width: none; }
+	body .container { max-width: none; }
 	
 	.gdlr-page-title-wrapper {
 		padding: 10px 0 !important;
