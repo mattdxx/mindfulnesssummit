@@ -13,7 +13,7 @@ class NewsletterWidget extends WP_Widget {
         $options_profile = get_option('newsletter_profile');
         $form = NewsletterSubscription::instance()->get_form_javascript();
 
-        $form .= '<form action="' . plugins_url('newsletter/do/subscribe.php') . '" onsubmit="return newsletter_check(this)" method="post">';
+        $form .= '<form action="' . home_url('/') . '?na=s" onsubmit="return newsletter_check(this)" method="post">';
         // Referrer
         $form .= '<input type="hidden" name="nr" value="widget"/>';
 
@@ -125,7 +125,7 @@ class NewsletterWidget extends WP_Widget {
                 }
             }
         } else {
-            $buffer = str_ireplace('<form', '<form method="post" action="' . plugins_url('newsletter/do/subscribe.php') . '" onsubmit="return newsletter_check(this)"', $buffer);
+            $buffer = str_ireplace('<form', '<form method="post" action="' . esc_attr(home_url('/') . '?na=s') . '" onsubmit="return newsletter_check(this)"', $buffer);
             $buffer = str_ireplace('</form>', '<input type="hidden" name="nr" value="widget"/></form>', $buffer);
         }
 

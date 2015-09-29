@@ -1,6 +1,6 @@
 <?php
 if (function_exists('load_plugin_textdomain')) {
-    load_plugin_textdomain('newsletter-emails', false, 'newsletter/emails/languages');
+    load_plugin_textdomain('newsletter', false, 'newsletter/emails/languages');
     load_plugin_textdomain('newsletter', false, 'newsletter/languages');
 }
 require_once NEWSLETTER_INCLUDES_DIR . '/controls.php';
@@ -19,7 +19,7 @@ if ($controls->is_action('unconvert')) {
 
 if ($controls->is_action('send')) {
     $newsletter->hook_newsletter();
-    $controls->messages .= __('Delivery engine triggered.', 'newsletter-emails');
+    $controls->messages .= __('Delivery engine triggered.', 'newsletter');
 }
 
 if ($controls->is_action('copy')) {
@@ -34,12 +34,12 @@ if ($controls->is_action('copy')) {
     $email['track'] = $original->track;
 
     Newsletter::instance()->save_email($email);
-    $controls->messages .= __('Message duplicated.', 'newsletter-emails');
+    $controls->messages .= __('Message duplicated.', 'newsletter');
 }
 
 if ($controls->is_action('delete')) {
     Newsletter::instance()->delete_email($_POST['btn']);
-    $controls->messages .= __('Message deleted.', 'newsletter-emails');
+    $controls->messages .= __('Message deleted.', 'newsletter');
 }
 
 if ($controls->is_action('delete_selected')) {
@@ -56,7 +56,7 @@ $emails = Newsletter::instance()->get_emails('message');
     <?php include NEWSLETTER_DIR . '/header-new.php'; ?>
 
 <div id="newsletter-title">
-    <h2><?php _e('Newsletters', 'newsletter-emails')?></h2>
+    <h2><?php _e('Newsletters', 'newsletter')?></h2>
 
  </div>
     <div class="newsletter-separator"></div>
@@ -79,10 +79,10 @@ $emails = Newsletter::instance()->get_emails('message');
         <?php } ?>
 
         <p>
-            <a href="<?php echo $module->get_admin_page_url('theme'); ?>" class="button"><?php _e('New newsletter', 'newsletter-emails')?></a>
-            <?php $controls->button_confirm('delete_selected', __('Delete selected newsletters', 'newsletter-emails'), 
-                    __('Proceed?', 'newsletter-emails')); ?>
-            <?php $controls->button('send', __('Trigger the delivery engine', 'newsletter-emails')); ?>
+            <a href="<?php echo $module->get_admin_page_url('theme'); ?>" class="button"><?php _e('New newsletter', 'newsletter')?></a>
+            <?php $controls->button_confirm('delete_selected', __('Delete selected newsletters', 'newsletter'), 
+                    __('Proceed?', 'newsletter')); ?>
+            <?php $controls->button('send', __('Trigger the delivery engine', 'newsletter')); ?>
         </p>
         <table class="widefat" style="width: auto">
             <thead>
@@ -112,10 +112,10 @@ $emails = Newsletter::instance()->get_emails('message');
                             <?php
                             if ($email->status == 'sending') {
                                 if ($email->send_on > time()) {
-                                    _e('Scheduled', 'newsletter-emails');
+                                    _e('Scheduled', 'newsletter');
                                 }
                                 else {
-                                    _e('Sending', 'newsletter-emails');
+                                    _e('Sending', 'newsletter');
                                 }
                             } else  {
                                 echo $email->status;
@@ -124,17 +124,17 @@ $emails = Newsletter::instance()->get_emails('message');
                         </td>
                         <td><?php if ($email->status == 'sent' || $email->status == 'sending') echo $email->sent . ' ' . __('of', 'newsletter') . ' ' . $email->total; ?></td>
                         <td><?php if ($email->status == 'sent' || $email->status == 'sending') echo $module->format_date($email->send_on); ?></td>
-                        <td><?php echo $email->track==1?__('Yes', 'newsletter-emails'):__('Yes', 'newsletter-emails'); ?></td>
-                        <td><a class="button" href="<?php echo $module->get_admin_page_url('edit'); ?>&amp;id=<?php echo $email->id; ?>">Edit</a></td>
+                        <td><?php echo $email->track==1?__('Yes', 'newsletter'):__('Yes', 'newsletter'); ?></td>
+                        <td><a class="button" href="<?php echo $module->get_admin_page_url('edit'); ?>&amp;id=<?php echo $email->id; ?>"><i class="fa fa-pencil"></i> <?php _e('Edit', 'newsletter') ?></a></td>
                         <td>
-                            <a class="button" href="<?php echo NewsletterStatistics::instance()->get_statistics_url($email->id); ?>">Statistics</a>
+                            <a class="button" href="<?php echo NewsletterStatistics::instance()->get_statistics_url($email->id); ?>"><i class="fa fa-bar-chart"></i> <?php _e('Statistics', 'newsletter') ?></a>
                         </td>
-                        <td><?php $controls->button_confirm('copy', __('Copy', 'newsletter-emails'), __('Proceed?', 'newsletter-emails'), $email->id); ?></td>
-                        <td><?php $controls->button_confirm('delete', __('Delete', 'newsletter-emails'), __('Proceed?', 'newsletter-emails'), $email->id); ?></td>
+                        <td><?php $controls->button_copy($email->id); ?></td>
+                        <td><?php $controls->button_delete($email->id); ?></td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
-        <p>(*) <?php _e('The expected total can change at the delivery end due to subscriptions/unsubscriptions in the meanwhile.', 'newsletter-emails')?></p>
+        <p>(*) <?php _e('The expected total can change at the delivery end due to subscriptions/unsubscriptions in the meanwhile.', 'newsletter')?></p>
     </form>
 </div>

@@ -93,6 +93,9 @@ class NewsletterUsers extends NewsletterModule {
         if ($options) {
             $sep = $options['separator'];
         }
+        if ($sep == 'tab') {
+            $sep = "\t";
+        }
         
         // CSV header
         echo '"Email"' . $sep . '"Name"' . $sep . '"Surname"' . $sep . '"Sex"' . $sep . '"Status"' . $sep . '"Date"' . $sep . '"Token";';

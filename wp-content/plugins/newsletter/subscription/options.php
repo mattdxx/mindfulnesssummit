@@ -105,10 +105,10 @@ if ($controls->is_action()) {
                 Newsletter::instance()->mail($user->email, 'Newsletter Messages Template Test', $newsletter->replace($message, $user));
             }
             $controls->messages .= 'Test emails sent to ' . count($users) . ' test subscribers: ' .
-            implode(', ', $addresses) . '. Read more about test subscribers <a href="http://www.thenewsletterplugin.com/plugins/newsletter/subscribers-module#test" target="_blank">here</a>.';
+                    implode(', ', $addresses) . '. Read more about test subscribers <a href="http://www.thenewsletterplugin.com/plugins/newsletter/subscribers-module#test" target="_blank">here</a>.';
         }
     }
-    
+
     if ($controls->is_action('test-confirmation')) {
 
         $users = NewsletterUsers::instance()->get_test_users();
@@ -131,11 +131,10 @@ if ($controls->is_action()) {
                 }
             }
             $controls->messages .= 'Test emails sent to ' . count($users) . ' test subscribers: ' .
-            implode(', ', $addresses) . '. Read more about test subscribers <a href="http://www.thenewsletterplugin.com/plugins/newsletter/subscribers-module#test" target="_blank">here</a>.';
+                    implode(', ', $addresses) . '. Read more about test subscribers <a href="http://www.thenewsletterplugin.com/plugins/newsletter/subscribers-module#test" target="_blank">here</a>.';
             $controls->messages .= '<br>If the message is not received, try to chnage the message text it could trigger some antispam filters.';
         }
     }
-    
 } else {
     $controls->data = get_option('newsletter', array());
 
@@ -224,30 +223,6 @@ if ($controls->is_action()) {
                             </p>
                         </td>
                     </tr>
-                     <tr valign="top">
-                        <th>Action URLs</th>
-                        <td>
-                            <?php $controls->select('action_url', array(0=>__('Standard', 'newsletter-statistics'), 
-                    1=>__('Blog Home URL with parameters', 'newsletter-statistics'))) ?>
-                            <p class="description">
-                                How the URLs for unsubscription, profile editing and so on should look. Due to some spam filter
-                                rules, the "Blog Home URL" should be safe but can conflict with plugins which removes the query string
-                                parameters.
-                            </p>
-                        </td>
-                    </tr>
-                    <?php /*
-                    <tr valign="top">
-                        <th>Disable visual editors?</th>
-                        <td>
-                            <?php $controls->yesno('novisual'); ?>
-                            <p class="description">
-                                If you prefer to edit the messages on this cofiguration panel writing them in HTML, you can
-                                disable the visual editors.
-                            </p>
-                        </td>
-                    </tr>
-                    */ ?>
                     <tr valign="top">
                         <th>Notifications</th>
                         <td>
@@ -284,20 +259,23 @@ if ($controls->is_action()) {
                             </p>
                         </td>
                     </tr>
+                    <!--
                     <tr valign="top">
                         <th>Enable the antibot?</th>
                         <td>
-                            <?php $controls->yesno('antibot'); ?>
+                    <?php $controls->yesno('antibot'); ?>
                             <p class="description">
                                 Tries to block bot generated subscriptions (without the annoying captcha).
                             </p>
                         </td>
                     </tr>
+                    -->
                 </table>
 
                 <h3>Special cases</h3>
 
                 <table class="form-table">
+                    <!--
                     <tr valign="top">
                         <th>Already subscribed page content</th>
                         <td>
@@ -310,6 +288,7 @@ if ($controls->is_action()) {
                             </p>
                         </td>
                     </tr>
+                    -->
                     <tr valign="top">
                         <th>Error page content</th>
                         <td>
@@ -450,7 +429,7 @@ if ($controls->is_action()) {
                     <tr valign="top">
                         <th>Email template</th>
                         <td>
-                            <?php $controls->textarea('template'); ?>
+                            <?php $controls->textarea_preview('template', '100%', '700'); ?>
                             <?php $controls->button('reset-template', 'Reset this template'); ?>
                             <?php $controls->button('test-template', 'Send a test'); ?>
                         </td>
@@ -637,7 +616,7 @@ if ($controls->is_action()) {
                         </td>
                     </tr>
                 </table>
-                
+
                 <h3>Confirmation</h3>
                 <p>
                     Subscribers will be automatically confirmed on first log-in (because it demonstrates they received the WP email with
@@ -669,7 +648,7 @@ if ($controls->is_action()) {
         </div>
 
         <p>
-            <?php $controls->button('save', 'Save'); ?>
+            <?php $controls->button_save(); ?>
             <?php $controls->button_confirm('reset', 'Reset all', 'Are you sure you want to reset all?'); ?>
         </p>
 
