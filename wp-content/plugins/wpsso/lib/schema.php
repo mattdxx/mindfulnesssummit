@@ -14,11 +14,22 @@ if ( ! class_exists( 'WpssoSchema' ) ) {
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
+
 			$this->p->util->add_plugin_filters( $this, array( 
 				'plugin_image_sizes' => 1,
 			) );
-			add_filter( 'language_attributes', 
-				array( &$this, 'add_doctype' ), WPSSO_DOCTYPE_PRIORITY, 1 );
+
+			if ( ! empty( $this->p->options['plugin_head_attr_filter_name'] ) &&
+				$this->p->options['plugin_head_attr_filter_name'] !== 'none' ) {
+
+					$prio = empty( $this->p->options['plugin_head_attr_filter_prio'] ) ? 
+						100 : $this->p->options['plugin_head_attr_filter_prio'];
+
+					add_filter( $this->p->options['plugin_head_attr_filter_name'], 
+						array( &$this, 'add_head_attributes' ), $prio, 1 );
+
+			} elseif ( $this->p->debug->enabled )
+				$this->p->debug->log( 'add_head_attributes skipped: plugin_head_attr_filter_name option is empty' );
 		}
 
 		public function filter_plugin_image_sizes( $sizes ) {
@@ -30,26 +41,29 @@ if ( ! class_exists( 'WpssoSchema' ) ) {
 			return $sizes;
 		}
 
-		public function add_doctype( $doctype ) {
+		public function add_head_attributes( $head_attr ) {
+
+			if ( $this->p->debug->enabled )
+				$this->p->debug->mark();
+
 			$obj = $this->p->util->get_post_object( false );
 			$post_id = empty( $obj->ID ) || empty( $obj->post_type ) ? 0 : $obj->ID;
-			$post_type = '';
-			$item_type = $this->p->cf['head']['schema_type']['blog'];	// default value for non-singular webpages
+			$schema_types = apply_filters( $this->p->cf['lca'].'_schema_post_types', 
+				$this->p->cf['head']['schema_type'] );
+			$item_type = $schema_types['website'];		// default value for non-singular webpages
 
 			if ( is_singular() ) {
 
-				if ( ! empty( $obj->post_type ) )
-					$post_type = $obj->post_type;
-
-				if ( isset( $this->p->cf['head']['schema_type'][$post_type] ) )
-					$item_type = $this->p->cf['head']['schema_type'][$post_type];
-				else $item_type = $this->p->cf['head']['schema_type']['article'];
+				if ( ! empty( $obj->post_type ) &&
+					isset( $schema_types[$obj->post_type] ) )
+						$item_type = $schema_types[$obj->post_type];
+				else $item_type = $schema_types['webpage'];
 
 			} elseif ( $this->p->util->force_default_author() &&
 				! empty( $this->p->options['og_def_author_id'] ) )
-					$item_type = $this->p->cf['head']['schema_type']['article'];
+					$item_type = $schema_types['webpage'];
 
-			$item_type = apply_filters( $this->p->cf['lca'].'_doctype_schema_type', $item_type, $post_id, $obj );
+			$item_type = apply_filters( $this->p->cf['lca'].'_schema_item_type', $item_type, $post_id, $obj );
 
 			if ( ! empty( $item_type ) ) {
 
@@ -58,64 +72,64 @@ if ( ! class_exists( 'WpssoSchema' ) ) {
 					$item_type = 'http://schema.org/'.$item_type;
 
 				// fix incorrect itemscope values
-				if ( strpos( $doctype, ' itemscope="itemscope"' ) !== false )
-					$doctype = preg_replace( '/ itemscope="itemscope"/', 
-						' itemscope', $doctype );
-				elseif ( strpos( $doctype, ' itemscope' ) === false )
-					$doctype .= ' itemscope';
+				if ( strpos( $head_attr, ' itemscope="itemscope"' ) !== false )
+					$head_attr = preg_replace( '/ itemscope="itemscope"/', 
+						' itemscope', $head_attr );
+				elseif ( strpos( $head_attr, ' itemscope' ) === false )
+					$head_attr .= ' itemscope';
 
 				// replace existing itemtype values
-				if ( strpos( $doctype, ' itemtype="' ) !== false )
-					$doctype = preg_replace( '/ itemtype="[^"]+"/',
-						' itemtype="'.$item_type.'"', $doctype );
-				else $doctype .= ' itemtype="'.$item_type.'"';
+				if ( strpos( $head_attr, ' itemtype="' ) !== false )
+					$head_attr = preg_replace( '/ itemtype="[^"]+"/',
+						' itemtype="'.$item_type.'"', $head_attr );
+				else $head_attr .= ' itemtype="'.$item_type.'"';
 
 			} elseif ( $this->p->debug->enabled )
-				$this->p->debug->log( 'schema item_type variable is empty' );
+				$this->p->debug->log( 'schema item_type value is empty' );
 
-			return $doctype;
+			return trim( $head_attr );
 		}
 
 		public function get_meta_array( $use_post, &$obj, &$meta_og = array() ) {
-			$meta_schema = array();
+			$mt_schema = array();
 
 			if ( ! empty( $this->p->options['add_meta_itemprop_name'] ) ) {
 				if ( ! empty( $meta_og['og:title'] ) )
-					$meta_schema['name'] = $meta_og['og:title'];
+					$mt_schema['name'] = $meta_og['og:title'];
 			}
 
 			if ( ! empty( $this->p->options['add_meta_itemprop_headline'] ) ) {
 				if ( ! empty( $meta_og['og:title'] ) &&
 					isset( $meta_og['og:type'] ) &&
 						$meta_og['og:type'] === 'article' )
-							$meta_schema['headline'] = $meta_og['og:title'];
+							$mt_schema['headline'] = $meta_og['og:title'];
 			}
 
 			if ( ! empty( $this->p->options['add_meta_itemprop_datepublished'] ) ) {
 				if ( ! empty( $meta_og['article:published_time'] ) )
-					$meta_schema['datepublished'] = $meta_og['article:published_time'];
+					$mt_schema['datepublished'] = $meta_og['article:published_time'];
 			}
 
 			if ( ! empty( $this->p->options['add_meta_itemprop_description'] ) ) {
-				$meta_schema['description'] = $this->p->webpage->get_description( $this->p->options['og_desc_len'], 
+				$mt_schema['description'] = $this->p->webpage->get_description( $this->p->options['og_desc_len'], 
 					'...', $use_post, true, true, true, 'schema_desc' );	// custom meta = schema_desc
 			}
 
 			if ( ! empty( $this->p->options['add_meta_itemprop_url'] ) ) {
 				if ( ! empty( $meta_og['og:url'] ) )
-					$meta_schema['url'] = $meta_og['og:url'];
+					$mt_schema['url'] = $meta_og['og:url'];
 			}
 
 			if ( ! empty( $this->p->options['add_meta_itemprop_image'] ) ) {
 				if ( ! empty( $meta_og['og:image'] ) ) {
 					if ( is_array( $meta_og['og:image'] ) )
 						foreach ( $meta_og['og:image'] as $image )
-							$meta_schema['image'][] = $image['og:image'];
-					else $meta_schema['image'] = $meta_og['og:image'];
+							$mt_schema['image'][] = $image['og:image'];
+					else $mt_schema['image'] = $meta_og['og:image'];
 				}
 			}
 
-			return apply_filters( $this->p->cf['lca'].'_meta_schema', $meta_schema, $use_post, $obj );
+			return apply_filters( $this->p->cf['lca'].'_meta_schema', $mt_schema, $use_post, $obj );
 		}
 
 		public function get_json_array( $post_id = false, $author_id = false, $size_name = 'thumbnail' ) {
