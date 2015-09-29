@@ -34,7 +34,7 @@
             {
                 add_action('wp_enqueue_scripts', array($this, 'load_scripts'));
             }
-			
+            
             public function load_scripts()
             {
                 wp_enqueue_script(
@@ -42,10 +42,15 @@
                     plugin_dir_url(__FILE__).'script.js?defer',
                     array('jquery')
                     );
-				wp_enqueue_style(
-					'mindsummit-mobilemockup-readmore-css',
+                wp_enqueue_style(
+                    'mindsummit-mobilemockup-readmore-css',
                     plugin_dir_url(__FILE__).'style.css',
                     array('style-responsive')
+                    );
+                wp_enqueue_style(
+                    'mindsummit-mobilemockup-mobileview-css',
+                    plugin_dir_url(__FILE__).'mobileview.css',
+                    array('parent-style', 'style', 'style-responsive', 'style-custom')
                     );
             }
 
@@ -55,8 +60,8 @@
     
     function MindSummit_MobileMockup_ReadMore_Load()
     {
-		preg_match('~^/sessions/\w~', $_SERVER['REQUEST_URI']) and
-			MindSummit_MobileMockup_ReadMore::instance();
+        preg_match('~^/sessions/\w~', $_SERVER['REQUEST_URI']) and
+            MindSummit_MobileMockup_ReadMore::instance();
     }
     add_action('plugins_loaded', 'MindSummit_MobileMockup_ReadMore_Load');
 

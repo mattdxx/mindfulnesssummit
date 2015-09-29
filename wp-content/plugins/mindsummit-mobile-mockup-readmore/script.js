@@ -17,6 +17,34 @@ jQuery(function(){
 		_already_ran = true;
 		
 		var $content = $('.gdlr-blog-content');
+		
+		//# This should be a hack. Client wants to hide the text,
+		//# but video-iframe is to be visible. So I will place all
+		//# the content before the video in a separate div.
+		var $content = (function($c){
+
+			var before_iframe = true;
+			var before_iframe_list = [];
+			$c.children().each(function(){
+				if (!before_iframe)
+					return;
+				var $this = $(this)
+				if ($this.find('iframe').size())
+					before_iframe = false;
+				else
+					before_iframe_list.push($this);
+			});
+
+			var $d = $('<div>');
+			$d.prependTo($c);
+
+			for (var i = 0; i < before_iframe_list.length; i++)
+				before_iframe_list[i].appendTo($d);
+			
+			return $d;
+		
+		})($content);
+
 		if (!$content.size())
 			return
 		

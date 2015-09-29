@@ -1,6 +1,6 @@
 @media only screen and (max-width: 419px) {
 	body .container{ max-width: none; }
-	body .container .eight { width: 95% }
+	/*body .container .eight { width: 95% }*/
 }
 
 .readmore-cut {
