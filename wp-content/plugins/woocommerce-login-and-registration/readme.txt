@@ -3,7 +3,7 @@ Contributors: phoeniixx
 Tags: phoeniixx, woocommerce, woocommerce plugins, login, signup, register,signin plugin, page header, shortcode,woocommerce login / signup lite,woocommerce login signup,woocommerce login,woocommerce signup
 Requires at least: 4.0
 Tested up to: 4.3
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,8 +56,6 @@ This plugin gives you the freedom to create a login/signup page or popup for bot
 **Ans.** Yes this plugin works with the current WooCommerce Version.
 
 
-
-
 == Screenshots ==
 
 1. This screenshot shows the enable option of Login / Signup popup.
@@ -69,5 +67,9 @@ This plugin gives you the freedom to create a login/signup page or popup for bot
 
 
 == Changelog ==
+
+= 1.1 - 14/09/2015 =
+* Fix - Compatibility issues.
+
 = 1.0 =
 * Initial release.

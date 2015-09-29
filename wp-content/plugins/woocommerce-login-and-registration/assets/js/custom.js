@@ -1,7 +1,7 @@
 jQuery(document).ready(function(){ 
   
-   jQuery(".header_login").colorbox({width:"50%", height:"525px", inline:true, href:"#login_data", opacity:0.5, closeButton:true});
-   jQuery(".header_signup").colorbox({width:"50%", height:"460px", inline:true, href:"#signup_data", opacity:0.5, closeButton:true});
+   jQuery(".header_login").colorbox({className: 'plrp_logreg', width:"50%", height:"525px", inline:true, href:"#login_data", opacity:0.5, closeButton:true});
+   jQuery(".header_signup").colorbox({className: 'plrp_logreg',width:"50%", height:"460px", inline:true, href:"#signup_data", opacity:0.5, closeButton:true});
 
   jQuery('#js_login').submit(function(event) {
 	  

@@ -32,7 +32,7 @@
         #cboxCurrent{position:absolute; top:-22px; right:205px; text-indent:-9999px;}
 
         /* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
-        #cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; text-indent:-9999px; width:20px; height:20px; position:absolute; top: 12px;   margin: 0 8px 0 0; background:url(../img/cross.png) no-repeat 0 0;}
+        #cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; text-indent:-9999px; width:20px; height:20px; position:absolute; top: 12px;   margin: 0 8px 0 0;}
         
         /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
         #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
@@ -49,7 +49,7 @@
         .cboxSlideshow_off #cboxSlideshow{background-position:-100px 0px; right:44px;}
         .cboxSlideshow_off #cboxSlideshow:hover{background-position:-75px -25px;}
 
-		/*manual css*/
+	/***manual css***/
 		#js_login , #js_signup {
                     border: medium none !important;
 					margin: 0 !important;
@@ -75,8 +75,34 @@
 		#reg_email_header{border: 1px solid #dcdcdc;   padding: 12px 8px;}
 		
 		#header_login {
-    margin-right: 5px;
-}
+                      margin-right: 5px;
+                     }
 #js_signup button:hover, button:focus, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:focus, input[type="button"]:focus, input[type="reset"]:focus{ background: #ebe9eb ; }
 
 #js_signup  input[type="submit"]:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, input[type="button"]:active, input[type="reset"]:active{ border:none;}
+
+
+.plrp_logreg #cboxContent {
+    background: #fff none repeat scroll 0 0;
+    overflow: visible;
+    position: fixed;
+    top: 50%;  
+    transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	height:auto;
+}
+.plrp_logreg    #cboxTopLeft{display:none;}
+.plrp_logreg    #cboxTopLeft{display:none;}
+.plrp_logreg  #cboxTopCenter { display:none;}
+.plrp_logreg  #cboxTopRight { display:none;}
+.plrp_logreg  #cboxMiddleLeft{display:none; }
+.plrp_logreg  #cboxBottomLeft{display:none;}
+.plrp_logreg  #cboxBottomCenter{display:none;}
+.plrp_logreg  #cboxBottomRight{display:none;}
+.plrp_logreg  #cboxMiddleRight{display:none;}
+.plrp_logreg  #cboxMiddleRight{display:none;}
+.plrp_logreg #cboxLoadedContent {height: auto !important;margin: 0;overflow: hidden !important;position: relative;}
+.plrp_logreg #cboxClose {background: rgba(0, 0, 0, 0) url("../img/cross.png") no-repeat scroll 0 0 !important; position: absolute;top: 10px;}
+.plrp_logreg #cboxTitle{ display:none !important;}
