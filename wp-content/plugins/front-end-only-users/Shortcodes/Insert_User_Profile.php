@@ -32,7 +32,7 @@ function Insert_User_Profile($atts) {
 											
 	$ReturnString .= "<style type='text/css'>";
 	$ReturnString .= $Custom_CSS;
-	$ReturnString .= "</style>";
+	$ReturnString .= EWD_FEUP_Add_Modified_Styles();
 											
 	if ($CheckCookie['Username'] == "" and $login_necessary == "Yes") {
 		$ReturnString .= __('You must be logged in to access this page.', 'EWD_FEUP');
@@ -41,7 +41,7 @@ function Insert_User_Profile($atts) {
 	}
 
 	
-	$ReturnString .= "<div id='ewd-feup-user-profile-div'>";
+	$ReturnString .= "<div id='ewd-feup-user-profile-div' class='ewd-feup-user-profile-div'>";
 	
 	$Omitted_Fields = explode(",", $omit_fields);
 	
@@ -52,8 +52,8 @@ function Insert_User_Profile($atts) {
 				if ($Field->Field_Name == $UserField->Field_Name) {$Value = $UserField->Field_Value;}
 			}
 			$ReturnString .= "<div class='feup-user-profile-field'>";
-			$ReturnString .= "<div id='ewd-feup-user-profile-lavel-" . $Field->Field_ID . "' class='ewd-feup-user-profile-label'>" . $Field->Field_Name . ": </div>";
-			$ReturnString .= "<div class='ewd-feup-text-input'>" . $Value . "</div>";
+			$ReturnString .= "<div id='ewd-feup-user-profile-label-" . $Field->Field_ID . "' class='ewd-feup-user-profile-label'>" . $Field->Field_Name . ": </div>";
+			$ReturnString .= "<div class='ewd-feup-text-input ewd-feup-user-profile-input'>" . $Value . "</div>";
 			$ReturnString .= "</div>";
 			unset($Req_Text);
 		}

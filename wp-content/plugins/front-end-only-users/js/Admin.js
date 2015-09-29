@@ -13,6 +13,26 @@ function ShowTab(TabName) {
 		jQuery("#"+TabName+"_Menu").addClass("nav-tab-active");
 }
 
+function ShowMoreOptions() {
+	jQuery(".feup-email-advanced-settings").toggle();
+	jQuery(".feup-email-toggle-show").toggle();
+	jQuery(".feup-email-toggle-hide").toggle();
+
+	return false;
+}
+
+function ShowOptionTab(TabName) {
+	jQuery(".feup-option-set").each(function() {
+		jQuery(this).addClass("feup-hidden");
+	});
+	jQuery("#"+TabName).removeClass("feup-hidden");
+	
+	jQuery(".options-subnav-tab").each(function() {
+		jQuery(this).removeClass("options-subnav-tab-active");
+	});
+	jQuery("#"+TabName+"_Menu").addClass("options-subnav-tab-active");
+}
+
 jQuery(document).ready(function() {	
 	jQuery('.ewd-feup-one-click-install-div-load').on('click', function() {
 		jQuery('#ewd-feup-one-click-install-div').removeClass('ewd-feup-oci-no-show');

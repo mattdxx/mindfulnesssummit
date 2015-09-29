@@ -7,7 +7,7 @@ Author: Tim Ruse
 Author URI: http://www.EtoileWebDesign.com/
 Terms and Conditions: http://www.etoilewebdesign.com/plugin-terms-and-conditions/
 Text Domain: EWD_FEUP
-Version: 2.2.9
+Version: 2.3.1
 */
 
 global $EWD_FEUP_db_version;
@@ -22,7 +22,7 @@ $ewd_feup_user_fields_table_name = $wpdb->prefix . "EWD_FEUP_User_Fields";
 $ewd_feup_fields_table_name = $wpdb->prefix . "EWD_FEUP_Fields";
 $ewd_feup_levels_table_name = $wpdb->prefix . "EWD_FEUP_Levels";
 $ewd_feup_user_events_table_name = $wpdb->prefix ."EWD_FEUP_User_Events";
-$EWD_FEUP_db_version = "2.2.8";
+$EWD_FEUP_db_version = "2.3.0";
 
 define( 'EWD_FEUP_CD_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'EWD_FEUP_CD_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -117,7 +117,7 @@ function Add_EWD_FEUP_Scripts() {
 
 add_action( 'wp_enqueue_scripts', 'EWD_FEUP_Add_FrontEnd_Scripts' );
 function EWD_FEUP_Add_FrontEnd_Scripts() {
-	wp_enqueue_script('ewd-feup-tracking', plugins_url( '/js/ewd-feup-tracking.js' , __FILE__ ), array( 'jquery' ));
+	if (get_option("EWD_FEUP_Track_Events") == "Yes") {wp_enqueue_script('ewd-feup-tracking', plugins_url( '/js/ewd-feup-tracking.js' , __FILE__ ), array( 'jquery' ));}
 }
 
 function EWD_FEUP_Admin_Head() {
@@ -191,6 +191,7 @@ include "Functions/Public_Functions.php";
 include "Functions/Update_Admin_Databases.php";
 include "Functions/Update_EWD_FEUP_Content.php";
 include "Functions/Update_EWD_FEUP_Tables.php";
+include "Functions/EWD_FEUP_Styling.php";
 
 include "Shortcodes/Insert_Confirm_Forgot_Password.php";
 include "Shortcodes/Insert_Edit_Account.php";

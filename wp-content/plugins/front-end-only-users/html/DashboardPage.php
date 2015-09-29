@@ -34,7 +34,7 @@
 					<?php } else { ?><ul><li><?php _e("Thanks for upgrading to version 2.4.21!", "EWD_FEUP"); ?><br> <a href='https://www.youtube.com/channel/UCZPuaoetCJB1vZOmpnMxJNw'><?php _e("Subscribe to our YouTube channel ", "EWD_FEUP"); ?></a> <?php _e("for tutorial videos on this and our other plugins!", "EWD_FEUP");?> </li></ul><?php } */ ?>
 					
 					<?php  if (get_option("EWD_FEUP_Install_Flag") == "Yes") { ?><ul><li><?php _e("Thanks for installing Front-End Only Users.", "EWD_FEUP"); ?><br> <a href='http://www.facebook.com/EtoileWebDesign'><?php _e("Follow us on Facebook", "EWD_FEUP"); ?></a> <?php _e("to suggest new features or hear about upcoming ones!", "EWD_FEUP");?> </li></ul>
-					<?php } else { ?><ul><li><?php _e("Thanks for upgrading to version 2.2.9!", "EWD_FEUP"); ?><br> <a href='http://www.facebook.com/EtoileWebDesign'><?php _e("Follow us on Facebook", "EWD_FEUP"); ?></a> <?php _e("to suggest new features or hear about upcoming ones!", "EWD_FEUP");?> </li></ul><?php }  ?>
+					<?php } else { ?><ul><li><?php _e("Thanks for upgrading to version 2.3.1!", "EWD_FEUP"); ?><br> <a href='http://www.facebook.com/EtoileWebDesign'><?php _e("Follow us on Facebook", "EWD_FEUP"); ?></a> <?php _e("to suggest new features or hear about upcoming ones!", "EWD_FEUP");?> </li></ul><?php }  ?>
 					
 					<?php /* if (get_option("EWD_FEUP_Install_Flag") == "Yes") { ?><ul><li><?php _e("Thanks for installing Front-End Only Users.", "EWD_FEUP"); ?><br> <a href='http://www.facebook.com/EtoileWebDesign'><?php _e("Follow us on Facebook", "EWD_FEUP"); ?></a> <?php _e("to suggest new features or hear about upcoming ones!", "EWD_FEUP");?>  </li></ul>
 					<?php } else { ?><ul><li><?php _e("Thanks for upgrading to version 2.0.0!", "EWD_FEUP"); ?><br> <a href='http://wordpress.org/support/view/plugin-reviews/ultimate-product-catalogue'><?php _e("Please rate our plugin", "EWD_FEUP"); ?></a> <?php _e("if you find the Ultimate Product Catalogue Plugin useful!", "EWD_FEUP");?> </li></ul><?php } */ ?>
@@ -179,11 +179,11 @@ update_option('EWD_FEUP_Install_Flag', "No");
 <div id="col-left">
 <div class="col-wrap">
 	<div id='ewd-feup-one-click-install'>
-		<a class='ewd-feup-one-click-install-div-load'>Open One-Click Installer</a>
+		<a class='ewd-feup-one-click-install-div-load button button-primary'>Open One-Click Installer</a>
 	</div>
 	<div id='ewd-feup-one-click-blur'></div>
 	<div id='ewd-feup-one-click-install-div' class='ewd-feup-oci-no-show'><?php include EWD_FEUP_CD_PLUGIN_PATH . "html/OneClickInstall.php"; ?></div>
-	<div id="dashboard-total-users">
+	<div id="dashboard-total-users" class="dashboard-users-total">
 		<?php if ($Admin_Approval == "Yes") { ?>
 			Unapproved Users:
 			<?php $TotalUsers = $wpdb->get_results("SELECT User_ID FROM $ewd_feup_user_table_name WHERE User_Admin_Approved!='Yes'");

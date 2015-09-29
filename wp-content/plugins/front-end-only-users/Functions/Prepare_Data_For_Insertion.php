@@ -81,17 +81,20 @@ function Add_Edit_User() {
 		if (!isset($Additional_Fields_Array)) {$Additional_Fields_Array=array();}
 		foreach ($Fields as $Field) {
 			if (!in_array($Field->Field_Name, $Omitted_Fields)) {
-				$Additional_Fields_Array[$Field->Field_Name]['Field_ID'] = $Field->Field_ID;
-				$Additional_Fields_Array[$Field->Field_Name]['Field_Name'] = $Field->Field_Name;
-				$Field_Name = str_replace(" ", "_", $Field->Field_Name);
-				if ($Field->Field_Type == "file") {
-				  	$File_Upload_Return = Handle_File_Upload($Field_Name);
-					if ($File_Upload_Return['Success'] == "No") {return $File_Upload_Return['Data'];}
-					elseif ($File_Upload_Return['Success'] == "N/A") {unset($Additional_Fields_Array[$Field->Field_Name]);}
-					else {$Additional_Fields_Array[$Field->Field_Name]['Field_Value'] = $File_Upload_Return['Data'];}
+				if ($Field->Field_Options != "") {$Field_Allowed_Values = explode(",", $Field->Field_Options);}
+				if (!is_array($Field_Allowed_Values) or in_array($_POST[$Field_Name], $Field_Allowed_Values)) {
+					$Additional_Fields_Array[$Field->Field_Name]['Field_ID'] = $Field->Field_ID;
+					$Additional_Fields_Array[$Field->Field_Name]['Field_Name'] = $Field->Field_Name;
+					$Field_Name = str_replace(" ", "_", $Field->Field_Name);
+					if ($Field->Field_Type == "file") {
+					  	$File_Upload_Return = Handle_File_Upload($Field_Name);
+						if ($File_Upload_Return['Success'] == "No") {return $File_Upload_Return['Data'];}
+						elseif ($File_Upload_Return['Success'] == "N/A") {unset($Additional_Fields_Array[$Field->Field_Name]);}
+						else {$Additional_Fields_Array[$Field->Field_Name]['Field_Value'] = $File_Upload_Return['Data'];}
+					}
+					elseif (is_array($_POST[$Field_Name])) {$Additional_Fields_Array[$Field->Field_Name]['Field_Value'] = stripslashes_deep(implode(",", $_POST[$Field_Name]));}
+					else {$Additional_Fields_Array[$Field->Field_Name]['Field_Value'] = stripslashes_deep($_POST[$Field_Name]);}
 				}
-				elseif (is_array($_POST[$Field_Name])) {$Additional_Fields_Array[$Field->Field_Name]['Field_Value'] = stripslashes_deep(implode(",", $_POST[$Field_Name]));}
-				else {$Additional_Fields_Array[$Field->Field_Name]['Field_Value'] = stripslashes_deep($_POST[$Field_Name]);}
 			}
 		}
 	}
@@ -428,7 +431,7 @@ function Add_Users_From_Spreadsheet() {
 				$error = __('No file was uploaded here..', 'EWD_FEUP');
 		}
 		/* Check that it is a .xls or .xlsx file */
-		elseif ($_FILES['Users_Spreadsheet']['type'] != "application/vnd.ms-excel" and $_FILES['Users_Spreadsheet']['type'] != "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
+		if(!preg_match("/\.(xls.?)$/", $_FILES['Users_Spreadsheet']['name'])) {
 			$error = __('File must be .xls or .xlsx', 'EWD_FEUP');
 		}
 		/* Move the file and store the URL to pass it onwards*/ 	 	

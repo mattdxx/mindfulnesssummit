@@ -22,6 +22,12 @@ function User_List($atts, $content = null) {
 			)
 	);
 		
+	$display_fields = explode(",", $display_field);
+	
+	$ReturnString .= "<style type='text/css'>";
+	$ReturnString .= $Custom_CSS;
+	$ReturnString .= EWD_FEUP_Add_Modified_Styles();
+
 	if (!$UserCookie and $login_necessary == "Yes") {
 		$ReturnString .= __("Please log in to access this content.", 'EWD_FEUP'); 
 		if ($login_page != "") {$ReturnString .= "<br />" . __('Please', 'EWD_FEUP') . " <a href='" . $login_page . "'>" . __('login', 'EWD_FEUP') . "</a> " . __('to continue.', 'EWD_FEUP');}
@@ -36,8 +42,16 @@ function User_List($atts, $content = null) {
 	}
 
 	foreach ($User_IDs as $User_ID) {
-		$User = $wpdb->get_row($wpdb->prepare("SELECT " . $display_field . " FROM $ewd_feup_user_table_name WHERE User_ID='%d'", $User_ID->User_ID));
-		$Return_User['User_Data'] = $User->$display_field;
+		foreach ($display_fields as $display_field) {
+			if ($display_field == "Username") {
+				$User = $wpdb->get_row($wpdb->prepare("SELECT Username FROM $ewd_feup_user_table_name WHERE User_ID='%d'", $User_ID->User_ID));
+				$Return_User[$display_field] = $User->Username;
+			}
+			else {
+				$User = $wpdb->get_row($wpdb->prepare("SELECT Field_Value FROM $ewd_feup_user_fields_table_name WHERE User_ID='%d' and Field_Name=%s", $User_ID->User_ID, $display_field));
+				$Return_User[$display_field] = $User->Field_Value;
+			}
+		}
 		$Return_User['User_ID'] = $User_ID->User_ID;
 		$UserDataSet[] = $Return_User;
 		unset($Return_User);
@@ -45,9 +59,11 @@ function User_List($atts, $content = null) {
 		
 	if (is_array($UserDataSet)) {
 		foreach ($UserDataSet as $User_Data) {			
-			$ReturnString .= "<div class='ewd-feup-user-list-result'>";
+			$ReturnString .= "<div class='ewd-feup-user-list-result' id='ewd-feup-user-list'>";
 			if ($user_profile_page != "") {$ReturnString .= "<a href='" . $user_profile_page . "?User_ID=" . $User_Data['User_ID'] . "'>";}
-			$ReturnString .= $User_Data['User_Data'];
+			foreach ($display_fields as $display_field) {
+				$ReturnString .= $User_Data[$display_field] . " ";
+			}
 			if ($user_profile_page != "") {$ReturnString .= "</a>";}
 			$ReturnString .= "</div>";
 		}

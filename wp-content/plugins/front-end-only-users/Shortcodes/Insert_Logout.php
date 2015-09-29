@@ -22,7 +22,8 @@ function Insert_Logout($atts) {
 		
 		$ReturnString .= "<style type='text/css'>";
 		$ReturnString .= $Custom_CSS;
-		$ReturnString .= "</style>";
+		$ReturnString .= EWD_FEUP_Add_Modified_Styles();
+		
 		
 		$ReturnString .= "<div class='feup-information-div'>";
 		$ReturnString .= __("You have been successfully logged out." , "EWD_FEUP");
