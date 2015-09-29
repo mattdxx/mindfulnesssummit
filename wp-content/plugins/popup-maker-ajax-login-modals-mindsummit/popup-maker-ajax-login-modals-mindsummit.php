@@ -14,6 +14,8 @@
 	if (!defined('ABSPATH'))
 		exit;
 	
+	require plugin_dir_path(__FILE__).'options.php';
+	
 	if (!class_exists('PopMake_Ajax_Login_Modals_MindSummit'))
 	{
 		class PopMake_Ajax_Login_Modals_MindSummit
@@ -35,6 +37,21 @@
 				add_action('user_register', array($this, 'update_user'));
 				add_filter('registration_errors', array($this, 'check_login'));
 				add_action('wp_enqueue_scripts', array($this, 'fix_js'));
+				add_action('wp_head', array($this, 'print_variables'));
+			}
+			
+			public function print_variables()
+			{
+				$values = array(
+					'regcapt' => get_option('popmake_login_regcapt'),
+					'logcapt' => get_option('popmake_login_logcapt'),
+					'reccapt' => get_option('popmake_login_reccapt'),
+					'regtext' => get_option('popmake_login_regtext'),
+					'regtext2' => get_option('popmake_login_regtext2')
+					);
+				echo '<script type="text/javascript" language="javascript">';
+				echo 'window.popmake_login_appearance = '.json_encode($values);
+				echo ';</script>';
 			}
 			
 			public function update_user($user_id)

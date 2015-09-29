@@ -56,33 +56,31 @@ jQuery('.popmake').on('popmakeInit', function(){
 	login.find('.login-username label').text('Email');
 	
 	// fix titles
+	var titles = window.popmake_login_appearance || {};
 	var popmake_title = $('.popmake-title');
 	var reg_title = 
 		popmake_title.clone()
-			.text('Register')
+			.html(titles.regcapt || 'Register')
 			.insertBefore( $('.popmake-registration-form>:first') )
 		;
 	var login_title =
 		popmake_title.clone()
-			.text('Log in')
+			.html(titles.logcapt || 'Log in')
 			.insertBefore( $('.popmake-login-form>:first') )
 		;
 	var recovery_title =
 		popmake_title.clone()
-			.text('Password reset')
+			.html(titles.reccapt || 'Password reset')
 			.insertBefore( $('.popmake-recovery-form>:first') )
 		;
 	popmake_title.remove();
 	
 	// paragraph text (registration form)
-	var paragraph_text =
-			email
-			? 'Please register below to view this content'
-			: 'Welcome please register below to view this content'
-	;
-	$('<p>')
-		.text(paragraph_text)
-		.insertAfter(reg_title);
+	var paragraph_text = email ? titles.regtext2 : titles.regtext;
+	paragraph_text &&
+		$('<p>')
+			.html(paragraph_text)
+			.insertAfter(reg_title);
 	
 	
 	// do not show the form if user is already registered one
