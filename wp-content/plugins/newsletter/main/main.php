@@ -24,12 +24,12 @@ if (!$controls->is_action()) {
         // Validation
         $controls->data['sender_email'] = $newsletter->normalize_email($controls->data['sender_email']);
         if (!$newsletter->is_email($controls->data['sender_email'])) {
-            $controls->errors .= 'The sender email address is not correct.<br>';
+            $controls->errors .= __('The sender email address is not correct.', 'newsletter') . '<br>';
         }
 
         $controls->data['return_path'] = $newsletter->normalize_email($controls->data['return_path']);
         if (!$newsletter->is_email($controls->data['return_path'], true)) {
-            $controls->errors .= 'Return path email is not correct.<br>';
+            $controls->errors .= __('Return path email is not correct.', 'newsletter') . '<br>';
         }
 
         $controls->data['php_time_limit'] = (int) $controls->data['php_time_limit'];
@@ -43,12 +43,12 @@ if (!$controls->is_action()) {
 
         $controls->data['reply_to'] = $newsletter->normalize_email($controls->data['reply_to']);
         if (!$newsletter->is_email($controls->data['reply_to'], true)) {
-            $controls->errors .= 'Reply to email is not correct.<br>';
+            $controls->errors .= __('Reply to email is not correct.', 'newsletter') . '<br>';
         }
 
         if (empty($controls->errors)) {
             update_option('newsletter_main', $controls->data);
-            $controls->messages .= 'Saved.';
+            $controls->messages .= __('Saved.', 'newsletter');
         }
     }
 
@@ -124,12 +124,12 @@ if (!$controls->is_action()) {
         <div id="tabs">
 
             <ul>
-                <li><a href="#tabs-basic">Basic Settings</a></li>
-                <li><a href="#tabs-user">Blog Info</a></li>
-                <li><a href="#tabs-speed">Delivery Speed</a></li>
-                <li><a href="#tabs-2">Advanced Settings</a></li>
-                <li><a href="#tabs-5">SMTP</a></li>
-                <li><a href="#tabs-3">Content Locking</a></li>
+                <li><a href="#tabs-basic"><?php _e('Basic Settings', 'newsletter') ?></a></li>
+                <li><a href="#tabs-user"><?php _e('Blog Info', 'newsletter') ?></a></li>
+                <li><a href="#tabs-speed"><?php _e('Delivery Speed', 'newsletter') ?></a></li>
+                <li><a href="#tabs-2"><?php _e('Advanced Settings', 'newsletter') ?></a></li>
+                <li><a href="#tabs-5"><?php _e('SMTP', 'newsletter') ?></a></li>
+                <li><a href="#tabs-3"><?php _e('Content Locking', 'newsletter') ?></a></li>
             </ul>
 
             <div id="tabs-basic">
@@ -144,12 +144,13 @@ if (!$controls->is_action()) {
                 <table class="form-table">
 
                     <tr valign="top">
-                        <th>Sender email address</th>
+                        <th><?php _e('Sender email address', 'newsletter') ?></th>
                         <td>
                             <?php $controls->text_email('sender_email', 40); ?> (valid email address)
 
                             <p class="description">
-                                This the email address from which subscribers will se your email coming. Since this setting can
+                                <?php _e('Email address from which subscribers will see your email coming.', 'newsletter') ?> 
+                                Since this setting can
                                 affect the reliability of delivery,
                                 <a href="http://www.thenewsletterplugin.com/plugins/newsletter/newsletter-configuration#sender" target="_blank">read my notes here</a> (important).
                                 Generally use an address within your domain name.
@@ -157,19 +158,20 @@ if (!$controls->is_action()) {
                         </td>
                     </tr>
                     <tr>
-                        <th>Sender name</th>
+                        <th><?php _e('Sender name', 'newsletter') ?></th>
                         <td>
                             <?php $controls->text('sender_name', 40); ?> (optional)
 
                             <p class="description">
-                                Insert here the name which subscribers will see as the sender of your email (for example your blog name). Since this setting can affect the reliability of delivery (usually under Windows)
+                                <?php _e('Name from which subscribers will see your email coming (for example your blog title).', 'newsletter') ?> 
+                                Since this setting can affect the reliability of delivery (usually under Windows)
                                 <a href="http://www.thenewsletterplugin.com/plugins/newsletter/newsletter-configuration#sender" target="_blank">read my notes here</a>.
                             </p>
                         </td>
                     </tr>
 
                     <tr valign="top">
-                        <th>Return path</th>
+                        <th><?php _e('Return path', 'newsletter') ?></th>
                         <td>
                             <?php $controls->text_email('return_path', 40); ?> (valid email address, default empty)
                             <p class="description">
@@ -180,9 +182,9 @@ if (!$controls->is_action()) {
                         </td>
                     </tr>
                     <tr valign="top">
-                        <th>Reply to</th>
+                        <th><?php _e('Reply to', 'newsletter') ?></th>
                         <td>
-                            <?php $controls->text_email('reply_to', 40); ?> (valid email address)
+                            <?php $controls->text_email('reply_to', 40); ?>
                             <p class="description">
                                 This is the email address where subscribers will reply (eg. if they want to reply to a newsletter). Leave it blank if
                                 you don't want to specify a different address from the sender email above. Since this setting can
@@ -212,7 +214,7 @@ if (!$controls->is_action()) {
             <div id="tabs-user">
 
                 <p>
-                    These informations are used by Newsletter themes to automatically generate some sections of regular newsletters,
+                    These information are used by Newsletter themes to automatically generate some sections of regular newsletters,
                     <a href="http://www.thenewsletterplugin.com/feed-by-mail-extension?utm_source=plugin&utm_medium=link&utm_campaign=newsletter-feed" target="_blank">
                         auto messages
                     </a> and 
@@ -231,15 +233,15 @@ if (!$controls->is_action()) {
                     <div class="tnp-tip">
                         <span class="tip-button">Tip</span>
                         <span class="tip-content">
-                            Keep the file lightweight and ideally smaller than 500px in width and 200px in height.
-                            Remember that .png images provide best performances with text and shapes logos.
+                            This image will be placed on top of email templates as-is, eventually stretched to
+                            match the template width.
                         </span>
                     </div>
                     </th>
                     <td>
-                        <?php $controls->media('header_logo'); ?>
+                        <?php $controls->media('header_logo', 'full'); ?>
                         <p class="description">
-                            Click to change. This should be your logo in .png or .jpg format.
+                            Click to change. This should be your logo in .png or .jpg format. The image shown is a resized preview.
                         </p>
                     </td>
                     </tr>
@@ -259,7 +261,7 @@ if (!$controls->is_action()) {
                     </tr>
                 </table>
 
-                <h3>Social Settings</h3>
+                <h3><?php _e('Social', 'newsletter') ?></h3>
 
                 <p>Social icons will be added automatically to your newsletter only for set URLs.</p>
 
@@ -320,7 +322,7 @@ if (!$controls->is_action()) {
                     </tr>
                 </table>
 
-                <h3>Footer Settings</h3>
+                <h3><?php _e('Footer', 'newsletter') ?></h3>
 
                 <table class="form-table">
                     <tr valign="top">
@@ -370,7 +372,7 @@ if (!$controls->is_action()) {
 
                 <table class="form-table">
                     <tr>
-                        <th>Max emails per hour</th>
+                        <th><?php _e('Max emails per hour', 'newsletter') ?></th>
                         <td>
                             <?php $controls->text('scheduler_max', 5); ?>
                             <p class="description">
@@ -553,7 +555,7 @@ if (!$controls->is_action()) {
         </div> <!-- tabs -->
 
         <p>
-            <?php $controls->button('save', 'Save'); ?>
+            <?php $controls->button_save(); ?>
             <?php $controls->button_confirm('remove', 'Totally remove this plugin', 'Really sure to totally remove this plugin. All data will be lost!'); ?>
         </p>
 

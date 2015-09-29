@@ -36,7 +36,7 @@ function Insert_Reset_Password_Form($atts) {
 		
 	if ($feup_success and $redirect_page != '#') {FEUPRedirect($redirect_page);}
 		
-	$ReturnString .= "<div id='ewd-feup-edit-profile-form-div'>";
+	$ReturnString .= "<div id='ewd-feup-edit-profile-form-div' class='ewd-feup-form-div'>";
 	if (isset($user_message['Message'])) {$ReturnString .= $user_message['Message'];}
 	$ReturnString .= "<form action='#' method='post' id='ewd-feup-edit-profile-form' class='feup-pure-form feup-pure-form-aligned'>";
 	$ReturnString .= "<input type='hidden' name='ewd-feup-check' value='" . sha1(md5($Time.$Salt)) . "'>";

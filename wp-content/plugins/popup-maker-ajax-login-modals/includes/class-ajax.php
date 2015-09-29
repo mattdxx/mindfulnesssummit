@@ -175,14 +175,21 @@ if( ! class_exists( 'PopMake_Ajax_Login_Modals_Ajax' ) ) {
                 return new WP_Error( 'no_password_reset', __( 'Password reset is not allowed for this user', 'popup-maker-ajax-login-modals' ) );
             else if( is_wp_error( $allow ) )
                 return $allow;
-            $key = $wpdb->get_var( $wpdb->prepare( "SELECT user_activation_key FROM $wpdb->users WHERE user_login = %s", $user_login ) );
-            if( empty( $key ) ) {
-                // Generate something random for a key...
-                $key = wp_generate_password( 20, false );
-                do_action( 'retrieve_password_key', $user_login, $key );
-                // Now insert the new md5 key into the db
-                $wpdb->update( $wpdb->users, array( 'user_activation_key' => $key ), array( 'user_login' => $user_login ) );
+            
+            // Generate something random for a key
+            $key = wp_generate_password( 20, false );
+            do_action( 'retrieve_password_key', $user_login, $key );
+            
+            // Now insert the key, hashed, into the DB.
+            global $wp_hasher;
+            if (empty($wp_hasher)) {
+                require_once ABSPATH . WPINC . '/class-phpass.php';
+                $wp_hasher = new PasswordHash( 8, true );
             }
+            $hashed = $wp_hasher->HashPassword( $key );
+            $wpdb->update( $wpdb->users, array( 'user_activation_key' => $hashed ), array( 'user_login' => $user_login ) );
+            
+
             $message = __( 'Someone requested that the password be reset for the following account:', 'popup-maker-ajax-login-modals' ) . "\r\n\r\n";
             $message .= network_home_url( '/' ) . "\r\n\r\n";
             $message .= sprintf( __( 'Username: %s' ), $user_login ) . "\r\n\r\n";

@@ -25,8 +25,8 @@ function Insert_Edit_Account_Form($atts) {
 												
 		$ReturnString .= "<style type='text/css'>";
 		$ReturnString .= $Custom_CSS;
-		$ReturnString .= "</style>";
-		
+		$ReturnString .= EWD_FEUP_Add_Modified_Styles();
+				
 		if ($CheckCookie['Username'] == "") {
 				$ReturnString .= __('You must be logged in to access this page.', 'EWD_FEUP');
 				if ($login_page != "") {$ReturnString .= "<br />" . __('Please', 'EWD_FEUP') . " <a href='" . $login_page . "'>" . __('login', 'EWD_FEUP') . "</a> " . __('to continue.', 'EWD_FEUP');}
@@ -35,23 +35,35 @@ function Insert_Edit_Account_Form($atts) {
 		
 		if ($feup_success and $redirect_page != '#') {FEUPRedirect($redirect_page);}
 		
-		$ReturnString .= "<div id='ewd-feup-edit-account-form-div'>";
+		$ReturnString .= "<div id='ewd-feup-edit-account-form-div' class='ewd-feup-form-div'>";
 		if (isset($user_message['Message'])) {$ReturnString .= $user_message['Message'];}
-		$ReturnString .= "<form action='#' method='post' id='ewd-feup-edit-account-form'>";
+		$ReturnString .= "<form action='#' method='post' id='ewd-feup-edit-account-form' class='pure-form pure-form-aligned feup-pure-form-aligned'>";
 		$ReturnString .= "<input type='hidden' name='ewd-feup-check' value='" . sha1(md5($Time.$Salt)) . "'>";
 		$ReturnString .= "<input type='hidden' name='ewd-feup-time' value='" . $Time . "'>";
 		$ReturnString .= "<input type='hidden' name='ewd-feup-action' value='edit-account'>";
 		if($Username_Is_Email == "Yes") {
-			$ReturnString .= "<div id='ewd-feup-register-username-div' class='ewd-feup-field-label'>" . __('Email', 'EWD_FEUP') . ": </div>";
+			$ReturnString .= "<div class='feup-pure-control-group'>";
+			$ReturnString .= "<label for='Username' id='ewd-feup-register-username-div' class='ewd-feup-field-label ewd-feup-login-label'>" . __('Email', 'EWD_FEUP') . ": </label>";
+						// $ReturnString .= "<div id='ewd-feup-register-username-div' class='ewd-feup-field-label'>" . __('Email', 'EWD_FEUP') . ": </div>";
 			$ReturnString .= "<input type='email' class='ewd-feup-text-input' name='Username' value='" . $User->Username . "'>";
+			$ReturnString .= "</div>";
 		} else {
-			$ReturnString .= "<div id='ewd-feup-register-username-div' class='ewd-feup-field-label'>" . __('Username', 'EWD_FEUP') . ": </div>";
+			$ReturnString .= "<div class='feup-pure-control-group'>";
+			$ReturnString .= "<label for='Username' id='ewd-feup-register-username-div' class='ewd-feup-field-label ewd-feup-login-label'>" . __('Username', 'EWD_FEUP') . ": </label>";
+						// $ReturnString .= "<div id='ewd-feup-register-username-div' class='ewd-feup-field-label'>" . __('Username', 'EWD_FEUP') . ": </div>";
 			$ReturnString .= "<input type='text' class='ewd-feup-text-input' name='Username' value='" . $User->Username . "'>";
+			$ReturnString .= "</div>";
 		}
-		$ReturnString .= "<div id='ewd-feup-register-password-div' class='ewd-feup-field-label'>" . __('Password', 'EWD_FEUP') . ": </div>";
+		$ReturnString .= "<div class='feup-pure-control-group'>";
+		$ReturnString .= "<label for='Password' id='ewd-feup-login-password-div' class='ewd-feup-field-label ewd-feup-login-label'>" . __('Password', 'EWD_FEUP') . ": </label>";
+		// $ReturnString .= "<div id='ewd-feup-register-password-div' class='ewd-feup-field-label'>" . __('Password', 'EWD_FEUP') . ": </div>";
 		$ReturnString .= "<input type='password' class='ewd-feup-text-input' name='User_Password' value=''>";
-		$ReturnString .= "<div id='ewd-feup-register-password-confirm-div' class='ewd-feup-field-label'>" . __('Repeat Password', 'EWD_FEUP') . ": </div>";
+		$ReturnString .= "</div>";
+		$ReturnString .= "<div class='feup-pure-control-group'>";
+		$ReturnString .= "<label for='Repeat-Password' id='ewd-feup-register-password-confirm-div' class='ewd-feup-field-label ewd-feup-login-label'>". __('Repeat Password', 'EWD_FEUP') .  ": </label>";
+		// $ReturnString .= "<div id='ewd-feup-register-password-confirm-div' class='ewd-feup-field-label'>" . __('Repeat Password', 'EWD_FEUP') . ": </div>";
 		$ReturnString .= "<input type='password' class='ewd-feup-text-input' name='Confirm_User_Password' value=''>";
+		$ReturnString .= "</div>";
 		$ReturnString .= "<div class='feup-pure-control-group'><label for='submit'></label><input type='submit' class='ewd-feup-submit feup-pure-button feup-pure-button-primary' name='Edit_Profile_Submit' value='" . $submit_text . "'></div>";
 		$ReturnString .= "</form>";
 		$ReturnString .= "</div>";

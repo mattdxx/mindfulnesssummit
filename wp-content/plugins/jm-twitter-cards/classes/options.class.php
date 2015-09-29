@@ -90,7 +90,8 @@ class Options {
 
 		$post_obj    = get_post( $post_ID );
 		$author_id   = $post_obj->post_author;
-		$cardCreator = '@' . Utilities::remove_at( $this->opts['twitterCreator'] );
+		$creator = ! empty( $this->opts['twitterCreator'] ) ? $this->opts['twitterCreator'] : null;
+		$cardCreator = '@' . Utilities::remove_at( $creator );
 
 		if ( $post_author ) {
 
@@ -98,8 +99,7 @@ class Options {
 
 			$cardUsernameKey = $this->opts['twitterUsernameKey'];
 			$cardCreator     = get_the_author_meta( $cardUsernameKey, $author_id );
-
-			$cardCreator = ( ! empty( $cardCreator ) ) ? $cardCreator : $this->opts['twitterCreator'];
+			$cardCreator = ( ! empty( $cardCreator ) ) ? $cardCreator : $creator;
 			$cardCreator = '@' . Utilities::remove_at( $cardCreator );
 		}
 
@@ -113,7 +113,7 @@ class Options {
 	 */
 	public function site_username() {
 
-		$cardSite = '@' . Utilities::remove_at( $this->opts['twitterSite'] );
+		$cardSite = '@' . Utilities::remove_at( ! empty( $this->opts['twitterSite'] ) ? $this->opts['twitterSite'] : null );
 		$site = apply_filters( 'jm_tc_card_site', $cardSite );
 
 		return array( 'site' => $site );
@@ -202,7 +202,7 @@ class Options {
 		}
 
 		//In case Open Graph is on
-		$img_meta = ( 'yes' === $this->opts['twitterCardOg'] ) ? 'image' : 'image:src';
+		$img_meta = 'image';
 
 		return array( $img_meta => apply_filters( 'jm_tc_image_source', $image ) );
 

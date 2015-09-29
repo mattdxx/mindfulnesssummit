@@ -57,7 +57,7 @@ class Particular {
 	public function new_blog( $blog_id ) {
 		switch_to_blog( $blog_id );
 
-		Init::on_activation();
+		Admin\Init::on_activation();
 
 		restore_current_blog();
 	}

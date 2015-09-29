@@ -259,7 +259,7 @@ $rules = array(0 => 'Optional', 1 => 'Required');
         </div>
 
         <p>
-            <?php $controls->button('save', 'Save'); ?>
+            <?php $controls->button_save(); ?>
             <?php $controls->button_confirm('reset', 'Reset all', 'Are you sure you want to reset all?'); ?>
         </p>
 

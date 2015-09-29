@@ -39,8 +39,8 @@ if ( ! class_exists( 'WpssoTaxonomy' ) ) {
 				add_filter( 'manage_'.$this->tax_slug.'_custom_column', array( $this, 'get_taxonomy_column_content' ), 10, 3 );
 
 				$this->p->util->add_plugin_filters( $this, array( 
-					'og_image_taxonomy_column_content' => 3,
-					'og_desc_taxonomy_column_content' => 3,
+					'og_image_taxonomy_column_content' => 4,
+					'og_desc_taxonomy_column_content' => 4,
 				) );
 
 				if ( ( $this->term_id = SucomUtil::get_req_val( 'tag_ID' ) ) === '' )
@@ -118,7 +118,8 @@ if ( ! class_exists( 'WpssoTaxonomy' ) ) {
 			return $this->get_mod_column_content( $value, $column_name, $id, 'taxonomy' );
 		}
 
-		public function filter_og_image_taxonomy_column_content( $value, $column_name, $id ) {
+		public function filter_og_image_taxonomy_column_content( $value, $column_name, $id, $mod ) {
+
 			if ( ! empty( $value ) )
 				return $value;
 
@@ -127,17 +128,19 @@ if ( ! class_exists( 'WpssoTaxonomy' ) ) {
 			$check_dupes = false;	// using first image we find, so dupe checking is useless
 			$force_regen = false;
 			$meta_pre = 'og';
-
-			$og_image = $this->get_og_image( 1, $size_name, $id,
-				$check_dupes, $force_regen, $meta_pre );
+			$og_image = array();
 
 			if ( empty( $og_image ) )
-				$og_image = $this->get_term_images( 1, $size_name, $id,
-					$check_dupes, $force_regen, $meta_pre );
+				$og_image = $this->get_og_video_preview_image( $id, $mod, $check_dupes, $meta_pre );
 
 			if ( empty( $og_image ) )
-				$og_image = $this->p->media->get_default_image( 1, $size_name,
-					$check_dupes, $force_regen );
+				$og_image = $this->get_og_image( 1, $size_name, $id, $check_dupes, $force_regen, $meta_pre );
+
+			if ( empty( $og_image ) )
+				$og_image = $this->get_term_images( 1, $size_name, $id, $check_dupes, $force_regen, $meta_pre );
+
+			if ( empty( $og_image ) )
+				$og_image = $this->p->media->get_default_image( 1, $size_name, $check_dupes, $force_regen );
 
 			if ( ! empty( $og_image ) && is_array( $og_image ) ) {
 				$image = reset( $og_image );
@@ -148,7 +151,7 @@ if ( ! class_exists( 'WpssoTaxonomy' ) ) {
 			return $value;
 		}
 
-		public function filter_og_desc_taxonomy_column_content( $value, $column_name, $id ) {
+		public function filter_og_desc_taxonomy_column_content( $value, $column_name, $id, $mod ) {
 			if ( ! empty( $value ) )
 				return $value;
 
@@ -175,6 +178,7 @@ if ( ! class_exists( 'WpssoTaxonomy' ) ) {
 
 		// hooked into the admin_head action
 		public function set_head_meta_tags() {
+
 			if ( ! empty( $this->head_meta_tags ) )	// only set header tags once
 				return;
 
@@ -199,7 +203,7 @@ if ( ! class_exists( 'WpssoTaxonomy' ) ) {
 						$this->head_info = $this->p->head->extract_head_info( $this->head_meta_tags );
 
 						if ( empty( $this->head_info['og:image'] ) )
-							$this->p->notice->err( 'An Open Graph image meta tag could not be generated for this webpage. Facebook and other social websites require at least one Open Graph image meta tag to render their shared content correctly.' );
+							$this->p->notice->err( $this->p->msgs->get( 'info-missing-og-image' ) );
 					}
 					break;
 			}
@@ -235,7 +239,7 @@ if ( ! class_exists( 'WpssoTaxonomy' ) ) {
 
 			$metabox = 'taxonomy';
 			$tabs = apply_filters( $this->p->cf['lca'].'_'.$metabox.'_tabs', $this->default_tabs );
-			if ( empty( $this->p->is_avail['metatags'] ) )
+			if ( empty( $this->p->is_avail['mt'] ) )
 				unset( $tabs['tags'] );
 
 			$rows = array();
@@ -257,7 +261,7 @@ if ( ! class_exists( 'WpssoTaxonomy' ) ) {
 					'lang:'.$lang.'_post:'.$post_id.'_url:'.$sharing_url.'_crawler:pinterest',
 				),
 				'WpssoMeta::get_mod_column_content' => array( 
-					'mod:taxonomy_lang:'.$lang.'_id:'.$term_id.'_column:'.$lca.'_og_image',
+					'lang:'.$lang.'_id:'.$term_id.'_mod:taxonomy_column:'.$lca.'_og_image',
 				),
 			);
 			$transients = apply_filters( $this->p->cf['lca'].'_taxonomy_cache_transients', 

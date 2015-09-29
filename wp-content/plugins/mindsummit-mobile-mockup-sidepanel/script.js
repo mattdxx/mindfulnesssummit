@@ -33,7 +33,7 @@ jQuery(function(){
 			if (!_pb_shift) _pb_shift = (_pb_width + _bb_height)/2;
 			if (!_bb_shift) _bb_shift = _pb_shift - _pb_width + _bb_height;
 			
-			var _w_middle = $(this).height()/2;
+			var _w_middle = $(this).height()/2 - 50;
 			$panel_button.css('top', _w_middle - _pb_shift);
 			$buynow_button.css('top', _w_middle - _bb_shift);
 		};

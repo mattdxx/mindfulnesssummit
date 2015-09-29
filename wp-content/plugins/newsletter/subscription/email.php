@@ -1,5 +1,7 @@
 <?php
 /*
+ * PLEASE USE THE TEMPLATE EDITOR INSIDE THE PLUGIN ADMINISTRATIVE PANEL, THIS FILE WILL BE SHORTLY DEPRECATED.
+ * 
  * NEVER EDIT THIS FILE OR COPY IT SOMEWHERE ELSE!
  *
  * See the email-alternative.php to customized the confirmation and welcome

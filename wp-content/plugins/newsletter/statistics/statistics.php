@@ -19,17 +19,25 @@ class NewsletterStatistics extends NewsletterModule {
     function __construct() {
         global $wpdb;
 
-        parent::__construct('statistics', '1.1.2');
-
+        parent::__construct('statistics', '1.1.3');
+        
         add_action('wp_loaded', array($this, 'hook_wp_loaded'));
-        }
+    }
 
     function hook_wp_loaded() {
+        global $wpdb;
+        
         if (isset($_GET['nltr'])) {
             $_GET['r'] = $_GET['nltr'];
             include dirname(__FILE__) . '/link.php';
             die();
         }
+        
+        if (isset($_GET['noti'])) {
+            $_GET['r'] = $_GET['noti'];
+            include dirname(__FILE__) . '/open.php';
+            die();
+        }        
     }
 
     function upgrade() {
@@ -65,7 +73,7 @@ class NewsletterStatistics extends NewsletterModule {
             $this->options['key'] = md5($_SERVER['REMOTE_ADDR'] . rand(100000, 999999) . time());
             $this->save_options($this->options);
         }
-        
+
         // Stores the link of every email to create short links
 //        $this->upgrade_query("create table if not exists {$wpdb->prefix}newsletter_links (id int auto_increment, primary key (id)) $charset_collate");
 //        $this->upgrade_query("alter table {$wpdb->prefix}newsletter_links add column email_id int not null default 0");
@@ -84,11 +92,7 @@ class NewsletterStatistics extends NewsletterModule {
         $this->relink_user_id = $user_id;
         $text = preg_replace_callback('/(<[aA][^>]+href=["\'])([^>"\']+)(["\'][^>]*>)(.*?)(<\/[Aa]>)/', array($this, 'relink_callback'), $text);
 
-        if ($this->options['tracking_url'] == 1) {
-            $text = str_replace('</body>', '<img width="1" height="1" alt="" src="' . home_url() . '?noti=' . urlencode(base64_encode($email_id . ';' . $user_id)) . '"/></body>', $text);
-        } else {
-            $text = str_replace('</body>', '<img width="1" height="1" alt="" src="' . plugins_url('newsletter') . '/statistics/open.php?r=' . urlencode(base64_encode($email_id . ';' . $user_id)) . '"/></body>', $text);
-        }
+        $text = str_replace('</body>', '<img width="1" height="1" alt="" src="' . home_url('/') . '?noti=' . urlencode(base64_encode($email_id . ';' . $user_id)) . '"/></body>', $text);
         return $text;
     }
 
@@ -99,11 +103,11 @@ class NewsletterStatistics extends NewsletterModule {
         if (strpos($href, '/newsletter/') !== false) {
             return $matches[0];
         }
-        
+
         if (strpos($href, '?na=') !== false) {
             return $matches[0];
         }
-        
+
         // Do not relink anchors
         if (substr($href, 0, 1) == '#') {
             return $matches[0];
@@ -115,26 +119,23 @@ class NewsletterStatistics extends NewsletterModule {
 
         // This is the link text which is added to the tracking data
         $anchor = '';
-        if ($this->options['anchor'] == 1) {
-            $anchor = trim(str_replace(';', ' ', $matches[4]));
-            // Keep images but not other tags
-            $anchor = strip_tags($anchor, '<img>');
-
-            // Truncate if needed to avoid to much long URLs
-            if (stripos($anchor, '<img') === false && strlen($anchor) > 100) {
-                $anchor = substr($anchor, 0, 100);
-            }
-        }
+//        if ($this->options['anchor'] == 1) {
+//            $anchor = trim(str_replace(';', ' ', $matches[4]));
+//            // Keep images but not other tags
+//            $anchor = strip_tags($anchor, '<img>');
+//
+//            // Truncate if needed to avoid to much long URLs
+//            if (stripos($anchor, '<img') === false && strlen($anchor) > 100) {
+//                $anchor = substr($anchor, 0, 100);
+//            }
+//        }
         $r = $this->relink_email_id . ';' . $this->relink_user_id . ';' . $href . ';' . $anchor;
         $r = $r . ';' . md5($r . $this->options['key']);
         $r = base64_encode($r);
         $r = urlencode($r);
 
-        if ($this->options['tracking_url'] == 1) {
-            $url = home_url() . '?nltr=' . $r;
-        } else {
-            $url = plugins_url('newsletter') . '/statistics/link.php?r=' . $r;
-        }
+        $url = home_url('/') . '?nltr=' . $r;
+
         return $matches[1] . $url . $matches[3] . $matches[4] . $matches[5];
     }
 

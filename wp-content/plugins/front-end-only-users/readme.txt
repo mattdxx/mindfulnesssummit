@@ -187,7 +187,39 @@ Tutorial Part 2
 4. Example of a restricted page
 5. The admin area
 
-== Changelog ==
+== Changelog == 
+= 2.3.1 =
+- Minor CSS update
+
+= 2.3.0 =
+- Major change to the structuring of the plugin options
+- Added a large number of styling options for the plugin
+- Fixed some of the layout issues for a few different shortcodes (careful when upgrading if you've used Custom CSS to style)
+- Made the one-click installer more prominent
+
+= 2.2.16 =
+- The tracking javascript is only added now when the tracking option is enabled
+- Minor spreadsheet uploads update
+
+= 2.2.15 =
+- Reformatting of the "Options" tab to make it easier to find the desired option
+- Small CSS fixes
+
+= 2.2.14 =
+- Fixed a problem where non-optioned values could be saved in fields
+
+= 2.2.13 =
+- Added the ability to include multiple fields in the display_field attribute for the user-list tag
+
+= 2.2.12 =
+- Actual fix for the spreadsheet uploads error
+
+= 2.2.11 =
+- Fixed an error that made user-list return blank when a field was entered for the display_field attribute
+
+= 2.2.10 =
+- Loosened the type checking for spreadsheet uploads
+
 = 2.2.9 =
 - Added a couple new attributes to the [user-list] shortcode
 - Changed a few default options for new installs

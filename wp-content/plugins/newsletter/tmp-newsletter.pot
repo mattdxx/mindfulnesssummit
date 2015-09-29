@@ -1,0 +1,609 @@
+# Copyright (C) 2015 Newsletter
+# This file is distributed under the same license as the Newsletter package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Newsletter 3.9.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/newsletter\n"
+"POT-Creation-Date: 2015-09-28 15:14:24+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: emails/edit.php:181
+msgid "There are no test subscribers."
+msgstr ""
+
+#: emails/edit.php:184
+msgid "Test newsletter sent to:"
+msgstr ""
+
+#: emails/edit.php:192
+msgid "Read more about test subscribers"
+msgstr ""
+
+#: emails/edit.php:291
+msgid "Message"
+msgstr ""
+
+#: emails/edit.php:292
+msgid "Message (textual)"
+msgstr ""
+
+#: emails/edit.php:293
+msgid "Targeting"
+msgstr ""
+
+#: emails/edit.php:294 users/massive.php:222
+msgid "Other"
+msgstr ""
+
+#: emails/edit.php:295 emails/index.php:93 statistics/index.php:82
+#: users/index.php:163 users/massive.php:230
+msgid "Status"
+msgstr ""
+
+#: emails/edit.php:308
+msgid "Available tags"
+msgstr ""
+
+#: emails/edit.php:348 users/massive.php:304 users/massive.php:313
+msgid "Gender"
+msgstr ""
+
+#: emails/edit.php:357
+msgid "Subscriber preferences"
+msgstr ""
+
+#: emails/edit.php:375
+msgid "Subscriber status"
+msgstr ""
+
+#: emails/edit.php:377 users/import.php:158 users/massive.php:245
+#: users/massive.php:282
+msgid "Confirmed"
+msgstr ""
+
+#: emails/edit.php:377 users/import.php:158 users/massive.php:282
+msgid "Not confirmed"
+msgstr ""
+
+#: emails/edit.php:380
+msgid ""
+"Send to not confirmed subscribers ONLY to ask for confirmation including the "
+"{subscription_confirm_url} tag."
+msgstr ""
+
+#: emails/edit.php:396
+msgid "Targeted subscribers"
+msgstr ""
+
+#: emails/edit.php:403
+msgid "Save to update if on targeting filters have been changed"
+msgstr ""
+
+#: emails/edit.php:414
+msgid "Private"
+msgstr ""
+
+#: emails/edit.php:418
+msgid "Hide/show from public sent newsletter list."
+msgstr ""
+
+#: emails/edit.php:419
+msgid "Required"
+msgstr ""
+
+#: emails/edit.php:424
+msgid "Track clicks and message opening"
+msgstr ""
+
+#: emails/edit.php:430
+msgid "Send on"
+msgstr ""
+
+#: emails/index.php:22
+msgid "Delivery engine triggered."
+msgstr ""
+
+#: emails/index.php:37
+msgid "Message duplicated."
+msgstr ""
+
+#: emails/index.php:42
+msgid "Message deleted."
+msgstr ""
+
+#: emails/index.php:59
+msgid "Newsletters"
+msgstr ""
+
+#: emails/index.php:82
+msgid "New newsletter"
+msgstr ""
+
+#: emails/index.php:83
+msgid "Delete selected newsletters"
+msgstr ""
+
+#: emails/index.php:84 users/index.php:230 users/index.php:235
+#: users/index.php:236 users/massive.php:283
+msgid "Proceed?"
+msgstr ""
+
+#: emails/index.php:85
+msgid "Trigger the delivery engine"
+msgstr ""
+
+#: emails/index.php:92 statistics/index.php:80
+msgid "Subject"
+msgstr ""
+
+#: emails/index.php:94
+msgid "Progress"
+msgstr ""
+
+#: emails/index.php:95
+msgid "Date"
+msgstr ""
+
+#: emails/index.php:96 statistics/index.php:85
+msgid "Tracking"
+msgstr ""
+
+#: emails/index.php:115 statistics/index.php:101
+msgid "Scheduled"
+msgstr ""
+
+#: emails/index.php:118 statistics/index.php:104
+msgid "Sending"
+msgstr ""
+
+#: emails/index.php:125 statistics/index.php:111
+msgid "of"
+msgstr ""
+
+#: emails/index.php:127
+msgid "Yes"
+msgstr ""
+
+#: emails/index.php:128 users/index.php:229
+msgid "Edit"
+msgstr ""
+
+#: emails/index.php:130
+msgid "Statistics"
+msgstr ""
+
+#: emails/index.php:138
+msgid ""
+"The expected total can change at the delivery end due to subscriptions/"
+"unsubscriptions in the meanwhile."
+msgstr ""
+
+#: emails/new.php:18 emails/new.php:62
+msgid "Here the email subject"
+msgstr ""
+
+#: emails/new.php:135
+msgid "Create a newsletter"
+msgstr ""
+
+#: emails/new.php:136
+msgid "Back to newsletter themes"
+msgstr ""
+
+#: emails/new.php:150
+msgid "Refresh the preview"
+msgstr ""
+
+#: emails/new.php:151
+msgid "Theme options are saved for next time you'll use this theme."
+msgstr ""
+
+#: emails/theme.php:92
+msgid "Select a theme"
+msgstr ""
+
+#: includes/controls.php:298
+msgid "Valid email address"
+msgstr ""
+
+#: includes/controls.php:330
+msgid "Save"
+msgstr ""
+
+#: includes/controls.php:336 includes/controls.php:346
+msgid "Proceed"
+msgstr ""
+
+#: includes/controls.php:339
+msgid "Copy"
+msgstr ""
+
+#: includes/controls.php:349
+msgid "Delete"
+msgstr ""
+
+#: main/main.php:27
+msgid "The sender email address is not correct."
+msgstr ""
+
+#: main/main.php:32
+msgid "Return path email is not correct."
+msgstr ""
+
+#: main/main.php:46
+msgid "Reply to email is not correct."
+msgstr ""
+
+#: main/main.php:51
+msgid "Saved."
+msgstr ""
+
+#: main/main.php:127
+msgid "Basic Settings"
+msgstr ""
+
+#: main/main.php:128
+msgid "Blog Info"
+msgstr ""
+
+#: main/main.php:129
+msgid "Delivery Speed"
+msgstr ""
+
+#: main/main.php:130
+msgid "Advanced Settings"
+msgstr ""
+
+#: main/main.php:131
+msgid "SMTP"
+msgstr ""
+
+#: main/main.php:132
+msgid "Content Locking"
+msgstr ""
+
+#: main/main.php:147
+msgid "Sender email address"
+msgstr ""
+
+#: main/main.php:152
+msgid "Email address from which subscribers will see your email coming."
+msgstr ""
+
+#: main/main.php:161
+msgid "Sender name"
+msgstr ""
+
+#: main/main.php:166
+msgid ""
+"Name from which subscribers will see your email coming (for example your "
+"blog title)."
+msgstr ""
+
+#: main/main.php:174
+msgid "Return path"
+msgstr ""
+
+#: main/main.php:185
+msgid "Reply to"
+msgstr ""
+
+#: main/main.php:264
+msgid "Social"
+msgstr ""
+
+#: main/main.php:325
+msgid "Footer"
+msgstr ""
+
+#: main/main.php:375
+msgid "Max emails per hour"
+msgstr ""
+
+#: statistics/index.php:50
+msgid "Tracking URL"
+msgstr ""
+
+#: statistics/index.php:52
+msgid "Standard"
+msgstr ""
+
+#: statistics/index.php:53
+msgid "Blog Home URL with parameters"
+msgstr ""
+
+#: statistics/index.php:55
+msgid "How the links inside newsletters are rewritten to track clicks."
+msgstr ""
+
+#: statistics/index.php:56
+msgid ""
+"Since spam filters check links inside emails, <a href=\"http://www."
+"thenewsletterplugin.com/plugins/newsletter/statistics-module#tracking-url\" "
+"target=\"_blank\">read more about this setting</a>."
+msgstr ""
+
+#: statistics/index.php:62
+msgid "Secret key"
+msgstr ""
+
+#: statistics/index.php:66
+msgid ""
+"This auto-generated key is used to protect the click tracking. If you change "
+"it old tracking links to external domains won't be registered anymore."
+msgstr ""
+
+#: users/import.php:156
+msgid "Import Subscribers As"
+msgstr ""
+
+#: users/import.php:168
+msgid ""
+"user data will be updated, existing preferences will be left untouched and "
+"new ones will be added."
+msgstr ""
+
+#: users/import.php:169
+msgid ""
+"user data will be overwritten with new informations (like name and "
+"preferences)."
+msgstr ""
+
+#: users/import.php:170
+msgid "user data will be left untouched if already present."
+msgstr ""
+
+#: users/import.php:194
+msgid "CSV file"
+msgstr ""
+
+#: users/index-old.php:138
+msgid "show clicks"
+msgstr ""
+
+#: users/index.php:130
+msgid "Search text"
+msgstr ""
+
+#: users/index.php:132
+msgid "filter by"
+msgstr ""
+
+#: users/index.php:133
+msgid "Search"
+msgstr ""
+
+#: users/index.php:135
+msgid "Show preferences"
+msgstr ""
+
+#: users/index.php:145 users/index.php:248 users/massive.php:283
+msgid "Go"
+msgstr ""
+
+#: users/index.php:150
+msgid "subscribers found"
+msgstr ""
+
+#: users/index.php:152
+msgid "The list is filtered, see the filters above."
+msgstr ""
+
+#: users/index.php:165
+msgid "Preferences"
+msgstr ""
+
+#: users/index.php:206
+msgid "NOT CONFIRMED"
+msgstr ""
+
+#: users/index.php:207
+msgid "CONFIRMED"
+msgstr ""
+
+#: users/index.php:208
+msgid "UNSUBSCRIBED"
+msgstr ""
+
+#: users/index.php:209
+msgid "BOUNCED"
+msgstr ""
+
+#: users/index.php:230
+msgid "Remove"
+msgstr ""
+
+#: users/index.php:235
+msgid "Resend confirmation"
+msgstr ""
+
+#: users/index.php:236
+msgid "Resend welcome"
+msgstr ""
+
+#: users/index.php:237
+msgid "Profile page"
+msgstr ""
+
+#: users/massive.php:17
+msgid "Subscribers not confirmed deleted: "
+msgstr ""
+
+#: users/massive.php:22
+msgid "Subscribers unsubscribed deleted: "
+msgstr ""
+
+#: users/massive.php:27
+msgid "Subscribers bounced deleted: "
+msgstr ""
+
+#: users/massive.php:32
+msgid "Subscribers changed to not confirmed: "
+msgstr ""
+
+#: users/massive.php:37
+msgid "Subscribers changed to confirmed: "
+msgstr ""
+
+#: users/massive.php:42
+msgid "Subscribers deleted: "
+msgstr ""
+
+#: users/massive.php:47
+msgid "added to the list/preference"
+msgstr ""
+
+#: users/massive.php:52
+msgid "removed to the list/preference"
+msgstr ""
+
+#: users/massive.php:76
+msgid "Confirmation email sent to:"
+msgstr ""
+
+#: users/massive.php:136
+msgid "WordPress users processed"
+msgstr ""
+
+#: users/massive.php:137
+msgid "subscriptions added"
+msgstr ""
+
+#: users/massive.php:200
+msgid "Please, backup before run a massive action."
+msgstr ""
+
+#: users/massive.php:220
+msgid "Massive actions"
+msgstr ""
+
+#: users/massive.php:221 users/massive.php:324
+msgid "Preferences/lists management"
+msgstr ""
+
+#: users/massive.php:231 users/massive.php:352
+msgid "Total"
+msgstr ""
+
+#: users/massive.php:232
+msgid "Actions"
+msgstr ""
+
+#: users/massive.php:236
+msgid "Total collected emails"
+msgstr ""
+
+#: users/massive.php:241
+msgid "Delete all"
+msgstr ""
+
+#: users/massive.php:241
+msgid "Are you sure you want to remove ALL subscribers?"
+msgstr ""
+
+#: users/massive.php:250
+msgid "Unconfirm all"
+msgstr ""
+
+#: users/massive.php:250 users/massive.php:272 users/massive.php:298
+#: users/massive.php:327 users/massive.php:328 users/massive.php:329
+#: users/massive.php:385
+msgid "Are you sure?"
+msgstr ""
+
+#: users/massive.php:259
+msgid "Delete all not confirmed"
+msgstr ""
+
+#: users/massive.php:259
+msgid "Are you sure you want to delete ALL not confirmed subscribers?"
+msgstr ""
+
+#: users/massive.php:260
+msgid "Confirm all"
+msgstr ""
+
+#: users/massive.php:260
+msgid "Are you sure you want to mark ALL subscribers as confirmed?"
+msgstr ""
+
+#: users/massive.php:262
+msgid "We have some tips about global actions, read more."
+msgstr ""
+
+#: users/massive.php:267
+msgid "Unsubscribed"
+msgstr ""
+
+#: users/massive.php:272
+msgid "Delete all unsubscribed"
+msgstr ""
+
+#: users/massive.php:276
+msgid "Import WordPress users"
+msgstr ""
+
+#: users/massive.php:281
+msgid "With status"
+msgstr ""
+
+#: users/massive.php:286
+msgid "Please, carefully read the documentation before taking this action!"
+msgstr ""
+
+#: users/massive.php:293
+msgid "Bounced"
+msgstr ""
+
+#: users/massive.php:298
+msgid "Delete all bounced"
+msgstr ""
+
+#: users/massive.php:346
+msgid "Totals refer only to confirmed subscribers."
+msgstr ""
+
+#: users/massive.php:350
+msgid "Number"
+msgstr ""
+
+#: users/massive.php:351
+msgid "Preference"
+msgstr ""
+
+#: users/massive.php:375
+msgid "Bounced addresses"
+msgstr ""
+
+#: users/massive.php:379
+msgid "One email address per line."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Newsletter"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.thenewsletterplugin.com/plugins/newsletter"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Newsletter is a cool plugin to create your own subscriber list, to send "
+"newsletters, to build your business. <strong>Before update give a look to <a "
+"href=\"http://www.thenewsletterplugin.com/plugins/newsletter#update\">this "
+"page</a> to know what's changed.</strong>"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Stefano Lissa"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.thenewsletterplugin.com"
+msgstr ""

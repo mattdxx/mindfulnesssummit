@@ -387,6 +387,35 @@ function Update_EWD_FEUP_Options() {
 	if (isset($_POST['email_field']) and $EWD_FEUP_Full_Version == "Yes") {update_option("EWD_FEUP_WooCommerce_Email_Field", $_POST['email_field']);}
 	if (isset($_POST['phone_field']) and $EWD_FEUP_Full_Version == "Yes") {update_option("EWD_FEUP_WooCommerce_Phone_Field", $_POST['phone_field']);}
 	
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_form_font'])) {update_option("EWD_FEUP_Styling_Form_Font", $_POST['feup_styling_form_font']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_form_font_size'])) {update_option("EWD_FEUP_Styling_Form_Font_Size", $_POST['feup_styling_form_font_size']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_form_font_weight'])) {update_option("EWD_FEUP_Styling_Form_Font_Weight", $_POST['feup_styling_form_font_weight']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_form_font_color'])) {update_option("EWD_FEUP_Styling_Form_Font_Color", $_POST['feup_styling_form_font_color']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_form_margin'])) {update_option("EWD_FEUP_Styling_Form_Margin", $_POST['feup_styling_form_margin']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_form_padding'])) {update_option("EWD_FEUP_Styling_Form_Padding", $_POST['feup_styling_form_padding']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_submit_bg_color'])) {update_option("EWD_FEUP_Styling_Submit_Bg_Color", $_POST['feup_styling_submit_bg_color']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_submit_font'])) {update_option("EWD_FEUP_Styling_Submit_Font", $_POST['feup_styling_submit_font']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_submit_font_color'])) {update_option("EWD_FEUP_Styling_Submit_Font_Color", $_POST['feup_styling_submit_font_color']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_submit_margin'])) {update_option("EWD_FEUP_Styling_Submit_Margin", $_POST['feup_styling_submit_margin']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_submit_padding'])) {update_option("EWD_FEUP_Styling_Submit_Padding", $_POST['feup_styling_submit_padding']);}
+	
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_userlistings_font'])) {update_option("EWD_FEUP_Styling_Userlistings_Font", $_POST['feup_styling_userlistings_font']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_userlistings_font_size'])) {update_option("EWD_FEUP_Styling_Userlistings_Font_Size", $_POST['feup_styling_userlistings_font_size']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_userlistings_font_weight'])) {update_option("EWD_FEUP_Styling_Userlistings_Font_Weight", $_POST['feup_styling_userlistings_font_weight']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_userlistings_font_color'])) {update_option("EWD_FEUP_Styling_Userlistings_Font_Color", $_POST['feup_styling_userlistings_font_color']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_userlistings_margin'])) {update_option("EWD_FEUP_Styling_Userlistings_Margin", $_POST['feup_styling_userlistings_margin']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_userlistings_padding'])) {update_option("EWD_FEUP_Styling_Userlistings_Padding", $_POST['feup_styling_userlistings_padding']);}
+
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_userprofile_label_font'])) {update_option("EWD_FEUP_Styling_Userprofile_Label_Font", $_POST['feup_styling_userprofile_label_font']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_userprofile_label_font_size'])) {update_option("EWD_FEUP_Styling_Userprofile_Label_Font_Size", $_POST['feup_styling_userprofile_label_font_size']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_userprofile_label_font_weight'])) {update_option("EWD_FEUP_Styling_Userprofile_Label_Font_Weight", $_POST['feup_styling_userprofile_label_font_weight']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_userprofile_label_font_color'])) {update_option("EWD_FEUP_Styling_Userprofile_Label_Font_Color", $_POST['feup_styling_userprofile_label_font_color']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_userprofile_content_font'])) {update_option("EWD_FEUP_Styling_Userprofile_Content_Font", $_POST['feup_styling_userprofile_content_font']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_userprofile_content_font_size'])) {update_option("EWD_FEUP_Styling_Userprofile_Content_Font_Size", $_POST['feup_styling_userprofile_content_font_size']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_userprofile_content_font_weight'])) {update_option("EWD_FEUP_Styling_Userprofile_Content_Font_Weight", $_POST['feup_styling_userprofile_content_font_weight']);}
+	if ($EWD_FEUP_Full_Version == "Yes" and isset($_POST['feup_styling_userprofile_content_font_color'])) {update_option("EWD_FEUP_Styling_Userprofile_Content_Font_Color", $_POST['feup_styling_userprofile_content_font_color']);}
+	
+
 	$update = __("Options have been succesfully updated.", 'EWD_FEUP');
 	$user_update = array("Message_Type" => "Update", "Message" => $update);
 	return $user_update;

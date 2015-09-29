@@ -37,12 +37,14 @@ class Code_Snippets_Settings_Menu extends Code_Snippets_Admin_Menu {
 
 			<?php settings_errors( 'code-snippets-settings-notices' ); ?>
 
-			<form action="<?php admin_url( 'options.php' ); ?>" method="post">
-				<?php settings_fields( 'code-snippets' ); ?>
-				<table class="form-table">
-					<?php do_settings_sections( 'code-snippets' ); ?>
-				</table>
-				<?php submit_button(); ?>
+			<form action="<?php echo admin_url( 'options.php' ); ?>" method="post">
+				<?php
+
+				settings_fields( 'code-snippets' );
+				do_settings_sections( 'code-snippets' );
+				submit_button();
+
+				?>
 			</form>
 		</div>
 		<?php

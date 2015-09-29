@@ -28,10 +28,11 @@ function Insert_Forgot_Password_Form($atts) {
 												
 	$ReturnString .= "<style type='text/css'>";
 	$ReturnString .= $Custom_CSS;
-	$ReturnString .= "</style>";
+	 $ReturnString .= EWD_FEUP_Add_Modified_Styles();
+	
 		
 		
-	$ReturnString .= "<div id='ewd-feup-forgot-password-form-div'>";
+	$ReturnString .= "<div id='ewd-feup-forgot-password-form-div' class='ewd-feup-form-div'>";
 	if (isset($user_message['Message'])) {$ReturnString .= $user_message['Message'];}
 	$ReturnString .= "<form action='#' method='post' id='ewd-feup-forgot-password-form' class='feup-pure-form feup-pure-form-aligned'>";
 	$ReturnString .= "<input type='hidden' name='ewd-feup-check' value='" . sha1(md5($Time.$Salt)) . "'>";

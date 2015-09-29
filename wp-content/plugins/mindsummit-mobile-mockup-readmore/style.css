@@ -1,9 +1,5 @@
-@media only screen and (max-width: 419px) {
-	body .container{ max-width: none; }
-}
-
 .readmore-cut {
-	max-height: 100px;
+	max-height: 250px;
 	overflow: hidden;
 	position: relative;
 	margin-bottom: 0;

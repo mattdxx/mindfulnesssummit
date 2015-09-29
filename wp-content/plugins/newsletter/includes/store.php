@@ -51,7 +51,7 @@ class NewsletterStore {
 
     function get_single_by_field($table, $field_name, $field_value, $format = OBJECT) {
         global $wpdb;
-        return $this->get_single_by_query("select * from $table where $field_name='" . $wpdb->escape($field_value) . "' limit 1", $format);
+        return $this->get_single_by_query("select * from $table where $field_name='" . esc_sql($field_value) . "' limit 1", $format);
     }
 
     function get_count($table, $where = null) {

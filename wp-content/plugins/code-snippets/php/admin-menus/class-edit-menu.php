@@ -53,11 +53,17 @@ class Code_Snippets_Edit_Menu extends Code_Snippets_Admin_Menu {
 		code_snippets_load_edit_help();
 
 		/* Enqueue the code editor and other scripts and styles */
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ), 9 );
+		add_action( 'admin_enqueue_scripts', 'code_snippets_enqueue_codemirror' );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_tagit' ), 9 );
 
 		/* Register action hooks */
-		add_action( 'code_snippets/admin/single', array( $this, 'render_description_editor' ), 9 );
-		add_action( 'code_snippets/admin/single', array( $this, 'render_tags_editor' ) );
+		if ( code_snippets_get_setting( 'general', 'enable_description' ) ) {
+			add_action( 'code_snippets/admin/single', array( $this, 'render_description_editor' ), 9 );
+		}
+
+		if ( code_snippets_get_setting( 'general', 'enable_tags' ) ) {
+			add_action( 'code_snippets/admin/single', array( $this, 'render_tags_editor' ) );
+		}
 
 		if ( code_snippets_get_setting( 'general', 'snippet_scope_enabled' ) ) {
 			add_action( 'code_snippets/admin/single/settings', array( $this, 'render_scope_setting' ) );
@@ -126,6 +132,24 @@ class Code_Snippets_Edit_Menu extends Code_Snippets_Admin_Menu {
 					/* Remove the snippet ID from the array */
 					$shared_snippets = array_diff( $shared_snippets, array( $snippet_id ) );
 					update_site_option( 'shared_network_snippets', array_values( $shared_snippets ) );
+
+					/* Deactivate on all sites */
+					global $wpdb;
+					if ( $sites = $wpdb->get_col( "SELECT blog_id FROM $wpdb->blogs" ) ) {
+
+						foreach ( $sites as $site ) {
+							switch_to_blog( $site );
+							$active_shared_snippets = get_option( 'active_shared_network_snippets' );
+
+							if ( is_array( $active_shared_snippets ) ) {
+								$active_shared_snippets = array_diff( $active_shared_snippets, array( $snippet_id ) );
+								update_option( 'active_shared_network_snippets', $active_shared_snippets );
+							}
+						}
+
+						restore_current_blog();
+					}
+
 				}
 			}
 
@@ -174,23 +198,25 @@ class Code_Snippets_Edit_Menu extends Code_Snippets_Admin_Menu {
 	function render_description_editor( Snippet $snippet ) {
 		$settings = code_snippets_get_settings();
 		$settings = $settings['description_editor'];
-		$media_buttons = $settings['media_buttons'];
-
-		echo '<label for="snippet_description"><h3>';
 		$heading = __( 'Description', 'code-snippets' );
-		echo $media_buttons ? $heading : "<div>$heading</div>";
-		echo '</h3></label>';
+
+		/* Hack to remove space between heading and editor tabs */
+		if ( ! $settings['media_buttons'] && 'false' !== get_user_option( 'rich_editing' ) ) {
+			$heading = "<div>$heading</div>";
+		}
+
+		echo '<label for="snippet_description"><h3>', $heading, '</h3></label>';
 
 		remove_editor_styles(); // stop custom theme styling interfering with the editor
 
 		wp_editor(
-			$snippet->description,
+			$snippet->desc,
 			'description',
 			apply_filters( 'code_snippets/admin/description_editor_settings', array(
 				'textarea_name' => 'snippet_description',
 				'textarea_rows' => $settings['rows'],
 				'teeny' => ! $settings['use_full_mce'],
-				'media_buttons' => $media_buttons,
+				'media_buttons' => $settings['media_buttons'],
 			) )
 		);
 	}
@@ -226,7 +252,7 @@ class Code_Snippets_Edit_Menu extends Code_Snippets_Admin_Menu {
 
 		$scopes = array(
 			__( 'Run snippet everywhere', 'code-snippets' ),
-			__( 'Only run in adminstration area', 'code-snippets' ),
+			__( 'Only run in administration area', 'code-snippets' ),
 			__( 'Only run on site front-end', 'code-snippets' ),
 		);
 
@@ -290,17 +316,11 @@ class Code_Snippets_Edit_Menu extends Code_Snippets_Admin_Menu {
 	}
 
 	/**
-	 * Registers and loads the code editor's assets
-	 *
-	 * @uses wp_enqueue_style() to add the stylesheets to the queue
-	 * @uses wp_enqueue_script() to add the scripts to the queue
+	 * Enqueue the Tag It library
 	 */
-	function enqueue_assets() {
+	function enqueue_tagit() {
 		$tagit_version = '2.0';
 		$url = plugin_dir_url( CODE_SNIPPETS_FILE );
-
-		/* Enqueue CodeMirror */
-		code_snippets_enqueue_codemirror();
 
 		/* Tag It UI */
 		wp_enqueue_script(

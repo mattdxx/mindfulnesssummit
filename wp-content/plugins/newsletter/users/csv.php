@@ -10,7 +10,7 @@ if (current_user_can('manage_options') || ($newsletter->options['editor'] == 1 &
     $controls = new NewsletterControls();
 
     if ($controls->is_action('export')) {
-        NewsletterUsers::instance()->export();
+        NewsletterUsers::instance()->export($controls->data);
     }
 } else {
     die('Not allowed.');

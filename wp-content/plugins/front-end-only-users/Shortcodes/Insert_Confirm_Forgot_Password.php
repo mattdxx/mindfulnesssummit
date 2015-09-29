@@ -23,13 +23,14 @@ function Insert_Confirm_Forgot_Password($atts) {
 												
 	$ReturnString .= "<style type='text/css'>";
 	$ReturnString .= $Custom_CSS;
-	$ReturnString .= "</style>";
+	 $ReturnString .= EWD_FEUP_Add_Modified_Styles();
+	
 		
 	if ($feup_success and $redirect_page != '#') {FEUPRedirect($redirect_page);}
 		
 	$ReturnString .= "<div id='ewd-feup-edit-profile-form-div'>";
 	if (isset($user_message['Message'])) {$ReturnString .= $user_message['Message'];}
-	$ReturnString .= "<form action='#' method='post' id='ewd-feup-edit-profile-form' class='feup-pure-form pure-form-aligned'>";
+	$ReturnString .= "<form action='#' method='post' id='ewd-feup-edit-profile-form' class='feup-pure-form pure-form-aligned feup-pure-form-aligned'>";
 	$ReturnString .= "<input type='hidden' name='ewd-feup-check' value='" . sha1(md5($Time.$Salt)) . "'>";
 	$ReturnString .= "<input type='hidden' name='ewd-feup-time' value='" . $Time . "'>";
 	$ReturnString .= "<input type='hidden' name='ewd-feup-action' value='confirm-forgot-password'>";
