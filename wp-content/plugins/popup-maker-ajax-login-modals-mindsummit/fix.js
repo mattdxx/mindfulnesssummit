@@ -1,3 +1,19 @@
+//# stretch registration modal in mobile view
+jQuery('.popmake').on('popmakeAfterReposition', function(){
+	
+	var $ = jQuery;
+	
+	if ($(window).width() < 740)
+		$('.popmake').css({
+				top: 0,
+				left: '0',
+				width: '100%',
+				height: '100%',
+				position: 'fixed'
+			});
+
+});
+
 jQuery('.popmake').on('popmakeInit', function(){
 
 	//('console' in window) && ('log' in window.console) && window.console.log('fix ok');
