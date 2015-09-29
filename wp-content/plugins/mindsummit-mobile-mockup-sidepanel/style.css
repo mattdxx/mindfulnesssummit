@@ -1,14 +1,19 @@
-@media only screen and (max-width: 419px) {
+@media only screen and (max-width: 739px) {
 	.sidebar-right-item {
 		display: none;
 	}
 }
 
-@media only screen and (min-width: 420px) {
+@media only screen and (min-width: 740px) {
 	.speaker-menu,
 	.buynow-link {
 		display: none;
 	}
+}
+
+/* remove .buynow-link temporary */
+.buynow-link {
+	display: none;
 }
 
 .speaker-menu-button-text {
@@ -21,7 +26,7 @@
 }
 .speaker-menu-button {
 	padding: 5px 13px;
-	background-color: orange;
+	background-color: #e88108;
 	color: white;
 	cursor: pointer;
 	position: absolute;
