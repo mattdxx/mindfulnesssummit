@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: profilebuilder\n"
-"POT-Creation-Date: 2015-04-30 10:25+0200\n"
+"Project-Id-Version: profile-builder\n"
+"POT-Creation-Date: 2015-09-29 14:28+0300\n"
 "PO-Revision-Date: 2015-04-30 10:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: Cozmoslabs\n"
@@ -9,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.8.5\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x;_n\n"
@@ -90,7 +91,7 @@ msgstr ""
 msgid "Not compatible with Profile Builder"
 msgstr ""
 
-#: ../admin/add-ons.php:170 ../front-end/class-formbuilder.php:290
+#: ../admin/add-ons.php:170 ../front-end/class-formbuilder.php:297
 msgid "Update"
 msgstr ""
 
@@ -142,8 +143,8 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: ../admin/admin-bar.php:86 ../admin/general-settings.php:189
-#: ../admin/register-version.php:95 ../features/functions.php:593
+#: ../admin/admin-bar.php:86 ../admin/general-settings.php:215
+#: ../admin/register-version.php:95 ../features/functions.php:620
 #: ../modules/custom-redirects/custom-redirects.php:136
 #: ../modules/modules.php:142
 msgid "Save Changes"
@@ -161,47 +162,51 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: ../admin/admin-functions.php:106
+#: ../admin/admin-functions.php:40
+msgid "Display name publicly as - only appears on the Edit Profile page!"
+msgstr ""
+
+#: ../admin/admin-functions.php:128
 #, php-format
 msgid ""
 "<strong>ERROR</strong>: The password must have the minimum length of %s "
 "characters"
 msgstr ""
 
-#: ../admin/admin-functions.php:112 ../admin/general-settings.php:175
+#: ../admin/admin-functions.php:134 ../admin/general-settings.php:201
 msgid "Very weak"
 msgstr ""
 
-#: ../admin/admin-functions.php:112 ../admin/general-settings.php:176
-#: ../features/functions.php:492
+#: ../admin/admin-functions.php:134 ../admin/general-settings.php:202
+#: ../features/functions.php:512
 msgid "Weak"
 msgstr ""
 
-#: ../admin/admin-functions.php:112 ../admin/general-settings.php:177
-#: ../features/functions.php:492
+#: ../admin/admin-functions.php:134 ../admin/general-settings.php:203
+#: ../features/functions.php:512
 msgid "Medium"
 msgstr ""
 
-#: ../admin/admin-functions.php:112 ../admin/general-settings.php:178
-#: ../features/functions.php:492
+#: ../admin/admin-functions.php:134 ../admin/general-settings.php:204
+#: ../features/functions.php:512
 msgid "Strong"
 msgstr ""
 
-#: ../admin/admin-functions.php:123
+#: ../admin/admin-functions.php:145
 #, php-format
 msgid "<strong>ERROR</strong>: The password must have a minimum strength of %s"
 msgstr ""
 
-#: ../admin/admin-functions.php:162
+#: ../admin/admin-functions.php:184
 msgid "Add Field"
 msgstr ""
 
-#: ../admin/admin-functions.php:164
+#: ../admin/admin-functions.php:186
 #: ../modules/class-mustache-templates/class-mustache-templates.php:374
 msgid "Save Settings"
 msgstr ""
 
-#: ../admin/admin-functions.php:175
+#: ../admin/admin-functions.php:197
 #, php-format
 msgid ""
 "If you enjoy using <strong> %1$s </strong> please <a href=\"%2$s\" target="
@@ -236,9 +241,8 @@ msgid "Login"
 msgstr ""
 
 #: ../admin/basic-info.php:37
-msgid ""
-"Friction-less login using <strong class=\"nowrap\">[wppb-login]</strong> "
-"shortcode or a widget."
+#, php-format
+msgid "Friction-less login using %s shortcode or a widget."
 msgstr ""
 
 #: ../admin/basic-info.php:40
@@ -246,9 +250,8 @@ msgid "Registration"
 msgstr ""
 
 #: ../admin/basic-info.php:41
-msgid ""
-"Beautiful registration forms fully customizable using the <strong class="
-"\"nowrap\">[wppb-register]</strong> shortcode."
+#, php-format
+msgid "Beautiful registration forms fully customizable using the %s shortcode."
 msgstr ""
 
 #: ../admin/basic-info.php:44
@@ -256,9 +259,8 @@ msgid "Edit Profile"
 msgstr ""
 
 #: ../admin/basic-info.php:45
-msgid ""
-"Straight forward edit profile forms using <strong class=\"nowrap\">[wppb-"
-"edit-profile]</strong> shortcode."
+#, php-format
+msgid "Straight forward edit profile forms using %s shortcode."
 msgstr ""
 
 #: ../admin/basic-info.php:51
@@ -280,9 +282,8 @@ msgid "Recover Password"
 msgstr ""
 
 #: ../admin/basic-info.php:58
-msgid ""
-"Allow users to recover their password in the front-end using the [wppb-"
-"recover-password]."
+#, php-format
+msgid "Allow users to recover their password in the front-end using the %s."
 msgstr ""
 
 #: ../admin/basic-info.php:61
@@ -424,10 +425,10 @@ msgid ""
 msgstr ""
 
 #: ../admin/basic-info.php:130
+#, php-format
 msgid ""
 "To create a page containing the users registered to this current site/blog, "
-"insert the following shortcode in a page of your chosing: <strong class="
-"\"nowrap\">[wppb-list-users]</strong>."
+"insert the following shortcode in a page of your chosing: %s."
 msgstr ""
 
 #: ../admin/basic-info.php:134
@@ -490,7 +491,7 @@ msgstr ""
 #: ../admin/general-settings.php:114
 #: ../modules/multiple-forms/register-forms.php:225
 #: ../modules/multiple-forms/register-forms.php:226
-#: ../modules/user-listing/userlisting.php:1288
+#: ../modules/user-listing/userlisting.php:1303
 msgid "Yes"
 msgstr ""
 
@@ -555,11 +556,19 @@ msgid ""
 "You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s."
 msgstr ""
 
-#: ../admin/general-settings.php:130
+#: ../admin/general-settings.php:125
+msgid "\"Admin Approval\" on User Role:"
+msgstr ""
+
+#: ../admin/general-settings.php:144
+msgid "Select on what user roles to activate Admin Approval."
+msgstr ""
+
+#: ../admin/general-settings.php:156
 msgid "\"Admin Approval\" Feature:"
 msgstr ""
 
-#: ../admin/general-settings.php:133
+#: ../admin/general-settings.php:159
 #, php-format
 msgid ""
 "You decide who is a user on your website. Get notified via email or approve "
@@ -567,58 +576,59 @@ msgid ""
 "upgrading to %1$sHobbyist or PRO versions%2$s."
 msgstr ""
 
-#: ../admin/general-settings.php:140
+#: ../admin/general-settings.php:166
 msgid "Allow Users to Log in With:"
 msgstr ""
 
-#: ../admin/general-settings.php:144
+#: ../admin/general-settings.php:170
 msgid "Username and Email"
 msgstr ""
 
-#: ../admin/general-settings.php:145 ../admin/manage-fields.php:146
+#: ../admin/general-settings.php:171 ../admin/manage-fields.php:159
 #: ../features/admin-approval/class-admin-approval.php:177
 #: ../features/email-confirmation/class-email-confirmation.php:167
 #: ../modules/email-customizer/email-customizer.php:28
 #: ../modules/user-listing/userlisting.php:92
-#: ../modules/user-listing/userlisting.php:596
-#: ../modules/user-listing/userlisting.php:1244
+#: ../modules/user-listing/userlisting.php:248
+#: ../modules/user-listing/userlisting.php:611
+#: ../modules/user-listing/userlisting.php:1259
 msgid "Username"
 msgstr ""
 
-#: ../admin/general-settings.php:146 ../front-end/login.php:170
+#: ../admin/general-settings.php:172 ../front-end/login.php:170
 #: ../modules/email-customizer/email-customizer.php:29
-#: ../modules/user-listing/userlisting.php:602
-#: ../modules/user-listing/userlisting.php:1245
+#: ../modules/user-listing/userlisting.php:617
+#: ../modules/user-listing/userlisting.php:1260
 msgid "Email"
 msgstr ""
 
-#: ../admin/general-settings.php:149
+#: ../admin/general-settings.php:175
 msgid "\"Username and Email\" - users can Log In with both Username and Email."
 msgstr ""
 
-#: ../admin/general-settings.php:150
+#: ../admin/general-settings.php:176
 msgid "\"Username\" - users can Log In only with Username."
 msgstr ""
 
-#: ../admin/general-settings.php:151
+#: ../admin/general-settings.php:177
 msgid "\"Email\" - users can Log In only with Email."
 msgstr ""
 
-#: ../admin/general-settings.php:158
+#: ../admin/general-settings.php:184
 msgid "Minimum Password Length:"
 msgstr ""
 
-#: ../admin/general-settings.php:163
+#: ../admin/general-settings.php:189
 msgid ""
 "Enter the minimum characters the password should have. Leave empty for no "
 "minimum limit"
 msgstr ""
 
-#: ../admin/general-settings.php:170
+#: ../admin/general-settings.php:196
 msgid "Minimum Password Strength:"
 msgstr ""
 
-#: ../admin/general-settings.php:174
+#: ../admin/general-settings.php:200
 msgid "Disabled"
 msgstr ""
 
@@ -641,25 +651,25 @@ msgid ""
 "versions</a>."
 msgstr ""
 
-#: ../admin/manage-fields.php:85
+#: ../admin/manage-fields.php:94
 msgid "Field Title"
 msgstr ""
 
-#: ../admin/manage-fields.php:85
+#: ../admin/manage-fields.php:94
 msgid "Title of the field"
 msgstr ""
 
-#: ../admin/manage-fields.php:86
+#: ../admin/manage-fields.php:95
 #: ../modules/multiple-forms/edit-profile-forms.php:241
 #: ../modules/multiple-forms/register-forms.php:262
 msgid "Field"
 msgstr ""
 
-#: ../admin/manage-fields.php:87
+#: ../admin/manage-fields.php:96
 msgid "Meta-name"
 msgstr ""
 
-#: ../admin/manage-fields.php:87
+#: ../admin/manage-fields.php:96
 msgid ""
 "Use this in conjuction with WordPress functions to display the value in the "
 "page of your choosing<br/>Auto-completed but in some cases editable (in "
@@ -667,13 +677,13 @@ msgid ""
 "very big user-count"
 msgstr ""
 
-#: ../admin/manage-fields.php:88
+#: ../admin/manage-fields.php:97
 #: ../modules/multiple-forms/edit-profile-forms.php:242
 #: ../modules/multiple-forms/register-forms.php:263
 msgid "ID"
 msgstr ""
 
-#: ../admin/manage-fields.php:88
+#: ../admin/manage-fields.php:97
 #: ../modules/multiple-forms/edit-profile-forms.php:242
 #: ../modules/multiple-forms/register-forms.php:263
 msgid ""
@@ -682,391 +692,1443 @@ msgid ""
 "edited"
 msgstr ""
 
-#: ../admin/manage-fields.php:89
+#: ../admin/manage-fields.php:98
 msgid "Description"
 msgstr ""
 
-#: ../admin/manage-fields.php:89
+#: ../admin/manage-fields.php:98
 msgid ""
 "Enter a (detailed) description of the option for end users to read<br/"
 ">Optional"
 msgstr ""
 
-#: ../admin/manage-fields.php:90
+#: ../admin/manage-fields.php:99
 msgid "Row Count"
 msgstr ""
 
-#: ../admin/manage-fields.php:90
+#: ../admin/manage-fields.php:99
 msgid ""
 "Specify the number of rows for a 'Textarea' field<br/>If not specified, "
 "defaults to 5"
 msgstr ""
 
-#: ../admin/manage-fields.php:91
+#: ../admin/manage-fields.php:100
 msgid "Allowed Image Extensions"
 msgstr ""
 
-#: ../admin/manage-fields.php:91
+#: ../admin/manage-fields.php:100
 msgid ""
 "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,."
 "ext2,.ext3<br/>If not specified, defaults to: .jpg,.jpeg,.gif,.png (.*)"
 msgstr ""
 
-#: ../admin/manage-fields.php:92
+#: ../admin/manage-fields.php:101
 msgid "Allowed Upload Extensions"
 msgstr ""
 
-#: ../admin/manage-fields.php:92
+#: ../admin/manage-fields.php:101
 msgid ""
 "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,."
 "ext2,.ext3<br/>If not specified, defaults to all WordPress allowed file "
 "extensions (.*)"
 msgstr ""
 
-#: ../admin/manage-fields.php:93
+#: ../admin/manage-fields.php:102
 msgid "Avatar Size"
 msgstr ""
 
-#: ../admin/manage-fields.php:93
+#: ../admin/manage-fields.php:102
 msgid ""
 "Enter a value (between 20 and 200) for the size of the 'Avatar'<br/>If not "
 "specified, defaults to 100"
 msgstr ""
 
-#: ../admin/manage-fields.php:94
+#: ../admin/manage-fields.php:103
 msgid "Date-format"
 msgstr ""
 
-#: ../admin/manage-fields.php:94
+#: ../admin/manage-fields.php:103
 msgid ""
 "Specify the format of the date when using Datepicker<br/>Valid options: mm/"
 "dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>If not "
 "specified, defaults to mm/dd/yy"
 msgstr ""
 
-#: ../admin/manage-fields.php:95
+#: ../admin/manage-fields.php:104
 msgid "Terms of Agreement"
 msgstr ""
 
-#: ../admin/manage-fields.php:95
+#: ../admin/manage-fields.php:104
 msgid ""
 "Enter a detailed description of the temrs of agreement for the user to read."
 "<br/>Links can be inserted by using standard HTML syntax: &lt;a href="
 "\"custom_url\"&gt;custom_text&lt;/a&gt;"
 msgstr ""
 
-#: ../admin/manage-fields.php:96
+#: ../admin/manage-fields.php:105
 msgid "Options"
 msgstr ""
 
-#: ../admin/manage-fields.php:96
+#: ../admin/manage-fields.php:105
 msgid ""
 "Enter a comma separated list of values<br/>This can be anything, as it is "
 "hidden from the user, but should not contain special characters or "
 "apostrophes"
 msgstr ""
 
-#: ../admin/manage-fields.php:97
+#: ../admin/manage-fields.php:106
 msgid "Labels"
 msgstr ""
 
-#: ../admin/manage-fields.php:97
+#: ../admin/manage-fields.php:106
 msgid "Enter a comma separated list of labels<br/>Visible for the user"
 msgstr ""
 
-#: ../admin/manage-fields.php:98
+#: ../admin/manage-fields.php:107
 msgid "Site Key"
 msgstr ""
 
-#: ../admin/manage-fields.php:98
+#: ../admin/manage-fields.php:107
 msgid ""
 "The site key from Google, <a href=\"http://www.google.com/recaptcha\" target="
 "\"_blank\">www.google.com/recaptcha</a>"
 msgstr ""
 
-#: ../admin/manage-fields.php:99
+#: ../admin/manage-fields.php:108
 msgid "Secret Key"
 msgstr ""
 
-#: ../admin/manage-fields.php:99
+#: ../admin/manage-fields.php:108
 msgid ""
 "The secret key from Google, <a href=\"http://www.google.com/recaptcha\" "
 "target=\"_blank\">www.google.com/recaptcha</a>"
 msgstr ""
 
-#: ../admin/manage-fields.php:100
+#: ../admin/manage-fields.php:109
+msgid "Display on PB forms"
+msgstr ""
+
+#: ../admin/manage-fields.php:109
+msgid "PB Login"
+msgstr ""
+
+#: ../admin/manage-fields.php:109
+msgid "PB Register"
+msgstr ""
+
+#: ../admin/manage-fields.php:109
+msgid "PB Recover Password"
+msgstr ""
+
+#: ../admin/manage-fields.php:109
+msgid "Select on which Profile Builder forms to display reCAPTCHA"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Display on default WP forms"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Default WP Login"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Default WP Register"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Default WP Recover Password"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Select on which default WP forms to display reCAPTCHA"
+msgstr ""
+
+#: ../admin/manage-fields.php:111
 msgid "User Roles"
 msgstr ""
 
-#: ../admin/manage-fields.php:100
+#: ../admin/manage-fields.php:111
 msgid ""
 "Select which user roles to show to the user ( drag and drop to re-order )"
 msgstr ""
 
-#: ../admin/manage-fields.php:101
+#: ../admin/manage-fields.php:112
 msgid "User Roles Order"
 msgstr ""
 
-#: ../admin/manage-fields.php:101
+#: ../admin/manage-fields.php:112
 msgid "Save the user role order from the user roles checkboxes"
 msgstr ""
 
-#: ../admin/manage-fields.php:102
+#: ../admin/manage-fields.php:113
 msgid "Default Value"
 msgstr ""
 
-#: ../admin/manage-fields.php:102
+#: ../admin/manage-fields.php:113
 msgid "Default value of the field"
 msgstr ""
 
-#: ../admin/manage-fields.php:103
+#: ../admin/manage-fields.php:114 ../admin/manage-fields.php:116
+#: ../admin/manage-fields.php:117
 msgid "Default Option"
 msgstr ""
 
-#: ../admin/manage-fields.php:103
+#: ../admin/manage-fields.php:114
 msgid "Specify the option which should be selected by default"
 msgstr ""
 
-#: ../admin/manage-fields.php:104
+#: ../admin/manage-fields.php:115
 msgid "Default Option(s)"
 msgstr ""
 
-#: ../admin/manage-fields.php:104
+#: ../admin/manage-fields.php:115
 msgid ""
 "Specify the option which should be checked by default<br/>If there are "
 "multiple values, separate them with a ',' (comma)"
 msgstr ""
 
-#: ../admin/manage-fields.php:105
+#: ../admin/manage-fields.php:116 ../admin/manage-fields.php:117
+msgid "Default option of the field"
+msgstr ""
+
+#: ../admin/manage-fields.php:118
 msgid "Default Content"
 msgstr ""
 
-#: ../admin/manage-fields.php:105
+#: ../admin/manage-fields.php:118
 msgid "Default value of the textarea"
 msgstr ""
 
-#: ../admin/manage-fields.php:106
+#: ../admin/manage-fields.php:119
 msgid "Required"
 msgstr ""
 
-#: ../admin/manage-fields.php:106
+#: ../admin/manage-fields.php:119
 msgid "Whether the field is required or not"
 msgstr ""
 
-#: ../admin/manage-fields.php:107
+#: ../admin/manage-fields.php:120
 msgid "Overwrite Existing"
 msgstr ""
 
-#: ../admin/manage-fields.php:107
+#: ../admin/manage-fields.php:120
 msgid ""
 "Selecting 'Yes' will add the field to the list, but will overwrite any other "
 "field in the database that has the same meta-name<br/>Use this at your own "
 "risk"
 msgstr ""
 
-#: ../admin/manage-fields.php:113
+#: ../admin/manage-fields.php:126
 msgid "Field Properties"
 msgstr ""
 
-#: ../admin/manage-fields.php:126
+#: ../admin/manage-fields.php:139
 msgid "Registration & Edit Profile"
 msgstr ""
 
-#: ../admin/manage-fields.php:145
+#: ../admin/manage-fields.php:158
 msgid "Name"
 msgstr ""
 
-#: ../admin/manage-fields.php:146
+#: ../admin/manage-fields.php:159
 msgid "Usernames cannot be changed."
 msgstr ""
 
-#: ../admin/manage-fields.php:147
+#: ../admin/manage-fields.php:160
 msgid "First Name"
 msgstr ""
 
-#: ../admin/manage-fields.php:148
+#: ../admin/manage-fields.php:161
 msgid "Last Name"
 msgstr ""
 
-#: ../admin/manage-fields.php:149 ../modules/user-listing/userlisting.php:635
+#: ../admin/manage-fields.php:162 ../modules/user-listing/userlisting.php:650
 msgid "Nickname"
 msgstr ""
 
-#: ../admin/manage-fields.php:150
+#: ../admin/manage-fields.php:163
 msgid "Display name publicly as"
 msgstr ""
 
-#: ../admin/manage-fields.php:151
+#: ../admin/manage-fields.php:164
 msgid "Contact Info"
 msgstr ""
 
-#: ../admin/manage-fields.php:152
+#: ../admin/manage-fields.php:165
 #: ../features/admin-approval/class-admin-approval.php:180
 #: ../features/email-confirmation/class-email-confirmation.php:168
 #: ../modules/user-listing/userlisting.php:98
 msgid "E-mail"
 msgstr ""
 
-#: ../admin/manage-fields.php:153
+#: ../admin/manage-fields.php:166
 #: ../modules/email-customizer/email-customizer.php:32
 #: ../modules/user-listing/userlisting.php:101
-#: ../modules/user-listing/userlisting.php:617
-#: ../modules/user-listing/userlisting.php:1246
+#: ../modules/user-listing/userlisting.php:632
+#: ../modules/user-listing/userlisting.php:1261
 msgid "Website"
 msgstr ""
 
-#: ../admin/manage-fields.php:157
+#: ../admin/manage-fields.php:170
 msgid "AIM"
 msgstr ""
 
-#: ../admin/manage-fields.php:158
+#: ../admin/manage-fields.php:171
 msgid "Yahoo IM"
 msgstr ""
 
-#: ../admin/manage-fields.php:159
+#: ../admin/manage-fields.php:172
 msgid "Jabber / Google Talk"
 msgstr ""
 
-#: ../admin/manage-fields.php:162
+#: ../admin/manage-fields.php:175
 msgid "About Yourself"
 msgstr ""
 
-#: ../admin/manage-fields.php:163 ../modules/user-listing/userlisting.php:104
-#: ../modules/user-listing/userlisting.php:620
-#: ../modules/user-listing/userlisting.php:1247
+#: ../admin/manage-fields.php:176 ../modules/user-listing/userlisting.php:104
+#: ../modules/user-listing/userlisting.php:635
+#: ../modules/user-listing/userlisting.php:1262
 msgid "Biographical Info"
 msgstr ""
 
-#: ../admin/manage-fields.php:163
+#: ../admin/manage-fields.php:176
 msgid ""
 "Share a little biographical information to fill out your profile. This may "
 "be shown publicly."
 msgstr ""
 
-#: ../admin/manage-fields.php:164 ../front-end/recover.php:75
+#: ../admin/manage-fields.php:177 ../front-end/recover.php:75
 #: ../modules/email-customizer/email-customizer.php:30
 msgid "Password"
 msgstr ""
 
-#: ../admin/manage-fields.php:164
+#: ../admin/manage-fields.php:177
 msgid "Type your password."
 msgstr ""
 
-#: ../admin/manage-fields.php:165 ../front-end/recover.php:80
+#: ../admin/manage-fields.php:178 ../front-end/recover.php:80
 msgid "Repeat Password"
 msgstr ""
 
-#: ../admin/manage-fields.php:165
+#: ../admin/manage-fields.php:178
 msgid "Type your password again. "
 msgstr ""
 
-#: ../admin/manage-fields.php:322 ../admin/manage-fields.php:466
-msgid "You must select a field\n"
+#: ../admin/manage-fields.php:237
+msgid "Afghanistan"
+msgstr ""
+
+#: ../admin/manage-fields.php:238
+msgid "Aland Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:239
+msgid "Albania"
+msgstr ""
+
+#: ../admin/manage-fields.php:240
+msgid "Algeria"
+msgstr ""
+
+#: ../admin/manage-fields.php:241
+msgid "American Samoa"
+msgstr ""
+
+#: ../admin/manage-fields.php:242
+msgid "Andorra"
+msgstr ""
+
+#: ../admin/manage-fields.php:243
+msgid "Angola"
+msgstr ""
+
+#: ../admin/manage-fields.php:244
+msgid "Anguilla"
+msgstr ""
+
+#: ../admin/manage-fields.php:245
+msgid "Antarctica"
+msgstr ""
+
+#: ../admin/manage-fields.php:246
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: ../admin/manage-fields.php:247
+msgid "Argentina"
+msgstr ""
+
+#: ../admin/manage-fields.php:248
+msgid "Armenia"
+msgstr ""
+
+#: ../admin/manage-fields.php:249
+msgid "Aruba"
+msgstr ""
+
+#: ../admin/manage-fields.php:250
+msgid "Australia"
+msgstr ""
+
+#: ../admin/manage-fields.php:251
+msgid "Austria"
+msgstr ""
+
+#: ../admin/manage-fields.php:252
+msgid "Azerbaijan"
+msgstr ""
+
+#: ../admin/manage-fields.php:253
+msgid "Bahamas"
+msgstr ""
+
+#: ../admin/manage-fields.php:254
+msgid "Bahrain"
+msgstr ""
+
+#: ../admin/manage-fields.php:255
+msgid "Bangladesh"
+msgstr ""
+
+#: ../admin/manage-fields.php:256
+msgid "Barbados"
+msgstr ""
+
+#: ../admin/manage-fields.php:257
+msgid "Belarus"
+msgstr ""
+
+#: ../admin/manage-fields.php:258
+msgid "Belgium"
+msgstr ""
+
+#: ../admin/manage-fields.php:259
+msgid "Belize"
+msgstr ""
+
+#: ../admin/manage-fields.php:260
+msgid "Benin"
+msgstr ""
+
+#: ../admin/manage-fields.php:261
+msgid "Bermuda"
+msgstr ""
+
+#: ../admin/manage-fields.php:262
+msgid "Bhutan"
+msgstr ""
+
+#: ../admin/manage-fields.php:263
+msgid "Bolivia"
+msgstr ""
+
+#: ../admin/manage-fields.php:264
+msgid "Bonaire, Saint Eustatius and Saba"
+msgstr ""
+
+#: ../admin/manage-fields.php:265
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: ../admin/manage-fields.php:266
+msgid "Botswana"
+msgstr ""
+
+#: ../admin/manage-fields.php:267
+msgid "Bouvet Island"
+msgstr ""
+
+#: ../admin/manage-fields.php:268
+msgid "Brazil"
+msgstr ""
+
+#: ../admin/manage-fields.php:269
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: ../admin/manage-fields.php:270
+msgid "British Virgin Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:271
+msgid "Brunei"
+msgstr ""
+
+#: ../admin/manage-fields.php:272
+msgid "Bulgaria"
+msgstr ""
+
+#: ../admin/manage-fields.php:273
+msgid "Burkina Faso"
+msgstr ""
+
+#: ../admin/manage-fields.php:274
+msgid "Burundi"
+msgstr ""
+
+#: ../admin/manage-fields.php:275
+msgid "Cambodia"
+msgstr ""
+
+#: ../admin/manage-fields.php:276
+msgid "Cameroon"
+msgstr ""
+
+#: ../admin/manage-fields.php:277
+msgid "Canada"
+msgstr ""
+
+#: ../admin/manage-fields.php:278
+msgid "Cape Verde"
+msgstr ""
+
+#: ../admin/manage-fields.php:279
+msgid "Cayman Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:280
+msgid "Central African Republic"
+msgstr ""
+
+#: ../admin/manage-fields.php:281
+msgid "Chad"
+msgstr ""
+
+#: ../admin/manage-fields.php:282
+msgid "Chile"
+msgstr ""
+
+#: ../admin/manage-fields.php:283
+msgid "China"
+msgstr ""
+
+#: ../admin/manage-fields.php:284
+msgid "Christmas Island"
+msgstr ""
+
+#: ../admin/manage-fields.php:285
+msgid "Cocos Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:286
+msgid "Colombia"
+msgstr ""
+
+#: ../admin/manage-fields.php:287
+msgid "Comoros"
+msgstr ""
+
+#: ../admin/manage-fields.php:288
+msgid "Cook Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:289
+msgid "Costa Rica"
+msgstr ""
+
+#: ../admin/manage-fields.php:290
+msgid "Croatia"
+msgstr ""
+
+#: ../admin/manage-fields.php:291
+msgid "Cuba"
+msgstr ""
+
+#: ../admin/manage-fields.php:292
+msgid "Curacao"
+msgstr ""
+
+#: ../admin/manage-fields.php:293
+msgid "Cyprus"
+msgstr ""
+
+#: ../admin/manage-fields.php:294
+msgid "Czech Republic"
+msgstr ""
+
+#: ../admin/manage-fields.php:295
+msgid "Democratic Republic of the Congo"
+msgstr ""
+
+#: ../admin/manage-fields.php:296
+msgid "Denmark"
+msgstr ""
+
+#: ../admin/manage-fields.php:297
+msgid "Djibouti"
+msgstr ""
+
+#: ../admin/manage-fields.php:298
+msgid "Dominica"
+msgstr ""
+
+#: ../admin/manage-fields.php:299
+msgid "Dominican Republic"
+msgstr ""
+
+#: ../admin/manage-fields.php:300
+msgid "East Timor"
+msgstr ""
+
+#: ../admin/manage-fields.php:301
+msgid "Ecuador"
+msgstr ""
+
+#: ../admin/manage-fields.php:302
+msgid "Egypt"
+msgstr ""
+
+#: ../admin/manage-fields.php:303
+msgid "El Salvador"
+msgstr ""
+
+#: ../admin/manage-fields.php:304
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: ../admin/manage-fields.php:305
+msgid "Eritrea"
+msgstr ""
+
+#: ../admin/manage-fields.php:306
+msgid "Estonia"
+msgstr ""
+
+#: ../admin/manage-fields.php:307
+msgid "Ethiopia"
+msgstr ""
+
+#: ../admin/manage-fields.php:308
+msgid "Falkland Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:309
+msgid "Faroe Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:310
+msgid "Fiji"
+msgstr ""
+
+#: ../admin/manage-fields.php:311
+msgid "Finland"
+msgstr ""
+
+#: ../admin/manage-fields.php:312
+msgid "France"
+msgstr ""
+
+#: ../admin/manage-fields.php:313
+msgid "French Guiana"
+msgstr ""
+
+#: ../admin/manage-fields.php:314
+msgid "French Polynesia"
+msgstr ""
+
+#: ../admin/manage-fields.php:315
+msgid "French Southern Territories"
+msgstr ""
+
+#: ../admin/manage-fields.php:316
+msgid "Gabon"
+msgstr ""
+
+#: ../admin/manage-fields.php:317
+msgid "Gambia"
+msgstr ""
+
+#: ../admin/manage-fields.php:318
+msgid "Georgia"
+msgstr ""
+
+#: ../admin/manage-fields.php:319
+msgid "Germany"
+msgstr ""
+
+#: ../admin/manage-fields.php:320
+msgid "Ghana"
+msgstr ""
+
+#: ../admin/manage-fields.php:321
+msgid "Gibraltar"
+msgstr ""
+
+#: ../admin/manage-fields.php:322
+msgid "Greece"
+msgstr ""
+
+#: ../admin/manage-fields.php:323
+msgid "Greenland"
+msgstr ""
+
+#: ../admin/manage-fields.php:324
+msgid "Grenada"
+msgstr ""
+
+#: ../admin/manage-fields.php:325
+msgid "Guadeloupe"
+msgstr ""
+
+#: ../admin/manage-fields.php:326
+msgid "Guam"
+msgstr ""
+
+#: ../admin/manage-fields.php:327
+msgid "Guatemala"
+msgstr ""
+
+#: ../admin/manage-fields.php:328
+msgid "Guernsey"
+msgstr ""
+
+#: ../admin/manage-fields.php:329
+msgid "Guinea"
+msgstr ""
+
+#: ../admin/manage-fields.php:330
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: ../admin/manage-fields.php:331
+msgid "Guyana"
 msgstr ""
 
 #: ../admin/manage-fields.php:332
+msgid "Haiti"
+msgstr ""
+
+#: ../admin/manage-fields.php:333
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:334
+msgid "Honduras"
+msgstr ""
+
+#: ../admin/manage-fields.php:335
+msgid "Hong Kong"
+msgstr ""
+
+#: ../admin/manage-fields.php:336
+msgid "Hungary"
+msgstr ""
+
+#: ../admin/manage-fields.php:337
+msgid "Iceland"
+msgstr ""
+
+#: ../admin/manage-fields.php:338
+msgid "India"
+msgstr ""
+
+#: ../admin/manage-fields.php:339
+msgid "Indonesia"
+msgstr ""
+
+#: ../admin/manage-fields.php:340
+msgid "Iran"
+msgstr ""
+
+#: ../admin/manage-fields.php:341
+msgid "Iraq"
+msgstr ""
+
+#: ../admin/manage-fields.php:342
+msgid "Ireland"
+msgstr ""
+
+#: ../admin/manage-fields.php:343
+msgid "Isle of Man"
+msgstr ""
+
+#: ../admin/manage-fields.php:344
+msgid "Israel"
+msgstr ""
+
+#: ../admin/manage-fields.php:345
+msgid "Italy"
+msgstr ""
+
+#: ../admin/manage-fields.php:346
+msgid "Ivory Coast"
+msgstr ""
+
+#: ../admin/manage-fields.php:347
+msgid "Jamaica"
+msgstr ""
+
+#: ../admin/manage-fields.php:348
+msgid "Japan"
+msgstr ""
+
+#: ../admin/manage-fields.php:349
+msgid "Jersey"
+msgstr ""
+
+#: ../admin/manage-fields.php:350
+msgid "Jordan"
+msgstr ""
+
+#: ../admin/manage-fields.php:351
+msgid "Kazakhstan"
+msgstr ""
+
+#: ../admin/manage-fields.php:352
+msgid "Kenya"
+msgstr ""
+
+#: ../admin/manage-fields.php:353
+msgid "Kiribati"
+msgstr ""
+
+#: ../admin/manage-fields.php:354
+msgid "Kosovo"
+msgstr ""
+
+#: ../admin/manage-fields.php:355
+msgid "Kuwait"
+msgstr ""
+
+#: ../admin/manage-fields.php:356
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: ../admin/manage-fields.php:357
+msgid "Laos"
+msgstr ""
+
+#: ../admin/manage-fields.php:358
+msgid "Latvia"
+msgstr ""
+
+#: ../admin/manage-fields.php:359
+msgid "Lebanon"
+msgstr ""
+
+#: ../admin/manage-fields.php:360
+msgid "Lesotho"
+msgstr ""
+
+#: ../admin/manage-fields.php:361
+msgid "Liberia"
+msgstr ""
+
+#: ../admin/manage-fields.php:362
+msgid "Libya"
+msgstr ""
+
+#: ../admin/manage-fields.php:363
+msgid "Liechtenstein"
+msgstr ""
+
+#: ../admin/manage-fields.php:364
+msgid "Lithuania"
+msgstr ""
+
+#: ../admin/manage-fields.php:365
+msgid "Luxembourg"
+msgstr ""
+
+#: ../admin/manage-fields.php:366
+msgid "Macao"
+msgstr ""
+
+#: ../admin/manage-fields.php:367
+msgid "Macedonia"
+msgstr ""
+
+#: ../admin/manage-fields.php:368
+msgid "Madagascar"
+msgstr ""
+
+#: ../admin/manage-fields.php:369
+msgid "Malawi"
+msgstr ""
+
+#: ../admin/manage-fields.php:370
+msgid "Malaysia"
+msgstr ""
+
+#: ../admin/manage-fields.php:371
+msgid "Maldives"
+msgstr ""
+
+#: ../admin/manage-fields.php:372
+msgid "Mali"
+msgstr ""
+
+#: ../admin/manage-fields.php:373
+msgid "Malta"
+msgstr ""
+
+#: ../admin/manage-fields.php:374
+msgid "Marshall Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:375
+msgid "Martinique"
+msgstr ""
+
+#: ../admin/manage-fields.php:376
+msgid "Mauritania"
+msgstr ""
+
+#: ../admin/manage-fields.php:377
+msgid "Mauritius"
+msgstr ""
+
+#: ../admin/manage-fields.php:378
+msgid "Mayotte"
+msgstr ""
+
+#: ../admin/manage-fields.php:379
+msgid "Mexico"
+msgstr ""
+
+#: ../admin/manage-fields.php:380
+msgid "Micronesia"
+msgstr ""
+
+#: ../admin/manage-fields.php:381
+msgid "Moldova"
+msgstr ""
+
+#: ../admin/manage-fields.php:382
+msgid "Monaco"
+msgstr ""
+
+#: ../admin/manage-fields.php:383
+msgid "Mongolia"
+msgstr ""
+
+#: ../admin/manage-fields.php:384
+msgid "Montenegro"
+msgstr ""
+
+#: ../admin/manage-fields.php:385
+msgid "Montserrat"
+msgstr ""
+
+#: ../admin/manage-fields.php:386
+msgid "Morocco"
+msgstr ""
+
+#: ../admin/manage-fields.php:387
+msgid "Mozambique"
+msgstr ""
+
+#: ../admin/manage-fields.php:388
+msgid "Myanmar"
+msgstr ""
+
+#: ../admin/manage-fields.php:389
+msgid "Namibia"
+msgstr ""
+
+#: ../admin/manage-fields.php:390
+msgid "Nauru"
+msgstr ""
+
+#: ../admin/manage-fields.php:391
+msgid "Nepal"
+msgstr ""
+
+#: ../admin/manage-fields.php:392
+msgid "Netherlands"
+msgstr ""
+
+#: ../admin/manage-fields.php:393
+msgid "New Caledonia"
+msgstr ""
+
+#: ../admin/manage-fields.php:394
+msgid "New Zealand"
+msgstr ""
+
+#: ../admin/manage-fields.php:395
+msgid "Nicaragua"
+msgstr ""
+
+#: ../admin/manage-fields.php:396
+msgid "Niger"
+msgstr ""
+
+#: ../admin/manage-fields.php:397
+msgid "Nigeria"
+msgstr ""
+
+#: ../admin/manage-fields.php:398
+msgid "Niue"
+msgstr ""
+
+#: ../admin/manage-fields.php:399
+msgid "Norfolk Island"
+msgstr ""
+
+#: ../admin/manage-fields.php:400
+msgid "North Korea"
+msgstr ""
+
+#: ../admin/manage-fields.php:401
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:402
+msgid "Norway"
+msgstr ""
+
+#: ../admin/manage-fields.php:403
+msgid "Oman"
+msgstr ""
+
+#: ../admin/manage-fields.php:404
+msgid "Pakistan"
+msgstr ""
+
+#: ../admin/manage-fields.php:405
+msgid "Palau"
+msgstr ""
+
+#: ../admin/manage-fields.php:406
+msgid "Palestinian Territory"
+msgstr ""
+
+#: ../admin/manage-fields.php:407
+msgid "Panama"
+msgstr ""
+
+#: ../admin/manage-fields.php:408
+msgid "Papua New Guinea"
+msgstr ""
+
+#: ../admin/manage-fields.php:409
+msgid "Paraguay"
+msgstr ""
+
+#: ../admin/manage-fields.php:410
+msgid "Peru"
+msgstr ""
+
+#: ../admin/manage-fields.php:411
+msgid "Philippines"
+msgstr ""
+
+#: ../admin/manage-fields.php:412
+msgid "Pitcairn"
+msgstr ""
+
+#: ../admin/manage-fields.php:413
+msgid "Poland"
+msgstr ""
+
+#: ../admin/manage-fields.php:414
+msgid "Portugal"
+msgstr ""
+
+#: ../admin/manage-fields.php:415
+msgid "Puerto Rico"
+msgstr ""
+
+#: ../admin/manage-fields.php:416
+msgid "Qatar"
+msgstr ""
+
+#: ../admin/manage-fields.php:417
+msgid "Republic of the Congo"
+msgstr ""
+
+#: ../admin/manage-fields.php:418
+msgid "Reunion"
+msgstr ""
+
+#: ../admin/manage-fields.php:419
+msgid "Romania"
+msgstr ""
+
+#: ../admin/manage-fields.php:420
+msgid "Russia"
+msgstr ""
+
+#: ../admin/manage-fields.php:421
+msgid "Rwanda"
+msgstr ""
+
+#: ../admin/manage-fields.php:422
+msgid "Saint Barthelemy"
+msgstr ""
+
+#: ../admin/manage-fields.php:423
+msgid "Saint Helena"
+msgstr ""
+
+#: ../admin/manage-fields.php:424
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: ../admin/manage-fields.php:425
+msgid "Saint Lucia"
+msgstr ""
+
+#: ../admin/manage-fields.php:426
+msgid "Saint Martin"
+msgstr ""
+
+#: ../admin/manage-fields.php:427
+msgid "Saint Pierre and Miquelon"
+msgstr ""
+
+#: ../admin/manage-fields.php:428
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: ../admin/manage-fields.php:429
+msgid "Samoa"
+msgstr ""
+
+#: ../admin/manage-fields.php:430
+msgid "San Marino"
+msgstr ""
+
+#: ../admin/manage-fields.php:431
+msgid "Sao Tome and Principe"
+msgstr ""
+
+#: ../admin/manage-fields.php:432
+msgid "Saudi Arabia"
+msgstr ""
+
+#: ../admin/manage-fields.php:433
+msgid "Senegal"
+msgstr ""
+
+#: ../admin/manage-fields.php:434
+msgid "Serbia"
+msgstr ""
+
+#: ../admin/manage-fields.php:435
+msgid "Seychelles"
+msgstr ""
+
+#: ../admin/manage-fields.php:436
+msgid "Sierra Leone"
+msgstr ""
+
+#: ../admin/manage-fields.php:437
+msgid "Singapore"
+msgstr ""
+
+#: ../admin/manage-fields.php:438
+msgid "Sint Maarten"
+msgstr ""
+
+#: ../admin/manage-fields.php:439
+msgid "Slovakia"
+msgstr ""
+
+#: ../admin/manage-fields.php:440
+msgid "Slovenia"
+msgstr ""
+
+#: ../admin/manage-fields.php:441
+msgid "Solomon Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:442
+msgid "Somalia"
+msgstr ""
+
+#: ../admin/manage-fields.php:443
+msgid "South Africa"
+msgstr ""
+
+#: ../admin/manage-fields.php:444
+msgid "South Georgia and the South Sandwich Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:445
+msgid "South Korea"
+msgstr ""
+
+#: ../admin/manage-fields.php:446
+msgid "South Sudan"
+msgstr ""
+
+#: ../admin/manage-fields.php:447
+msgid "Spain"
+msgstr ""
+
+#: ../admin/manage-fields.php:448
+msgid "Sri Lanka"
+msgstr ""
+
+#: ../admin/manage-fields.php:449
+msgid "Sudan"
+msgstr ""
+
+#: ../admin/manage-fields.php:450
+msgid "Suriname"
+msgstr ""
+
+#: ../admin/manage-fields.php:451
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: ../admin/manage-fields.php:452
+msgid "Swaziland"
+msgstr ""
+
+#: ../admin/manage-fields.php:453
+msgid "Sweden"
+msgstr ""
+
+#: ../admin/manage-fields.php:454
+msgid "Switzerland"
+msgstr ""
+
+#: ../admin/manage-fields.php:455
+msgid "Syria"
+msgstr ""
+
+#: ../admin/manage-fields.php:456
+msgid "Taiwan"
+msgstr ""
+
+#: ../admin/manage-fields.php:457
+msgid "Tajikistan"
+msgstr ""
+
+#: ../admin/manage-fields.php:458
+msgid "Tanzania"
+msgstr ""
+
+#: ../admin/manage-fields.php:459
+msgid "Thailand"
+msgstr ""
+
+#: ../admin/manage-fields.php:460
+msgid "Togo"
+msgstr ""
+
+#: ../admin/manage-fields.php:461
+msgid "Tokelau"
+msgstr ""
+
+#: ../admin/manage-fields.php:462
+msgid "Tonga"
+msgstr ""
+
+#: ../admin/manage-fields.php:463
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: ../admin/manage-fields.php:464
+msgid "Tunisia"
+msgstr ""
+
+#: ../admin/manage-fields.php:465
+msgid "Turkey"
+msgstr ""
+
+#: ../admin/manage-fields.php:466
+msgid "Turkmenistan"
+msgstr ""
+
+#: ../admin/manage-fields.php:467
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:468
+msgid "Tuvalu"
+msgstr ""
+
+#: ../admin/manage-fields.php:469
+msgid "U.S. Virgin Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:470
+msgid "Uganda"
+msgstr ""
+
+#: ../admin/manage-fields.php:471
+msgid "Ukraine"
+msgstr ""
+
+#: ../admin/manage-fields.php:472
+msgid "United Arab Emirates"
+msgstr ""
+
+#: ../admin/manage-fields.php:473
+msgid "United Kingdom"
+msgstr ""
+
+#: ../admin/manage-fields.php:474
+msgid "United States"
+msgstr ""
+
+#: ../admin/manage-fields.php:475
+msgid "United States Minor Outlying Islands"
+msgstr ""
+
+#: ../admin/manage-fields.php:476
+msgid "Uruguay"
+msgstr ""
+
+#: ../admin/manage-fields.php:477
+msgid "Uzbekistan"
+msgstr ""
+
+#: ../admin/manage-fields.php:478
+msgid "Vanuatu"
+msgstr ""
+
+#: ../admin/manage-fields.php:479
+msgid "Vatican"
+msgstr ""
+
+#: ../admin/manage-fields.php:480
+msgid "Venezuela"
+msgstr ""
+
+#: ../admin/manage-fields.php:481
+msgid "Vietnam"
+msgstr ""
+
+#: ../admin/manage-fields.php:482
+msgid "Wallis and Futuna"
+msgstr ""
+
+#: ../admin/manage-fields.php:483
+msgid "Western Sahara"
+msgstr ""
+
+#: ../admin/manage-fields.php:484
+msgid "Yemen"
+msgstr ""
+
+#: ../admin/manage-fields.php:485
+msgid "Zambia"
+msgstr ""
+
+#: ../admin/manage-fields.php:486
+msgid "Zimbabwe"
+msgstr ""
+
+#: ../admin/manage-fields.php:617 ../admin/manage-fields.php:761
+msgid "You must select a field\n"
+msgstr ""
+
+#: ../admin/manage-fields.php:627
 msgid ""
 "Please choose a different field type as this one already exists in your form "
 "(must be unique)\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:343
+#: ../admin/manage-fields.php:638
 msgid "The entered avatar size is not between 20 and 200\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:346
+#: ../admin/manage-fields.php:641
 msgid "The entered avatar size is not numerical\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:354
+#: ../admin/manage-fields.php:649
 msgid "The entered row number is not numerical\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:357
+#: ../admin/manage-fields.php:652
 msgid "You must enter a value for the row number\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:365
+#: ../admin/manage-fields.php:660
 msgid "You must enter the site key\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:367
+#: ../admin/manage-fields.php:662
 msgid "You must enter the secret key\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:375
+#: ../admin/manage-fields.php:670
 msgid "The entered value for the Datepicker is not a valid date-format\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:378
+#: ../admin/manage-fields.php:673
 msgid "You must enter a value for the date-format\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:394
+#: ../admin/manage-fields.php:689
 msgid "The meta-name cannot be empty\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:406 ../admin/manage-fields.php:414
-#: ../admin/manage-fields.php:424
+#: ../admin/manage-fields.php:701 ../admin/manage-fields.php:709
+#: ../admin/manage-fields.php:719
 msgid "That meta-name is already in use\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:446
+#: ../admin/manage-fields.php:741
 #, php-format
 msgid ""
 "The following option(s) did not coincide with the ones in the options list: "
 "%s\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:450
+#: ../admin/manage-fields.php:745
 #, php-format
 msgid ""
 "The following option did not coincide with the ones in the options list: %s\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:457
+#: ../admin/manage-fields.php:752
 msgid "Please select at least one user role\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:473
+#: ../admin/manage-fields.php:768
 msgid "That field is already added in this form\n"
 msgstr ""
 
-#: ../admin/manage-fields.php:522
+#: ../admin/manage-fields.php:817
 msgid ""
 "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-"
 "required\">Required</pre>"
 msgstr ""
 
-#: ../admin/manage-fields.php:522
+#: ../admin/manage-fields.php:817
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:440
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:529
 #: ../features/admin-approval/class-admin-approval.php:119
-#: ../features/functions.php:614 ../features/functions.php:621
+#: ../features/functions.php:641 ../features/functions.php:648
 #: ../modules/multiple-forms/multiple-forms.php:416
 msgid "Edit"
 msgstr ""
 
-#: ../admin/manage-fields.php:522
+#: ../admin/manage-fields.php:817
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:440
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:530
 #: ../features/admin-approval/class-admin-approval.php:124
 #: ../features/admin-approval/class-admin-approval.php:235
 #: ../features/email-confirmation/class-email-confirmation.php:120
 #: ../features/email-confirmation/class-email-confirmation.php:217
-#: ../features/functions.php:607 ../features/functions.php:621
+#: ../features/functions.php:634 ../features/functions.php:648
 msgid "Delete"
 msgstr ""
 
-#: ../admin/manage-fields.php:537
+#: ../admin/manage-fields.php:832
 msgid "Use these shortcodes on the pages you want the forms to be displayed:"
 msgstr ""
 
-#: ../admin/manage-fields.php:543
+#: ../admin/manage-fields.php:841
 msgid ""
 "If you're interested in displaying different fields in the registration and "
 "edit profile forms, please use the Multiple Registration & Edit Profile "
 "Forms Addon."
+msgstr ""
+
+#: ../admin/manage-fields.php:843
+msgid ""
+"With Profile Builder Pro v2 you can display different fields in the "
+"registration and edit profile forms, using the Multiple Registration & Edit "
+"Profile Forms module."
 msgstr ""
 
 #: ../admin/register-version.php:14
@@ -1164,8 +2226,8 @@ msgstr ""
 
 #: ../assets/lib/wck-api/fields/country select.php:14
 #: ../assets/lib/wck-api/fields/cpt select.php:17
-#: ../assets/lib/wck-api/fields/select.php:14
-#: ../assets/lib/wck-api/fields/user select.php:15
+#: ../assets/lib/wck-api/fields/select.php:14 ../assets/lib/wck-api/fields/user
+#: select.php:15
 msgid "...Choose"
 msgstr ""
 
@@ -1174,11 +2236,13 @@ msgstr ""
 msgid "You can add the information for the %s after you add a entry"
 msgstr ""
 
-#: ../assets/lib/wck-api/fields/upload.php:37
+#: ../assets/lib/wck-api/fields/upload.php:43
+#: ../front-end/extra-fields/upload/upload.php:112
 msgid "Remove"
 msgstr ""
 
-#: ../assets/lib/wck-api/fields/upload.php:54
+#: ../assets/lib/wck-api/fields/upload.php:75
+#: ../front-end/extra-fields/upload/upload.php:128
 msgid "Upload "
 msgstr ""
 
@@ -1192,7 +2256,7 @@ msgid "Add Entry"
 msgstr ""
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:440
-#: ../features/functions.php:621
+#: ../features/functions.php:648
 msgid "Content"
 msgstr ""
 
@@ -1204,20 +2268,25 @@ msgstr ""
 msgid "Delete this item"
 msgstr ""
 
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:671
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:676
 msgid "Please enter a value for the required field "
 msgstr ""
 
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:1150
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:1155
 msgid "Syncronize WCK"
 msgstr ""
 
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:1162
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:1167
 msgid "Syncronize WCK Translation"
 msgstr ""
 
+#: ../assets/misc/plugin-compatibilities.php:241
+msgid ""
+"Your account has to be confirmed by an administrator before you can log in."
+msgstr ""
+
 #: ../features/admin-approval/admin-approval.php:7
-#: ../features/admin-approval/class-admin-approval.php:496
+#: ../features/admin-approval/class-admin-approval.php:458
 msgid "Admin Approval"
 msgstr ""
 
@@ -1243,67 +2312,71 @@ msgid "User successfully deleted!"
 msgstr ""
 
 #: ../features/admin-approval/admin-approval.php:74
-#: ../features/admin-approval/admin-approval.php:139
+#: ../features/admin-approval/admin-approval.php:118
 #: ../features/email-confirmation/email-confirmation.php:135
 msgid "You either don't have permission for that action or there was an error!"
 msgstr ""
 
-#: ../features/admin-approval/admin-approval.php:86
+#: ../features/admin-approval/admin-approval.php:85
 msgid "Your session has expired! Please refresh the page and try again."
 msgstr ""
 
-#: ../features/admin-approval/admin-approval.php:106
+#: ../features/admin-approval/admin-approval.php:97
 msgid "Users successfully approved!"
 msgstr ""
 
-#: ../features/admin-approval/admin-approval.php:121
+#: ../features/admin-approval/admin-approval.php:106
 msgid "Users successfully unapproved!"
 msgstr ""
 
-#: ../features/admin-approval/admin-approval.php:134
+#: ../features/admin-approval/admin-approval.php:114
 msgid "Users successfully deleted!"
 msgstr ""
 
-#: ../features/admin-approval/admin-approval.php:149
+#: ../features/admin-approval/admin-approval.php:134
 #, php-format
 msgid "Your account on %1$s has been approved!"
 msgstr ""
 
-#: ../features/admin-approval/admin-approval.php:150
-#: ../features/admin-approval/admin-approval.php:153
+#: ../features/admin-approval/admin-approval.php:135
+#: ../features/admin-approval/admin-approval.php:138
 msgid "approved"
 msgstr ""
 
-#: ../features/admin-approval/admin-approval.php:152
+#: ../features/admin-approval/admin-approval.php:137
 #, php-format
 msgid "An administrator has just approved your account on %1$s (%2$s)."
 msgstr ""
 
-#: ../features/admin-approval/admin-approval.php:156
+#: ../features/admin-approval/admin-approval.php:142
 #, php-format
 msgid "Your account on %1$s has been unapproved!"
 msgstr ""
 
-#: ../features/admin-approval/admin-approval.php:157
-#: ../features/admin-approval/admin-approval.php:160
+#: ../features/admin-approval/admin-approval.php:143
+#: ../features/admin-approval/admin-approval.php:146
 msgid "unapproved"
 msgstr ""
 
-#: ../features/admin-approval/admin-approval.php:159
+#: ../features/admin-approval/admin-approval.php:145
 #, php-format
 msgid "An administrator has just unapproved your account on %1$s (%2$s)."
 msgstr ""
 
-#: ../features/admin-approval/admin-approval.php:176
+#: ../features/admin-approval/admin-approval.php:164
 msgid ""
 "<strong>ERROR</strong>: Your account has to be confirmed by an administrator "
 "before you can log in."
 msgstr ""
 
-#: ../features/admin-approval/admin-approval.php:188
+#: ../features/admin-approval/admin-approval.php:176
 msgid ""
 "Your account has to be confirmed by an administrator before you can use the "
 "\"Password Recovery\" feature."
+msgstr ""
+
+#: ../features/admin-approval/admin-approval.php:203
+msgid "Your account has been successfully created!"
 msgstr ""
 
 #: ../features/admin-approval/class-admin-approval.php:124
@@ -1329,21 +2402,23 @@ msgid "Approve"
 msgstr ""
 
 #: ../features/admin-approval/class-admin-approval.php:178
-#: ../modules/user-listing/userlisting.php:608
-#: ../modules/user-listing/userlisting.php:1249
+#: ../modules/user-listing/userlisting.php:249
+#: ../modules/user-listing/userlisting.php:623
+#: ../modules/user-listing/userlisting.php:1264
 msgid "Firstname"
 msgstr ""
 
 #: ../features/admin-approval/class-admin-approval.php:179
-#: ../modules/user-listing/userlisting.php:611
-#: ../modules/user-listing/userlisting.php:1250
+#: ../modules/user-listing/userlisting.php:626
+#: ../modules/user-listing/userlisting.php:1265
 msgid "Lastname"
 msgstr ""
 
 #: ../features/admin-approval/class-admin-approval.php:181
 #: ../modules/user-listing/userlisting.php:124
-#: ../modules/user-listing/userlisting.php:638
-#: ../modules/user-listing/userlisting.php:1253
+#: ../modules/user-listing/userlisting.php:250
+#: ../modules/user-listing/userlisting.php:653
+#: ../modules/user-listing/userlisting.php:1268
 msgid "Role"
 msgstr ""
 
@@ -1373,15 +2448,15 @@ msgstr ""
 msgid "Sorry, but you don't have permission to do that!"
 msgstr ""
 
-#: ../features/admin-approval/class-admin-approval.php:325
+#: ../features/admin-approval/class-admin-approval.php:341
 msgid "Approved"
 msgstr ""
 
-#: ../features/admin-approval/class-admin-approval.php:327
+#: ../features/admin-approval/class-admin-approval.php:343
 msgid "Unapproved"
 msgstr ""
 
-#: ../features/admin-approval/class-admin-approval.php:499
+#: ../features/admin-approval/class-admin-approval.php:461
 #: ../features/email-confirmation/class-email-confirmation.php:469
 msgid "All Users"
 msgstr ""
@@ -1499,12 +2574,12 @@ msgstr ""
 msgid "Email notification resent to user"
 msgstr ""
 
-#: ../features/email-confirmation/email-confirmation.php:364
+#: ../features/email-confirmation/email-confirmation.php:384
 #, php-format
 msgid "[%1$s] Activate %2$s"
 msgstr ""
 
-#: ../features/email-confirmation/email-confirmation.php:367
+#: ../features/email-confirmation/email-confirmation.php:387
 #, php-format
 msgid ""
 "To activate your user, please click the following link:\n"
@@ -1514,94 +2589,98 @@ msgid ""
 "After you activate it you will receive yet *another email* with your login."
 msgstr ""
 
-#: ../features/email-confirmation/email-confirmation.php:406
+#: ../features/email-confirmation/email-confirmation.php:428
 #: ../front-end/register.php:68
 msgid "Could not create user!"
 msgstr ""
 
-#: ../features/email-confirmation/email-confirmation.php:409
+#: ../features/email-confirmation/email-confirmation.php:431
 msgid "That username is already activated!"
 msgstr ""
 
-#: ../features/email-confirmation/email-confirmation.php:438
+#: ../features/email-confirmation/email-confirmation.php:453
 msgid "There was an error while trying to activate the user"
 msgstr ""
 
-#: ../features/email-confirmation/email-confirmation.php:483
+#: ../features/email-confirmation/email-confirmation.php:501
 #: ../modules/email-customizer/admin-email-customizer.php:73
 msgid "A new subscriber has (been) registered!"
 msgstr ""
 
-#: ../features/email-confirmation/email-confirmation.php:486
+#: ../features/email-confirmation/email-confirmation.php:504
 #, php-format
 msgid "New subscriber on %1$s.<br/><br/>Username:%2$s<br/>E-mail:%3$s<br/>"
 msgstr ""
 
-#: ../features/email-confirmation/email-confirmation.php:491
+#: ../features/email-confirmation/email-confirmation.php:550
+#, php-format
+msgid "[%1$s] Your new account information"
+msgstr ""
+
+#: ../features/email-confirmation/email-confirmation.php:554
+#: ../features/email-confirmation/email-confirmation.php:557
+#: ../modules/email-customizer/email-customizer.php:413
+#: ../modules/email-customizer/email-customizer.php:420
+#: ../modules/email-customizer/email-customizer.php:434
+msgid "Your selected password at signup"
+msgstr ""
+
+#: ../features/email-confirmation/email-confirmation.php:556
+#, php-format
+msgid "Welcome to %1$s!<br/><br/><br/>Your username is:%2$s and password:%3$s"
+msgstr ""
+
+#: ../features/email-confirmation/email-confirmation.php:605
 msgid ""
 "The \"Admin Approval\" feature was activated at the time of registration, so "
 "please remember that you need to approve this user before he/she can log in!"
 msgstr ""
 
-#: ../features/email-confirmation/email-confirmation.php:506
-#, php-format
-msgid "[%1$s] Your new account information"
-msgstr ""
-
-#: ../features/email-confirmation/email-confirmation.php:510
-#: ../features/email-confirmation/email-confirmation.php:513
-#: ../modules/email-customizer/email-customizer.php:395
-#: ../modules/email-customizer/email-customizer.php:402
-#: ../modules/email-customizer/email-customizer.php:416
-msgid "Your selected password at signup"
-msgstr ""
-
-#: ../features/email-confirmation/email-confirmation.php:512
-#, php-format
-msgid "Welcome to %1$s!<br/><br/><br/>Your username is:%2$s and password:%3$s"
-msgstr ""
-
-#: ../features/email-confirmation/email-confirmation.php:521
-#: ../front-end/register.php:103
+#: ../features/email-confirmation/email-confirmation.php:613
+#: ../front-end/register.php:116
 msgid ""
 "Before you can access your account, an administrator needs to approve it. "
 "You will be notified via email."
 msgstr ""
 
-#: ../features/functions.php:199 ../features/functions.php:200
-msgid "Profile Builder"
-msgstr ""
-
-#: ../features/functions.php:273
+#: ../features/functions.php:281
 msgid "The user-validation has failed - the avatar was not deleted!"
 msgstr ""
 
-#: ../features/functions.php:284
+#: ../features/functions.php:292
 msgid "The user-validation has failed - the attachment was not deleted!"
 msgstr ""
 
-#: ../features/functions.php:467
+#: ../features/functions.php:487
 msgid "Strength indicator"
 msgstr ""
 
-#: ../features/functions.php:492
+#: ../features/functions.php:512
 msgid "Very Weak"
 msgstr ""
 
-#: ../features/functions.php:506
+#: ../features/functions.php:526
 #, php-format
 msgid "Minimum length of %d characters"
 msgstr ""
 
-#: ../features/functions.php:580
+#: ../features/functions.php:600
 msgid "This field is required"
 msgstr ""
 
-#: ../features/functions.php:600
+#: ../features/functions.php:607
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:374
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:379
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:421
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:458
+msgid "Please enter a (valid) reCAPTCHA value"
+msgstr ""
+
+#: ../features/functions.php:627
 msgid "Cancel"
 msgstr ""
 
-#: ../features/functions.php:632
+#: ../features/functions.php:659
 #, php-format
 msgid ""
 "To allow users to register for your website via Profile Builder, you first "
@@ -1610,7 +2689,7 @@ msgid ""
 "%3$sDismiss%4$s"
 msgstr ""
 
-#: ../features/functions.php:636
+#: ../features/functions.php:663
 #, php-format
 msgid ""
 "To allow users to register for your website via Profile Builder, you first "
@@ -1655,8 +2734,7 @@ msgstr ""
 msgid "Users can register themselves or you can manually create users here."
 msgstr ""
 
-#: ../front-end/class-formbuilder.php:99
-#: ../front-end/class-formbuilder.php:102
+#: ../front-end/class-formbuilder.php:99 ../front-end/class-formbuilder.php:102
 msgid "This message is only visible by administrators"
 msgstr ""
 
@@ -1694,323 +2772,183 @@ msgid ""
 "than %1$d seconds, please click %2$s.%3$s"
 msgstr ""
 
-#: ../front-end/class-formbuilder.php:233
-#: ../front-end/class-formbuilder.php:240
+#: ../front-end/class-formbuilder.php:239
+#: ../front-end/class-formbuilder.php:246
 #, php-format
 msgid "The account %1s has been successfully created!"
 msgstr ""
 
-#: ../front-end/class-formbuilder.php:236
-#: ../front-end/class-formbuilder.php:246
+#: ../front-end/class-formbuilder.php:242
+#: ../front-end/class-formbuilder.php:252
 #, php-format
 msgid ""
 "Before you can access your account %1s, you need to confirm your email "
 "address. Please check your inbox and click the activation link."
 msgstr ""
 
-#: ../front-end/class-formbuilder.php:242
+#: ../front-end/class-formbuilder.php:248
 #, php-format
 msgid ""
 "Before you can access your account %1s, an administrator has to approve it. "
 "You will be notified via email."
 msgstr ""
 
-#: ../front-end/class-formbuilder.php:256
+#: ../front-end/class-formbuilder.php:262
 msgid "Your profile has been successfully updated!"
 msgstr ""
 
-#: ../front-end/class-formbuilder.php:266
+#: ../front-end/class-formbuilder.php:272
 msgid "There was an error in the submitted form"
 msgstr ""
 
-#: ../front-end/class-formbuilder.php:287
+#: ../front-end/class-formbuilder.php:294
 msgid "Add User"
 msgstr ""
 
-#: ../front-end/class-formbuilder.php:287 ../front-end/login.php:202
+#: ../front-end/class-formbuilder.php:294 ../front-end/login.php:202
 msgid "Register"
 msgstr ""
 
-#: ../front-end/class-formbuilder.php:333
+#: ../front-end/class-formbuilder.php:340
 #: ../front-end/extra-fields/extra-fields.php:35
 msgid "The avatar was successfully deleted!"
 msgstr ""
 
-#: ../front-end/class-formbuilder.php:333
+#: ../front-end/class-formbuilder.php:340
 #: ../front-end/extra-fields/extra-fields.php:37
 msgid "The following attachment was successfully deleted:"
 msgstr ""
 
-#: ../front-end/class-formbuilder.php:345
+#: ../front-end/class-formbuilder.php:352
 msgid "Send these credentials via email."
 msgstr ""
 
-#: ../front-end/class-formbuilder.php:506
+#: ../front-end/class-formbuilder.php:509
 msgid "User to edit:"
 msgstr ""
 
-#: ../front-end/default-fields/email/email.php:42
+#: ../front-end/default-fields/email/email.php:44
 msgid "The email you entered is not a valid email address."
 msgstr ""
 
-#: ../front-end/default-fields/email/email.php:46
+#: ../front-end/default-fields/email/email.php:48
 msgid "You must enter a valid email address."
 msgstr ""
 
-#: ../front-end/default-fields/email/email.php:55
-#: ../front-end/default-fields/email/email.php:60
+#: ../front-end/default-fields/email/email.php:57
+#: ../front-end/default-fields/email/email.php:64
 msgid "This email is already reserved to be used soon."
 msgstr ""
 
-#: ../front-end/default-fields/email/email.php:55
-#: ../front-end/default-fields/email/email.php:60
-#: ../front-end/default-fields/email/email.php:68
-#: ../front-end/default-fields/email/email.php:79
-#: ../front-end/default-fields/username/username.php:44
-#: ../front-end/default-fields/username/username.php:54
+#: ../front-end/default-fields/email/email.php:57
+#: ../front-end/default-fields/email/email.php:64
+#: ../front-end/default-fields/email/email.php:73
+#: ../front-end/default-fields/email/email.php:84
+#: ../front-end/default-fields/username/username.php:50
+#: ../front-end/default-fields/username/username.php:65
 msgid "Please try a different one!"
 msgstr ""
 
-#: ../front-end/default-fields/email/email.php:68
-#: ../front-end/default-fields/email/email.php:79
+#: ../front-end/default-fields/email/email.php:73
+#: ../front-end/default-fields/email/email.php:84
 msgid "This email is already in use."
 msgstr ""
 
-#: ../front-end/default-fields/password-repeat/password-repeat.php:35
-#: ../front-end/default-fields/password-repeat/password-repeat.php:39
+#: ../front-end/default-fields/password-repeat/password-repeat.php:37
+#: ../front-end/default-fields/password-repeat/password-repeat.php:41
 msgid "The passwords do not match"
 msgstr ""
 
-#: ../front-end/default-fields/password/password.php:44
-#: ../front-end/recover.php:244
+#: ../front-end/default-fields/password/password.php:46
+#: ../front-end/recover.php:245
 #, php-format
 msgid "The password must have the minimum length of %s characters"
 msgstr ""
 
-#: ../front-end/default-fields/password/password.php:48
-#: ../front-end/recover.php:248
+#: ../front-end/default-fields/password/password.php:50
+#: ../front-end/recover.php:249
 #, php-format
 msgid "The password must have a minimum strength of %s"
 msgstr ""
 
-#: ../front-end/default-fields/username/username.php:44
+#: ../front-end/default-fields/username/username.php:50
 msgid "This username already exists."
 msgstr ""
 
-#: ../front-end/default-fields/username/username.php:47
+#: ../front-end/default-fields/username/username.php:53
+#: ../front-end/default-fields/username/username.php:60
 msgid "This username is invalid because it uses illegal characters."
 msgstr ""
 
-#: ../front-end/default-fields/username/username.php:47
+#: ../front-end/default-fields/username/username.php:53
+#: ../front-end/default-fields/username/username.php:60
 msgid "Please enter a valid username."
 msgstr ""
 
-#: ../front-end/default-fields/username/username.php:54
+#: ../front-end/default-fields/username/username.php:65
 msgid "This username is already reserved to be used soon."
 msgstr ""
 
-#: ../front-end/extra-fields/avatar/avatar.php:65
-#: ../front-end/extra-fields/avatar/avatar.php:103
-#: ../front-end/extra-fields/upload/upload.php:29
-#: ../front-end/extra-fields/upload/upload.php:68
-msgid "max upload size"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:71
-msgid "Current avatar: No uploaded avatar"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:76
-#: ../front-end/extra-fields/avatar/avatar.php:110
-msgid "Avatar"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:80
-#: ../front-end/extra-fields/avatar/avatar.php:85
-#: ../front-end/extra-fields/avatar/avatar.php:113
-#: ../front-end/extra-fields/avatar/avatar.php:115
-msgid "Click to see the current avatar"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:82
-#: ../front-end/extra-fields/avatar/avatar.php:113
-msgid ""
-"The avatar can't be deleted (It was marked as required by the administrator)"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:87
-#: ../front-end/extra-fields/avatar/avatar.php:115
-msgid "Are you sure you want to delete this avatar?"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:88
-#: ../front-end/extra-fields/avatar/avatar.php:115
-msgid "Click to delete the current avatar"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:96
-#: ../front-end/extra-fields/checkbox/checkbox.php:44
-#: ../front-end/extra-fields/datepicker/datepicker.php:47
-#: ../front-end/extra-fields/input-hidden/input-hidden.php:32
-#: ../front-end/extra-fields/input/input.php:28
-#: ../front-end/extra-fields/radio/radio.php:42
-#: ../front-end/extra-fields/select-multiple/select-multiple.php:44
-#: ../front-end/extra-fields/select-timezone/select-timezone.php:42
-#: ../front-end/extra-fields/select/select.php:44
-#: ../front-end/extra-fields/textarea/textarea.php:28
-#: ../front-end/extra-fields/upload/upload.php:62
+#: ../front-end/extra-fields/avatar/avatar.php:72
+#: ../front-end/extra-fields/checkbox/checkbox.php:45
+#: ../front-end/extra-fields/datepicker/datepicker.php:40
+#: ../front-end/extra-fields/input-hidden/input-hidden.php:34
+#: ../front-end/extra-fields/input/input.php:30
+#: ../front-end/extra-fields/radio/radio.php:44
+#: ../front-end/extra-fields/select-multiple/select-multiple.php:46
+#: ../front-end/extra-fields/select-timezone/select-timezone.php:44
+#: ../front-end/extra-fields/select/select.php:46
+#: ../front-end/extra-fields/textarea/textarea.php:30
+#: ../front-end/extra-fields/upload/upload.php:70
 #: ../front-end/extra-fields/wysiwyg/wysiwyg.php:33
 msgid "required"
 msgstr ""
 
-#: ../front-end/extra-fields/avatar/avatar.php:106
-msgid "Current avatar"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:106
-msgid "No uploaded avatar"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:124
-#, php-format
-msgid ""
-"The image file set in the %s field for this user could not be found on the "
-"server. The default WordPress avatar is being used at the moment."
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:212
-#: ../front-end/extra-fields/upload/upload.php:173
-msgid "The extension of the file did not match"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:215
-#: ../front-end/extra-fields/avatar/avatar.php:218
-#: ../front-end/extra-fields/upload/upload.php:177
-#: ../front-end/extra-fields/upload/upload.php:180
-msgid "The file uploaded exceeds the upload_max_filesize directive in php.ini"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:221
-#: ../front-end/extra-fields/upload/upload.php:183
-msgid "The file uploaded exceeds the MAX_FILE_SIZE directive in php.ini"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:224
-msgid "The file could only partially be uploaded "
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:227
-#: ../front-end/extra-fields/avatar/avatar.php:251
-#: ../front-end/extra-fields/avatar/avatar.php:254
-#: ../front-end/extra-fields/upload/upload.php:189
-#: ../front-end/extra-fields/upload/upload.php:213
-#: ../front-end/extra-fields/upload/upload.php:216
-msgid "No file was selected"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:230
-#: ../front-end/extra-fields/upload/upload.php:192
-msgid "The temporary upload folder is missing from the system"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:233
-#: ../front-end/extra-fields/upload/upload.php:195
-msgid "The file failed to write to the disk"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:236
-#: ../front-end/extra-fields/upload/upload.php:198
-msgid "A PHP extension stopped the file upload"
-msgstr ""
-
-#: ../front-end/extra-fields/avatar/avatar.php:239
-msgid "Unknown error occurred"
-msgstr ""
-
 #: ../front-end/extra-fields/extra-fields.php:99 ../front-end/login.php:89
 #: ../front-end/login.php:96 ../front-end/login.php:110
-#: ../front-end/recover.php:17 ../front-end/recover.php:227
+#: ../front-end/recover.php:17 ../front-end/recover.php:228
 msgid "ERROR"
 msgstr ""
 
-#: ../front-end/extra-fields/recaptcha/recaptcha.php:47
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:48
 msgid "To use reCAPTCHA you must get an API key from"
 msgstr ""
 
-#: ../front-end/extra-fields/recaptcha/recaptcha.php:77
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:131
 msgid "For security reasons, you must pass the remote ip to reCAPTCHA!"
 msgstr ""
 
-#: ../front-end/extra-fields/recaptcha/recaptcha.php:139
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:192
 msgid "To use reCAPTCHA you must get an API public key from:"
 msgstr ""
 
-#: ../front-end/extra-fields/recaptcha/recaptcha.php:142
-msgid "To use reCAPTCHA you must get an API private key from:"
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:421
+msgid "Click the BACK button on your browser, and try again."
 msgstr ""
 
-#: ../front-end/extra-fields/upload/upload.php:35
-msgid "Current file: No uploaded attachment"
+#: ../front-end/extra-fields/upload/upload.php:122
+msgid "Select File"
 msgstr ""
 
-#: ../front-end/extra-fields/upload/upload.php:39
-#: ../front-end/extra-fields/upload/upload.php:48
-#: ../front-end/extra-fields/upload/upload.php:71
-#: ../front-end/extra-fields/upload/upload.php:75
-#: ../front-end/extra-fields/upload/upload.php:77
-msgid "Current file"
+#: ../front-end/extra-fields/upload/upload_helper_functions.php:78
+#: ../front-end/extra-fields/upload/upload_helper_functions.php:87
+msgid "Sorry, you cannot upload this file type for this field."
 msgstr ""
 
-#: ../front-end/extra-fields/upload/upload.php:42
-#: ../front-end/extra-fields/upload/upload.php:51
-#: ../front-end/extra-fields/upload/upload.php:75
-#: ../front-end/extra-fields/upload/upload.php:77
-msgid "Click to see the current attachment"
+#: ../front-end/extra-fields/upload/upload_helper_functions.php:94
+msgid "An error occurred, please try again later."
 msgstr ""
 
-#: ../front-end/extra-fields/upload/upload.php:44
-#: ../front-end/extra-fields/upload/upload.php:75
-msgid ""
-"The attachment can't be deleted (It was marked as required by the "
-"administrator)"
-msgstr ""
-
-#: ../front-end/extra-fields/upload/upload.php:53
-#: ../front-end/extra-fields/upload/upload.php:77
-msgid "Are you sure you want to delete this attachment?"
-msgstr ""
-
-#: ../front-end/extra-fields/upload/upload.php:54
-#: ../front-end/extra-fields/upload/upload.php:77
-msgid "Click to delete the current attachment"
-msgstr ""
-
-#: ../front-end/extra-fields/upload/upload.php:71
-msgid "No uploaded attachment"
-msgstr ""
-
-#: ../front-end/extra-fields/upload/upload.php:164
-msgid "The extension of the file is not allowed"
-msgstr ""
-
-#: ../front-end/extra-fields/upload/upload.php:186
-msgid "The file could only partially be uploaded"
-msgstr ""
-
-#: ../front-end/extra-fields/upload/upload.php:201
-msgid "This field wasn't updated because an unknown error occured"
-msgstr ""
-
-#: ../front-end/extra-fields/user-role/user-role.php:65
-#: ../front-end/extra-fields/user-role/user-role.php:78
+#: ../front-end/extra-fields/user-role/user-role.php:67
+#: ../front-end/extra-fields/user-role/user-role.php:80
 msgid "Only administrators can see this field on edit profile forms."
 msgstr ""
 
-#: ../front-end/extra-fields/user-role/user-role.php:74
+#: ../front-end/extra-fields/user-role/user-role.php:76
 msgid "As an administrator you cannot change your role."
 msgstr ""
 
-#: ../front-end/extra-fields/user-role/user-role.php:106
+#: ../front-end/extra-fields/user-role/user-role.php:112
 msgid "You cannot register this user role"
 msgstr ""
 
@@ -2054,15 +2992,15 @@ msgstr ""
 msgid "Lost your password?"
 msgstr ""
 
-#: ../front-end/login.php:241 ../front-end/logout.php:17
+#: ../front-end/login.php:240 ../front-end/logout.php:17
 msgid "Log out of this account"
 msgstr ""
 
-#: ../front-end/login.php:241
+#: ../front-end/login.php:240
 msgid "Log out"
 msgstr ""
 
-#: ../front-end/login.php:242
+#: ../front-end/login.php:241
 #, php-format
 msgid "You are currently logged in as %1$s. %2$s"
 msgstr ""
@@ -2122,7 +3060,7 @@ msgstr ""
 msgid "Please check that you entered the correct email address."
 msgstr ""
 
-#: ../front-end/recover.php:215
+#: ../front-end/recover.php:216
 #, php-format
 msgid ""
 "Someone requested that the password be reset for the following account: <b>"
@@ -2130,46 +3068,46 @@ msgid ""
 "happen.<br/>To reset your password, visit the following link:%2$s"
 msgstr ""
 
-#: ../front-end/recover.php:218
+#: ../front-end/recover.php:219
 #, php-format
 msgid "Password Reset from \"%1$s\""
 msgstr ""
 
-#: ../front-end/recover.php:227
+#: ../front-end/recover.php:228
 #, php-format
 msgid "There was an error while trying to send the activation link to %1$s!"
 msgstr ""
 
-#: ../front-end/recover.php:255
+#: ../front-end/recover.php:256
 msgid "Your password has been successfully changed!"
 msgstr ""
 
-#: ../front-end/recover.php:274
+#: ../front-end/recover.php:275
 #, php-format
 msgid "You have successfully reset your password to: %1$s"
 msgstr ""
 
-#: ../front-end/recover.php:277 ../front-end/recover.php:291
+#: ../front-end/recover.php:278 ../front-end/recover.php:292
 #, php-format
 msgid "Password Successfully Reset for %1$s on \"%2$s\""
 msgstr ""
 
-#: ../front-end/recover.php:288
+#: ../front-end/recover.php:289
 #, php-format
 msgid ""
 "%1$s has requested a password change via the password reset feature.<br/>His/"
 "her new password is:%2$s"
 msgstr ""
 
-#: ../front-end/recover.php:307
+#: ../front-end/recover.php:308
 msgid "The entered passwords don't match!"
 msgstr ""
 
-#: ../front-end/recover.php:352
+#: ../front-end/recover.php:353
 msgid "ERROR:"
 msgstr ""
 
-#: ../front-end/recover.php:352
+#: ../front-end/recover.php:353
 msgid "Invalid key!"
 msgstr ""
 
@@ -2185,11 +3123,11 @@ msgstr ""
 msgid "This username is already activated!"
 msgstr ""
 
-#: ../front-end/register.php:102
+#: ../front-end/register.php:115
 msgid "Your email was successfully confirmed."
 msgstr ""
 
-#: ../front-end/register.php:112
+#: ../front-end/register.php:144
 msgid "There was an error while trying to activate the user."
 msgstr ""
 
@@ -2616,31 +3554,31 @@ msgstr ""
 
 #: ../modules/multiple-forms/edit-profile-forms.php:131
 #: ../modules/multiple-forms/register-forms.php:134
-#: ../modules/user-listing/userlisting.php:1140
+#: ../modules/user-listing/userlisting.php:1155
 msgid "Shortcode"
 msgstr ""
 
 #: ../modules/multiple-forms/edit-profile-forms.php:151
 #: ../modules/multiple-forms/register-forms.php:155
-#: ../modules/user-listing/userlisting.php:1161
+#: ../modules/user-listing/userlisting.php:1176
 msgid "(no title)"
 msgstr ""
 
 #: ../modules/multiple-forms/edit-profile-forms.php:171
 #: ../modules/multiple-forms/register-forms.php:174
-#: ../modules/user-listing/userlisting.php:1181
+#: ../modules/user-listing/userlisting.php:1196
 msgid "The shortcode will be available after you publish this form."
 msgstr ""
 
 #: ../modules/multiple-forms/edit-profile-forms.php:173
 #: ../modules/multiple-forms/register-forms.php:176
-#: ../modules/user-listing/userlisting.php:1183
+#: ../modules/user-listing/userlisting.php:1198
 msgid "Use this shortcode on the page you want the form to be displayed:"
 msgstr ""
 
 #: ../modules/multiple-forms/edit-profile-forms.php:177
 #: ../modules/multiple-forms/register-forms.php:180
-#: ../modules/user-listing/userlisting.php:1187
+#: ../modules/user-listing/userlisting.php:1202
 msgid ""
 "<span style=\"color:red;\">Note:</span> changing the form title also changes "
 "the shortcode!"
@@ -2648,7 +3586,7 @@ msgstr ""
 
 #: ../modules/multiple-forms/edit-profile-forms.php:183
 #: ../modules/multiple-forms/register-forms.php:186
-#: ../modules/user-listing/userlisting.php:1220
+#: ../modules/user-listing/userlisting.php:1235
 msgid "Form Shortcode"
 msgstr ""
 
@@ -2786,10 +3724,10 @@ msgid "After Registration..."
 msgstr ""
 
 #: ../modules/user-listing/class-userlisting.php:470
-#: ../modules/user-listing/userlisting.php:709
-#: ../modules/user-listing/userlisting.php:953
-#: ../modules/user-listing/userlisting.php:996
-#: ../modules/user-listing/userlisting.php:1340
+#: ../modules/user-listing/userlisting.php:724
+#: ../modules/user-listing/userlisting.php:968
+#: ../modules/user-listing/userlisting.php:1011
+#: ../modules/user-listing/userlisting.php:1355
 msgid "Search Users by All Fields"
 msgstr ""
 
@@ -2826,12 +3764,12 @@ msgid "Display name as"
 msgstr ""
 
 #: ../modules/user-listing/userlisting.php:125
-#: ../modules/user-listing/userlisting.php:1248
+#: ../modules/user-listing/userlisting.php:1263
 msgid "Registration Date"
 msgstr ""
 
 #: ../modules/user-listing/userlisting.php:126
-#: ../modules/user-listing/userlisting.php:1252
+#: ../modules/user-listing/userlisting.php:1267
 msgid "Number of Posts"
 msgstr ""
 
@@ -2884,12 +3822,30 @@ msgstr ""
 msgid "Single-userlisting Template"
 msgstr ""
 
+#: ../modules/user-listing/userlisting.php:247
+msgid "Avatar"
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:251
+#: ../modules/user-listing/userlisting.php:638
+msgid "Posts"
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:252
+#: ../modules/user-listing/userlisting.php:620
+msgid "Sign-up Date"
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:253
+msgid "More"
+msgstr ""
+
 #: ../modules/user-listing/userlisting.php:338
-msgid "You do not have permission to view this user list"
+msgid "You do not have permission to view this user list."
 msgstr ""
 
 #: ../modules/user-listing/userlisting.php:351
-msgid "You do not have the required user role to view this user list"
+msgid "You do not have the required user role to view this user list."
 msgstr ""
 
 #: ../modules/user-listing/userlisting.php:364
@@ -2900,208 +3856,208 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:599
+#: ../modules/user-listing/userlisting.php:614
 msgid "First/Lastname"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:605
-msgid "Sign-up Date"
-msgstr ""
-
-#: ../modules/user-listing/userlisting.php:614
-#: ../modules/user-listing/userlisting.php:1251
+#: ../modules/user-listing/userlisting.php:629
+#: ../modules/user-listing/userlisting.php:1266
 msgid "Display Name"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:623
-msgid "Posts"
-msgstr ""
-
-#: ../modules/user-listing/userlisting.php:626
-#: ../modules/user-listing/userlisting.php:1257
+#: ../modules/user-listing/userlisting.php:641
+#: ../modules/user-listing/userlisting.php:1272
 msgid "Aim"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:629
-#: ../modules/user-listing/userlisting.php:1258
+#: ../modules/user-listing/userlisting.php:644
+#: ../modules/user-listing/userlisting.php:1273
 msgid "Yim"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:632
-#: ../modules/user-listing/userlisting.php:1259
+#: ../modules/user-listing/userlisting.php:647
+#: ../modules/user-listing/userlisting.php:1274
 msgid "Jabber"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:812
+#: ../modules/user-listing/userlisting.php:827
 msgid "Click here to see more information about this user"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:812
+#: ../modules/user-listing/userlisting.php:827
 msgid "More..."
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:815
+#: ../modules/user-listing/userlisting.php:830
 msgid "Click here to see more information about this user."
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:907
-#: ../modules/user-listing/userlisting.php:910
+#: ../modules/user-listing/userlisting.php:922
+#: ../modules/user-listing/userlisting.php:925
 msgid "Click here to go back"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:907
+#: ../modules/user-listing/userlisting.php:922
 msgid "Back"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:940
+#: ../modules/user-listing/userlisting.php:955
 msgid "&laquo;&laquo; First"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:941
+#: ../modules/user-listing/userlisting.php:956
 msgid "&laquo; Prev"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:942
+#: ../modules/user-listing/userlisting.php:957
 msgid "Next &raquo; "
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:943
+#: ../modules/user-listing/userlisting.php:958
 msgid "Last &raquo;&raquo;"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:972
+#: ../modules/user-listing/userlisting.php:987
 msgid "You don't have any pagination settings on this userlisting!"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1013
+#: ../modules/user-listing/userlisting.php:1028
 msgid "Search"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1014
+#: ../modules/user-listing/userlisting.php:1029
 msgid "Clear Results"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1190
-#: ../modules/user-listing/userlisting.php:1194
+#: ../modules/user-listing/userlisting.php:1205
+#: ../modules/user-listing/userlisting.php:1209
 msgid "Extra shortcode parameters"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1192
+#: ../modules/user-listing/userlisting.php:1207
 msgid "View all extra shortcode parameters"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1197
+#: ../modules/user-listing/userlisting.php:1212
 msgid ""
 "displays users having a certain meta-value within a certain (extra) meta-"
 "field"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1198
+#: ../modules/user-listing/userlisting.php:1213
 msgid "Example:"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1200
+#: ../modules/user-listing/userlisting.php:1215
 msgid ""
 "Remember though, that the field-value combination must exist in the database."
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1206
+#: ../modules/user-listing/userlisting.php:1221
 msgid "displays only the users that you specified the user_id for"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1212
+#: ../modules/user-listing/userlisting.php:1227
 msgid "displays all users except the ones you specified the user_id for"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1269
+#: ../modules/user-listing/userlisting.php:1284
 msgid "Random (very slow on large databases > 10K user)"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1282
+#: ../modules/user-listing/userlisting.php:1287
+msgid "Ascending"
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:1288
+msgid "Descending"
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:1297
 msgid "Roles to Display"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1282
+#: ../modules/user-listing/userlisting.php:1297
 msgid ""
 "Restrict the userlisting to these selected roles only<br/>If not specified, "
 "defaults to all existing roles"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1283
+#: ../modules/user-listing/userlisting.php:1298
 msgid "Number of Users/Page"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1283
+#: ../modules/user-listing/userlisting.php:1298
 msgid ""
 "Set the number of users to be displayed on every paginated part of the all-"
 "userlisting"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1284
+#: ../modules/user-listing/userlisting.php:1299
 msgid "Default Sorting Criteria"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1284
+#: ../modules/user-listing/userlisting.php:1299
 msgid ""
 "Set the default sorting criteria<br/>This can temporarily be changed for "
 "each new session"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1285
+#: ../modules/user-listing/userlisting.php:1300
 msgid "Default Sorting Order"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1285
+#: ../modules/user-listing/userlisting.php:1300
 msgid ""
 "Set the default sorting order<br/>This can temporarily be changed for each "
 "new session"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1286
+#: ../modules/user-listing/userlisting.php:1301
 msgid "Avatar Size (All-userlisting)"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1286
+#: ../modules/user-listing/userlisting.php:1301
 msgid "Set the avatar size on the all-userlisting only"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1287
+#: ../modules/user-listing/userlisting.php:1302
 msgid "Avatar Size (Single-userlisting)"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1287
+#: ../modules/user-listing/userlisting.php:1302
 msgid "Set the avatar size on the single-userlisting only"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1288
+#: ../modules/user-listing/userlisting.php:1303
 msgid "Visible only to logged in users?"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1288
+#: ../modules/user-listing/userlisting.php:1303
 msgid "The userlisting will only be visible only to the logged in users"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1289
+#: ../modules/user-listing/userlisting.php:1304
 msgid "Visible to following Roles"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1289
+#: ../modules/user-listing/userlisting.php:1304
 msgid "The userlisting will only be visible to the following roles"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1295
+#: ../modules/user-listing/userlisting.php:1310
 msgid "Userlisting Settings"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1316
+#: ../modules/user-listing/userlisting.php:1331
 msgid ""
 "You need to activate the Userlisting feature from within the \"Modules\" tab!"
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1316
+#: ../modules/user-listing/userlisting.php:1331
 msgid "You can find it in the Profile Builder menu."
 msgstr ""
 
-#: ../modules/user-listing/userlisting.php:1479
+#: ../modules/user-listing/userlisting.php:1494
 msgid "No results found!"
 msgstr ""
