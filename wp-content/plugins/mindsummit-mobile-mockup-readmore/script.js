@@ -1,6 +1,6 @@
 jQuery(function(){
 	
-	var MOBILE_WIDTH = 419;
+	var MOBILE_WIDTH = 739;
 	
 	var $ = jQuery;
 	var _already_ran = false;

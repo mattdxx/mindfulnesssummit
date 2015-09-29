@@ -47,11 +47,6 @@
                     plugin_dir_url(__FILE__).'style.css',
                     array('style-responsive')
                     );
-                wp_enqueue_style(
-                    'mindsummit-mobilemockup-mobileview-css',
-                    plugin_dir_url(__FILE__).'mobileview.css',
-                    array('parent-style', 'style', 'style-responsive', 'style-custom')
-                    );
             }
 
         } # class MindSummit_MobileMockup_ReadMore
