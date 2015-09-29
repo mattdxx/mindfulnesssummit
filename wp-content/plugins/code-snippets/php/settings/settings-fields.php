@@ -1,72 +1,167 @@
 <?php
 
 /**
- * This file handles rendering the settings fields
- *
- * @since 2.0.0
- * @package Code_Snippets
+ * Retrieve the default setting values
+ * @return array
  */
+function code_snippets_get_default_settings() {
+	static $defaults;
 
-/**
- * Render a checkbox field for a setting
- *
- * @since 2.0.0
- * @param array $atts The setting field's attributes
- */
-function code_snippets_checkbox_field( $atts ) {
-	$saved_value = code_snippets_get_setting( $atts['section'], $atts['id'] );
-	$input_name = sprintf( 'code_snippets_settings[%s][%s]', $atts['section'], $atts['id'] );
-
-	$output = sprintf(
-		'<input type="checkbox" name="%s"%s>',
-		$input_name,
-		checked( $saved_value, true, false )
-	);
-
-	// Output the checkbox field, optionally with label
-	if ( isset( $atts['label'] ) ) {
-		printf( '<label for="%s">%s %s</label>', $input_name, $output, $atts['label'] );
-	} else {
-		echo $output;
+	if ( isset( $defaults ) ) {
+		return $defaults;
 	}
 
-	// Add field description if it is set
-	if ( ! empty( $atts['desc'] ) ) {
-		echo '<p class="description">' . $atts['desc'] . '</p>';
+	$defaults = array();
+
+	foreach ( code_snippets_get_settings_fields() as $section_id => $fields ) {
+		$defaults[ $section_id ] = array();
+
+		foreach ( $fields as $field_id => $field_atts ) {
+			$defaults[ $section_id ][ $field_id ] = $field_atts['default'];
+		}
 	}
+
+	return $defaults;
 }
 
 /**
- * Render a number select field for an editor setting
- *
- * @since 2.0.0
- * @param array $atts The setting field's attributes
+ * Retrieve the settings fields
+ * @return array
  */
-function code_snippets_number_field( $atts ) {
+function code_snippets_get_settings_fields() {
+	static $fields;
 
-	printf(
-		'<input type="number" name="code_snippets_settings[%s][%s]" value="%s"',
-		$atts['section'],
-		$atts['id'],
-		code_snippets_get_setting( $atts['section'], $atts['id'] )
+	if ( isset( $fields ) ) {
+		return $fields;
+	}
+
+	$fields = array();
+
+	$fields['general'] = array(
+		'activate_by_default' => array(
+			'name' => __( 'Activate by Default', 'code-snippets' ),
+			'type' => 'checkbox',
+			'label' => __( "Make the 'Save and Activate' button the default action when saving a snippet.", 'code-snippets' ),
+			'default' => false,
+		),
+
+		'snippet_scope_enabled' => array(
+			'name' => __( 'Enable Scope Selector', 'code-snippets' ),
+			'type' => 'checkbox',
+			'label' => __( 'Enable the scope selector when editing a snippet', 'code-snippets' ),
+			'default' => true,
+		),
+
+		'enable_tags' => array(
+			'name' => __( 'Enable Snippet Tags', 'code-snippets' ),
+			'type' => 'checkbox',
+			'label' => __( 'Show snippet tags on admin pages' ),
+			'default' => true,
+		),
+
+		'enable_description' => array(
+			'name' => __( 'Enable Snippet Descriptions', 'code-snippets' ),
+			'type' => 'checkbox',
+			'label' => __( 'Show snippet descriptions on admin pages' ),
+			'default' => true,
+		),
 	);
 
-	if ( isset( $atts['min'] ) ) {
-		printf( ' min="%d"', $atts['min'] );
-	}
+	/* Description Editor settings section */
+	$fields['description_editor'] = array(
 
-	if ( isset( $atts['max'] ) ) {
-		printf( ' max="%d"', $atts['max'] );
-	}
+		'rows' => array(
+			'name' => __( 'Row Height', 'code-snippets' ),
+			'type' => 'number',
+			'label' => __( 'rows', 'code-snippets' ),
+			'default' => 5,
+			'min' => 0,
+		),
 
-	echo '>';
+		'use_full_mce' => array(
+			'name' => __( 'Use Full Editor', 'code-snippets' ),
+			'type' => 'checkbox',
+			'label' => __( 'Enable all features of the visual editor', 'code-snippets' ),
+			'default' => false,
+		),
 
-	if ( ! empty( $atts['label'] ) ) {
-		echo ' ' . $atts['label'];
-	}
+		'media_buttons' => array(
+			'name' => __( 'Media Buttons', 'code-snippets' ),
+			'type' => 'checkbox',
+			'label' => __( 'Enable the add media buttons', 'code-snippets' ),
+			'default' => false,
+		),
+	);
 
-	// Add field description if it is set
-	if ( ! empty( $atts['desc'] ) ) {
-		echo '<p class="description">' . $atts['desc'] . '</p>';
-	}
+	/* Code Editor settings section */
+
+	$fields['editor'] = array(
+		'theme' => array(
+			'name' => __( 'Theme', 'code-snippets' ),
+			'type' => 'codemirror_theme_select',
+			'default' => 'default',
+			'codemirror' => 'theme',
+		),
+
+		'indent_with_tabs' => array(
+			'name' => __( 'Indent With Tabs', 'code-snippets' ),
+			'type' => 'checkbox',
+			'label' => __( 'Use hard tabs (not spaces) for indentation.', 'code-snippets' ),
+			'default' => true,
+			'codemirror' => 'indentWithTabs',
+		),
+
+		'tab_size' => array(
+			'name' => __( 'Tab Size', 'code-snippets' ),
+			'type' => 'number',
+			'desc' => __( 'The width of a tab character.', 'code-snippets' ),
+			'default' => 4,
+			'codemirror' => 'tabSize',
+			'min' => 0,
+		),
+
+		'indent_unit' => array(
+			'name' => __( 'Indent Unit', 'code-snippets' ),
+			'type' => 'number',
+			'desc' => __( 'How many spaces a block should be indented.', 'code-snippets' ),
+			'default' => 2,
+			'codemirror' => 'indentUnit',
+			'min' => 0,
+		),
+
+		'wrap_lines' => array(
+			'name' => __( 'Wrap Lines', 'code-snippets' ),
+			'type' => 'checkbox',
+			'label' => __( 'Whether the editor should scroll or wrap for long lines.', 'code-snippets' ),
+			'default' => true,
+			'codemirror' => 'lineWrapping',
+		),
+
+		'line_numbers' => array(
+			'name' => __( 'Line Numbers', 'code-snippets' ),
+			'type' => 'checkbox',
+			'label' => __( 'Show line numbers to the left of the editor.', 'code-snippets' ),
+			'default' => true,
+			'codemirror' => 'lineNumbers',
+		),
+
+		'auto_close_brackets' => array(
+			'name' => __( 'Auto Close Brackets', 'code-snippets' ),
+			'type' => 'checkbox',
+			'label' => __( 'Auto-close brackets and quotes when typed.', 'code-snippets' ),
+			'default' => true,
+			'codemirror' => 'autoCloseBrackets',
+		),
+
+		'highlight_selection_matches' => array(
+			'name' => __( 'Highlight Selection Matches', 'code-snippets' ),
+			'label' => __( 'Highlight all instances of a currently selected word.', 'code-snippets' ),
+			'type' => 'checkbox',
+			'default' => true,
+			'codemirror' => 'highlightSelectionMatches',
+		),
+	);
+
+	$fields = apply_filters( 'code_snippets_settings_fields', $fields );
+	return $fields;
 }

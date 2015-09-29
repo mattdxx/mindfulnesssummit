@@ -383,9 +383,7 @@ function execute_snippet( $code, $id = 0 ) {
 	$result = eval( $code );
 	ob_end_clean();
 
-	if ( $id ) {
-		do_action( 'code_snippets/after_execute_snippet', $id, $code );
-	}
+	do_action( 'code_snippets/after_execute_snippet', $id, $code, $result );
 
 	return $result;
 }
@@ -404,6 +402,10 @@ function execute_active_snippets() {
 		return false;
 	}
 
+	if ( isset( $_GET['code_snippets_safe_mode'] ) && $_GET['code_snippets_safe_mode'] && current_user_can( get_snippets_cap() ) ) {
+		return false;
+	}
+
 	/** @var wpdb $wpdb */
 	global $wpdb;
 
@@ -416,6 +418,7 @@ function execute_active_snippets() {
 	/* Check if the snippets tables exist */
 	$table_exists = $wpdb->get_var( "SHOW TABLES LIKE '$wpdb->snippets'" ) === $wpdb->snippets;
 	$ms_table_exists = is_multisite() && $wpdb->get_var( "SHOW TABLES LIKE '$wpdb->ms_snippets'" ) === $wpdb->ms_snippets;
+	$sql = '';
 
 	/* Fetch snippets from site table */
 	if ( $table_exists ) {
