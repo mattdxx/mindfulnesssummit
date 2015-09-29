@@ -11,6 +11,11 @@
 	}
 }
 
+/* remove .buynow-link temporary */
+.buynow-link {
+	display: none;
+}
+
 .speaker-menu-button-text {
 	transform: rotate(180deg);
 	-webkit-transform: rotate(180deg);
@@ -21,7 +26,7 @@
 }
 .speaker-menu-button {
 	padding: 5px 13px;
-	background-color: orange;
+	background-color: #e88108;
 	color: white;
 	cursor: pointer;
 	position: absolute;
