@@ -57,7 +57,7 @@ if( ! class_exists( 'PopMake_Ajax_Login_Modals_Ajax' ) ) {
             if( is_wp_error( $user ) ) {
                 $response = array(
                     'success' => false,
-                    'message'  => __( 'Wrong Username or Password!', 'popup-maker-ajax-login-modals' ),
+                    'message'  => __( 'Wrong Email or Password!', 'popup-maker-ajax-login-modals' ),
                 );
             } else {
                 $response = array(
@@ -87,9 +87,15 @@ if( ! class_exists( 'PopMake_Ajax_Login_Modals_Ajax' ) ) {
             }
 
             if( is_wp_error( $user ) ) {
+				
+				$response_error_message = $user->get_error_message();
+				if ($user->get_error_code() == 'existing_user_email')
+					$response_error_message = 
+						'Sorry, that email address is already registered, please <a href="/wp-login.php" onclick="jQuery(\'.popmake-registration-form,.popmake-recovery-form\').slideUp();jQuery(\'.popmake-login-form\').appendTo(jQuery(\'.popmake-login-form\').parent()).slideDown();return false;">login here</a>';
+
                 $response = array(
                     'success' => false,
-                    'message'   => $user->get_error_message(),
+                    'message'   => $response_error_message,
                 );
             }
             else {
@@ -129,9 +135,15 @@ if( ! class_exists( 'PopMake_Ajax_Login_Modals_Ajax' ) ) {
             $user_forgotten = $this->retrieve_password( $username );
             // Check if there were any errors when requesting a new password
             if( is_wp_error( $user_forgotten ) ) {
+				
+				$response_error_message = $user_forgotten->get_error_message();
+				if ($user_forgotten->get_error_code() == 'invalid_email')
+					$response_error_message = 
+						"This email address isn’t registered for a 'Access Pass'";
+				
                 $response = array(
                     'reset'      => false,
-                    'message' => $user_forgotten->get_error_message(),
+                    'message' => $response_error_message,
                 );
             }
             else {
@@ -216,3 +228,4 @@ if( ! class_exists( 'PopMake_Ajax_Login_Modals_Ajax' ) ) {
 
     }
 } // End if class_exists check
+
