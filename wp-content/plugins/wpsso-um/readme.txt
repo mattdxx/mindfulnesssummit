@@ -8,7 +8,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
 Requires At Least: 3.1
 Tested Up To: 4.3.1
-Stable Tag: 1.1.7
+Stable Tag: 1.1.8
 
 Update Manager for the WordPress Social Sharing Optimization (WPSSO) Pro plugin and its extensions.
 
@@ -61,7 +61,7 @@ Update Manager for the WordPress Social Sharing Optimization (WPSSO) Pro plugin 
 
 * [GitHub](https://github.com/SurniaUlula/wpsso-um)
 
-= Version 1.1.8 =
+= Version 1.1.8 2015/09/29 =
 
 * **New Features**
 	* *None*
@@ -70,7 +70,7 @@ Update Manager for the WordPress Social Sharing Optimization (WPSSO) Pro plugin 
 * **Bugfixes**
 	* *None*
 * **Developer Notes**
-	* Removed unnecessary current/new comparison before saving plugin update information (which may be incorrectly reported as current by some database caching solutions).
+	* Removed unnecessary current/new comparison before saving plugin update information (current options may have been incorrectly reported as new by some caching solutions).
 
 = Version 1.1.7 (2015/09/23) =
 
@@ -161,6 +161,10 @@ Update Manager for the WordPress Social Sharing Optimization (WPSSO) Pro plugin 
 	* *None*
 
 == Upgrade Notice ==
+
+= 1.1.8 =
+
+2015/09/29 Removed unnecessary current/new comparison before saving plugin update information.
 
 = 1.1.7 =
 

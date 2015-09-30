@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Plugin Name: WPSSO Pro Update Manager (WPSSO UM)
  * Plugin URI: http://surniaulula.com/extend/plugins/wpsso-um/
  * Author: Jean-Sebastien Morisset
@@ -9,7 +9,7 @@
  * Description: Update Manager for the WordPress Social Sharing Optimization (WPSSO) Pro plugin and its extensions
  * Requires At Least: 3.1
  * Tested Up To: 4.3.1
- * Version: 1.1.7
+ * Version: 1.1.8
  * 
  * Copyright 2015 - Jean-Sebastien Morisset - http://surniaulula.com/
  */
@@ -30,7 +30,7 @@ if ( ! class_exists( 'WpssoUm' ) ) {
 
 		private static $wpsso_short = 'WPSSO';
 		private static $wpsso_name = 'WordPress Social Sharing Optimization (WPSSO)';
-		private static $wpsso_min_version = '3.10';
+		private static $wpsso_min_version = '3.10.1';
 		private static $wpsso_has_min_ver = true;
 
 		public static function &get_instance() {

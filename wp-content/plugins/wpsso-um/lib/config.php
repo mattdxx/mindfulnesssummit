@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoUmConfig' ) ) {
 			'allow_update_host' => 'wpsso.com',
 			'plugin' => array(
 				'wpssoum' => array(
-					'version' => '1.1.7',		// plugin version
+					'version' => '1.1.8',		// plugin version
 					'short' => 'WPSSO UM',
 					'name' => 'WPSSO Pro Update Manager (WPSSO UM)',
 					'desc' => 'WPSSO extension to provide updates for the WordPress Social Sharing Optimization (WPSSO) Pro plugin and its extensions.',
