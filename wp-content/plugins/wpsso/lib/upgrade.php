@@ -22,8 +22,6 @@ if ( ! class_exists( 'WpssoOptionsUpgrade' ) && class_exists( 'WpssoOptions' ) )
 			'link_def_author_on_index' => 'seo_def_author_on_index',
 			'link_def_author_on_search' => 'seo_def_author_on_search',
 			'plugin_tid' => 'plugin_wpsso_tid',
-			'tc_prod_def_l2' => 'tc_prod_def_label2',
-			'tc_prod_def_d2' => 'tc_prod_def_data2',
 			'og_publisher_url' => 'fb_publisher_url',
 			'add_meta_property_og:video' => 'add_meta_property_og:video:url',
 			'twitter_shortener' => 'plugin_shortener',
@@ -35,13 +33,45 @@ if ( ! class_exists( 'WpssoOptionsUpgrade' ) && class_exists( 'WpssoOptions' ) )
 			'twitter_js_loc' => 'twitter_script_loc',	// wpsso ssb
 			'buffer_js_loc' => 'buffer_script_loc',		// wpsso ssb
 			'linkedin_js_loc' => 'linkedin_script_loc',	// wpsso ssb
+			'og_desc_strip' => 'plugin_p_strip',
+			'og_desc_alt' => 'plugin_use_img_alt',
+			'add_meta_name_twitter:data1' => '',
+			'add_meta_name_twitter:label1' => '',
+			'add_meta_name_twitter:data2' => '',
+			'add_meta_name_twitter:label2' => '',
+			'add_meta_name_twitter:data3' => '',
+			'add_meta_name_twitter:label3' => '',
+			'add_meta_name_twitter:data4' => '',
+			'add_meta_name_twitter:label4' => '',
+			'tc_enable' => '',
+			'tc_photo_width' => '',
+			'tc_photo_height' => '',
+			'tc_photo_crop' => '',
+			'tc_photo_crop_x' => '',
+			'tc_photo_crop_y' => '',
+			'tc_gal_min' => '',
+			'tc_gal_width' => '',
+			'tc_gal_height' => '',
+			'tc_gal_crop' => '',
+			'tc_gal_crop_x' => '',
+			'tc_gal_crop_y' => '',
+			'tc_prod_width' => '',
+			'tc_prod_height' => '',
+			'tc_prod_crop' => '',
+			'tc_prod_crop_x' => '',
+			'tc_prod_crop_y' => '',
+			'tc_prod_labels' => '',
+			'tc_prod_def_label2' => '',
+			'tc_prod_def_data2' => '',
+			'plugin_version' => '',
 		);
 
 		protected $p;
 
 		public function __construct( &$plugin ) {
 			$this->p =& $plugin;
-			$this->p->debug->mark();
+			if ( $this->p->debug->enabled )
+				$this->p->debug->mark();
 		}
 
 		// def_opts accepts output from functions, so don't force reference

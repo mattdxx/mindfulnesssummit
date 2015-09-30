@@ -259,8 +259,7 @@ class NewsletterModule {
                 return $url . '&amp;' . $qs;
             else
                 return $url . '&' . $qs;
-        }
-        else
+        } else
             return $url . '?' . $qs;
     }
 
@@ -387,7 +386,7 @@ class NewsletterModule {
      */
     static function split_posts(&$posts, $time = 0) {
         if ($last_run < 0) {
-            return array_chunk($posts, ceil(count($posts)/2));
+            return array_chunk($posts, ceil(count($posts) / 2));
         }
 
         $result = array(array(), array());
@@ -492,7 +491,7 @@ class NewsletterModule {
     }
 
     function admin_menu() {
-
+        
     }
 
     function add_menu_page($page, $title) {
@@ -597,8 +596,9 @@ class NewsletterModule {
      * @param array|object $user
      */
     function save_user($user, $return_format = OBJECT) {
-        if (is_object($user))
+        if (is_object($user)) {
             $user = (array) $user;
+        }
         if (empty($user['id'])) {
             $existing = $this->get_user($user['email']);
             if ($existing != null) {
@@ -623,6 +623,44 @@ class NewsletterModule {
         return $this->store->get_single_by_field(NEWSLETTER_USERS_TABLE, 'wp_user_id', $wp_user_id, $format);
     }
 
+    public static function antibot_form_check() {
+        return strtolower($_SERVER['REQUEST_METHOD']) == 'post' && isset($_POST['ts']) && time() - $_POST['ts'] < 30;
+    }
+
+    public static function request_to_antibot_form($submit_label = 'Continue...') {
+        header('Content-Type: text/html;charset=UTF-8');
+        header('X-Robots-Tag: noindex,nofollow,noarchive');
+        header('Cache-Control: no-cache,no-store,private');
+        echo "<!DOCTYPE html>\n";
+        echo '<html><head></head><body>';
+        echo '<form method="post" action="' . home_url('/') . '" id="form">';
+        foreach ($_REQUEST as $name => $value) {
+            if (is_array($value)) {
+                foreach ($value as $element) {
+                    echo '<input type="hidden" name="';
+                    echo esc_attr($name);
+                    echo '[]" value="';
+                    echo esc_attr(stripslashes($element));
+                    echo '">';
+                }
+            } else {
+
+                echo '<input type="hidden" name="';
+                echo esc_attr($name);
+                echo '" value="';
+                echo esc_attr(stripslashes($value));
+                echo '">';
+            }
+        }
+        echo '<input type="hidden" name="ts" value="' . time() . '">';
+        echo '<noscript><input type="submit" value="';
+        echo esc_attr($submit_label);
+        echo '"></noscript></form>';
+        echo '<script>document.getElementById("form").submit();</script>';
+        echo '</body></html>';
+        die();
+    }
+
 }
 
 /**
@@ -639,4 +677,20 @@ function nt_post_image($post_id = null, $size = 'thumbnail', $alternative = null
 
 function newsletter_get_post_image($post_id = null, $size = 'thumbnail', $alternative = null) {
     echo NewsletterModule::get_post_image($post_id, $size, $alternative);
+}
+
+/**
+ * Accepts a post or a post ID.
+ * 
+ * @param WP_Post $post
+ */
+function newsletter_the_excerpt($post, $words = 30) {
+    $post = get_post($post);
+    $excerpt = $post->post_excerpt;
+    if (empty($excerpt)) {
+        $excerpt = $post->post_content;
+        $excerpt = strip_shortcodes($excerpt);
+        $excerpt = wp_strip_all_tags($excerpt, true);
+    }
+    echo '<p>' . wp_trim_words($excerpt, $words) . '</p>';
 }

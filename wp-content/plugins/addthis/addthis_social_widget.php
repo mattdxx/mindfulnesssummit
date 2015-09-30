@@ -3,7 +3,7 @@
  * Plugin Name: AddThis Sharing Buttons
  * Plugin URI: http://www.addthis.com
  * Description: Use the AddThis suite of website tools which includes sharing, following, recommended content, and conversion tools to help you make your website smarter. With AddThis, you can see how your users are engaging with your content, provide a personalized experience for each user and encourage them to share, subscribe or follow.
- * Version: 5.1.1
+ * Version: 5.1.2
  * Author: The AddThis Team
  * Author URI: http://www.addthis.com/
  * License: GPL2
@@ -1081,11 +1081,10 @@ if ($addthis_options['addthis_plugin_controls'] == "AddThis") {
         $checkForToolbox = "addthis_toolbox";
         $checkForButton = "addthis_button";
 
-        if (   _addthis_excerpt_buttons_enabled()
-            && strpos($content, $checkForToolbox) === false
+        if (strpos($content, $checkForToolbox) === false
             && strpos($content, $checkForButton) === false
         ) {
-          $content = addthis_display_social_widget($content, false, false);
+          $content = addthis_display_social_widget($content, false, true);
         }
 
         return $content;
@@ -1222,7 +1221,7 @@ if ($addthis_options['addthis_plugin_controls'] == "AddThis") {
         return $below;
     }
 
-    function addthis_display_social_widget($content, $filtered = true, $below_excerpt = false)
+    function addthis_display_social_widget($content, $filtered = true, $excerpt = false)
     {
         global $addthis_styles, $addthis_new_styles, $post;
         global $addThisConfigs;
@@ -1242,8 +1241,8 @@ if ($addthis_options['addthis_plugin_controls'] == "AddThis") {
 
             $aboveFieldName = $fieldList['above']['fieldName'];
             $belowFieldName = $fieldList['below']['fieldName'];
-            $displayAbove = (isset($options[$aboveFieldName]) && $options[$aboveFieldName] == true ) ? true : false;
-            $displayBelow = (isset($options[$belowFieldName]) && $options[$belowFieldName] == true ) ? true : false;
+            $displayAbove = !empty($options[$aboveFieldName]);
+            $displayBelow = !empty($options[$belowFieldName]);
         } else {
             $displayAbove = false;
             $displayBelow = false;
@@ -1270,6 +1269,9 @@ if ($addthis_options['addthis_plugin_controls'] == "AddThis") {
             $displayBelow = false;
         }
 
+        $displayAbove = apply_filters('addthis_post_exclude', $displayAbove);
+        $displayBelow = apply_filters('addthis_post_exclude', $displayBelow);
+
         remove_filter('wp_trim_excerpt', 'addthis_remove_tag', 9, 1);
         remove_filter('get_the_excerpt', 'addthis_late_widget');
         $identifier =  addthis_get_identifier();
@@ -1279,6 +1281,7 @@ if ($addthis_options['addthis_plugin_controls'] == "AddThis") {
             && $options['above'] != 'none'
             && $options['above'] != 'disable'
             && $displayAbove
+            && (!$excerpt || _addthis_excerpt_buttons_enabled_above())
         ) {
             $above = addthis_display_widget_above($styles, $options);
         } elseif ($displayAbove) {
@@ -1291,7 +1294,7 @@ if ($addthis_options['addthis_plugin_controls'] == "AddThis") {
             && $options['below'] != 'none'
             && $options['below'] != 'disable'
             && $displayBelow
-            && ! $below_excerpt
+            && (!$excerpt || _addthis_excerpt_buttons_enabled_below())
         ) {
             $below = addthis_display_widget_below($styles, $options);
         } elseif (   $below_excerpt

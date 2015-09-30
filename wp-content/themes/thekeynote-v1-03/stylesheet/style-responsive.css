@@ -32,7 +32,9 @@ margin-top: 44px; }
 	body .gdlr-logo.gdlr-align-right #gdlr-responsive-navigation .dl-trigger{ top: 45px; margin-top: 0px; }
 	
 	.gdlr-navigation-wrapper{ display: none; }
-	.gdlr-fixed-header{ display: none; }
+	
+	/*.gdlr-fixed-header{ display: none; }*/
+	.gdlr-fixed-header .gdlr-header-inner { margin-top: -10px; }
 
 	.portfolio-item-wrapper .gdlr-outer-nav, .blog-item-wrapper .gdlr-outer-nav { display: none; }
 	.gdlr-blog-widget .post-header { overflow: visible; clear: left; }

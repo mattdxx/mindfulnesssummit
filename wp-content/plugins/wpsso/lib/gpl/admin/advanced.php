@@ -18,8 +18,9 @@ if ( ! class_exists( 'WpssoGplAdminAdvanced' ) ) {
 				'plugin_settings_rows' => 3,
 				'plugin_content_rows' => 2,
 				'plugin_social_rows' => 2,
+				'plugin_integration_rows' => 2,
 				'plugin_cache_rows' => 3,
-				'plugin_apikeys_rows' => 3,
+				'plugin_apikeys_rows' => 2,
 				'cm_custom_rows' => 2,
 				'cm_builtin_rows' => 2,
 				'taglist_tags_rows' => 4,
@@ -28,42 +29,56 @@ if ( ! class_exists( 'WpssoGplAdminAdvanced' ) ) {
 
 		public function filter_plugin_settings_rows( $rows, $form, $network = false ) {
 
-			if ( $network === true )
-				return $rows;
+			$rows[] = '<td colspan="'.( $network ? 4 : 2 ).'" align="center">'.
+				$this->p->msgs->get( 'pro-feature-msg', array( 'lca' => 'wpsso' ) ).'</td>';
 
-			$rows[] = '<td colspan="2" align="center">'.
-				$this->p->msgs->get( 'pro-feature-msg' ).'</td>';
-
-			$rows[] = $this->p->util->get_th( 'Check Webpage Head for Conflicts', 'highlight', 'plugin_check_head' ).
-			'<td class="blank">'.$form->get_no_checkbox( 'plugin_check_head' ).'</td>';
+			$rows[] = $this->p->util->get_th( 'Options to Show by Default', null, 'plugin_show_opts' ).
+			'<td class="blank">'.$this->p->cf['form']['show_options'][$this->p->options['plugin_show_opts']].'</td>'.
+			$this->get_site_use( $form, $network, 'plugin_object_cache_exp' );
 
 			$rows[] = '<tr class="hide_in_basic">'.
 			$this->p->util->get_th( 'Report Cache Purge Count', null, 'plugin_cache_info' ).
-			'<td class="blank">'.$form->get_no_checkbox( 'plugin_cache_info' ).'</td>';
+			'<td class="blank">'.$form->get_no_checkbox( 'plugin_cache_info' ).'</td>'.
+			$this->get_site_use( $form, $network, 'plugin_cache_info' );
 
 			$rows[] = '<tr class="hide_in_basic">'.
 			$this->p->util->get_th( 'Use WP Locale for Language', null, 'plugin_filter_lang' ).
-			'<td class="blank">'.$form->get_no_checkbox( 'plugin_filter_lang' ).'</td>';
+			'<td class="blank">'.$form->get_no_checkbox( 'plugin_filter_lang' ).'</td>'.
+			$this->get_site_use( $form, $network, 'plugin_filter_lang' );
 
 			$rows[] = '<tr class="hide_in_basic">'.
 			$this->p->util->get_th( 'Auto-Resize Media Images', null, 'plugin_auto_img_resize' ).
-			'<td class="blank">'.$form->get_no_checkbox( 'plugin_auto_img_resize' ).'</td>';
+			'<td class="blank">'.$form->get_no_checkbox( 'plugin_auto_img_resize' ).'</td>'.
+			$this->get_site_use( $form, $network, 'plugin_auto_img_resize' );
 
 			$rows[] = '<tr class="hide_in_basic">'.
 			$this->p->util->get_th( 'Check Image Dimensions', null, 'plugin_ignore_small_img' ).
-			'<td class="blank">'.$form->get_no_checkbox( 'plugin_ignore_small_img' ).'</td>';
+			'<td class="blank">'.$form->get_no_checkbox( 'plugin_ignore_small_img' ).'</td>'.
+			$this->get_site_use( $form, $network, 'plugin_ignore_small_img' );
 
 			if ( ! empty( $this->p->cf['*']['lib']['shortcode'] ) ) {
 				$rows[] = '<tr class="hide_in_basic">'.
-				$this->p->util->get_th( 'Enable Shortcode(s)', null, 'plugin_shortcodes' ).
-				'<td class="blank">'.$form->get_no_checkbox( 'plugin_shortcodes' ).'</td>';
+				$this->p->util->get_th( 'Enable Plugin Shortcode(s)', null, 'plugin_shortcodes' ).
+				'<td class="blank">'.$form->get_no_checkbox( 'plugin_shortcodes' ).'</td>'.
+				$this->get_site_use( $form, $network, 'plugin_shortcodes' );
 			}
 
 			if ( ! empty( $this->p->cf['*']['lib']['widget'] ) ) {
 				$rows[] = '<tr class="hide_in_basic">'.
-				$this->p->util->get_th( 'Enable Widget(s)', null, 'plugin_widgets' ).
-				'<td class="blank">'.$form->get_no_checkbox( 'plugin_widgets' ).'</td>';
+				$this->p->util->get_th( 'Enable Plugin Widget(s)', null, 'plugin_widgets' ).
+				'<td class="blank">'.$form->get_no_checkbox( 'plugin_widgets' ).'</td>'.
+				$this->get_site_use( $form, $network, 'plugin_widgets' );
 			}
+
+			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( 'Enable WP Excerpt for Pages', null, 'plugin_page_excerpt' ).
+			'<td class="blank">'.$form->get_no_checkbox( 'plugin_page_excerpt' ).'</td>'.
+			$this->get_site_use( $form, $network, 'plugin_page_excerpt' );
+
+			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( 'Enable WP Tags for Pages', null, 'plugin_page_tags' ).
+			'<td class="blank">'.$form->get_no_checkbox( 'plugin_page_tags' ).'</td>'.
+			$this->get_site_use( $form, $network, 'plugin_page_tags' );
 
 			return $rows;
 		}
@@ -73,6 +88,32 @@ if ( ! class_exists( 'WpssoGplAdminAdvanced' ) ) {
 			$rows[] = '<td colspan="2" align="center">'.
 				$this->p->msgs->get( 'pro-feature-msg' ).'</td>';
 
+			$rows[] = $this->p->util->get_th( 'Use Filtered (SEO) Titles', 'highlight', 'plugin_filter_title' ).
+			'<td class="blank">'.$form->get_no_checkbox( 'plugin_filter_title' ).'</td>';
+			
+			$rows[] = $this->p->util->get_th( 'Apply WordPress Content Filters', 'highlight', 'plugin_filter_content' ).
+			'<td class="blank">'.$form->get_no_checkbox( 'plugin_filter_content' ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( 'Apply WordPress Excerpt Filters', null, 'plugin_filter_excerpt' ).
+			'<td class="blank">'.$form->get_no_checkbox( 'plugin_filter_excerpt' ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( 'Content Starts at 1st Paragraph', null, 'plugin_p_strip' ).
+			'<td class="blank">'.$form->get_no_checkbox( 'plugin_p_strip' ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( 'Use Image Alt if No Content', null, 'plugin_use_img_alt' ).
+			'<td class="blank">'.$form->get_no_checkbox( 'plugin_use_img_alt' ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( 'Image Alt Text Prefix', null, 'plugin_img_alt_prefix' ).
+			'<td class="blank">'.$form->options['plugin_img_alt_prefix'].'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( 'WP Caption Paragraph Prefix', null, 'plugin_p_cap_prefix' ).
+			'<td class="blank">'.$form->options['plugin_p_cap_prefix'].'</td>';
+
 			$rows[] = $this->p->util->get_th( 'Check for Embedded Media', null, 'plugin_embedded_media' ).
 			'<td class="blank">'.
 			'<p>'.$form->get_no_checkbox( 'plugin_slideshare_api' ).' Slideshare Presentations</p>'.
@@ -80,14 +121,6 @@ if ( ! class_exists( 'WpssoGplAdminAdvanced' ) ) {
 			'<p>'.$form->get_no_checkbox( 'plugin_wistia_api' ).' Wistia Videos</p>'.
 			'<p>'.$form->get_no_checkbox( 'plugin_youtube_api' ).' YouTube Videos and Playlists</p>'.
 			'</td>';
-
-			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( 'Enable Excerpt for Pages', null, 'plugin_page_excerpt' ).
-			'<td class="blank">'.$form->get_no_checkbox( 'plugin_page_excerpt' ).'</td>';
-
-			$rows[] = '<tr class="hide_in_basic">'.
-			$this->p->util->get_th( 'Enable WordPress Tags for Pages', null, 'plugin_page_tags' ).
-			'<td class="blank">'.$form->get_no_checkbox( 'plugin_page_tags' ).'</td>';
 
 			return $rows;
 		}
@@ -125,16 +158,37 @@ if ( ! class_exists( 'WpssoGplAdminAdvanced' ) ) {
 			return $rows;
 		}
 
-		public function filter_plugin_cache_rows( $rows, $form, $network = false ) {
+		public function filter_plugin_integration_rows( $rows, $form ) {
 
-			$rows[] = '<td colspan="'.( $network === false ? 2 : 4 ).'" align="center">'.
+			$rows[] = '<td colspan="2" align="center">'.
 				$this->p->msgs->get( 'pro-feature-msg' ).'</td>';
 
-			$rows[] = $this->p->util->get_th( 'Object Cache Expiry', 'highlight', 'plugin_object_cache_exp' ).
+			$rows[] = $this->p->util->get_th( 'Check for Duplicate Meta Tags', 'highlight', 'plugin_check_head' ).
+			'<td class="blank">'.$form->get_no_checkbox( 'plugin_check_head' ).'</td>';
+
+			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( 'Header &lt;html&gt; Attribute Filter', null, 'plugin_html_attr_filter' ).
+			'<td class="blank">Name:&nbsp;'.$this->p->options['plugin_html_attr_filter_name'].'</td><td class="blank">'.
+				'Priority:&nbsp;'.$this->p->options['plugin_html_attr_filter_prio'].'</td>';
+			
+			$rows[] = '<tr class="hide_in_basic">'.
+			$this->p->util->get_th( 'Header &lt;head&gt; Attribute Filter', 'highlight', 'plugin_head_attr_filter' ).
+			'<td class="blank">Name:&nbsp;'.$this->p->options['plugin_head_attr_filter_name'].'</td><td class="blank">'.
+				'Priority:&nbsp;'.$this->p->options['plugin_head_attr_filter_prio'].'</td>';
+			
+			return $rows;
+		}
+
+		public function filter_plugin_cache_rows( $rows, $form, $network = false ) {
+
+			$rows[] = '<td colspan="'.( $network ? 4 : 2 ).'" align="center">'.
+				$this->p->msgs->get( 'pro-feature-msg', array( 'lca' => 'wpsso' ) ).'</td>';
+
+			$rows['plugin_object_cache_exp'] = $this->p->util->get_th( 'Object Cache Expiry', 'highlight', 'plugin_object_cache_exp' ).
 			'<td nowrap class="blank">'.$this->p->options['plugin_object_cache_exp'].' seconds</td>'.
 			$this->get_site_use( $form, $network, 'plugin_object_cache_exp' );
 
-			$rows[] = '<tr class="hide_in_basic">'.
+			$rows['plugin_verify_certs'] = '<tr class="hide_in_basic">'.
 			$this->p->util->get_th( 'Verify SSL Certificates', null, 'plugin_verify_certs' ).
 			'<td class="blank">'.$form->get_no_checkbox( 'plugin_verify_certs' ).'</td>'.
 			$this->get_site_use( $form, $network, 'plugin_verify_certs' );
@@ -144,42 +198,30 @@ if ( ! class_exists( 'WpssoGplAdminAdvanced' ) ) {
 
 		public function filter_plugin_apikeys_rows( $rows, $form, $network = false ) {
 
-			$rows[] = '<td colspan="'.( $network === false ? 2 : 4 ).'" align="center">'.
+			$rows[] = '<td colspan="'.( $network ? 4 : 2 ).'" align="center">'.
 				$this->p->msgs->get( 'pro-feature-msg', array( 'lca' => 'wpsso' ) ).'</td>';
 
 			$rows['plugin_shortener'] = $this->p->util->get_th( 'Preferred URL Shortening Service', null, 'plugin_shortener' ).
 			'<td class="blank">'.$form->get_hidden( 'plugin_shortener' ).
-			$this->p->cf['form']['shorteners'][$this->p->options['plugin_shortener']].'</td>'.
-			$this->get_site_use( $form, $network, 'plugin_shortener' );
+			$this->p->cf['form']['shorteners'][$this->p->options['plugin_shortener']].'</td>';
 
 			$rows['plugin_min_shorten'] = '<tr class="hide_in_basic">'.
 			$this->p->util->get_th( 'Minimum URL Length to Shorten', null, 'plugin_min_shorten' ). 
-			'<td nowrap class="blank">'.$this->p->options['plugin_min_shorten'].' characters</td>'.
-			$this->get_site_use( $form, $network, 'plugin_min_shorten' );
+			'<td nowrap class="blank">'.$this->p->options['plugin_min_shorten'].' characters</td>';
 
 			$rows['plugin_bitly_login'] = $this->p->util->get_th( 'Bit.ly Username', null, 'plugin_bitly_login' ).
-			'<td class="blank mono">'.$this->p->options['plugin_bitly_login'].'</td>'.
-			$this->get_site_use( $form, $network, 'plugin_bitly_login' );
+			'<td class="blank mono">'.$this->p->options['plugin_bitly_login'].'</td>';
 
 			$rows['plugin_bitly_api_key'] = $this->p->util->get_th( 'Bit.ly API Key', null, 'plugin_bitly_api_key' ).
-			'<td class="blank mono">'.$this->p->options['plugin_bitly_api_key'].'</td>'.
-			$this->get_site_use( $form, $network, 'plugin_bitly_api_key' );
+			'<td class="blank mono">'.$this->p->options['plugin_bitly_api_key'].'</td>';
 
 			$rows['plugin_google_api_key'] = $this->p->util->get_th( 'Google Project App BrowserKey', null, 'plugin_google_api_key' ).
-			'<td class="blank mono">'.$this->p->options['plugin_google_api_key'].'</td>'.
-			$this->get_site_use( $form, $network, 'plugin_google_api_key' );
+			'<td class="blank mono">'.$this->p->options['plugin_google_api_key'].'</td>';
 
 			$rows['plugin_google_shorten'] = $this->p->util->get_th( 'Google URL Shortener API is ON', null, 'plugin_google_shorten' ).
-			'<td class="blank">'.$this->p->cf['form']['yes_no'][$this->p->options['plugin_google_shorten']].'</td>'.
-			$this->get_site_use( $form, $network, 'plugin_google_shorten' );
+			'<td class="blank">'.$this->p->cf['form']['yes_no'][$this->p->options['plugin_google_shorten']].'</td>';
 
 			return $rows;
-		}
-
-		protected function get_site_use( &$form, &$network, $opt ) {
-			return $network === false ? '' : $this->p->util->get_th( 'Site Use', 'site_use' ).
-				'<td class="site_use blank">'.$form->get_select( $opt.':use', 
-					$this->p->cf['form']['site_option_use'], 'site_use', null, true, true ).'</td>';
 		}
 
 		public function filter_cm_custom_rows( $rows, $form ) {
@@ -274,6 +316,12 @@ if ( ! class_exists( 'WpssoGplAdminAdvanced' ) ) {
 			}
 
 			return array_merge( $rows, $col_rows );
+		}
+
+		protected function get_site_use( &$form, &$network, $name ) {
+			return $network === false ? '' : $this->p->util->get_th( 'Site Use', 'site_use' ).
+				'<td class="site_use blank">'.$form->get_select( $name.':use', 
+					$this->p->cf['form']['site_option_use'], 'site_use', null, true, true ).'</td>';
 		}
 	}
 }

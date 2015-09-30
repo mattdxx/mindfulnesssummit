@@ -6,38 +6,48 @@ function tcm_ui_metabox($post) {
 
     $args=array('metabox'=>TRUE, 'field'=>'id');
     $ids=$tcm->Manager->getCodes(-1, $post, $args);
+
+    $allIds=array();
     $snippets=$tcm->Manager->values();
+    $postType=$post->post_type;
+    foreach($snippets as $snippet) {
+        if($snippet['trackMode']==TCM_TRACK_MODE_CODE) {
+            if($snippet['active']!=0) {
+                if($snippet['exceptPostsOfType_'.$postType.'_Active']==0
+                    || !in_array(-1, $snippet['exceptPostsOfType_'.$postType])) {
+                    $allIds[]=$snippet['id'];
+                }
+            }
+        }
+    }
     ?>
     <div>
         <?php $tcm->Lang->P('Select existing Tracking Code')?>
     </div>
-    <input type="hidden" name="tcm_previous_ids" value="<?php echo implode(',', $ids)?>" />
+    <input type="hidden" name="tcm_all_ids" value="<?php echo implode(',', $allIds)?>" />
 
     <div>
         <?php
         $postType=$post->post_type;
         foreach($snippets as $snippet) {
             $id=$snippet['id'];
+            if($snippet['trackMode']!=TCM_TRACK_MODE_CODE) {
+                continue;
+            }
+
             $disabled='';
             $checked='';
 
-            if($snippet['active']==0) {
+            if(!in_array($id, $allIds)) {
                 $disabled=' DISABLED';
-            } elseif($snippet['exceptPostsOfType_'.$postType.'_Active']>0 && in_array(-1, $snippet['exceptPostsOfType_'.$postType])) {
-                //the user have excluded all the posts of this type from code definition
-                $disabled=' DISABLED';
-            } else {
-                if(in_array($id, $ids)) {
-                    $checked=' checked';
-                    //$active=($snippet['includePostsOfType_'.$postType.'_Active']>0);
-                    //if(!$active) {
-                    //    $checked='';
-                    //}
-                }
+            } elseif(in_array($id, $ids)) {
+                $checked=' CHECKED';
             }
             ?>
             <input type="checkbox" class="tcm-checkbox" name="tcm_ids[]" value="<?php echo $id?>" <?php echo $checked ?> <?php echo $disabled ?> />
-            <a href="<?php echo TCM_TAB_EDITOR_URI?>&id=<?php echo $id?>" target="_blank"><?php echo $snippet['name']?></a>
+            <?php echo $snippet['name']?></a>
+            <a href="<?php echo TCM_TAB_EDITOR_URI?>&id=<?php echo $id?>" target="_blank">&nbsp;››</a>
+
             <br/>
         <?php } ?>
     </div>
@@ -56,8 +66,11 @@ function tcm_ui_metabox($post) {
         </div>
     <?php } else { ?>
         <span style="color:red;font-weight:bold;"><?php $tcm->Lang->P('FreeLicenseReached')?></span>
-    <?php }
-}
+    <?php } ?>
+
+    <div style="clear:both"></div>
+    <i>Saving the post you'll save the tracking code</i>
+<?php }
 
 //si aggancia per creare i metabox in post e page
 add_action('add_meta_boxes', 'tcm_add_meta_box');
@@ -84,6 +97,32 @@ function tcm_add_meta_box() {
         }
     }
 }
+function tcm_edit_snippet_array($post, &$snippet, $prefix, $diff) {
+    global $tcm;
+    $postId=$tcm->Utils->get($post, 'ID', FALSE);
+    if($postId===FALSE) {
+        $postId=$tcm->Utils->get($post, 'post_ID');
+    }
+    $postType=$tcm->Utils->get($post, 'post_type');
+
+    $keyArray='PostsOfType_'.$postType;
+    $keyActive=$keyArray.'_Active';
+    if($snippet[$prefix.$keyActive]==0) {
+        $snippet[$prefix.$keyArray]=array();
+    }
+    $k=$prefix.$keyArray;
+    if($diff) {
+        $snippet[$k]=array_diff($snippet[$k], array($postId));
+    } else {
+        $snippet[$k]=array_merge($snippet[$k], array($postId));
+        if(in_array(-1, $snippet[$k])) {
+            $snippet[$k]=array(-1);
+        }
+    }
+    $snippet[$k]=array_unique($snippet[$k]);
+    $snippet[$prefix.$keyActive]=(count($snippet[$k])>0 ? 1 : 0);
+    return $snippet;
+}
 //si aggancia a quando un post viene salvato per salvare anche gli altri dati del metabox
 add_action('save_post', 'tcm_save_meta_box_data');
 function tcm_save_meta_box_data($postId) {
@@ -106,65 +145,67 @@ function tcm_save_meta_box_data($postId) {
         return;
     }
 
-    $postType=$_POST['post_type'];
-    $previousIds=explode(',', $tcm->Utils->qs('tcm_previous_ids'));
+    $args=array('metabox'=>TRUE, 'field'=>'id');
+    $ids=$tcm->Manager->getCodes(-1, $_POST, $args);
+    if(!is_array($ids)) {
+        $ids=array();
+    }
+
+    $allIds=$tcm->Utils->qs('tcm_all_ids');
+    if($allIds===FALSE || $allIds=='') {
+        $allIds=array();
+    } else {
+        $allIds=explode(',', $allIds);
+    }
     $currentIds=$tcm->Utils->qs('tcm_ids', array());
-    $keyArray='PostsOfType_'.$postType;
-    $keyActive=$keyArray.'_Active';
+    if(!is_array($currentIds)) {
+        $currentIds=array();
+    }
 
-    if($previousIds!=$currentIds) {
-        //first remove by ids from old snippets
-        foreach($previousIds as $id) {
+    if($ids!=$currentIds) {
+        foreach($allIds as $id) {
             $id=intval($id);
-            if($id>0 && !in_array($id, $currentIds)) {
-                $snippet=$tcm->Manager->get($id);
-                if($snippet!=NULL) {
-                    //remove my id from post type includes
-                    $snippet['include'.$keyArray] = array_diff($snippet['include'.$keyArray], array($postId));
-                    $snippet['include'.$keyArray] = array_unique($snippet['include'.$keyArray]);
-                    $snippet['include'.$keyActive]=(count($snippet['include'.$keyArray])>0 ? 1 : 0);
+            if($id<=0) {
+                continue;
+            }
+            if(in_array($id, $currentIds) && in_array($id, $ids)) {
+                //selected now and already selected
+                continue;
+            }
+            if(!in_array($id, $currentIds) && !in_array($id, $ids)) {
+                //not selected now and not already selected
+                continue;
+            }
 
-                    //include it in post type exception
-                    if($snippet['except'.$keyActive]==0) {
-                        $snippet['except'.$keyArray]=array();
-                    }
-                    $snippet['except'.$keyArray] = array_merge($snippet['except'.$keyArray], array($postId));
-                    $snippet['except'.$keyArray] = array_unique($snippet['except'.$keyArray]);
-                    $snippet['except'.$keyActive]=1;
-                }
-                $tcm->Manager->put($id, $snippet);
+            $snippet=$tcm->Manager->get($id);
+            if($snippet==NULL) {
+                continue;
             }
-        }
-        //after insert by id in the snippets selected
-        foreach($currentIds as $id) {
-            $id=intval($id);
-            if($id>0 && !in_array($id, $previousIds)) {
-                $snippet = $tcm->Manager->get($id);
-                if ($snippet) {
-                    //include my id in post type includes
-                    if($snippet['include'.$keyActive]==0) {
-                        $snippet['include'.$keyArray]=array();
-                    }
-                    $snippet['include'.$keyArray] = array_merge($snippet['include'.$keyArray], array($postId));
-                    $snippet['include'.$keyArray] = array_unique($snippet['include'.$keyArray]);
-                    $snippet['include'.$keyActive]=1;
-                    //remove it from post type exception
-                    $snippet['except'.$keyArray] = array_diff($snippet['except'.$keyArray], array($postId));
-                    $snippet['except'.$keyArray] = array_unique($snippet['except'.$keyArray]);
-                    $snippet['except'.$keyActive]=(count($snippet['except'.$keyArray])>0 ? 1 : 0);
-                }
-                $tcm->Manager->put($id, $snippet);
+
+            $snippet=tcm_edit_snippet_array($_POST, $snippet, 'include', TRUE);
+            $snippet=tcm_edit_snippet_array($_POST, $snippet, 'except', TRUE);
+            if(in_array($id, $currentIds)) {
+                $snippet=tcm_edit_snippet_array($_POST, $snippet, 'include', FALSE);
+            } else {
+                $snippet=tcm_edit_snippet_array($_POST, $snippet, 'except', FALSE);
             }
+            $tcm->Manager->put($id, $snippet);
         }
     }
 
     $name=stripslashes($tcm->Utils->qs('tcm_name'));
     $code=$tcm->Utils->qs('tcm_code');
-    if($name!='' && $code!='' && !$tcm->Manager->exists($name) && $tcm->Manager->rc()>0) {
+    if($name!='' && $code!='') {
+        $postType=$_POST['post_type'];
+        $keyArray='PostsOfType_'.$postType;
+        $keyActive=$keyArray.'_Active';
+
         $snippet=array(
             'active'=>1
             , 'name'=>$name
             , 'code'=>$code
+            , 'trackPage'=>TCM_TRACK_PAGE_SPECIFIC
+            , 'trackMode'=>TCM_TRACK_MODE_CODE
         );
         $snippet['include'.$keyActive]=1;
         $snippet['include'.$keyArray]=array($postId);

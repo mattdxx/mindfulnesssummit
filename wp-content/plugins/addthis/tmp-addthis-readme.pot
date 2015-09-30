@@ -1,0 +1,786 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "AddThis Sharing Buttons"
+msgstr ""
+
+#. Short description.
+msgid "AddThis provides the best sharing tools to help you make your website smarter."
+msgstr ""
+
+#. Screenshot description.
+msgid "Sharing Tools tab on the plugin settings page (WordPress mode)"
+msgstr ""
+
+#. Screenshot description.
+msgid "Advanced Options tab on the plugin settings page"
+msgstr ""
+
+#. Screenshot description.
+msgid "Drag and dropable sharing buttons widget (WordPress mode)"
+msgstr ""
+
+#. Screenshot description.
+msgid "Sharing Tools tab on the plugin settings page (AddThis mode)"
+msgstr ""
+
+#. Screenshot description.
+msgid "Analytics on the AddThis Dashboard"
+msgstr ""
+
+#. Screenshot description.
+msgid "Tool Gallery on the AddThis Dashboard"
+msgstr ""
+
+#. Screenshot description.
+msgid "Customization options on the AddThis Dashboard"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "The best sharing and following tools on the web are now available for your WordPress site. Promote your content easily by sharing to over 200 of the most popular social networking and bookmarking sites (like Facebook, Twitter, Pinterest, Google+, WhatsApp, LinkedIn and more). Clean, customizable and simple social buttons are unobtrusive, quick to load and recognized all over the web."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Go to the 'Add New' plugins screen in your WordPress admin area"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Search for 'AddThis'"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Click 'Install Now' and activate the plugin"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Upload the addthis folder to the <code>/wp-content/plugins/</code> directory"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Activate the plugin through the 'Plugins' screen in your WordPress admin area"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Upload the downloaded zip file on the 'Add New' plugins screen (see the 'Upload' tab) in your WordPress admin area and activate."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "For an automatic installation through WordPress:"
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "For a manual installation via FTP:"
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "To upload the plugin through WordPress, instead of FTP:"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Resolves a bug where above excerpt sharing buttons would be added whenever below excerpt sharing buttons were enabled"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Adding back in the addthis_post_exclude filter"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "PHP notice at addthis_social_widget.php:1337"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "PHP error for older versions of PHP (&lt; 5.3.0) at addthis_settings_functions.php:476"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Adding select configs and page info into addthis_plugin_info to aide <a href=\"http://support.addthis.com/\">the AddThis Support Team</a> with troubleshooting"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: set your own addthis.layers() paramaters to customize further using our <a href=\"http://support.addthis.com/customer/portal/articles/1200473-smart-layers-api\">Smart Layers API</a> (in WordPress mode only)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixing a bug with the AddThis Sharing Buttons meta box not showing up for users in AddThis mode when editing posts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixing a bug with addthis_config where the JSON wasn't always checked before submitting the settings form"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixing a bug with the sharing sidebar, where the theme for the sidebar was used for all AddThis layers tools (in WordPress mode)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixing a bug between AddThis Sharing Buttons and AddThis Follow Buttons, where saving changes in Follow Buttons would reset Sharing Buttons settings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Support for WordPress 4.3"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixing XSS bug in the administrative panel"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixing a bug that resets settings to defaults during the upgrade for users in AddThis mode"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Reverting to pre-5.0.9 settings of plugin for upgrades from 5.0.9, 5.0.10 and 5.0.11"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixing overwrite of $addThisConfig global to resolve more PHP errors where a function is called from a non-object"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixing bug where all checkboxes get unchecked on first settings page save"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixing PHP error with getConfigs() on a non-object in addthis_social_widget.php on line 1086"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated troubleshooting information available to AddThis support to be more in line with other plugins, including providing the anonymous profile IDs to help in moving over statistics to registered profile IDs upon request."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improving the way variables are being shared to support global AddThis variables between AddThis plugins (not supported yet by any other plugin) and plugin specific settings. Specifically, this is to make sure things such as the profile ID or addthis_config settings are the same across all AddThis plugins."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Refactored the filter used on wp_trim_excerpt in WordPress mode to better interact with other modules' and themes' filters on wp_trim_excerpt, excerpt_length and excerpt_more (such as mh-magazine-lite)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Resolving issues with PHP errors for URLs with %s in them when using \"Select Your Own\" services"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Resolving services bug, where once a user selected their own for above or below content, the custom services where always used, even if the user went back to Auto Personalization"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixing bug with a PHP warning for undefined index below_chosen_list"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "PHP notice fix for AddThisConfigs.php on line 204"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Changed the page/post edit screens AddThing sharing buttons checkbox to on/off radiobuttons"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added a checkbox to the plugin's settings page's Advanced Options tab to enable/disable the per page/post sharing button configurations mentioned above"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Limiting when we filter content from get_the_excerpt because of issues with the manshet and backstreet themes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Reducing PHP warnings and error messages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Adding back in addthis_config.ignore_server_config JavaScript variable for WordPress model (for on page configurations)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Adding data-cfasync=\"false\" to all AddThis JavaScript to stop CloudFlare's RocketScript feature from breaking sharing buttons"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Adding all WordPress mode Advanced Options to AddThis mode Advanced Options. These are primarily options to edit the addthis_share and addthis_config JavaScript variables used by AddThis tools, as well as giving you the option to choose whether to load the AddThis script asyncronously."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removing conflicts with WordPress Login Box plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removing conflicts with AddThis Follow Widget plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "CSS to remove new lines from br tags between our buttons, because some themes add them and break stuff (such as Customizr)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Exposing more objects for use with adding sharing buttons to troublesome themes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "PHP error fixes for strict modes of PHP"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Reduced the size of the plugin by removing unused images"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixes for WordPress instances running on PHP verions below 5.5"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved migration of checkbox settings from 4.0 plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved settings page layout on mobile devices and small screens"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved CSS class naming around red/green enable sliders on the settings page, to reduce CSS conflicts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Proactively removing all other CSS and JavaScript files from other plugins when on our settings page to reduce conflicts with other active plugins"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removing unused CSS"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Two functional modes allowing users to choose whether to control sharing buttons from within the WordPress admin area (with limited features), or through the AddThis Dashboard at addthis.com."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Sharing sidebar configuration available within WordPress (in addition to the previously available sharing buttons above and below content)."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Seperate preferences for what sharing buttons appear on what templates."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Cleaned up plugin and removed deprecated AddThis config options."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added beauty."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removed the global configuration for custom service list."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removed support for themes that use the get_the_excerpt method because of inconsistent results across themes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added node marker and loop cap to getFirstElderWithCondition to solve infinite loop"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed the issue where characters *,+,- were printed in feeds"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Adds data-url and data-title attributes to get_the_excerpt toolbox divs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed js folder"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed issues with certain themes using get_the_excerpt method"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed issue with Share layer and Recommended layer showing up in wrong order"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed issue with Recommended layer showing up page title instead of Recommended layer title"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed PHP warnings in Divi theme"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removed addthis initialization function (addthis.init()) to avoid javascript error in async mode."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added option to show inline sharing buttons on category and archive pages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Control inline share buttons for each page/post"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Implemented asynchronous script loading"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added option to add checkbox to show/hide Addthis sharing buttons in admin post add/edit page."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Prevented buttons showing on 404 error pages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "CSS fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added css classes to prevent inline div from taking extra spaces"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Frictionless integration with AddThis Dashboard."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated services list in description"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added new snapshots to give more idea on the new plugin flow"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Minor text changes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Integrated with AddThis Dashboard."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Managed the plugin in such a way that, tool settings can be controlled from AddThis Dashboard"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Provided options to upgrade to new setup for the existing users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Minor bug fix"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "CURL bug fix"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Resolved conflict with another plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Minor updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix for better analytics"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Minor bug fixes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed JS errors in Options page."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix for wrong url being shared while using Custom Button option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Reintroduced Custom Button Code box"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Drag and drop customization of buttons"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Better preview of buttons"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Better support for excerpts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Internal issues with tw:screenname resolved"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Better JSON validation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fixes: Style conflicts resolved"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: Style conflicts with some themes resolved"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Made friends with WPSupercache"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: Style tags are now allowed in Custom Code box."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: Conflict with WpSuperCache resolved"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Wordpress 3.5 style conflicts resolved"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: Issues with usernames/passwords with special characters"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "UX changes in admin settings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Credential verification in Admin settings. If AddThis account details are wrong it will be notified to user."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added hashtag support for Twitter"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Conflict removed with <a href=\"http://wordpress.org/extend/plugins/addthis-follow/\">AddThis Follow</a> and <a href=\"http://wordpress.org/extend/plugins/addthis-welcome/\">AddThis Welcome Bar</a> Wordpress plugins"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "<a href=\"http://www.addthis.com/blog/2012/09/13/introducing-our-new-sharing-experience\">New streamlined and simplified share menu</a>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Instant Share for Facebook and Twitter"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated Pinterest support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Refactor how we add code to pages which should eliminate how many times it is added"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Numerous Bug Fixes and a few new filters"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add opt out for copy tracking"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Don't strip pintrest tags from custom buttons"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add Google Analytics option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update settings interface"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix custom button whitespace saving issue"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix compatability with 3.2"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix over agressive regular expression"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "More Customization Option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "optionally shorten urls with one bit.ly account"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add +1"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add Twitter Template Option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add Post Meta Box"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add top shared/clicked URLS to dashboard"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "More Filters"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "define ADDTHIS_NO_NOTICES to prevent admin notices from displaying"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "force service codes to be lowercase"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "If opting out of clickback tracking, set config to force opting out"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix conflict with other plugins"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Prevent button js from appearing in feeds"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "plugin should still work if theme doesn't have wp_head and wp_footer"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug Fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "set addthis_exclude custom field to 'true' to not display addthis on that post / page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added additional paramater to"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Ability to specify custom toolboxes for both above and below"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added additional paramater to do_action('addthis_widget').  Paramaters are now:"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "url (use get_permalink() if you are calling it inside the loop)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "title (use the_title() if calling inside the loop)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Style (specify the style to display) See $addthis_new_styles for the styles.  may also pass an arra (see addthis_custom_toolbox for array values to pass)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix theme compatablity issues"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix excerpts bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add option to not display on excerpts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Restore option to customize services"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add more filters"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Redesigned Settings page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Share Counter option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Redesigned Admin Dashboard widget"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated sharing widget options"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated sidebar widget to extend WP_Widget"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Using wp_register_sidebar_widget() in WordPress installs that support it"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed argument bug in 1.6.5"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "i.e., "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Can be called, for example, with get_permalink() and the_title() within a post loop, or some other URL if necessary"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed parse bug with \"static\" menu option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed regression of brand option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added template tags. &lt;?php do_action( 'addthis_widget' ); ?&gt; in your template will print an AddThis button or toolbox, per your configuration."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added <a href=\"http://addthis.com/blog/2010/03/11/clickback-analytics-measure-traffic-back-to-your-site-from-addthis/\">clickback</a> tracking."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added \"Automatic\" language option. We'll auto-translate the AddThis button and menu into our supported languages depending on your users' settings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed script showing up in some trackback summaries."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added <a href=\"http://addthis.com/toolbox\">toolbox</a> support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added WPMU support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added support for displaying basic sharing metrics in the WordPress dashboard"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated settings management to use nonces"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Fixed name conflict with get_wp_version() (renamed to addthis_get_wp_version()), affecting users with the k2 theme."
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Fixed nondeterministic bug with the_title(), causing the title to occasionally appear in posts."
+msgstr ""
+
+#. Found in faq header.
+msgid "Is AddThis free?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Do I need to create an account?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Is JavaScript required?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Why use AddThis?"
+msgstr ""
+
+#. Found in faq header.
+msgid "What PHP version is required?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Who else uses AddThis?"
+msgstr ""
+
+#. Found in faq header.
+msgid "What services does AddThis support?"
+msgstr ""
+
+#. Found in faq header.
+msgid "How do I remove AddThis from a page"
+msgstr ""
+
+#. Found in faq list item.
+msgid "Ease of use. AddThis is easy to install, customize and localize. We've worked hard to make a suite of simple and beautiful website tools on the internet."
+msgstr ""
+
+#. Found in faq list item.
+msgid "Performance. The AddThis menu code is tiny and fast. We constantly optimize its behavior and design to make sharing a snap."
+msgstr ""
+
+#. Found in faq list item.
+msgid "Peace of mind. AddThis gathers the best services on the internet so you don't have to, and backs them up with industrial strength analytics, code caching, active tech support and a thriving developer community."
+msgstr ""
+
+#. Found in faq list item.
+msgid "Flexibility. AddThis can be customized via API, and served securely via SSL. You can roll your own sharing toolbars with our toolbox. Share just about anything, anywhere ­­ your way."
+msgstr ""
+
+#. Found in faq list item.
+msgid "Global reach. AddThis sends content to 200+ sharing services 60+ languages, to over 1.9 billion unique users in countries all over the world."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "No, you do not need to create an account in order to control a limited number of AddThis sharing tools from within WordPress. In order to use more AddThis tools and see your site's analytics you will need to create an account with AddThis. It requires an email address and name, but that's it."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "All of the options required through this plugin require javascript. JavaScript must be enabled. We load the actual interface via JavaScript at run-time, which allows us to upgrade the core functionality of the menu itself automatically everywhere."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "This plugin requires PHP 5.2.4 or greater."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Over 15,000,000 sites have installed AddThis. With over 1.9 billion unique users, AddThis is helping share content all over the world, in more than sixty languages."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "We currently support over 200 services, from email and blogging platforms to social networks and news aggregators, and we add new services every month. Want to know if your favorite service is supported? This list is accurate up to the minute: <a href=\"http://www.addthis.com/services\">http://www.addthis.com/services</a>."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "In the screen options you can enable the AddThis meta box. Check the box and save if you've already published that page or post to disable AddThis on that page or post."
+msgstr ""

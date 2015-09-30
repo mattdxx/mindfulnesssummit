@@ -133,7 +133,7 @@ function newsletter_emails_get_theme_options($theme) {
 
     <div id="newsletter-title">
         <h2><?php _e('Create a newsletter', 'newsletter-emails') ?>
-            <a class="add-new-h2" href="<?php echo NewsletterEmails::instance()->get_admin_page_url('theme'); ?>"><?php _e('Back to the themes', 'newsletter-emails') ?></a>
+            <a class="add-new-h2" href="<?php echo NewsletterEmails::instance()->get_admin_page_url('theme'); ?>"><?php _e('Back to newsletter themes', 'newsletter-emails') ?></a>
         </h2>
     </div>
     <div class="newsletter-separator"></div>
@@ -161,7 +161,7 @@ function newsletter_emails_get_theme_options($theme) {
                     <?php @include $module->get_current_theme_file_path('theme-options.php'); ?>
                 </td>
                 <td style="vertical-align: top; padding-top: 15px; padding-left: 15px">
-                    <iframe src="<?php echo wp_nonce_url(plugins_url('newsletter') . '/emails/preview.php?' . time()); ?>" width="100%" height="700" style="border: 1px solid #ccc"></iframe>
+                    <iframe src="<?php echo wp_nonce_url(plugins_url('newsletter') . '/emails/preview.php?' . time(), 'view'); ?>" height="700" style="width: 100%; border: 1px solid #ccc"></iframe>
                 </td>
             </tr>
         </table>

@@ -75,7 +75,14 @@ abstract class MC4WP_Request implements iMC4WP_Request {
 				// remove data from array
 				unset( $data[$key] );
 
-				$key = substr( $key,7 );
+				// get part after "mc4wp_" and use that as key
+				$key = substr( $key, 7 );
+
+				// if key starts with h_, change it to say "honeypot" (because field has dynamic name attribute)
+				if( strpos( $key, 'h_' ) === 0 ){
+					$key = 'honeypot';
+				}
+
 				$config[ $key ] = $value;
 			}
 		}
@@ -203,7 +210,7 @@ abstract class MC4WP_Request implements iMC4WP_Request {
 			'{form_element}' => $this->form_element_id,
 			'{email}' => urlencode( $this->user_data['EMAIL'] )
 		);
-		$url = MC4WP_Tools::replace_variables( $this->form->settings['redirect'], $additional_replacements );
+		$url = MC4WP_Tools::replace_variables( $this->form->settings['redirect'], $additional_replacements, null, 'url' );
 		return $url;
 	}
 

@@ -39,14 +39,16 @@ if ( ! class_exists( 'WpssoPost' ) ) {
 
 					if ( is_array( $post_types ) ) {
 						foreach ( $post_types as $ptn ) {
-							add_filter( 'manage_'.$ptn.'_posts_columns', array( $this, 'add_column_headings' ), 10, 1 );
-							add_action( 'manage_'.$ptn.'_posts_custom_column', array( $this, 'show_post_column_content',), 10, 2 );
+							add_filter( 'manage_'.$ptn.'_posts_columns', 
+								array( $this, 'add_column_headings' ), 10, 1 );
+							add_action( 'manage_'.$ptn.'_posts_custom_column', 
+								array( $this, 'show_post_column_content',), 10, 2 );
 						}
 					}
 
 					$this->p->util->add_plugin_filters( $this, array( 
-						'og_image_post_column_content' => 3,
-						'og_desc_post_column_content' => 3,
+						'og_image_post_column_content' => 4,
+						'og_desc_post_column_content' => 4,
 					) );
 				}
 			}
@@ -56,37 +58,24 @@ if ( ! class_exists( 'WpssoPost' ) ) {
 			echo $this->get_mod_column_content( '', $column_name, $id, 'post' );
 		}
 
-		public function filter_og_image_post_column_content( $value, $column_name, $id ) {
+		public function filter_og_image_post_column_content( $value, $column_name, $id, $mod ) {
 			if ( ! empty( $value ) )
 				return $value;
 
 			// use the open graph image dimensions to reject images that are too small
 			$size_name = $this->p->cf['lca'].'-opengraph';
-			$check_dupes = false;	// using first image we find, so dupe checking is useless
+			$check_dupes = false;	// use first image we find, so dupe checking is useless
 			$force_regen = false;
 			$meta_pre = 'og';
 			$og_image = array();
 
-			// get video preview images if allowed
-			if ( ! empty( $this->p->options['og_vid_prev_img'] ) ) {
-				// assume the first video will have a preview image
-				$og_video = $this->p->og->get_all_videos( 1, $id, $check_dupes, $meta_pre );
-				if ( ! empty( $og_video ) && is_array( $og_video ) ) {
-					foreach ( $og_video as $video ) {
-						if ( ! empty( $video['og:image'] ) ) {
-							$og_image[] = $video;
-							break;
-						}
-					}
-				}
-			}
+			if ( empty( $og_image ) )
+				$og_image = $this->get_og_video_preview_image( $id, $mod, $check_dupes, $meta_pre );
 
 			if ( empty( $og_image ) ) {
-				$og_image = $this->p->og->get_all_images( 1, $size_name, $id,
-					$check_dupes, $meta_pre );
+				$og_image = $this->p->og->get_all_images( 1, $size_name, $id, $check_dupes, $meta_pre );
 				if ( empty( $og_image ) )
-					$og_image = $this->p->media->get_default_image( 1, $size_name,
-						$check_dupes, $force_regen );
+					$og_image = $this->p->media->get_default_image( 1, $size_name, $check_dupes, $force_regen );
 			}
 
 			if ( ! empty( $og_image ) && is_array( $og_image ) ) {
@@ -98,7 +87,7 @@ if ( ! class_exists( 'WpssoPost' ) ) {
 			return $value;
 		}
 
-		public function filter_og_desc_post_column_content( $value, $column_name, $id ) {
+		public function filter_og_desc_post_column_content( $value, $column_name, $id, $mod ) {
 			if ( ! empty( $value ) )
 				return $value;
 
@@ -107,6 +96,7 @@ if ( ! class_exists( 'WpssoPost' ) ) {
 
 		// hooked into the admin_head action
 		public function set_head_meta_tags() {
+
 			if ( ! empty( $this->head_meta_tags ) )	// only set header tags once
 				return;
 
@@ -144,7 +134,7 @@ if ( ! class_exists( 'WpssoPost' ) ) {
 
 					if ( $obj->post_status == 'publish' ) {
 						if ( empty( $this->head_info['og:image'] ) )
-							$this->p->notice->err( 'An Open Graph image meta tag could not be generated for this webpage. Facebook and other social websites require at least one Open Graph image meta tag to render their shared content correctly.' );
+							$this->p->notice->err( $this->p->msgs->get( 'info-missing-og-image' ) );
 						// check for duplicates once the post has been published and we have a functioning permalink
 						if ( ! empty( $this->p->options['plugin_check_head'] ) )
 							$this->check_post_header( $post_id, $obj );
@@ -192,7 +182,7 @@ if ( ! class_exists( 'WpssoPost' ) ) {
 							foreach( $types as $t ) {
 								if ( isset( $m[$t] ) && $m[$t] !== 'generator' && 
 									! empty( $check_opts[$tag.'_'.$t.'_'.$m[$t]] ) )
-										$this->p->notice->err( 'Possible conflict detected - your theme or another plugin is adding a <code>'.$tag.' '.$t.'="'.$m[$t].'"</code> HTML tag to the head section of this webpage.', true );
+										$this->p->notice->err( 'Possible conflict detected &mdash; your theme or another plugin is adding a <code>'.$tag.' '.$t.'="'.$m[$t].'"</code> HTML tag to the head section of this webpage.', true );
 							}
 						}
 					}
@@ -241,7 +231,7 @@ if ( ! class_exists( 'WpssoPost' ) ) {
 
 			$metabox = 'post';
 			$tabs = apply_filters( $this->p->cf['lca'].'_'.$metabox.'_tabs', $this->default_tabs );
-			if ( empty( $this->p->is_avail['metatags'] ) )
+			if ( empty( $this->p->is_avail['mt'] ) )
 				unset( $tabs['tags'] );
 
 			$rows = array();

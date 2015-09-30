@@ -6,9 +6,9 @@ Donate Link: https://wpsso.com/
 Tags: attached, bbPress, buddypress, e-commerce, easy digital downloads, edd, Facebook, featured, g+, gallery, gallery card, google, google plus, hashtags, imagebrowser, jetpack, JSON-LD, knowledge graph, linkedin, marketpress, meta-tags, multilingual, multisite, nextgen gallery, nggalbum, nggallery, object cache, open graph, photo card, photon, pinterest, player card, polylang, rich pins, schema, seo, singlepic, slideshare, social, Summary Card, transient cache, twitter, twitter cards, vimeo, wistia, woocommerce, wpsso, wp_cache, youtube
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
-Requires At Least: 3.0
-Tested Up To: 4.3
-Stable Tag: 3.7.4
+Requires At Least: 3.1
+Tested Up To: 4.3.1
+Stable Tag: 3.10.2
 
 Fast, light-weight, full-featured plugin for great looking shares on all social sites - no matter how your content is shared or re-shared!
 
@@ -21,7 +21,7 @@ Fast, light-weight, full-featured plugin for great looking shares on all social 
 <p><strong>WPSSO automatically retrieves and uses information from a wide range or sources</strong>, including All in One SEO Pack, bbPress, BuddyPress, Easy Digital Downloads, HeadSpace2 SEO, JetPack Photon, NextGEN Gallery, MarketPress - WordPress eCommerce, Polylang, WooCommerce, Yoast SEO (aka WordPress SEO), WP e-Commerce, Gravatar, Slideshare, Vimeo, Wistia, YouTube, extends the WordPress REST API v2, and much more.</p>
 
 <blockquote>
-<h4>Industry Reviews</h4>
+<h4>Industry Reviews of WPSSO</h4>
 
 <p>"<em>If you want to make every tweet, like, share, pin, and +1 count, then you should definitely start using WPSSO on your WordPress site.</em>" &mdash; <a href="http://www.indexwp.com/wordpress-social-sharing-optimization-pro-review/">indexwp.com</a></p>
 
@@ -34,32 +34,57 @@ Fast, light-weight, full-featured plugin for great looking shares on all social 
 <p>"<em>WPSSO Pro provides a handy tool for your marketing team, and improves your content whenever it’s shared by you or your fans. The free version has a lot of great features and makes a good trial version, but I think that eCommerce sites really benefit from the eCommerce plugin and video integrations (as well as the inclusion of Twitter card support) that the Pro version offers.</em>" &mdash; <a href="http://www.sellwithwp.com/optimized-social-media-wpsso-plugin-review/">sellwithwp.com</a></p>
 </blockquote>
 
-<h4> Quick List of Features</h4>
+<h4>Quick List of Features</h4>
 
-<strong>Free / Basic Version</strong>
+<strong>WPSSO Free / Basic Features</strong>
 
 * Adds Open Graph / Rich Pin meta tags (Facebook, Google+, Pinterest, LinkedIn, etc.).
+* Twitter Card meta tags:
+	* [App Card](https://dev.twitter.com/cards/types/app) (requires the [WPSSO App Meta](https://wordpress.org/plugins/wpsso-am/) extension)
+	* [Summary Card with Large Image](https://dev.twitter.com/cards/types/summary-large-image)
+	* [Summary Card](https://dev.twitter.com/cards/types/summary)
+	* [Player Card](https://dev.twitter.com/cards/types/player) is provided with the Pro version (as it requires video discovery modules available only in the Pro version).
+	* [Photo Card](https://dev.twitter.com/cards/types/photo), [Gallery Card](https://dev.twitter.com/cards/types/gallery), and [Product Card](https://dev.twitter.com/cards/types/product) were deprecated by Twitter on July 3rd, 2015 and are no longer supported.
 * Configurable image sizes for Open Graph (Facebook, LinkedIn, etc.) and Pinterest.
+* Customizable image dimensions for each Twitter Card type.
 * Optional fallback to a default image and video for index and search webpages.
-* Supports featured, attached, gallery shortcode, and/or HTML image tags in content.
-* Fallback to the image alt value if the content and except do not include any text.
-* Validates image dimensions to provide accurate media for social websites.
+* Support for featured, attached, gallery shortcode, and/or HTML image tags in content.
+* Fallback to image alt values if the content and except do not include any text.
+* Validates image dimensions and aspect ratios for reliable sharing results.
 * Auto-regeneration of inaccurate / missing WordPress image sizes.
 * Fully renders content (including shortcodes) for accurate description texts.
 * Support of WordPress and/or SEO titles for Posts and Pages.
 * Configurable title separator character (hyphen by default).
 * Configurable title and description lengths for different contexts (Open Graph, Twitter Card, SEO).
-* Includes author and publisher profile URLs for Facebook and Google Search.
+* Includes author and publisher profile URLs and markup for Facebook and Google Search.
 * Includes hashtags from Post and Page WordPress tags.
 * Includes the author's name for Pinterest Rich Pins.
-* Includes a Google / SEO description meta tag if a known SEO plugin is not detected.
+* Includes a Google / SEO description meta tag, if a known SEO plugin is not detected.
 * Includes <a href="https://developers.google.com/structured-data/customize/social-profiles">author (Person) and publisher (Organization) social profiles</a>, <a href="https://developers.google.com/structured-data/customize/logos">publisher (Organization) logo</a>, and <a href="https://developers.google.com/structured-data/site-name">WebSite Site Name</a> in schema.org JSON-LD format for Google Search and their <em>Knowledge Graph</em></a>.
-* Provides Facebook, Google+ and Twitter URL user profile contact fields.
-* Validation tools and special meta tag preview tabs on admin edit pages.
+* Configurable website / business social accounts for JSON-LD markup:
+	* Facebook Business Page URL
+	* Google+ Business Page URL
+	* Pinterest Company Page URL
+	* Twitter Business @username
+	* Instagram Business URL
+	* LinkedIn Company Page URL
+	* MySpace Business (Brand) URL
+* User profile contact fields for Open Graph, Twitter Card, and JSON-LD markup:
+	* Facebook URL
+	* Google+ URL
+	* Instagram URL
+	* LinkedIn URL
+	* MySpace URL
+	* Pinterest URL
+	* Skype Username
+	* Tumblr URL
+	* Twitter @username
+	* YouTube Channel URL
+* Validation tools, social preview, and meta tag value tabs on admin editing pages.
 * Customizable *multilingual* Site Title and Site Description texts.
 * Contextual help for *every* plugin option and [comprehensive online documentation](http://wpsso.com/codex/plugins/wpsso/).
 * Uses object and transient caches to provide incredibly fast execution speeds.
-* **Additional free extension plugins for WPSSO**:
+* Additional and optional Free extension plugins for WPSSO:
 	* [App Meta](https://wordpress.org/plugins/wpsso-am/) for Apple Store / iTunes and Google Play App meta tags.
 	* [Place and Location Meta](https://wordpress.org/plugins/wpsso-plm/) for Facebook *Location* and Pinterest *Place* Rich Pin meta tags.
 	* [Ridiculously Responsive Social Sharing Buttons](https://wordpress.org/plugins/wpsso-rrssb/) for great looking SVG buttons in any size.
@@ -74,23 +99,18 @@ Fast, light-weight, full-featured plugin for great looking shares on all social 
 <p><img src="https://surniaulula.github.io/wpsso/images/social/twitter-player-card-single.png" width="100%" height="100%"/></p>
 </div>
 
-<strong>Pro / Power-User Version</strong>
+<h4>Quick List of Features (Continued)</h4>
 
-* Twitter Card meta tags:
-	* *Product Card* &mdash; Product information from an e-commerce plugin.
-	* *Player Card* &mdash; An embedded video in the Post / Page content.
-	* *Gallery Card* &mdash; A Media Library gallery or NextGEN Gallery shortcode.
-	* *Photo Card* &mdash; An Attachment page or NextGEN Gallery ImageBrowser webpage.
-	* *Large Image Summary Card* &mdash; An image from the custom Social Settings, Featured, Attached, or NextGEN Gallery singlepic.
-	* *App Card* &mdash; Apple Store iPhone / iPad or Google Play App (requires the [WPSSO App Meta](https://wordpress.org/plugins/wpsso-am/) extension).
-	* *Summary Card* &mdash; All other webpages.
-* Customizable image dimensions for each Twitter Card type.
-* Additional profile contact fields with configurable label and field names.
-* A custom Social Setings metabox for each Post, Page, custom post type, user profile, and taxonomy (category and tag) pages.
-* Options to include / exclude specific Google / SEO, Open Graph, and Twitter Card meta tags.
-* Support for embedded videos in content text (iframe and object HTML tags).
-* **Integrates with 3rd party plugins and services for additional image, video, product, and content information** (see [About Pro Modules](http://wpsso.com/codex/plugins/wpsso/notes/modules/) and [Integration Notes](http://wpsso.com/codex/plugins/wpsso/installation/integration/) for details). The following modules are included with the Pro version, and are automatically loaded if/when the supported plugins and/or services are detected.
-	* Supported 3rd Party Plugins
+<strong>WPSSO Pro / Power-User Features</strong>
+
+* A "Social Settings" metabox for Post, Page, custom post type, user profile, and taxonomy (category and tag) editing pages &mdash; the "Social Settings" metbox allows you to customize the article topic, the shared title, the Open Graph / Facebook / Rich Pin, Google Search, and Twitter Card descriptions, along with the shared image and/or video.
+* Support for embedded videos in content text ("iframe" and "object" HTML markup).
+* Additional Open Graph / Rich Pin meta tags for videos and e-commerce products.
+* Twitter [Player Card](https://dev.twitter.com/cards/types/player) markup for embedded videos from Slideshare, Vimeo, Wistia, and/or Youtube.
+* Configurable user profile contact field names and labels for customized theme / SEO plugin integration.
+* Include or exclude individual Google / SEO, Open Graph, Twitter Card, and Schema meta tags from webpage headers.
+* Integrates with **3rd party plugins and services** for additional image, video, product, and content information (see [About Pro Modules](http://wpsso.com/codex/plugins/wpsso/notes/modules/) and [Integration Notes](http://wpsso.com/codex/plugins/wpsso/installation/integration/) for details). The following modules are included with the Pro version, and are automatically loaded if/when the supported plugins and/or services are detected.
+	* **Supported 3rd Party Plugins**
 		* All in One SEO Pack
 		* bbPress
 		* BuddyPress
@@ -104,7 +124,7 @@ Fast, light-weight, full-featured plugin for great looking shares on all social 
 		* Yoast SEO (aka WordPress SEO)
 		* WP e-Commerce
 		* <a href="https://wordpress.org/plugins/rest-api/">WordPress REST API v2</a>
-	* Supported Service APIs
+	* **Supported Service APIs**
 		* Gravatar Images
 		* Slideshare Presentations
 		* Vimeo Videos
@@ -114,60 +134,6 @@ Fast, light-weight, full-featured plugin for great looking shares on all social 
 <blockquote>
 <p><a href="http://wpsso.com/extend/plugins/wpsso/">Purchase the Pro version on WPSSO.com</a> (includes a <em>No Risk 30 Day Refund Policy</em>).</p>
 </blockquote>
-
-<h4>3rd Party Integration</h4>
-
-Aside from the additional support for Twitter Cards, the main difference between the WPSSO Free and Pro versions is the integration of 3rd party plugins and services.
-
-<div style="clear:both;"></div>
-<div style="width:40%;min-width:256px;max-width:1200px;height:auto;float:right;margin:10px 0 40px 60px;">
-<p><img src="https://surniaulula.github.io/wpsso/images/social/twitter-tiled-gallery-wpsso.png" width="100%" height="100%"/></p>
-</div>
-
-<strong>Images and Videos</strong>
-
-WPSSO detects and uses all images - associated or included in your Post or Page content - including WordPress image galleries. WordPress Media Library images (and NextGEN Gallery in the Pro version) are resized according to their intended audience (Facebook, Twitter, Pinterest, etc). The Pro version also detects embedded videos from Slideshare, Vimeo, Wistia, and Youtube (including their preview images).
-
-WPSSO (Pro version) also includes support for [JetPack Photon](http://jetpack.me/support/photon/) and [NextGEN Gallery v1 and v2](https://wordpress.org/plugins/nextgen-gallery/) albums, galleries and images (shortcodes, image tags, album / gallery preview images, etc.).
-
-<strong>Enhanced SEO</strong>
-
-WPSSO (Pro version) integrates with [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/), [All in One SEO Pack](https://wordpress.org/plugins/all-in-one-seo-pack/), and [HeadSpace2 SEO](https://wordpress.org/plugins/headspace2/) &mdash; making sure your custom SEO settings are reflected in the Open Graph, Rich Pin, and Twitter Card meta tags.
-
-<blockquote>
-<p>Read about the <a href="http://surniaulula.com/2014/10/25/social-seo-wordpress-seo-vs-wpsso/">differences between the Yoast SEO (aka WordPress SEO) and WPSSO plugins</a> for social sharing.</p>
-</blockquote>
-
-<div style="clear:both;"></div>
-<div style="width:40%;min-width:256px;max-width:1200px;height:auto;float:right;margin:10px 0 40px 60px;">
-<p><img src="https://surniaulula.github.io/wpsso/images/social/twitter-product-wpsso-single.png" width="100%" height="100%"/></p>
-</div>
-
-<strong>eCommerce Products</strong>
-
-WPSSO (Pro version) also supports [Easy Digital Downloads](https://wordpress.org/plugins/easy-digital-downloads/), [MarketPress - WordPress eCommerce](https://wordpress.org/plugins/wordpress-ecommerce/), [WooCommerce v1 and v2](https://wordpress.org/plugins/woocommerce/), and [WP e-Commerce](https://wordpress.org/plugins/wp-e-commerce/) product pages, creating appropriate meta tags for [Facebook Products](https://developers.facebook.com/docs/payments/product/), [Twitter Product Cards](https://dev.twitter.com/docs/cards/types/product-card) and [Pinterest Rich Pins](http://developers.pinterest.com/rich_pins/), including variations and additional / custom images.
-
-<strong>Forums and Social</strong>
-
-WPSSO (Pro version) supports [bbPress](https://wordpress.org/plugins/bbpress/) and [BuddyPress](https://wordpress.org/plugins/buddypress/) (see the [BuddyPress Integration Notes](http://wpsso.com/codex/plugins/wpsso/notes/buddypress-integration/)), making sure your meta tags reflect the page content, including appropriate titles, descriptions, images, etc.
-
-<div style="clear:both;"></div>
-
-<h4>User Profile Social Contacts</h4>
-
-WPSSO (Pro version) allows you to customize the field names, label, and add / remove the following contacts from the user profile page:
-
-* AIM
-* Facebook URL
-* Google+ URL
-* Jabber / Google Talk
-* LinkedIn URL
-* Pinterest URL
-* Skype Username
-* Tumblr URL
-* Twitter @username
-* Yahoo IM
-* YouTube Channel URL
 
 <div style="clear:both;"></div>
 <div style="width:40%;min-width:256px;max-width:1200px;height:auto;float:right;margin:10px 0 40px 60px;">
@@ -180,6 +146,24 @@ WPSSO provides <a href="https://developers.google.com/structured-data/customize/
 
 <div style="clear:both;"></div>
 
+<h4>User Profile Social Contacts</h4>
+
+WPSSO allows you to customize (Pro version) the field names, label, and add / remove the following contacts from the user profile page:
+
+* AIM
+* Facebook URL
+* Google+ URL
+* Instagram URL
+* Jabber / Google Talk
+* LinkedIn URL
+* MySpace URL
+* Pinterest URL
+* Skype Username
+* Tumblr URL
+* Twitter @username
+* Yahoo IM
+* YouTube Channel URL
+
 <h4>Complete Social Meta Tags</h4>
 
 WPSSO adds Facebook / [Open Graph](http://ogp.me/), [Pinterest Rich Pins](http://developers.pinterest.com/rich_pins/), [Twitter Cards](https://dev.twitter.com/docs/cards), and [Search Engine Optimization](http://en.wikipedia.org/wiki/Search_engine_optimization) meta tags to the head section of webpages. These meta tags are used by Google Search and all social websites to describe and display your content correctly (title, description, hashtags, images, videos, product, author profile / authorship, publisher, etc.). WPSSO uses the *existing* content of your webpages to build HTML meta tags &mdash; There's no need to manually enter / configure any additional values or settings (although many settings and options *are* available). <a href="http://wpsso.com/extend/plugins/wpsso/screenshots/">See examples from Google Search, Google+, Facebook, Twitter, Pinterest, StumbleUpon, Tumblr, etc.</a> &mdash; along with screenshots of the WPSSO settings pages.
@@ -190,7 +174,7 @@ WPSSO adds Facebook / [Open Graph](http://ogp.me/), [Pinterest Rich Pins](http:/
 <p><img src="https://surniaulula.github.io/wpsso/images/settings/wpsso-advanced-settings-page-w-meta-tags.png" width="100%" height="100%"/></p>
 </div>
 
-WPSSO (Pro version) provides the [Summary](https://dev.twitter.com/docs/cards/types/summary-card), [Large Image Summary](https://dev.twitter.com/docs/cards/large-image-summary-card), [Photo](https://dev.twitter.com/docs/cards/types/photo-card), [Gallery](https://dev.twitter.com/docs/cards/types/gallery-card), [Player](https://dev.twitter.com/docs/cards/types/player-card) and [Product](https://dev.twitter.com/docs/cards/types/product-card) Twitter Cards &mdash; *including configurable image sizes for each card type*.
+WPSSO provides the [Summary](https://dev.twitter.com/cards/types/summary), [Summary with Large Image](https://dev.twitter.com/cards/types/summary-large-image), [App](https://dev.twitter.com/cards/types/app) (requires the [WPSSO App Meta](https://wordpress.org/plugins/wpsso-am/) extension), and [Player](https://dev.twitter.com/cards/types/player) Twitter Cards &mdash; *including configurable image sizes for each card type*. The [Photo](https://dev.twitter.com/cards/types/photo), [Gallery](https://dev.twitter.com/cards/types/gallery), and [Product](https://dev.twitter.com/cards/types/product) Twitter Cards were deprecated by Twitter on July 3rd, 2015.
 
 * **Google / SEO Link and Meta Tags**
 	* author
@@ -231,38 +215,60 @@ WPSSO (Pro version) provides the [Summary](https://dev.twitter.com/docs/cards/ty
 	* description
 	* image
 	* url
-* **Twitter Card Meta Tags** (Pro version)
-	* twitter:card (Summary, Large Image Summary, Photo, Gallery, Player and Product)
+* **Twitter Card Meta Tags**
+	* twitter:card (Summary, Summary with Large Image, App, Player Cards)
 	* twitter:creator
-	* twitter:data1
-	* twitter:data2
-	* twitter:data3
-	* twitter:data4
 	* twitter:description
 	* twitter:image
 	* twitter:image:width
 	* twitter:image:height
-	* twitter:image0
-	* twitter:image1
-	* twitter:image2
-	* twitter:image3
-	* twitter:label1
-	* twitter:label2
-	* twitter:label3
-	* twitter:label4
 	* twitter:player
 	* twitter:player:width
 	* twitter:player:height
 	* twitter:site
 	* twitter:title
 
+<h4>3rd Party Integration (Pro version)</h4>
+
+Aside from the additional support for Twitter Cards, the main difference between the WPSSO Free and Pro versions is the integration of 3rd party plugins and services.
+
+<div style="clear:both;"></div>
+<div style="width:40%;min-width:256px;max-width:1200px;height:auto;float:right;margin:10px 0 40px 60px;">
+<p><img src="https://surniaulula.github.io/wpsso/images/social/twitter-tiled-gallery-wpsso.png" width="100%" height="100%"/></p>
+</div>
+
+<strong>Images and Videos</strong>
+
+WPSSO detects and uses all images - associated or included in your content - including the WordPress image gallery and NextGEN Gallery shortcodes. WordPress Media Library images (and NextGEN Gallery in the Pro version) are resized according to their intended audience (Facebook, Twitter, Pinterest, etc). The Pro version also detects embedded videos from Slideshare, Vimeo, Wistia, and Youtube (including their preview images).
+
+WPSSO (Pro version) also includes support for [JetPack Photon](http://jetpack.me/support/photon/) and [NextGEN Gallery v1 and v2](https://wordpress.org/plugins/nextgen-gallery/) albums, galleries and images (shortcodes, image tags, album / gallery preview images, etc.).
+
+<strong>Enhanced SEO</strong>
+
+WPSSO (Pro version) integrates with [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/), [All in One SEO Pack](https://wordpress.org/plugins/all-in-one-seo-pack/), and [HeadSpace2 SEO](https://wordpress.org/plugins/headspace2/) &mdash; making sure your custom SEO settings are reflected in the Open Graph, Rich Pin, and Twitter Card meta tags.
+
+<blockquote>
+<p>Read about the <a href="http://surniaulula.com/2014/10/25/social-seo-wordpress-seo-vs-wpsso/">differences between the Yoast SEO (aka WordPress SEO) and WPSSO plugins</a> for social sharing.</p>
+</blockquote>
+
+<div style="clear:both;"></div>
+<div style="width:40%;min-width:256px;max-width:1200px;height:auto;float:right;margin:10px 0 40px 60px;">
+<p><img src="https://surniaulula.github.io/wpsso/images/social/twitter-product-wpsso-single.png" width="100%" height="100%"/></p>
+</div>
+
+<strong>eCommerce Products</strong>
+
+WPSSO (Pro version) also supports [Easy Digital Downloads](https://wordpress.org/plugins/easy-digital-downloads/), [MarketPress - WordPress eCommerce](https://wordpress.org/plugins/wordpress-ecommerce/), [WooCommerce v1 and v2](https://wordpress.org/plugins/woocommerce/), and [WP e-Commerce](https://wordpress.org/plugins/wp-e-commerce/) product pages, creating appropriate meta tags for [Facebook Products](https://developers.facebook.com/docs/payments/product/), [Twitter Product Cards](https://dev.twitter.com/docs/cards/types/product-card) and [Pinterest Rich Pins](http://developers.pinterest.com/rich_pins/), including variations and additional / custom images.
+
+<strong>Forums and Social</strong>
+
+WPSSO (Pro version) supports [bbPress](https://wordpress.org/plugins/bbpress/) and [BuddyPress](https://wordpress.org/plugins/buddypress/) (see the [BuddyPress Integration Notes](http://wpsso.com/codex/plugins/wpsso/notes/buddypress-integration/)), making sure your meta tags reflect the page content, including appropriate titles, descriptions, images, etc.
+
+<div style="clear:both;"></div>
+
 <h4>Proven Performance</h4>
 
 WPSSO is *fast and coded for performance*, making full use of all available caching techniques (persistent / non-persistent object and disk caching). WPSSO loads only the library files and object classes it needs, keeping it small, fast, and yet still able to support a wide range of 3rd party integration features.
-
-<h4>Clean Uninstall</h4>
-
-Try the WPSSO plugin with complete confidence &mdash; when uninstalled, WPSSO removes *all* traces of itself from the database (options, site options, user and post meta, transients, etc.).
 
 <h4>Professional Support</h4>
 
@@ -275,15 +281,15 @@ Follow Surnia Ulula on [Google+](https://plus.google.com/+SurniaUlula/?rel=autho
 = Install and Uninstall =
 
 <ul>
-	<li><a href="http://wpsso.com/codex/plugins/wpsso/installation/developer-special-buy-one-get-one-free/">Developer Special – Buy one, Get one Free</a></li>
-	<li><a href="http://wpsso.com/codex/plugins/wpsso/installation/migrate-from-ngfb/">How-To Migrate from NGFB to WPSSO</a></li>
 	<li><a href="http://wpsso.com/codex/plugins/wpsso/installation-to/install-the-plugin/">Install the Plugin</a></li>
 	<li><a href="http://wpsso.com/codex/plugins/wpsso/installation/integration/">Integration Notes</a>
 	<ul>
 		<li><a href="http://wpsso.com/codex/plugins/wpsso/installation/integration/buddypress-integration/">BuddyPress Integration</a></li>
 	</ul></li>
-	<li><a href="http://wpsso.com/codex/plugins/wpsso/installation/debugging-and-problem-solving/">Debugging and Problem Solving</a></li>
 	<li><a href="http://wpsso.com/codex/plugins/wpsso/installation/uninstall-the-plugin/">Uninstall the Plugin</a></li>
+	<li><a href="http://wpsso.com/codex/plugins/wpsso/installation/debugging-and-problem-solving/">Debugging and Problem Solving</a></li>
+	<li><a href="http://wpsso.com/codex/plugins/wpsso/installation/migrate-from-ngfb/">How-To Migrate from NGFB to WPSSO</a></li>
+	<li><a href="http://wpsso.com/codex/plugins/wpsso/installation/developer-special-buy-one-get-one-free/">Developer Special – Buy one, Get one Free</a></li>
 </ul>
 
 = Plugin Setup =
@@ -401,7 +407,7 @@ Follow Surnia Ulula on [Google+](https://plus.google.com/+SurniaUlula/?rel=autho
 
 == Changelog ==
 
-<blockquote>
+<blockquote id="changelog_top_info">
 <p>New versions of the plugin are released approximately every week (more or less). 
 New features are added, tested, and released incrementally, instead of grouping them together in a major version release. 
 When minor bugs fixes and/or code improvements are applied, new versions are also released.
@@ -413,220 +419,124 @@ This release schedule keeps the code stable and reliable, at the cost of more fr
 * [GitHub](https://github.com/SurniaUlula/wpsso)
 * [WordPress.org](https://wordpress.org/plugins/wpsso/developers/)
 
-= Version 3.7.4 (2015/08/29) =
+= Version 3.10.2 2015/09/29 =
 
 * **New Features**
 	* *None*
 * **Improvements**
-	* *None*
+	* The user and taxonomy "Priority Media" options now takes precedence over any forced default media from the plugin settings.
+	* Added the 'Maximum Images', 'Maximum Videos', and 'Include Preview Image(s)' options to the user and taxonomy Social Settings metabox.
 * **Bugfixes**
-	* Fixed a Facebook debugger error for 'fb:admins' with multiple comma-delimited values by creating additionl 'fb:admins' meta tags (with a single value each).
+	* Fixed the saving / checking / use of the 'Include Preview Image(s)' option in the Social Settings metabox.
+	* Fixed the default Open Graph title and description values in the Social Settings metabox (custom values were detected as defaults and being lost after saving a second time).
+	* Fixed detection of the admin-side `profile.php` page as a 'user page' for custom social settings.
 * **Developer Notes**
-	* Moved the Open Graph type and Schema itemtype lists to arrays under WpssoConfig::$cf['head'].
-	* Added three new filters to accept under-sized images individually (see filters.txt for details).
-		* wpsso_attached_accept_img_size
-		* wpsso_content_accept_img_size
-		* wpsso_ngg_accept_img_size
+	* Removed unnecessary current/new options comparison in the WpssoOptions `save_options()` method (current options may have been incorrectly reported as new by some database caching solutions).
+	* Renamed a few variables and methods for improve readability:
+		* Renamed the `$custom_idx` variable to `$md_idx`.
+		* Renamed the `$source_id` variable to `$src_id`.
+		* Renamed the WpssoHead `get_tag_array()` private method to `get_mt_array()`.
+		* Renamed the WpssoHead `get_single_tag()` private method to `get_single_mt()`.
+		* Renamed the WpssoSchema `add_head_attr()` public method (and filter) to `add_head_attributes()`.
+		* Renamed the WpssoOpengraph `add_html_attr()` public method (and filter) to `add_html_attributes()`.
 
-= Version 3.7.3 (2015/08/26) =
+= Version 3.10.1 2015/09/23 =
 
 * **New Features**
 	* *None*
 * **Improvements**
-	* Refactored / improved the WpssoCheck->get_avail() method for a slight speed improvement when checking dependencies.
+	* Slight performance improvement when reading / processing the options array.
+	* Added Free / Pro status text to the SSO admin menu / settings item names.
 * **Bugfixes**
-	* Fixed an incorrect warning message for an empty Video Embed option value in the Social Settings metabox.
+	* Fixed the Open Graph default title and description values in the post Social Settings metabox.
+	* Fixed use of a missing NextGEN Gallery Pro version module in the Twitter Card class (Free version).
 * **Developer Notes**
-	* *None*
+	* Added saving of plugin extension version numbers to the options array when new versions are found.
+	* Removed all Photo, Gallery, and Product Twitter Card related option keys from the options array.
+	* Changed the WpssoAdmin $readme_info property to a static variable.
 
-= Version 8.7.2 (2015/08/23) =
+= Version 3.10 2015/09/20 =
+
+<p>The Photo Card, Gallery Card, and Product Card were deprecated by Twitter on July 3rd, 2015. WPSSO continues to support all <a href="https://dev.twitter.com/cards/types">current Twitter Card formats</a>, including the Summary Card, Summary Card with Large Image, App Card (extension plugin required), and Player Card &mdash; in both the Free (New) and Pro versions.</p>
 
 * **New Features**
 	* *None*
 * **Improvements**
-	* *None*
+	* Added Twitter Card features in the Free version.
+	* Removed Product Card from all e-Commerce integration modules (Pro version).
+	* Removed Photo and Gallery Card features.
 * **Bugfixes**
-	* Fixed a missing "R" issue in titles and descriptions by replacing the '\R' regex escape sequence by '\n\r' (the '\R' escape sequence does not appear to be supported by all PHP versions).
+	* *None*
 * **Developer Notes**
-	* Refactored / improved the SucomUtil class is_post_page(), is_term_page(), is_author_page() methods.
-	* Added is_product_page(), is_product_category, and is_product_tag() methods in the SucomUtil class for the WooCommerce module.
-	* Refactored the WooCommerce module to use the new SucomUtil is_product methods for a slight performance improvement (Pro version).
+	* Removed the 'wpsso_tc_edd', 'wpsso_tc_marketpress', 'wpsso_tc_woocommerce', and 'wpsso_tc_wpecommerce' filters.
+	* Added a new WpssoUtil::save_all_times() method to save installation, activation, and update times.
 
-= Version 3.7.1 (2015/08/21) =
+= Version 3.9.2 2015/09/13 =
 
 * **New Features**
 	* *None*
 * **Improvements**
-	* *None*
+	* Completed the Network SSO Advanced settings page "Plugin Settings" tab with all available options (Pro version).
 * **Bugfixes**
-	* Fixed / improved duplicate meta tag pattern matching by allowing extra newline characters added by W3TC.
+	* Fixed an incorrect "Include Preview Image(s)" default value in the Social Settings metabox (Pro version).
 * **Developer Notes**
-	* *None*
+	* Moved the `conflict_warnings()` method from WpssoCheck to the WpssoAdmin class.
+	* Changed the minimum WordPress version from 3.0 to 3.1 (required to display admin notices).
 
-= Version 3.7 (2015/08/18) =
+= Version 3.9 2015/09/09 =
+
+<p><a href="http://surniaulula.com/2015/09/09/ngfb-wpsso-update-improved-schema-support/">Release notes for WPSSO Version 3.9</a>.</p>
 
 * **New Features**
-	* Added support for the <a href="https://wordpress.org/plugins/rest-api/">WordPress REST API (Version 2)</a> plugin (Pro version).
+	* Added a new "Theme Integration" tab on the Advanced settings page.
+	* Added a new "Header <html> Attribute Filter" option on the Advanced settings page (Pro version).
+	* Added a new "Header <head> Attribute Filter" option on the Advanced settings page (Pro version).
+	* Added a new "Image Alt Text Prefix" option on the Advanced settings page (Pro version).
+	* Added a new "WP Caption Paragraph Prefix" option on the Advanced settings page (Pro version).
 * **Improvements**
-	* *None*
+	* Changed the default index schema type from "Blog" to "WebSite" (pseudo-standard SEO value).
+	* Changed the default post/page schema type from "Article" to "WebPage" (pseudo-standard SEO value).
+	* Updated the Easy Digital Downloads (EDD) module to add a "Product" schema item type for "download" post types (Pro version).
 * **Bugfixes**
 	* *None*
 * **Developer Notes**
-	* The WPSSO WordPress REST API v2 module extends the returned /wp-json/wp/v2/posts (including custom post types), terms, and users JSON with a new 'head' array field consisting of 'html' and 'parts' arrays (Pro version).
+	* Renamed the 'wpsso_doctype_prefix_ns' filter to 'wpsso_og_prefix_ns' (returns an array of Open Graph namespace URLs).
+	* Renamed the 'wpsso_doctype_schema_type' filter to 'wpsso_schema_item_type' (returns an itemtype URL string).
+	* Added a new 'wpsso_schema_post_types' filter to return an associative array of post types and Schema URL values.
+	* Added a new `WpssoUtil::save_time()` method called by WPSSO extensions when activated. 
+	* Added a new `SucomUtil::get_option_key()` method.
+	* Added a new `wpsso_schema_attributes()` function for optional use in the &lt;head&gt; element.
 
-= Version 3.6.5 (2015/08/14) =
+= Version 3.8 2015/09/03 =
 
-* **New Features**
-	* *None*
-* **Improvements**
-	* Added a check for full size image dimensions vs the requested image size dimensions - if identical, the full size image URL will be used instead. This allows the plugin to use a (potentially) better quality image than the re-generated version provided by WordPress. 
-	* Added a check and admin notice on activation for lower "Object Cache Expiry" values than the recommended default (86400 seconds).
-* **Bugfixes**
-	* *None*
-* **Developer Notes**
-	* *None*
+<p>This latest version include new dismissible warnings for rejected images (too small and/or extreme aspect ratios) when using WordPress v4.2+. When previously dismissed warnings are found, an additional notice will be shown to allow these warnings to be displayed again temporarily.</p>
 
-= Version 3.6.4.4 (2015/08/11) =
-
-* **New Features**
-	* *None*
-* **Improvements**
-	* Added extra error checking for custom max image/video values from post/taxonomy/user settings.
-* **Bugfixes**
-	* Fixed the custom post/taxonomy/user settings update process by removing the addition of default values (Pro version).
-* **Developer Notes**
-	* *None*
-
-= Version 3.6.4.3 (2015/08/07) =
+<p>This release also include code improvements for small performance gains on the admin side (tooltip and message lookups, for example). Developers should note that filtering of individual meta tags has been disabled by default, and can be re-enabled using the WPSSO_FILTER_SINGLE_TAGS constant. Some tooltip and message lookup filter names have also been changed, which meant releasing updates for all WPSSO extension plugins as well.</p>
 
 * **New Features**
 	* *None*
 * **Improvements**
-	* Improved filtering for incorrect Yoast SEO error message(s).
+	* Added the ability to dismiss image dimension warnings when using WordPress 4.2+.
+	* The "Pro Authentication ID" option is now included on the Pro Licenses settings page for all plugins / extensions with a Pro version available (and not only for active plugins / extensions).
 * **Bugfixes**
 	* *None*
 * **Developer Notes**
-	* *None*
-
-= Version 3.6.4.2 (2015/08/04) =
-
-* **New Features**
-	* *None*
-* **Improvements**
-	* Confirmed WordPress v4.2.4 compatibility.
-	* Added PHP realpath() to the WPSSO_PLUGINDIR constant value to prevent PHP fwrite() issues.
-* **Bugfixes**
-	* Fixed the WooCommerce and WPeCommerce term description code to use the 'ngfb_description_seed' filter for compatibility with SEO integration modules (Pro version).
-* **Developer Notes**
-	* *None*
-
-= Version 3.6.4 (2015/08/02) =
-
-* **New Features**
-	* Added new `wpsso_get_sharing_url()` and `wpsso_get_short_url()` functions.
-* **Improvements**
-	* *None*
-* **Bugfixes**
-	* *None*
-* **Developer Notes**
-	* *None*
-
-= Version 3.6.3.1 (2015/07/31) =
-
-* **New Features**
-	* *None*
-* **Improvements**
-	* *None*
-* **Bugfixes**
-	* Added missing check for a default image URL in the WpssoUtil `force_default_media()` method.
-	* Fixed the post cache object variable name in the WpssoProUtilShorten `filter_post_cache_objects()` method (Pro version).
-* **Developer Notes**
-	* *None*
-
-= Version 3.6.3 (2015/07/28) =
-
-* **New Features**
-	* Added information about the new WPSSO RRSSB extension in the Extension Plugins settings page.
-* **Improvements**
-	* The "Use Filtered (SEO) Titles" option is now enabled by default.
-	* Added a check in the various SEO Pro modules to skip SEO titles when "Use Filtered (SEO) Titles" is disabled (Pro version).
-	* Added an onMouseOut check for Social Settings input fields.
-* **Bugfixes**
-	* *None*
-* **Developer Notes**
-	* The $add_hashtags method argument now supports integer values as well (not just true/false).
-
-= Version 3.6.2.1 (2015/07/25) =
-
-* **New Features**
-	* *None*
-* **Improvements**
-	* Added a check for missing DOMDocument PHP class in older PHP versions.
-	* Updated the minimum PHP version requirement to v4.1.
-* **Bugfixes**
-	* Added a check for missing $screen->id attribute when creating new taxonomy terms.
-* **Developer Notes**
-	* *None*
-
-= Version 3.6.2 (2015/07/25) =
-
-* **New Features**
-	* *None*
-* **Improvements**
-	* *None*
-* **Bugfixes**
-	* Fixed two option variable names in the NgfbUtil get_cache_file_url() method.
-	* Fixed an incorrectly named variable when retrieving WooCommerce term descriptions (Pro version).
-* **Developer Notes**
-	* Moved the get_tweet_max_len() method from the SucomUtil class to the NgfbUtil class.
-	* Added a get_tweet_text() method in the NgfbUtil class (for future use by extensions, etc).
-	* Added $short_url and $service arguments to the NgfbUtil get_tweet_max_len() method.
-	* Added support for a %%short_url%% inline variable.
-
-= Version 3.6.1 (2015/07/23) =
-
-* **New Features**
-	* *None*
-* **Improvements**
-	* Changed the "Apply WordPress Content Filters" default from checked to unchecked.
-	* Added an informational message on activation about enabling the "Apply WordPress Content Filters" if using shortcodes.
-	* Added a check for an empty WooCommerce term description value before setting the Open Graph and Twitter description meta tag (Pro version).
-* **Bugfixes**
-	* *None*
-* **Developer Notes**
-	* Moved additional plugin activation checks from the Wpsso to the WpssoRegister class.
-
-= Version 3.6 (2015/07/21) =
-
-* **New Features**
-	* Added the Article "headline" and "datepublished" markup for Google's testing tool.
-	* Added a "Video Preview Image(s)" option in the Social Settings metabox under the Priority Media tab.
-* **Improvements**
-	* *None*
-* **Bugfixes**
-	* *None*
-* **Developer Notes**
-	* Renamed the SucomUtil th() method to get_th().
+	* Moved the 'installed_version' and 'ua_plugin' filter methods from Wpsso to the WpssoUtil class.
+	* Added a new entries in the options table (wpsso_timestamps) for installed, activated, and updated timestamps.
+	* Improved the setting of constants with new `set_variable_constants()` and `get_variable_constants()` methods in the WpssoConfig class.
+	* Refactored the `uninstall_plugin()` method in the WpssoRegister class to use the new `get_variable_constants()` method.
+	* Added a new WPSSO_FILTER_SINGLE_TAGS constant to enable filtering of individual meta tags (disabled by default).
+	* Added new WPSSO_TS_NAME, WPSSO_NOTICE_NAME, and WPSSO_DISMISS_NAME constants.
+	* Added new SucomUtil `add_option_key()` and `update_option_key()` static methods to update values within an option. 
+	* Refactored most of the SucomNotice class code. Notice messages are now saved as array keys (instead of array elements) with a payload array as their value. This allows notice messages to have a number of properties (message ID string, dismissible true/false, etc.). 
+	* Added a new SucomNotice `ajax_dismiss_notice()` method to handle dismissible notices.
+	* Added a new `$dismiss` argument to all SucomNotice logging methods.
+	* Added a new "Reset Hidden Notices" button on the WPSSO settings pages.
+	* Refactored the WpssoMessages->get() method a slight speed improvement. Please note that 'wpsso_tooltip_\*' filters have been renamed to 'wpsso_messages_tooltip_\*' (adjust your filter hooks accordingly).
 
 == Upgrade Notice ==
 
-= 3.7.4 =
+= 3.10.2 =
 
-Fixed a Facebook debugger error for 'fb:admins' with multiple comma-delimited values. Added three new filters to accept under-sized images individually.
-
-= 3.7.3 =
-
-Fixed incorrect warning message for empty Video Embed option value. Refactored / improved NgfbCheck->get_avail() method for a slight speed improvement.
-
-= 3.7.2 =
-
-Fixed a missing "R" issue in titles and descriptions by replacing the '\R' regex escape sequence by '\n\r'.
-
-= 3.7.1 =
-
-Fixed / improved duplicate meta tag pattern matching by allowing extra newline characters added by W3TC.
-
-= 3.7 =
-
-Added support for the WordPress REST API (Version 2) plugin (Pro version).
+2015/09/29 Fixed use of the 'Include Preview Image(s)' option in Social Settings metabox. Fixed default Open Graph title / description values in Social Settings metabox. Fixed detection of profile.php as a 'user page' for custom settings.
 

@@ -1,0 +1,19 @@
+.wpgmp_map img {
+    max-width: none !important;
+    padding: 0px !important;
+}
+
+.wpgmp_map div {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.wpgmp_map_container {
+    position: relative;
+}
+
+.wpgmp_map_container .gm-style-iw {
+    min-height: 50px!important;
+    min-width: 150px!important;
+}

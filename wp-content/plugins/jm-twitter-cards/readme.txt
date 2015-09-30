@@ -3,7 +3,7 @@ Contributors: jmlapam
 Tags: twitter, cards, semantic markup, metabox, meta, photo, product, gallery, player
 Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7BJYYT486HEH6
 Requires at least: 3.6
-Tested up to: 4.1
+Tested up to: 4.3
 License: GPLv2 or later
 Stable tag: trunk
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -169,6 +169,12 @@ Vous devez utiliser le shortcode [gallery] pour obtenir une card galerie (c'est 
 Meant to help developers only. You'll have to code to use them.
 
 == Changelog ==
+
+= 6.2 =
+* 17 Sep 2015
+* https://wordpress.org/support/topic/php-fatal-error-class-tokentometwittercardsinit-not-found [fixed]
+* fix deprecated markup for img
+* https://github.com/TweetPressFr/jm-twitter-cards/issues/53 [security fix]
 
 = 6.1 =
 * 16 Aug 2015

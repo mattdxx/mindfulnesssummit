@@ -3,30 +3,42 @@
 class MC4WP_MailChimp {
 
 	/**
+	 * @var string
+	 */
+	protected $transient_name = 'mc4wp_mailchimp_lists';
+
+	/**
+	 * Empty the Lists cache
+	 */
+	public function empty_cache() {
+		delete_transient( $this->transient_name );
+		delete_transient( $this->transient_name . '_fallback' );
+	}
+
+	/**
 	 * Get MailChimp lists
 	 * Try cache first, then try API, then try fallback cache.
 	 *
-	 * @param bool $force_renewal
+	 * @param bool $force_refresh
 	 * @param bool $force_fallback
 	 *
 	 * @return array
 	 */
-	public function get_lists( $force_renewal = false, $force_fallback = false ) {
+	public function get_lists( $force_refresh = false, $force_fallback = false ) {
 
-		if( $force_renewal ) {
-			delete_transient( 'mc4wp_mailchimp_lists' );
-			delete_transient( 'mc4wp_mailchimp_lists_fallback' );
+		if( $force_refresh ) {
+			$this->empty_cache();
 		}
 
-		$cached_lists = get_transient( 'mc4wp_mailchimp_lists' );
+		$cached_lists = get_transient( $this->transient_name  );
 
 		// if force_fallback is true, get lists from older transient
 		if( $force_fallback ) {
-			$cached_lists = get_transient( 'mc4wp_mailchimp_lists_fallback' );
+			$cached_lists = get_transient( $this->transient_name . '_fallback' );
 		}
 
 		// got lists? if not, proceed with API call.
-		if( empty( $cached_lists ) ) {
+		if( ! is_array( $cached_lists ) ) {
 
 			// make api request for lists
 			$api = mc4wp_get_api();
@@ -46,10 +58,13 @@ class MC4WP_MailChimp {
 						'interest_groupings' => array()
 					);
 
-					// get interest groupings
-					$groupings_data = $api->get_list_groupings( $list->id );
-					if ( $groupings_data ) {
-						$lists["{$list->id}"]->interest_groupings = array_map( array( $this, 'strip_unnecessary_grouping_properties' ), $groupings_data );
+					// only get interest groupings if list has some
+					if( $list->stats->grouping_count > 0 ) {
+						// get interest groupings
+						$groupings_data = $api->get_list_groupings( $list->id );
+						if ( $groupings_data ) {
+							$lists["{$list->id}"]->interest_groupings = array_map( array( $this, 'strip_unnecessary_grouping_properties' ), $groupings_data );
+						}
 					}
 
 				}
@@ -64,16 +79,16 @@ class MC4WP_MailChimp {
 				}
 
 				// store lists in transients
-				set_transient( 'mc4wp_mailchimp_lists', $lists, ( 24 * 3600 ) ); // 1 day
-				set_transient( 'mc4wp_mailchimp_lists_fallback', $lists, 1209600 ); // 2 weeks
+				set_transient(  $this->transient_name, $lists, ( 24 * 3600 ) ); // 1 day
+				set_transient(  $this->transient_name . '_fallback', $lists, 1209600 ); // 2 weeks
 
 				return $lists;
 			} else {
 				// api request failed, get fallback data (with longer lifetime)
-				$cached_lists = get_transient( 'mc4wp_mailchimp_lists_fallback' );
+				$cached_lists = get_transient( $this->transient_name . '_fallback' );
 
-				if ( ! $cached_lists ) {
-					return array();
+				if ( ! is_array( $cached_lists ) ) {
+					return false;
 				}
 			}
 
@@ -153,7 +168,7 @@ class MC4WP_MailChimp {
 	public function get_list_grouping_name( $list_id, $grouping_id ) {
 
 		$grouping = $this->get_list_grouping( $list_id, $grouping_id );
-		if( $grouping ) {
+		if( isset( $grouping->name ) ) {
 			return $grouping->name;
 		}
 
@@ -198,7 +213,7 @@ class MC4WP_MailChimp {
 
 		$list_counts = get_transient( 'mc4wp_list_counts' );
 
-		if ( false === $list_counts ) {
+		if( false === $list_counts ) {
 			// make api call
 			$api = mc4wp_get_api();
 			$lists = $api->get_lists();
@@ -279,6 +294,38 @@ class MC4WP_MailChimp {
 
 		return (object) $array;
 
+	}
+
+	/**
+	 * Get the name of a list field by its merge tag
+	 *
+	 * @param $list_id
+	 * @param $tag
+	 *
+	 * @return string
+	 */
+	public function get_list_field_name_by_tag( $list_id, $tag ) {
+		// try default fields
+		switch( $tag ) {
+			case 'EMAIL':
+				return __( 'Email address', 'mailchimp-for-wp' );
+				break;
+			case 'OPTIN_IP':
+				return __( 'IP Address', 'mailchimp-for-wp' );
+				break;
+		}
+		// try to find field in list
+		$list = $this->get_list( $list_id, false, true );
+		if( is_object( $list ) && isset( $list->merge_vars ) ) {
+			// try list merge vars first
+			foreach( $list->merge_vars as $field ) {
+				if( $field->tag !== $tag ) {
+					continue;
+				}
+				return $field->name;
+			}
+		}
+		return '';
 	}
 
 }

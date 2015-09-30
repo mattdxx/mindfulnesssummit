@@ -249,7 +249,7 @@ if (count($calls) > 1) {
                     </tbody>
                 </table>
 
-                <p><?php $controls->button('save', 'Save'); ?></p>
+                <p><?php $controls->button_save(); ?></p>
             </div>
 
             <!-- SEMAPHORES -->
@@ -408,7 +408,7 @@ if (count($calls) > 1) {
                             <td>
                                 <?php
                                 if (defined('NEWSLETTER_MAX_EXECUTION_TIME')) {
-                                    echo NEWSLETTER_MAX_EXECUTION_TIME . ' seconds';
+                                    echo NEWSLETTER_MAX_EXECUTION_TIME . ' (seconds)';
                                 } else {
                                     echo 'Not set';
                                 }
@@ -418,7 +418,7 @@ if (count($calls) > 1) {
                         <tr>
                             <td>NEWSLETTER_CRON_INTERVAL</td>
                             <td>
-                                <?php echo NEWSLETTER_CRON_INTERVAL . 'seconds'; ?>
+                                <?php echo NEWSLETTER_CRON_INTERVAL . ' (seconds)'; ?>
                             </td>
                         </tr>
                         <tr>
@@ -460,6 +460,12 @@ if (count($calls) > 1) {
                             </td>
                         </tr>
                         <tr>
+                            <td>Blog Charset</td>
+                            <td>
+                                <?php echo get_option('blog_charset'); ?>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>WordPress Memory limit</td>
                             <td>
                                 <?php echo WP_MEMORY_LIMIT; ?>
@@ -490,29 +496,7 @@ if (count($calls) > 1) {
                             </td>
                         </tr>
                         <tr>
-                            <td>Hook "phpmailer_init"</td>
-                            <td>
-                                Obsolete.<br>
-                                <?php
-                                $filters = $wp_filter['phpmailer_init'];
-                                if (!is_array($filters))
-                                    echo 'No actions attached';
-                                else {
-                                    foreach ($filters as &$filter) {
-                                        foreach ($filter as &$entry) {
-                                            if (is_array($entry['function']))
-                                                echo get_class($entry['function'][0]) . '->' . $entry['function'][1];
-                                            else
-                                                echo $entry['function'];
-                                            echo '<br />';
-                                        }
-                                    }
-                                }
-                                ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Action file accessibility</td>
+                            <td>Action file accessibility (obsolete)</td>
                             <td>
                                 <?php                                
                                     $res = wp_remote_get(plugins_url('newsletter') . '/do/subscribe.php?test=1');
@@ -530,7 +514,7 @@ if (count($calls) > 1) {
                             </td>
                         </tr>
                         <tr>
-                            <td>File permissions</td>
+                            <td>File permissions (obsolete)</td>
                             <td>
                                 <?php
                                 $index_owner = fileowner(ABSPATH . '/index.php');

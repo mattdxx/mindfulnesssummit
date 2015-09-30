@@ -1,0 +1,937 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp google map lite version 3.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-22 12:56+0530\n"
+"PO-Revision-Date: 2015-08-22 12:56+0530\n"
+"Last-Translator: Flipper Code <hello@flippercode.com>\n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-SearchPath-0: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-"
+"content/plugins/wp-google-map-plugin\n"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/core/class.controller.php:140
+msgid " updated successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/core/class.controller.php:141
+msgid " added successfully. You can manage your "
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/core/class.map-widget.php:25
+msgid "A widget to display google maps"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/core/class.map-widget.php:71
+msgid "Title:"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/core/class.map-widget.php:77
+msgid "Select Your Map:"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/core/class.map-widget.php:80
+msgid "Select map"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/core/class.tabular.php:222
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/core/class.tabular.php:421
+msgid "Selected "
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/core/class.tabular.php:252
+msgid "Manage "
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/core/class.tabular.php:585
+msgid "Filter"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/core/class.tabular.php:645
+msgid "Select Page"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/core/class.template.php:472
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/group_map/views/form.php:63
+msgid "Choose Marker Image"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/core/class.template.php:479
+msgid "Remove Marker Image"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/google-maps.php:206
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/google-maps.php:207
+msgid "WP Google Map"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/google-maps.php:424
+msgid "Choose Icons"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/google-maps.php:494
+msgid "Choose icon"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/google-maps.php:494
+msgid "Search icons"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/google-maps.php:521
+msgid "Insert into Post"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/group_map/model.group_map.php:41
+msgid "Add Marker Category"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/group_map/model.group_map.php:42
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:194
+msgid "Marker Categories"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/group_map/model.group_map.php:116
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/model.location.php:170
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/model.location.php:365
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/model.map.php:167
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/group_map/model.group_map.php:118
+msgid "Category updated successfully"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/group_map/model.group_map.php:120
+msgid "Category added successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/group_map/views/form.php:32
+msgid "Marker Category"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/group_map/views/form.php:32
+msgid "Manage Marker Categories"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/group_map/views/form.php:42
+msgid "Parent Category"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/group_map/views/form.php:44
+msgid "Assign parent category if any."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/group_map/views/form.php:51
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/group_map/views/form.php:56
+msgid "Marker Category Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/group_map/views/form.php:54
+msgid "Enter here marker category title."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/model.location.php:44
+msgid "Add Location"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/model.location.php:45
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:41
+msgid "Manage Locations"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/model.location.php:172
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/model.location.php:367
+msgid "Location updated successfully"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/model.location.php:174
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/model.location.php:369
+msgid "Location added successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/model.location.php:258
+msgid "Please select file to be imported."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/model.location.php:260
+msgid "Please upload a valid file"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:41
+msgid "Location Information"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:43
+msgid "Location Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:45
+msgid "Enter here the location title."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:47
+msgid "Enter Location Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:50
+msgid "Location Address"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:52
+msgid "Enter here the address. Google auto suggest helps you to choose one."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:55
+msgid "Type Location Address"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:59
+msgid "Latitude and Longitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:62
+msgid "Enter here the latitude."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:65
+msgid "Enter the Latitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:72
+msgid "Enter here the longitude."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:75
+msgid "Enter the Longitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:80
+msgid "City and State"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:83
+msgid "Enter here the city."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:85
+msgid "City"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:92
+msgid "Enter here the state."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:94
+msgid "State"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:99
+msgid "Country and Postal Code"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:102
+msgid "Enter here the country."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:104
+msgid "Country"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:111
+msgid "Enter here the postal code."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:113
+msgid "Postal Code"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:119
+msgid "Current Location"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:126
+msgid "On Click"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:127
+msgid "Display Infowindow"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:127
+msgid "Redirect"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:135
+msgid "Infowindow Message"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:137
+msgid "Enter here the infoWindow message."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:146
+msgid "Redirect Url"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:148
+msgid "Enter here the redirect url. e.g http://www.flippercode.com"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:156
+msgid "YES"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:156
+msgid "NO"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:157
+msgid "Open new tab"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:159
+msgid "Open a new window tab."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:168
+msgid "Infowindow Default Open"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:172
+msgid "Check to enable infowindow default open."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:176
+msgid "Marker Draggable"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:180
+msgid "Check if you want to allow visitors to drag the marker."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:184
+msgid "Marker Animation"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:186
+msgid "Please select marker animation."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:233
+msgid "You don't have categorie(s)."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/location/views/form.php:240
+msgid "Save Location"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/model.map.php:40
+msgid "Add Map"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/model.map.php:41
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/form.php:32
+msgid "Manage Maps"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/model.map.php:169
+msgid "Map updated successfully"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/model.map.php:171
+msgid "Map added successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/model.map.php:198
+msgid "Copy"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/form.php:32
+msgid "Map Information"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/form.php:41
+msgid "Save Map"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-position-style-form.php:24
+msgid "Control Position(s) Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-position-style-form.php:29
+msgid "Pan Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-position-style-form.php:31
+msgid "Please select position of pan control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-position-style-form.php:35
+msgid "Zoom Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-position-style-form.php:37
+msgid "Please select position of zoom control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-position-style-form.php:42
+msgid "Zoom Control Style"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-position-style-form.php:44
+msgid "Please select style of zoom control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-position-style-form.php:49
+msgid "Map Type Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-position-style-form.php:52
+msgid "Please select position of map type control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-position-style-form.php:58
+msgid "Map Type Control Style"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-position-style-form.php:60
+msgid "Please select style of map type control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-position-style-form.php:65
+msgid "Street View Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-position-style-form.php:67
+msgid "Please select position of street view control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-setting-form.php:8
+msgid "Control Setting"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-setting-form.php:13
+msgid "Turn Off Pan Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-setting-form.php:17
+msgid "Please check to disable pan control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-setting-form.php:21
+msgid "Turn Off Zoom Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-setting-form.php:25
+msgid "Please check to disable zoom control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-setting-form.php:29
+msgid "Turn Off Map Type Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-setting-form.php:33
+msgid "Please check to disable map type control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-setting-form.php:37
+msgid "Turn Off Scale Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-setting-form.php:41
+msgid "Please check to disable scale control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-setting-form.php:45
+msgid "Turn Off Street View Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-setting-form.php:49
+msgid "Please check to disable street view control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-setting-form.php:53
+msgid "Turn Off Overview Map Control"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/control-setting-form.php:57
+msgid "Please check to disable overview map control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:9
+msgid "Map Title"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:11
+msgid "Enter here the map title."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:16
+msgid "Map Width"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:18
+msgid "Enter here the map width in pixel. Leave it blank for 100% width."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:22
+msgid "Map Height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:24
+msgid "Enter here the map height in pixel."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:96
+msgid "Map Zoom Level"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:98
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:105
+msgid "Available options 1 to 19."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:103
+msgid "Map Type"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:110
+msgid "Turn Off Scrolling Wheel"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:114
+msgid "Please check to disable scroll wheel zoom."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:118
+msgid "Map Draggable"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:122
+msgid "Please check to disable map draggable."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:127
+msgid "45&deg; Imagery"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/general-setting-form.php:131
+msgid ""
+"Apply 45&deg; Imagery ? (only available for map type SATELLITE and HYBRID)."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/layers-form.php:9
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/layers-form.php:14
+msgid "Layers Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/layers-form.php:22
+msgid "Traffic Layer"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/layers-form.php:26
+msgid "Please check to enable traffic Layer."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/layers-form.php:31
+msgid "Transit Layer"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/layers-form.php:35
+msgid "Please check to enable Transit Layer."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/layers-form.php:41
+msgid "Bicycling Layer"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/layers-form.php:45
+msgid "Please check to enable Bicycling Layer."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/locations-form.php:41
+msgid "Choose Locations"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/locations-form.php:46
+msgid "Choose"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/locations-form.php:47
+msgid "Select All"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/locations-form.php:48
+msgid "Deselect All"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/map-center-settings.php:8
+msgid "Map's Center"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/map-center-settings.php:14
+msgid "Center Latitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/map-center-settings.php:16
+msgid "Enter here the center latitude."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/map-center-settings.php:20
+msgid "Center Longitude"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/map-center-settings.php:22
+msgid "Enter here the center longitude."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:9
+msgid "Street View Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:15
+msgid "Turn On Street View"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:19
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:29
+msgid "Please check to enable Street View control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:25
+msgid "Turn On Close Button."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:36
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:47
+msgid "Turn Off links Control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:40
+msgid "Please check to disable links control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:51
+msgid "Please check to disable Street View Pan control."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:58
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:67
+msgid "POV Heading"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:61
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:70
+msgid "Please enter POV heading."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:77
+msgid "POV Pitch"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/map/views/map-forms/street-view-setting-form.php:80
+msgid "Please enter POV Pitch."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/overview/views/view.php:12
+msgid "How to Use"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/overview/views/view.php:14
+msgid "Go through the steps below to create your first map."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/overview/views/view.php:18
+#, php-format
+msgid ""
+"Use our auto suggestion enabled location box to add your location <a href="
+"\"%s\">here</a>. You can add multiple locations.All those locations will be "
+"available to choose when you create your map."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/overview/views/view.php:23
+#, php-format
+msgid ""
+"Now <a href=\"%s\">click here</a> to create a map. You can create as many "
+"maps you want to add. Using shortcode, you can add maps on posts/pages."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/overview/views/view.php:28
+msgid ""
+"When done with administrative tasks, you can display map on posts/pages "
+"using. You can create as many maps you want to add. Using shortcode, you can "
+"add maps on posts/pages. Enable map in the widgets section to display in "
+"sidebar."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/overview/views/view.php:34
+msgid "Pro Version"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/overview/views/view.php:36
+msgid "Pro Edition Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/model.settings.php:28
+msgid "Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/model.settings.php:53
+msgid "Setting(s) saved successfully."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:10
+msgid "General Setting(s)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:12
+msgid "Business API Key"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:14
+msgid "Insert Api Key if you signup for google maps business api."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:17
+msgid "ENGLISH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:18
+msgid "ARABIC"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:19
+msgid "BASQUE"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:20
+msgid "BULGARIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:21
+msgid "BENGALI"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:22
+msgid "CATALAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:23
+msgid "CZECH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:24
+msgid "DANISH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:25
+msgid "GERMAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:26
+msgid "GREEK"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:27
+msgid "ENGLISH (AUSTRALIAN)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:28
+msgid "ENGLISH (GREAT BRITAIN)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:29
+msgid "SPANISH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:30
+msgid "FARSI"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:31
+msgid "FINNISH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:32
+msgid "FILIPINO"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:33
+msgid "FRENCH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:34
+msgid "GALICIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:35
+msgid "GUJARATI"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:36
+msgid "HINDI"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:37
+msgid "CROATIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:38
+msgid "HUNGARIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:39
+msgid "INDONESIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:40
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:48
+msgid "ITALIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:41
+msgid "HEBREW"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:42
+msgid "JAPANESE"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:43
+msgid "KANNADA"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:44
+msgid "KOREAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:45
+msgid "LITHUANIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:46
+msgid "LATVIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:47
+msgid "MALAYALAM"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:49
+msgid "MARATHI"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:50
+msgid "DUTCH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:51
+msgid "NORWEGIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:52
+msgid "POLISH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:53
+msgid "PORTUGUESE"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:54
+msgid "PORTUGUESE (BRAZIL)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:55
+msgid "PORTUGUESE (PORTUGAL)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:56
+msgid "ROMANIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:57
+msgid "RUSSIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:58
+msgid "SLOVAK"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:59
+msgid "SLOVENIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:60
+msgid "SERBIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:61
+msgid "SWEDISH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:62
+msgid "TAGALOG"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:63
+msgid "TAMIL"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:64
+msgid "TELUGU"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:65
+msgid "THAI"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:66
+msgid "TURKISH"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:67
+msgid "UKRAINIAN"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:68
+msgid "VIETNAMESE"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:69
+msgid "CHINESE (SIMPLIFIED)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:70
+msgid "CHINESE (TRADITIONAL)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:75
+msgid "Select Language"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:77
+msgid "Default is English."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/settings/views/manage.php:82
+msgid "Save Setting"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/shortcode/views/put-wpgmp.php:89
+msgid "not working..."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/shortcode/views/put-wpgmp.php:91
+msgid "No results found."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/demos/wp-content/plugins/wp-google-map-plugin/modules/shortcode/views/put-wpgmp.php:92
+msgid "Route is not available for your requested route."
+msgstr ""

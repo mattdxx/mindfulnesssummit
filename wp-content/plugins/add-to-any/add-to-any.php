@@ -1,11 +1,13 @@
 <?php
 /*
-Plugin Name: Share Buttons by AddToAny
+Plugin Name: AddToAny Share Buttons
 Plugin URI: https://www.addtoany.com/
 Description: Share buttons for your pages including AddToAny's universal sharing button, Facebook, Twitter, Google+, Pinterest, WhatsApp and many more.  [<a href="options-general.php?page=add-to-any.php">Settings</a>]
-Version: 1.6.5
+Version: 1.6.6
 Author: AddToAny
 Author URI: https://www.addtoany.com/
+Text Domain: add-to-any
+Domain Path: /languages
 */
 
 if ( ! isset( $A2A_locale ) ) {
@@ -44,9 +46,7 @@ function A2A_SHARE_SAVE_init() {
 		$A2A_SHARE_SAVE_options = get_option( 'addtoany_options' );
 	}
 	
-	load_plugin_textdomain( 'add-to-any',
-		$A2A_SHARE_SAVE_plugin_url_path . '/languages',
-		$A2A_SHARE_SAVE_plugin_basename . '/languages' );
+	load_plugin_textdomain( 'add-to-any', false, $A2A_SHARE_SAVE_plugin_basename . '/languages/' );
 		
 	if ( ! isset( $A2A_SHARE_SAVE_options['display_in_excerpts'] ) || $A2A_SHARE_SAVE_options['display_in_excerpts'] != '-1' ) {
 		// Excerpts use strip_tags() for the_content, so cancel if Excerpt and append to the_excerpt instead
@@ -566,24 +566,24 @@ if ( ! function_exists( 'A2A_menu_locale' ) ) {
 			return false;
 			
 		$A2A_locale = 'a2a_localize = {
-	Share: "' . __( "Share", "add-to-any" ) . '",
-	Save: "' . __( "Save", "add-to-any" ) . '",
-	Subscribe: "' . __( "Subscribe", "add-to-any" ) . '",
-	Email: "' . __( "Email", "add-to-any" ) . '",
-	Bookmark: "' . __( "Bookmark", "add-to-any" ) . '",
-	ShowAll: "' . __( "Show all", "add-to-any" ) . '",
-	ShowLess: "' . __( "Show less", "add-to-any" ) . '",
-	FindServices: "' . __( "Find service(s)", "add-to-any" ) . '",
-	FindAnyServiceToAddTo: "' . __( "Instantly find any service to add to", "add-to-any" ) . '",
-	PoweredBy: "' . __( "Powered by", "add-to-any" ) . '",
-	ShareViaEmail: "' . __( "Share via email", "add-to-any" ) . '",
-	SubscribeViaEmail: "' . __( "Subscribe via email", "add-to-any" ) . '",
-	BookmarkInYourBrowser: "' . __( "Bookmark in your browser", "add-to-any" ) . '",
-	BookmarkInstructions: "' . __( "Press Ctrl+D or \u2318+D to bookmark this page", "add-to-any" ) . '",
-	AddToYourFavorites: "' . __( "Add to your favorites", "add-to-any" ) . '",
-	SendFromWebOrProgram: "' . __( "Send from any email address or email program", "add-to-any" ) . '",
-	EmailProgram: "' . __( "Email program", "add-to-any" ) . '",
-	More: "' . __( "More&#8230;", "add-to-any" ) . '"
+	Share: "' . __( "Share", 'add-to-any' ) . '",
+	Save: "' . __( "Save", 'add-to-any' ) . '",
+	Subscribe: "' . __( "Subscribe", 'add-to-any' ) . '",
+	Email: "' . __( "Email", 'add-to-any' ) . '",
+	Bookmark: "' . __( "Bookmark", 'add-to-any' ) . '",
+	ShowAll: "' . __( "Show all", 'add-to-any' ) . '",
+	ShowLess: "' . __( "Show less", 'add-to-any' ) . '",
+	FindServices: "' . __( "Find service(s)", 'add-to-any' ) . '",
+	FindAnyServiceToAddTo: "' . __( "Instantly find any service to add to", 'add-to-any' ) . '",
+	PoweredBy: "' . __( "Powered by", 'add-to-any' ) . '",
+	ShareViaEmail: "' . __( "Share via email", 'add-to-any' ) . '",
+	SubscribeViaEmail: "' . __( "Subscribe via email", 'add-to-any' ) . '",
+	BookmarkInYourBrowser: "' . __( "Bookmark in your browser", 'add-to-any' ) . '",
+	BookmarkInstructions: "' . __( "Press Ctrl+D or \u2318+D to bookmark this page", 'add-to-any' ) . '",
+	AddToYourFavorites: "' . __( "Add to your favorites", 'add-to-any' ) . '",
+	SendFromWebOrProgram: "' . __( "Send from any email address or email program", 'add-to-any' ) . '",
+	EmailProgram: "' . __( "Email program", 'add-to-any' ) . '",
+	More: "' . __( "More&#8230;", 'add-to-any' ) . '"
 };
 ';
 		return $A2A_locale;
@@ -732,25 +732,19 @@ function A2A_SHARE_SAVE_head_script() {
 	$options = get_option( 'addtoany_options' );
 	
 	$http_or_https = ( is_ssl() ) ? 'https' : 'http';
+
+	// Use local cache?
+	$cache = ( isset( $options['cache'] ) && '1' == $options['cache'] ) ? true : false;
+	$upload_dir = wp_upload_dir();
+	$static_server = ( $cache ) ? $upload_dir['baseurl'] . '/addtoany' : $http_or_https . '://static.addtoany.com/menu';
 	
-	global $A2A_SHARE_SAVE_external_script_called;
-	if ( ! $A2A_SHARE_SAVE_external_script_called ) {
-		// Use local cache?
-		$cache = ( isset( $options['cache'] ) && '1' == $options['cache'] ) ? true : false;
-		$upload_dir = wp_upload_dir();
-		$static_server = ( $cache ) ? $upload_dir['baseurl'] . '/addtoany' : $http_or_https . '://static.addtoany.com/menu';
-		
-		// Enternal script call + initial JS + set-once variables
-		$additional_js = ( isset( $options['additional_js_variables'] ) ) ? $options['additional_js_variables'] : '' ;
-		$script_configs = ( ( $cache ) ? "\n" . 'a2a_config.static_server="' . $static_server . '";' : '' )
-			. ( ( isset( $options['onclick'] ) && '1' == $options['onclick'] ) ? "\n" . 'a2a_config.onclick=1;' : '' )
-			. ( ( isset( $options['show_title'] ) && '1' == $options['show_title'] ) ? "\n" . 'a2a_config.show_title=1;' : '' )
-			. ( ( $additional_js ) ? "\n" . stripslashes( $additional_js ) : '' );
-		$A2A_SHARE_SAVE_external_script_called = true;
-	}
-	else {
-		$script_configs = "";
-	}
+	// Enternal script call + initial JS + set-once variables
+	$additional_js = ( isset( $options['additional_js_variables'] ) ) ? $options['additional_js_variables'] : '' ;
+	$script_configs = ( ( $cache ) ? "\n" . 'a2a_config.static_server="' . $static_server . '";' : '' )
+		. ( ( isset( $options['onclick'] ) && '1' == $options['onclick'] ) ? "\n" . 'a2a_config.onclick=1;' : '' )
+		. ( ( isset( $options['show_title'] ) && '1' == $options['show_title'] ) ? "\n" . 'a2a_config.show_title=1;' : '' )
+		. ( ( $additional_js ) ? "\n" . stripslashes( $additional_js ) : '' );
+	$A2A_SHARE_SAVE_external_script_called = true;
 	
 	$javascript_header = "\n" . '<script type="text/javascript">' . "<!--\n"
 	
@@ -825,46 +819,6 @@ function A2A_SHARE_SAVE_footer_script() {
 }
 
 add_action( 'wp_footer', 'A2A_SHARE_SAVE_footer_script' );
-
-
-
-function A2A_SHARE_SAVE_theme_hooks_check() {
-	$template_directory = get_template_directory();
-	
-	// If footer.php exists in the current theme, scan for "wp_footer"
-	$file = $template_directory . '/footer.php';
-	if ( is_file( $file ) ) {
-		$search_string = "wp_footer";
-		$file_lines = @file( $file );
-		
-		foreach ( $file_lines as $line ) {
-			$searchCount = substr_count( $line, $search_string );
-			if ( $searchCount > 0 ) {
-				return true;
-			}
-		}
-		
-		// wp_footer() not found:
-		echo "<div class=\"update-nag\">" . __( "Your theme needs to be fixed. To fix your theme, use the <a href=\"theme-editor.php\">Theme Editor</a> to insert <code>&lt;?php wp_footer(); ?&gt;</code> just before the <code>&lt;/body&gt;</code> line of your theme's <code>footer.php</code> file." ) . "</div>";
-	}
-	
-	// If header.php exists in the current theme, scan for "wp_head"
-	$file = $template_directory . '/header.php';
-	if ( is_file( $file ) ) {
-		$search_string = "wp_head";
-		$file_lines = @file( $file );
-		
-		foreach ( $file_lines as $line ) {
-			$searchCount = substr_count( $line, $search_string );
-			if ( $searchCount > 0 ) {
-				return true;
-			}
-		}
-		
-		// wp_footer() not found:
-		echo "<div class=\"update-nag\">" . __( "Your theme needs to be fixed. To fix your theme, use the <a href=\"theme-editor.php\">Theme Editor</a> to insert <code>&lt;?php wp_head(); ?&gt;</code> just before the <code>&lt;/head&gt;</code> line of your theme's <code>header.php</code> file." ) . "</div>";
-	}
-}
 
 function A2A_SHARE_SAVE_auto_placement( $title ) {
 	global $A2A_SHARE_SAVE_auto_placement_ready;
@@ -1142,8 +1096,8 @@ if ( is_admin() ) {
 function A2A_SHARE_SAVE_add_menu_link() {
 	if ( current_user_can( 'manage_options' ) ) {
 		$page = add_options_page(
-			'AddToAny: '. __( "Share/Save", "add-to-any" ) . " " . __( "Settings" )
-			, __( "AddToAny", "add-to-any" )
+			'AddToAny: ' . __( "Share/Save", 'add-to-any' ) . " " . __( "Settings" )
+			, __( "AddToAny", 'add-to-any' )
 			, 'activate_plugins' 
 			, basename( __FILE__ )
 			, 'A2A_SHARE_SAVE_options_page'

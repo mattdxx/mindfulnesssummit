@@ -21,9 +21,9 @@ function User_Search($atts, $content = null) {
 				)
 		);
 		
-		$ReturnString .= "<style type='text/css'>";
-		$ReturnString .= $Custom_CSS;
-		$ReturnString .= "</style>";
+	$ReturnString .= "<style type='text/css'>";
+	$ReturnString .= $Custom_CSS;
+	$ReturnString .= EWD_FEUP_Add_Modified_Styles();
 		
 		if (!$UserCookie and $login_necessary == "Yes") {
 			  $ReturnString .= __("Please log in to access this content.", 'EWD_FEUP'); 

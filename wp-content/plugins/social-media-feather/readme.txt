@@ -1,9 +1,9 @@
 === Social Media Feather - lightweight social media sharing and follow buttons ===
 Contributors: Synved
 Donate link: http://synved.com/wordpress-social-media-feather/
-Tags: shortcode, shortcodes, link, links, url, permalink, permalinks, time, icons, button, buttons, free, content, plugin, Share, sharing, social share, social sharing, page, pages, widget, CSS, list, media, profile, shortlinks, social, social media, Like, twitter, google, Facebook, Reddit, youtube, vimeo, tumblr, instagram, flickr, foursquare, social media buttons, bookmark, bookmarks, bookmarking, pinterest, linkedin, social links, image, edit, manage, mail, Post, posts, Style, seo, title, filter, follow, following, social follow, social following, Social Media Icons, Social Media Widget, high resolution, retina, ipad
+Tags: shortcode, shortcodes, link, links, url, permalink, permalinks, time, icons, button, buttons, free, content, plugin, Share, sharing, social share, social sharing, page, pages, widget, CSS, list, media, profile, shortlinks, social, social media, Like, twitter, google, Facebook, Reddit, youtube, vimeo, tumblr, instagram, flickr, foursquare, pinterest, linkedin, social media buttons, bookmark, bookmarks, bookmarking, social links, image, edit, manage, mail, Post, posts, Style, seo, title, filter, follow, following, social follow, social following, Social Media Icons, Social Media Widget, social widget, retina, iOS, iphone, ipad, high resolution, sidebar
 Requires at least: 3.1
-Tested up to: 4.2
+Tested up to: 4.4
 Stable tag: trunk
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -34,7 +34,7 @@ On the other hand, given the widespread focus on WordPress social media integrat
 
 The **WordPress social media sharing** offered by the plugin includes all major social sharing buttons providers like Facebook, Twitter, Google+, reddit, Pinterest, tumblr, Linkedin and even e-mail.
 
-It will show social buttons that your users can click to share to facebook or tweet your posts and pages on your site or submit it to reddit and google plus and all other social sharing networks.
+It will show social buttons that your users can click to share to facebook or tweet your posts and pages on your site or submit it to reddit and google plus or publish it on tumblr and all other social sharing networks.
 
 The **WordPress social media following** offered by the plugin includes all major social network providers and tools like Facebook, Twitter, Google+, Pinterest, Linkedin, YouTube, tumblr, instagram, flickr, foursquare, vimeo or RSS.
 
@@ -141,10 +141,18 @@ You can achieve this by using *Custom Fields*. Simply set a custom field of `syn
 
 = How do I change the Twitter button to twit the title of the post instead of the message "Hey, check this out"? =
 
-You can achieve this by using editing the Twitter Share Link under Settings -> Social Media from this:
+You can achieve this by editing the Twitter Share Link under Settings -> Social Media from this:
 `http://twitter.com/share?url=%%url%%&text=%%message%%`
 to this:
 `http://twitter.com/share?url=%%url%%&text=%%title%%`
+
+= How do I only show sharing buttons in my sidebar, rather than under each post? =
+
+Go to Settings -> Social Media and under "Automatic Display" uncheck "Display Sharing Buttons" as well as "Display Follow Buttons". Then go under Appearance -> Widgets and add the "Social Media Feather: Sharing" widget to your sidebar.
+
+= How do I only show follow buttons in my sidebar, rather than under each post? =
+
+Go to Settings -> Social Media and under "Automatic Display" uncheck "Display Sharing Buttons" as well as "Display Follow Buttons". Then go under Appearance -> Widgets and add the "Social Media Feather: Follow Us" widget to your sidebar.
 
 == Screenshots ==
 
@@ -157,6 +165,9 @@ to this:
 7. This shows the available social sharing and following widgets and their settings 
 
 == Changelog ==
+
+= 1.7.9 =
+* Changed text domain to reflect plugin slug
 
 = 1.7.8 =
 * Disable credit link by default

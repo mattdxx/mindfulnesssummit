@@ -84,10 +84,17 @@ class MC4WP_API {
 			$result = $this->call( 'helper/ping' );
 
 			if( $result !== false ) {
-				if( isset( $result->msg ) && $result->msg === "Everything's Chimpy!" ) {
-					$this->connected = true;
+
+				if( isset( $result->msg ) ) {
+					if( $result->msg === "Everything's Chimpy!" ) {
+						$this->connected = true;
+					} else {
+						$this->show_error( $result->msg );
+					}
 				} elseif( isset( $result->error ) ) {
 					$this->show_error( 'MailChimp Error: ' . $result->error );
+				} else {
+					$this->show_error( 'Could not connect to MailChimp. The following response was received. <br><pre><code style="display: block; padding: 20px;">' . print_r( $result, true ) . '</code></pre>' );
 				}
 			}
 
@@ -198,6 +205,11 @@ class MC4WP_API {
 	* @return array|bool
 	*/
 	public function get_subscriber_info( $list_id, $emails ) {
+
+		if( is_string( $emails ) ) {
+			$emails = array( $emails );
+		}
+
 		$result = $this->call( 'lists/member-info', array(
 				'id' => $list_id,
 				'emails'  => $emails,
@@ -363,6 +375,11 @@ class MC4WP_API {
 			if( isset( $response->code ) ) {
 				$this->error_code = (int) $response->code;
 			}
+
+		}
+
+		if( is_null( $response ) ) {
+			return false;
 		}
 
 		return $response;
@@ -421,11 +438,11 @@ class MC4WP_API {
 	private function get_headers() {
 
 		$headers = array(
-			'Accept-Encoding' => ''
+			'Accept' => 'application/json'
 		);
 
 		// Copy Accept-Language from browser headers
-		if( isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) ) {
+		if( ! empty( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) ) {
 			$headers['Accept-Language'] = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
 		}
 

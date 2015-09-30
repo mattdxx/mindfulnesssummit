@@ -16,10 +16,13 @@ class TCM_Tabs {
     }
 
     function attachMenu() {
-        $name='Tracking Code Manager';
-        add_submenu_page('options-general.php'
-            , $name, $name
-            , 'manage_options', TCM_PLUGIN_SLUG, array(&$this, 'showTabPage'));
+        global $tcm;
+        if(!$tcm->Plugin->isActive(TCM_PLUGINS_TRACKING_CODE_MANAGER_PRO)) {
+            $name='Tracking Code Manager';
+            add_submenu_page('options-general.php'
+                , $name, $name
+                , 'manage_options', TCM_PLUGIN_SLUG, array(&$this, 'showTabPage'));
+        }
     }
     function pluginActions($links, $file) {
         global $tcm;

@@ -45,7 +45,8 @@ if ($verified) {
     </head>
     <body>
         <div style="max-width: 100%; width: 500px; margin: 40px auto; text-align: center">
-            <p>The requested page does not exits. Try to start from the site <a href="<?php echo home_url()?>">homepage</a>. Thank you.</p>
+            <p>The requested URL (<?php echo esc_html($url) ?>) has not been verified.</p>
+            <p>You can follow it if you recognize it as a valid URL.</p>
         </div>
     </body>
 </html>

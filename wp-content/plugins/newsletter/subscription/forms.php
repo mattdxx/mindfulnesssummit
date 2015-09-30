@@ -46,7 +46,7 @@ if ($controls->is_action('save')) {
                             <td>
                                 <?php $controls->textarea('form_' . $i); ?>
                                 <br />
-                                <?php $controls->button('save', 'Save'); ?>
+                                <?php $controls->button_save(); ?>
                             </td>
                         </tr>
                     <?php } ?>

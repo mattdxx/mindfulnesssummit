@@ -17,6 +17,11 @@
   vertical-align: baseline;
   line-height: normal;
 }
+.mc4wp-form form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .mc4wp-form label {
   font-weight: bold;
   margin-bottom: 5px;
@@ -29,6 +34,7 @@
 .mc4wp-form input[type="tel"],
 .mc4wp-form input[type="url"],
 .mc4wp-form input[type="date"],
+.mc4wp-form input[type="number"],
 .mc4wp-form textarea,
 .mc4wp-form select {
   width: 100%;
@@ -48,33 +54,42 @@
 }
 .mc4wp-form input[type="checkbox"] {
   -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
 }
 .mc4wp-form input[type="radio"] {
   -webkit-appearance: radio;
-}
-.mc4wp-form input[name="_mc4wp_required_but_not_really"] {
-  display: none !important;
+  -moz-appearance: radio;
 }
 .mc4wp-form input[type="submit"],
 .mc4wp-form button,
 .mc4wp-form input[type="button"] {
   cursor: pointer;
   display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .mc4wp-form label > span,
 .mc4wp-form li > label {
   font-weight: normal;
 }
 
+/* Right-To-Left specific styles */
+.rtl .mc4wp-form input[type="checkbox"],
+.rtl .mc4wp-form input[type="radio"] {
+  margin: 0 0 0 6px;
+}
+
+/* Alert */
 .mc4wp-alert {
   margin: 1em 0;
   padding: 10px 15px;
   color: #c09853;
   background-color: #fcf8e3;
   border: 1px solid #fbeed5;
-  border-radius: 2px;
-  -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   display: block;
   position: relative;
 }

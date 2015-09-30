@@ -45,6 +45,7 @@ if ($controls->is_action('save')) {
     <form method="post" action="">
         <?php $controls->init(); ?>
     <table class="form-table">
+        <!--
         <tr>
             <th><?php _e('Tracking URL', 'newsletter-statistics') ?></th>
             <td>
@@ -56,18 +57,19 @@ if ($controls->is_action('save')) {
                 </p>
             </td>
         </tr>
+        -->
         <tr>
             <th><?php _e('Secret key', 'newsletter-statistics') ?></th>
             <td>
-                <?php $controls->value('key') ?>
+                <?php $controls->text('key') ?>
                 <p class="description">
-                    <?php _e('This auto-generated key is used to protect the click tracking. Shown for debug purposes.', 'newsletter-statistics') ?> 
+                    <?php _e('This auto-generated key is used to protect the click tracking. If you change it old tracking links to external domains won\'t be registered anymore.', 'newsletter-statistics') ?> 
                 </p>
             </td>
         </tr>        
     </table>
     <p>
-        <?php $controls->button('save', __('Save', 'newsletter')) ?>
+        <?php $controls->button_save() ?>
     </p>
     </form>
 
