@@ -981,3 +981,9 @@ p {
   display:none !important;
 }
 
+
+/*--- Checkout page modifications ---*/
+.woocommerce-checkout #payment_method_stripe,
+.woocommerce-checkout #payment div.payment_box:before {
+    display: none;
+}

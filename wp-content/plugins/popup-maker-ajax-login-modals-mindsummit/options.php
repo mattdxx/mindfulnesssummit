@@ -28,7 +28,7 @@
 				add_action('admin_menu', array($this, 'create_menu'));
 				
 				# adding 'settings' link near plugin name (in the list of plugins)
-				add_filter('plugin_action_links', array($this, 'settings_link'));
+				//add_filter('plugin_action_links', array($this, 'settings_link'));
 			}
 			
 			# adding 'settings' link near plugin name (in the list of plugins)

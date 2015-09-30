@@ -98,7 +98,7 @@ class NewsletterUsers extends NewsletterModule {
         }
         
         // CSV header
-        echo '"Email"' . $sep . '"Name"' . $sep . '"Surname"' . $sep . '"Sex"' . $sep . '"Status"' . $sep . '"Date"' . $sep . '"Token";';
+        echo '"Email"' . $sep . '"Name"' . $sep . '"Surname"' . $sep . '"Sex"' . $sep . '"Status"' . $sep . '"Date"' . $sep . '"Token"' . $sep;
 
         // In table profiles
         for ($i = 1; $i <= NEWSLETTER_PROFILE_MAX; $i++) {
@@ -126,7 +126,7 @@ class NewsletterUsers extends NewsletterModule {
                 echo '"' . $recipients[$i]->email . '"' . $sep . '"' . $this->sanitize_csv($recipients[$i]->name) .
                 '"' . $sep . '"' . $this->sanitize_csv($recipients[$i]->surname) .
                 '"' . $sep . '"' . $recipients[$i]->sex .
-                '"' . $sep . '"' . $recipients[$i]->status . '"' . $sep . '"' . $recipients[$i]->created . '";"' . $recipients[$i]->token . '"' . $sep;
+                '"' . $sep . '"' . $recipients[$i]->status . '"' . $sep . '"' . $recipients[$i]->created . '"' . $sep . '"' . $recipients[$i]->token . '"' . $sep;
 
                 for ($j = 1; $j <= NEWSLETTER_PROFILE_MAX; $j++) {
                     $column = 'profile_' . $j;
