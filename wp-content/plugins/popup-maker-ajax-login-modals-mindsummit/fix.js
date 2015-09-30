@@ -81,7 +81,7 @@ jQuery('.popmake').on('popmakeInit', function(){
 	registration.find('.registration-password').hide();
 	//# replace labels
 	registration.find('.registration-confirm label').text('Password');
-	registration.find('.registration-username label').text('Name');
+	registration.find('.registration-username label').text('Name (i.e. your First & Last name');
 	login.find('.login-username label').text('Email');
 	$('ul.popmake-alm-footer-links li').each(function(){
 		for (var n = this.firstChild; n; n = n.nextSibling)
