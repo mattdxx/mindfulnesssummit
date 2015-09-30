@@ -28,7 +28,7 @@ jQuery('.popmake').on('popmakeInit', function(){
 
 	// we want to be able to parse query_string
 	var _get_param = function(p){
-			var qs = document.location.search.substring(1).split('&');
+			var qs = document.location.search.substring(1).replace('+', '%20').split('&');
 			var _p = p+'=';
 			var _p_len = _p.length;
 			for (var i = 0; i < qs.length; i++)
@@ -56,23 +56,70 @@ jQuery('.popmake').on('popmakeInit', function(){
 	// prefill email address if any
 	var email = _get_param('email');
 	if (email) {
-		login.find('[name=log]').val(email);
-		registration.find('[name=user_email],[name=user_login]').val(email);
+		login.find('input[name=log]').val(email);
+		registration.find('input[name=user_email]').val(email);
+		recovery.find('input[name=user_login]').val(email);
 	};
 	
 	var fname = _get_param('fname');
 	var lname = _get_param('lname');
+	var fullname = _get_param('fullname');
 	var uname = _get_param('uname');
+	if ( !(fname || lname) && fullname)
+	{
+		var fullname_parts = fullname.split(' ', 2);
+		fname = fullname_parts[0] || '';
+		lname = fullname_parts[1] || '';
+	}
+	if (fname || lname)
+		registration.find('input[name=user_login]').val(fname+' '+lname);
 	
-	// hide some form elements, change labels for others
-	registration.find('.registration-username label').text('Email');
-	registration.find('.registration-email').hide();
+	//# change css properties
+	registration.find('.registration-username').css('width', '100%');
+	registration.find('.registration-email').css('display', 'inline-block');
+	registration.find('.registration-email').css('float', 'none');
 	registration.find('.registration-password').hide();
+	//# replace labels
 	registration.find('.registration-confirm label').text('Password');
+	registration.find('.registration-username label').text('Name');
 	login.find('.login-username label').text('Email');
+	$('ul.popmake-alm-footer-links li').each(function(){
+		for (var n = this.firstChild; n; n = n.nextSibling)
+			if (n.nodeType == 3) //# TEXT_NODE
+				n.nodeValue = n.nodeValue.replace('account', "'Access Pass'");
+	});
+	
+	//# this is a data from a database
+	var titles = window.popmake_login_appearance || {};
+	
+	//# placeholders
+	var text_shift = '';
+	registration.find('input[name=user_login]').attr(
+			'placeholder',
+			text_shift + (titles.regphname || 'Your First & Last name')
+		);
+	registration.find('input[name=user_email]').attr(
+			'placeholder',
+			text_shift + (titles.regphemail || 'Email')
+		);
+	registration.find('input[name=user_pass2]').attr(
+			'placeholder',
+			text_shift + (titles.regphpass || 'Password')
+		);
+	login.find('input[name=log]').attr(
+			'placeholder',
+			text_shift + (titles.logphemail || 'Email')
+		);
+	login.find('input[name=pwd]').attr(
+			'placeholder',
+			text_shift + (titles.logphpass || 'Password')
+		);
+	recovery.find('input[name=user_login]').attr(
+			'placeholder',
+			text_shift + (titles.recphemail || 'Email')
+		);
 	
 	// fix titles
-	var titles = window.popmake_login_appearance || {};
 	var popmake_title = $('.popmake-title');
 	var reg_title = 
 		popmake_title.clone()
@@ -98,6 +145,9 @@ jQuery('.popmake').on('popmakeInit', function(){
 			.html(paragraph_text)
 			.insertAfter(reg_title);
 	
+	// precheck and hide 'remember me' checkbox
+	login.find('[name=rememberme]').prop('checked', true);
+	login.find('.login-remember').hide();
 	
 	// do not show the form if user is already registered one
 	document.cookie.match('(?:^|;)\s*mindsummitreg=1\s*(?:;|$)') &&
@@ -132,10 +182,7 @@ jQuery('.popmake').on('popmakeInit', function(){
 			var id = this.id || (('getAttribute' in this) && this.getAttribute('id'))
 			if (id == 'ajax-registration-form') {
 				is_reg_form = 1;
-				//# following two lines are needed for passing
-				//# additional checks in the future (as we made
-				//# those fields hidden)
-				this.user_email.value = this.user_login.value;
+				//# want to pass additional checks in original plugin
 				this.user_pass.value = this.user_pass2.value;
 			}
 		});
@@ -144,10 +191,20 @@ jQuery('.popmake').on('popmakeInit', function(){
 		
 		if (is_reg_form)
 		{
-			o.popmake_reg = 1;
-			if (fname) o.fname = fname;
-			if (lname) o.lname = lname;
+			var _fullname = o.user_login;
+			if (fname+' '+lname == _fullname)
+			{	//# user hasn't changed them
+				if (fname) o.fname = fname;
+				if (lname) o.lname = lname;
+			}
+			else if (_fullname)
+			{	//# user has changed them
+				var fullname_parts = _fullname.split(' ', 2);
+				o.fname = fullname_parts[0];
+				o.lname = fullname_parts[1];
+			}
 			o.user_login = uname ? uname : random_uname(o.user_email);
+			o.popmake_reg = 1;
 		}
 		
 		return o;

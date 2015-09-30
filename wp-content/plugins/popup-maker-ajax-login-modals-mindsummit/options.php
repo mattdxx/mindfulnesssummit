@@ -63,6 +63,13 @@
 				register_setting( 'regpopup-settings-group', 'popmake_login_regtext2' );
 				register_setting( 'regpopup-settings-group', 'popmake_login_logcapt' );
 				register_setting( 'regpopup-settings-group', 'popmake_login_reccapt' );
+				
+				register_setting( 'regpopup-settings-group', 'popmake_login_regphname' );
+				register_setting( 'regpopup-settings-group', 'popmake_login_regphemail' );
+				register_setting( 'regpopup-settings-group', 'popmake_login_regphpass' );
+				register_setting( 'regpopup-settings-group', 'popmake_login_logphemail' );
+				register_setting( 'regpopup-settings-group', 'popmake_login_logphpass' );
+				register_setting( 'regpopup-settings-group', 'popmake_login_recphpass' );
 			}
 			
 			public function settings_page()
@@ -75,13 +82,60 @@
 					<?php settings_fields( 'regpopup-settings-group' ); ?>
 					<table class="form-table">
 						<tr valign="top">
-						<th scope="row">Registration caption</th>
+						<th scope="row" colspan="2"><h2>Registration</h2></th>
+						</tr>
+						
+						<tr valign="top">
+						<th scope="row">Caption</th>
 						<td><input type="text" name="popmake_login_regcapt" value="<?php echo htmlentities(get_option('popmake_login_regcapt')); ?>" /></td>
 						</tr>
 						 
 						<tr valign="top">
+						<th scope="row">Text:</th>
+						<td><textarea name="popmake_login_regtext"><?php echo htmlentities(get_option('popmake_login_regtext')); ?></textarea></td>
+						</tr>
+						
+						<tr valign="top">
+						<th scope="row">Text (invitation):</th>
+						<td><textarea name="popmake_login_regtext2"><?php echo htmlentities(get_option('popmake_login_regtext2')); ?></textarea></td>
+						</tr>
+						
+						<tr valign="top">
+						<th scope="row">Name mobile hint:</th>
+						<td><input type="text" name="popmake_login_regphname" value="<?php echo htmlentities(get_option('popmake_login_regphname')); ?>" /></td>
+						</tr>
+						
+						<tr valign="top">
+						<th scope="row">Email mobile hint:</th>
+						<td><input type="text" name="popmake_login_regphemail" value="<?php echo htmlentities(get_option('popmake_login_regphemail')); ?>" /></td>
+						</tr>
+						
+						<tr valign="top">
+						<th scope="row">Password mobile hint:</th>
+						<td><input type="text" name="popmake_login_regphpass" value="<?php echo htmlentities(get_option('popmake_login_regphpass')); ?>" /></td>
+						</tr>
+						
+						<tr valign="top">
+						<th scope="row" colspan="2"><h2>Login</h2></th>
+						</tr>
+						
+						<tr valign="top">
 						<th scope="row">Login caption</th>
 						<td><input type="text" name="popmake_login_logcapt" value="<?php echo htmlentities(get_option('popmake_login_logcapt')); ?>" /></td>
+						</tr>
+						
+						<tr valign="top">
+						<th scope="row">Email mobile hint:</th>
+						<td><input type="text" name="popmake_login_logphemail" value="<?php echo htmlentities(get_option('popmake_login_logphemail')); ?>" /></td>
+						</tr>
+						
+						<tr valign="top">
+						<th scope="row">Password mobile hint:</th>
+						<td><input type="text" name="popmake_login_logphpass" value="<?php echo htmlentities(get_option('popmake_login_logphpass')); ?>" /></td>
+						</tr>
+						
+						<tr valign="top">
+						<th scope="row" colspan="2"><h2>Recovery</h2></th>
 						</tr>
 						
 						<tr valign="top">
@@ -90,14 +144,10 @@
 						</tr>
 						
 						<tr valign="top">
-						<th scope="row">Registration text:</th>
-						<td><textarea name="popmake_login_regtext"><?php echo htmlentities(get_option('popmake_login_regtext')); ?></textarea></td>
+						<th scope="row">Email mobile hint:</th>
+						<td><input type="text" name="popmake_login_recphemail" value="<?php echo htmlentities(get_option('popmake_login_recphemail')); ?>" /></td>
 						</tr>
 						
-						<tr valign="top">
-						<th scope="row">Registration text (invitation):</th>
-						<td><textarea name="popmake_login_regtext2"><?php echo htmlentities(get_option('popmake_login_regtext2')); ?></textarea></td>
-						</tr>
 					</table>
 					
 					<p class="submit">
