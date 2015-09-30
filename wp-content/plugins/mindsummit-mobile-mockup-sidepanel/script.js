@@ -17,29 +17,6 @@ jQuery(function(){
 		$('<div class="speaker-menu-button"><div class="speaker-menu-button-text"></div></div>')
 			.appendTo($panel);
 	
-	//# buynow link
-	var $buynow_button = $('<div class="buynow-link">')
-		.appendTo('body');
-		
-	//# window resize handler
-	var _pb_width, _bb_height, _pb_shift, _bb_shift;
-	var _resize_handler = function(){
-			
-			if (window.getComputedStyle($panel.get(0)).display == 'none')
-				return;
-			
-			if (!_pb_width) _pb_width = $panel_button.outerWidth(true);
-			if (!_bb_height) _bb_height = $buynow_button.outerHeight(true);
-			if (!_pb_shift) _pb_shift = (_pb_width + _bb_height)/2;
-			if (!_bb_shift) _bb_shift = _pb_shift - _pb_width + _bb_height;
-			
-			var _w_middle = $(this).height()/2 - 50;
-			$panel_button.css('top', _w_middle - _pb_shift);
-			$buynow_button.css('top', _w_middle - _bb_shift);
-		};
-	$(window).resize(_resize_handler);
-	_resize_handler.call(window);
-	
 	//# open/close sliding panel
 	var _open = false;
 	var _p_width = $panel.outerWidth();
@@ -52,5 +29,96 @@ jQuery(function(){
 			.animate({'right': new_right})
 			;
 	});
+	
+	//# implementing touch interface for sliding panel
+	var obj = $('body').get(0);
+	
+	var shift;
+	
+	var begin_swipe = false;
+	var window_width;
+	var timer_begin;
+	var touch_x;
+	var touch_y;
+	var last_x, last_y;
+	
+	obj.addEventListener('touchstart', function(e){
+		
+		window_width = $(window).width();
+		touch_x = e.changedTouches[0].clientX;
+		touch_y = e.changedTouches[0].clientY;
+		
+		if (!_open)
+		{
+			if (touch_x/window_width > 0.9)
+			{
+				begin_swipe = true;
+				shift = 0;
+			}
+		}
+		else
+		{
+			if (touch_x > window_width - _p_width)
+			{
+				begin_swipe = true;
+				shift = touch_x - window_width + _p_width;
+			}
+		}
+
+		timer_begin = (window.performance && window.performance.now) ? window.performance.now() : 0;
+		last_x = touch_x;
+		last_y = touch_y;
+		
+	}, false);
+	
+	obj.addEventListener('touchmove', function(e){
+		
+		if (!begin_swipe) return;
+		
+		var x = e.changedTouches[0].clientX;
+		var y = e.changedTouches[0].clientY;
+		
+		if (_open)
+		{
+			if (Math.abs(x - last_x) > Math.abs(y - last_y))
+			{
+				$panel.css('right', Math.min(0, window_width + shift - x - _p_width));
+				e.preventDefault();
+			}
+		}
+		else
+		{
+			if (touch_x - x < 10)
+				$panel.css('right', -_p_width);
+			else
+				$panel.css('right', Math.min(0, window_width + shift - x - _p_width));
+
+			e.preventDefault();
+		}
+		
+	}, false);
+
+	obj.addEventListener('touchend', function(e){
+		if (begin_swipe)
+		{
+			var x = e.changedTouches[0].clientX;
+			var timer_end = (window.performance && window.performance.now) ? window.performance.now() : 0;
+			var swipe_time = timer_end - timer_begin;
+			var swipe_dist = x - touch_x;
+			
+			_open =
+				(swipe_time && swipe_time < 350 && (swipe_dist > 80 || swipe_dist < -80))
+				? (swipe_dist < 0)
+				: ( (window_width - x + shift)/window_width > 0.4 )
+				;
+			
+			$panel
+				.finish()
+				.animate({ 'right': _open ? Math.min(0, window_width - _p_width) : -_p_width })
+				;
+		}
+		begin_swipe = false;
+	}, false);
+
 });
 
