@@ -984,6 +984,13 @@ p {
 
 /*--- Checkout page modifications ---*/
 .woocommerce-checkout #payment_method_stripe,
-.woocommerce-checkout #payment div.payment_box:before {
+.woocommerce-checkout #payment div.payment_box:before,
+.woocommerce-checkout .woocommerce-checkout-review-order-table,
+.woocommerce-checkout .woocommerce-info,
+.a2a_kit {
     display: none;
+}
+
+.woocommerce-checkout .gdlr-item-start-content {
+    padding-top: 20px;
 }
