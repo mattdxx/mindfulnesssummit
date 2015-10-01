@@ -32,6 +32,7 @@
             private function hooks()
             {
                 add_action('user_register', array($this, 'subscribe'));
+                add_action('user_register', array($this, 'track'));
                 add_action('wp_enqueue_scripts', array($this, 'mark_form'));
             }
 
@@ -43,7 +44,24 @@
                     array('popmake-ajax-login-modals-js')
                     );
             }
-            
+
+			// Track in segment.io
+			public function track( $user_id )
+			{
+				if ( $user = get_userdata( $user_id ) ) {
+					$identify = array(
+						'user_id' => $user->ID,
+						'traits'  => array(
+							'username'  => $user->user_login,
+							'email'     => $user->user_email,
+							'firstName' => $user->user_firstname,
+							'lastName'  => $user->user_lastname,
+						)
+					);
+					Analytics::track( 'User registered', $identify );
+				}
+			}
+				
             public function subscribe($user_id)
             {
                 # credentials
