@@ -54,3 +54,20 @@ function mindsummit_remove_add_to_cart_message( $message, $product_id ){
 	return '';
 }
 
+/**
+ * Auto Complete all WooCommerce orders.
+ */
+add_action( 'woocommerce_thankyou', 'custom_woocommerce_auto_complete_order' );
+function custom_woocommerce_auto_complete_order( $order_id ) {
+	if ( ! $order_id ) {
+		return;
+	}
+
+	$order = wc_get_order( $order_id );
+	$order->update_status( 'completed' );
+}
+
+/**
+ * Remove the address from the Complete Order email
+ */
+remove_action( 'woocommerce_email_customer_details', array( 'WC_Emails', 'email_addresses' ), 20, 3 );

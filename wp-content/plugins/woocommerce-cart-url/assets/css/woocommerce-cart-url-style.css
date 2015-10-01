@@ -1,0 +1,57 @@
+#wcu-products .inside {
+	margin: 0;
+	padding: 0;
+	background: #FEFEFE;
+}
+#wcu-products .add_items {
+	float: right;
+	padding-right: 12px;
+	vertical-align: top;
+}
+#wcu-products .bulk_actions {
+	float: left;
+	padding-left: 8px;
+	vertical-align: top;
+}
+
+#wcu-products .do_bulk_action {
+	vertical-align: middle;
+}
+.wcu-items-wrapper table.woocommerce_order_items tbody tr:first-child td {
+	border-top: none !important;
+}
+#wcu-products .add_cart_url_item {
+	float: right;
+	margin-left: 5px;
+}
+#wcu-products .add_item_id,
+#wcu-products .wc-product-search {
+	width: 400px;
+	max-width: 100%;
+	max-width: calc(100% - 110px);
+	float: right;
+	height: 28px;
+}
+
+
+/* Cart URLs Table*/
+
+/* WooCommerce Add icon */
+#cart_urls_table .add.button:before {
+	font-family: WooCommerce;
+	speak: none;
+	font-weight: 400;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	margin-right: 7px;
+	content: "\e007";
+}
+/* Overview row actions */
+#cart_urls_table tr .row-actions {
+	visibility: hidden;
+}
+#cart_urls_table tr:hover > td > .row-actions {
+	visibility: visible !important;
+}

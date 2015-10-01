@@ -986,7 +986,6 @@ p {
 .woocommerce-checkout #payment_method_stripe,
 .woocommerce-checkout #payment div.payment_box:before,
 .woocommerce-checkout .woocommerce-checkout-review-order-table,
-.woocommerce-checkout .woocommerce-info,
 .a2a_kit {
     display: none;
 }
