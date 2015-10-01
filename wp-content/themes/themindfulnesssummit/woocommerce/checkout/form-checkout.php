@@ -24,7 +24,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 // filter hook for include new pages inside the payment method
 $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->get_checkout_url() ); ?>
 
-<strong>Donate to get a Full Summit Access Pass</strong>
+<h2 class="gdlr-heading-shortcode " style="font-weight: bold;">Donate to get a Full Summit Access Pass</h2>
 Make a discounted donation of USD$79 ($99 after October 15th $149 after Oct 31st) to get a ‘Full Access Pass’ to the mindfulness summit. This includes permanent (forever) access to:
 <ul>
 	<li>All 31 days of video content to download or stream as much as you like</li>
@@ -33,7 +33,7 @@ Make a discounted donation of USD$79 ($99 after October 15th $149 after Oct 31st
 	<li>Exclusive access to the full meditation album to download or stream from all the meditation sessions</li>
 	<li>5 Free bonus gifts supplied by our speakers</li>
 </ul>
-<strong>All net proceeds go to mindfulness based charities</strong>
+<h4 style="font-weight: bold; color:#e78325;" class="gdlr-heading-shortcode "><strong>All net proceeds go to mindfulness based charities</strong></h4>
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( $get_checkout_url ); ?>" enctype="multipart/form-data">
 
