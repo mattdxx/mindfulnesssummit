@@ -33,7 +33,32 @@ if ( $order ) : ?>
 
 	<?php else : ?>
 
-		<p><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
+
+		<p>Thank you supporting mindfulness charities and upgrading your access pass.</p>
+
+		<p>Your account has been upgraded to a Full Access Pass for the mindfulness summit content.</p>
+
+		<p>All the content will be unlocked day by day through October 2015 (and live streamed content will be recorded for you).</p>
+
+		<p>You will have access to all the premium content (transcripts, video & audio downloads) that have been unlocked so far on each of the individual session pages. The latest session released is always accessible here:<br/>
+			<a href="http://themindfulnesssummit.com/live/" target="_blank">http://themindfulnesssummit.com/live/</a></p>
+
+		<p>Access each of the past sessions from here (we will update the links after each day has gone live):</br>
+			<a href="http://themindfulnesssummit.com/event-schedule/" target="_blank">http://themindfulnesssummit.com/event-schedule/</a></p>
+
+		<p>We will also post additional content and bonuses into you 'My Account' page here:<br/>
+			<a href="http://themindfulnesssummit.com/my-account/" target="_blank">http://themindfulnesssummit.com/my-account/</a><br/>
+			This will continue to be populated throughout October to add extra links, the bonuses etc.</p>
+
+		<p>In early November once all the content is complete, the live stream recorded and bonus content uploaded, we will send you a reminder.</p>
+
+		<p>Thanks for practicing mindfulness and helping others!</p>
+
+		<p>Melli, Matt and the MrsMindfulness team.</p>
+		<p></p>
+		<p></p>
+
+
 
 		<ul class="order_details">
 			<li class="order">
