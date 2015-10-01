@@ -155,6 +155,7 @@ jQuery('.popmake').on('popmakeInit', function(){
 	
 	// uname randomizer
 	var random_uname = function(email) {
+		if (!email) return '';
 		var email_fp = String.prototype.split.call(email, '@');
 		var uname = email_fp[0].replace(/[^a-zA-Z0-9]/g, '_');
 		if (!uname)
