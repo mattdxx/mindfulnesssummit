@@ -69,7 +69,7 @@
 				register_setting( 'regpopup-settings-group', 'popmake_login_regphpass' );
 				register_setting( 'regpopup-settings-group', 'popmake_login_logphemail' );
 				register_setting( 'regpopup-settings-group', 'popmake_login_logphpass' );
-				register_setting( 'regpopup-settings-group', 'popmake_login_recphpass' );
+				register_setting( 'regpopup-settings-group', 'popmake_login_recphemail' );
 			}
 			
 			public function settings_page()
