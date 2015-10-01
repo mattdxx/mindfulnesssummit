@@ -36,6 +36,7 @@
 			private function hooks()
 			{
 				add_action('user_register', array($this, 'update_user'));
+				add_action('user_register', array($this, 'user_register'));
 				add_filter('registration_errors', array($this, 'check_login'));
 				add_action('wp_enqueue_scripts', array($this, 'fix_js'));
 				add_action('wp_enqueue_scripts', array($this, 'fix_css'));
@@ -86,6 +87,24 @@
 					
 					if (count($user_meta_data) > 1)
 						@wp_update_user($user_meta_data);
+				}
+			}
+
+			// Used to track a new user in segment.io
+			public function user_register($user_id)
+			{
+				if ( $user = get_userdata( $user_id ) ) {
+					$identify = array(
+						'user_id' => $user->ID,
+						'traits'  => array(
+							'username'  => $user->user_login,
+							'email'     => $user->user_email,
+							'firstName' => $user->user_firstname,
+							'lastName'  => $user->user_lastname,
+						)
+					);
+
+					Analytics::track( 'User registered', $identify );
 				}
 			}
 			
