@@ -46,13 +46,6 @@ function mindsummit_custom_override_checkout_fields( $fields ) {
 	return $fields;
 }
 
-/**
- * Remove the "Product has been added to cart" message
- */
-add_filter( 'wc_add_to_cart_message', 'mindsummit_remove_add_to_cart_message' );
-function mindsummit_remove_add_to_cart_message( $message, $product_id ){
-	return '';
-}
 
 /**
  * Auto Complete all WooCommerce orders.
