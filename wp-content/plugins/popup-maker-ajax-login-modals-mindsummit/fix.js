@@ -81,7 +81,7 @@ jQuery('.popmake').on('popmakeInit', function(){
 	registration.find('.registration-password').hide();
 	//# replace labels
 	registration.find('.registration-confirm label').text('Password');
-	registration.find('.registration-username label').text('Name (i.e. your First & Last name');
+	registration.find('.registration-username label').text('Name (i.e. First & Last name)');
 	login.find('.login-username label').text('Email');
 	$('ul.popmake-alm-footer-links li').each(function(){
 		for (var n = this.firstChild; n; n = n.nextSibling)
@@ -185,6 +185,15 @@ jQuery('.popmake').on('popmakeInit', function(){
 				//# want to pass additional checks in original plugin
 				this.user_pass.value = this.user_pass2.value;
 			}
+			if (id == 'ajax-recovery-form') {
+				//# remember user's email
+				var date = new Date();
+				date.setDate(date.getDate() + 1);
+				document.cookie =
+					'mindsummit_passreset_email='+encodeURIComponent(this.user_login.value) +
+					'; path=/; expires='+date.toUTCString();
+			}
+
 		});
 		
 		var o = _old_serializer.call(this);
