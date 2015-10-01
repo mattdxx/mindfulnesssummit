@@ -1,0 +1,28 @@
+*** WooCommerce Cart URL ***
+
+= 1.1.1 - 01/09/2015 =
+
+* [Improvement] - Improve resource loading
+* [Fix] - Deleted Cart URLs no longer work
+
+
+= 1.1.0 - 28/07/2015 =
+
+* [add] - Compatibility with WooCommerce 2.4.x
+* [add] - Choose if you want to clear the cart or not
+* [add[ - Choose where to redirect the user after add
+* [improvement] - Use select2 to choose products
+* [improvement] - Use prettier URLs and make things more clear
+* [improvement] - Small style issues
+
+
+= 1.0.1 - 28/02/2015 =
+
+* Compatibility with WooCommerce 2.3.x
+* Updated phpdoc
+* Added plugin action links
+
+
+= 1.0.0 - 02/02/2015 =
+
+* Initial release!
