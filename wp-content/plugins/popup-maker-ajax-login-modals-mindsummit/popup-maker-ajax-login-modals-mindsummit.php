@@ -15,6 +15,7 @@
 		exit;
 	
 	require plugin_dir_path(__FILE__).'options.php';
+	require plugin_dir_path(__FILE__).'passresetredir.php';
 	
 	if (!class_exists('PopMake_Ajax_Login_Modals_MindSummit'))
 	{

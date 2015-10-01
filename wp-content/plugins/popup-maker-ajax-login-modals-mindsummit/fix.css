@@ -1,0 +1,42 @@
+@media only screen and (max-width: 739px){
+	.popmake-title {
+		font-size: 25px !important;
+		margin-bottom: 5px;
+	}
+	.popmake-ajax-form label {
+		display: none !important;
+	}
+	.popmake-ajax-form p {
+		margin-bottom: 4px;
+	}
+	
+	input::-webkit-input-placeholder {
+		/*color: rgb(231, 131, 37);*/
+		/*text-align: center;*/
+	}
+	input::-moz-input-placeholder {
+		/*color: rgb(231, 131, 37);*/
+		/*text-align: center;*/
+	}
+	input:-webkit-input-placeholder {
+		/*color: rgb(231, 131, 37);*/
+		/*text-align: center;*/
+	}
+	input:-moz-input-placeholder {
+		/*color: rgb(231, 131, 37);*/
+		/*text-align: center;*/
+	}
+	input:input-placeholder {
+		/*color rgb(231, 131, 37);*/
+		/*text-align: center;*/
+	}
+}
+
+@media only screen and (min-width: 740px){
+	input::-webkit-input-placeholder { color: rgb(244, 244, 244); }
+	input::-moz-input-placeholder { color: rgb(244, 244, 244); }
+	input:-webkit-input-placeholder { color: rgb(244, 244, 244); }
+	input:-moz-input-placeholder { color: rgb(244, 244, 244); }
+	input:input-placeholder {color rgb(244, 244, 244); }
+}
+
