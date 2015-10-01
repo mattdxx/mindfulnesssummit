@@ -3,7 +3,7 @@
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Pro Update Manager (WPSSO UM)</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Update Manager for the WordPress Social Sharing Optimization (WPSSO) Pro plugin and its extensions.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.1.7</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.1.8</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 3.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.3.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>

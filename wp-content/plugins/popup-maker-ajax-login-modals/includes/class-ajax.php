@@ -139,7 +139,8 @@ if( ! class_exists( 'PopMake_Ajax_Login_Modals_Ajax' ) ) {
 				$response_error_message = $user_forgotten->get_error_message();
 				if ($user_forgotten->get_error_code() == 'invalid_email')
 					$response_error_message = 
-						"This email address isn’t registered for a 'Access Pass'";
+						"This email address isn’t registered for a 'Access Pass' - <a href=\"/wp-login.php\" onclick=\"jQuery('.popmake-login-form,.popmake-recovery-form').slideUp();jQuery('.popmake-registration-form').appendTo(jQuery('.popmake-registration-form').parent()).slideDown();return false;\">register here</a>";
+
 				
                 $response = array(
                     'reset'      => false,

@@ -37,17 +37,30 @@
 				add_action('user_register', array($this, 'update_user'));
 				add_filter('registration_errors', array($this, 'check_login'));
 				add_action('wp_enqueue_scripts', array($this, 'fix_js'));
+				add_action('wp_enqueue_scripts', array($this, 'fix_css'));
 				add_action('wp_head', array($this, 'print_variables'));
 			}
 			
 			public function print_variables()
 			{
 				$values = array(
+					
 					'regcapt' => get_option('popmake_login_regcapt'),
 					'logcapt' => get_option('popmake_login_logcapt'),
 					'reccapt' => get_option('popmake_login_reccapt'),
+					
 					'regtext' => get_option('popmake_login_regtext'),
-					'regtext2' => get_option('popmake_login_regtext2')
+					'regtext2' => get_option('popmake_login_regtext2'),
+					
+					'regphname' => get_option('popmake_login_regphname'),
+					'regphemail' => get_option('popmake_login_regphemail'),
+					'regphpass' => get_option('popmake_login_regphpass'),
+					
+					'logphemail' => get_option('popmake_login_logphemail'),
+					'logphpass' => get_option('popmake_login_logphpass'),
+					
+					'recphemail' => get_option('popmake_login_recphemail')
+					
 					);
 				echo '<script type="text/javascript" language="javascript">';
 				echo 'window.popmake_login_appearance = '.json_encode($values);
@@ -92,6 +105,16 @@
 					array('popmake-ajax-login-modals-js')
 					);
 			}
+			
+			public function fix_css()
+			{
+				wp_enqueue_style(
+					'popmake-ajax-login-modals-mindsummit-css',
+					plugin_dir_url(__FILE__).'fix.css',
+					array('parent-style', 'style', 'style-responsive', 'style-custom', 'popmake-ajax-login-modals-css')
+					);
+			}
+
 			
 		} # class PopMake_Ajax_Login_Modals_MindSummit
 		
