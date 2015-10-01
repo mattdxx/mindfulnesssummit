@@ -287,16 +287,18 @@ class NewsletterControls {
 
     function text($name, $size = 20, $placeholder = '') {
         $value = $this->get_value($name);
-        echo '<input placeholder="' . htmlspecialchars($placeholder) . '" name="options[' . $name . ']" type="text" size="' . $size . '" value="';
-        echo htmlspecialchars($value);
-        echo '"/>';
+        echo '<input placeholder="' . esc_attr($placeholder) . '" name="options[' . $name . ']" type="text" size="' . $size . '" value="';
+        echo esc_attr($value);
+        echo '">';
     }
 
     function text_email($name, $size = 40) {
         $value = $this->get_value($name);
-        echo '<input name="options[' . $name . ']" type="email" placeholder="Valid email address" size="' . $size . '" value="';
-        echo htmlspecialchars($value);
-        echo '"/>';
+        echo '<input name="options[' . $name . ']" type="email" placeholder="';
+        echo esc_attr(__('Valid email address', 'newsletter'));
+        echo '" size="' . $size . '" value="';
+        echo esc_attr($value);
+        echo '">';
     }
 
     function text_url($name, $size = 40) {
@@ -320,6 +322,41 @@ class NewsletterControls {
             echo '<input class="button-secondary" type="button" value="' . $label . '" onclick="this.form.act.value=\'' . $action . '\';this.form.submit()"/>';
         }
     }
+    
+    /**
+     * With translated "Save" label.
+     */
+    function button_save($function = null) {
+        $this->button('save', __('Save', 'newsletter'), $function);
+    }
+    
+    /**
+     * Creates a button with "copy" action.
+     * @param type $data
+     */
+    function button_copy($data = '')
+    {
+        echo '<button class="button-secondary" onclick="this.form.btn.value=\'' . esc_attr($data) . '\';this.form.act.value=\'copy\';if (!confirm(\'';
+        echo esc_attr(__('Proceed', 'newsletter'));
+        echo '\')) return false;">';
+        echo '<i class="fa fa-copy"></i> ';
+        echo esc_html(__('Copy', 'newsletter'));
+        echo '</button>';
+    }
+    
+    /**
+     * Creates a button wirh "delete" action.
+     * @param type $data
+     */
+    function button_delete($data = '')
+    {
+        echo '<button class="button-secondary" onclick="this.form.btn.value=\'' . esc_attr($data) . '\';this.form.act.value=\'delete\';if (!confirm(\'';
+        echo esc_attr(__('Proceed', 'newsletter'));
+        echo '\')) return false;">';
+        echo '<i class="fa fa-times"></i> ';
+        echo esc_html(__('Delete', 'newsletter'));
+        echo '</button>';
+    }    
 
     function button_primary($action, $label, $function = null) {
         if ($function != null) {
@@ -358,10 +395,21 @@ class NewsletterControls {
     }
 
     function textarea_fixed($name, $width = '100%', $height = '200') {
-        echo '<textarea name="options[' . $name . ']" wrap="off" style="width:' . $width . ';height:' . $height . 'px">';
+        echo '<textarea id="options-' . $name . '" name="options[' . $name . ']" wrap="off" style="width:' . $width . ';height:' . $height . 'px">';
         echo htmlspecialchars($this->data[$name]);
         echo '</textarea>';
     }
+    
+    function textarea_preview($name, $width = '100%', $height = '200', $header = '', $footer = '') {
+        //do_action('newsletter_controls_textarea_preview', $name);
+        echo '<input class="button" type="button" onclick="newsletter_textarea_preview(\'options-' . $name . '\', \'\', \'\')" value="Switch editor/preview">';
+        echo '<div style="position: relative">';
+        echo '<textarea id="options-' . $name . '" name="options[' . $name . ']" wrap="off" style="width:' . $width . ';height:' . $height . 'px">';
+        echo htmlspecialchars($this->data[$name]);
+        echo '</textarea>';
+        echo '<iframe id="options-' . $name . '-iframe" class="newsletter-textarea-preview" style="background-color: #fff; width: ' . $width . '; height: ' . $height . 'px; position: absolute; top: 0; left: 0; z-index: 10000; display: none"></iframe>';
+        echo '</div>';
+    }    
 
     function email($prefix, $editor = null, $disable_option = false) {
         if ($disable_option) {
@@ -390,6 +438,21 @@ class NewsletterControls {
         if ($label != '')
             echo '&nbsp;' . $label . '</label>';
     }
+    
+    function radio($name, $value, $label = '') {
+        if ($label != '') {
+            echo '<label>';
+        }
+        echo '<input type="radio" id="' . $name . '" name="options[' . $name . ']" value="' . esc_attr($value) . '"';
+        $v = $this->get_value($name);
+        if ($v == $value) {
+            echo ' checked="checked"';
+        }
+        echo '>';
+        if ($label != '') {
+            echo '&nbsp;' . $label . '</label>';
+        }
+    }    
 
     /**
      * Creates a checkbox named $name and checked if the internal data contains under
@@ -641,7 +704,7 @@ class NewsletterControls {
             var media = tnp_uploader.state().get("selection").first();
             document.getElementById(name + "_id").value = media.id;
             document.getElementById(name + "_url").value = media.attributes.url;
-            document.getElementById(name + "_img").src = media.attributes.sizes.thumbnail.url;
+            document.getElementById(name + "_img").src = media.attributes.sizes.medium.url;
         }).open();
     }
     function newsletter_media_remove(name) {
@@ -650,6 +713,14 @@ class NewsletterControls {
             document.getElementById(name + "_url").value = "";
             document.getElementById(name + "_img").src = "' . plugins_url('newsletter') . '/images/nomedia.png";
         }
+    }
+    function newsletter_textarea_preview(id, header, footer) {
+        var d = document.getElementById(id + "-iframe").contentWindow.document;
+        d.open();
+        //d.write(template.replace("{messaggio}", templateEditor.getValue()));
+        d.write(header + document.getElementById(id).value + footer);
+        d.close();
+        jQuery("#" + id + "-iframe").toggle();
     }
 </script>
 ';
@@ -742,23 +813,22 @@ class NewsletterControls {
         echo '</select>&nbsp;px';
     }
 
-    function media($name, $size='thumbnail') {
+    function media($name) {
         $media_id = $this->data[$name]['id'];
-        $media = wp_get_attachment_image_src($media_id, $size);
+        $media = wp_get_attachment_image_src($media_id, 'medium');
+        $media_full = wp_get_attachment_image_src($media_id, 'full');
 
         if ($media === false) {
             $media = array('', '', '');
-            echo '<img id="' . $name . '_img" src="' . plugins_url('newsletter') . '/images/nomedia.png" onclick="newsletter_media(\'' . $name . '\')">';
+            echo '<img style="width: 200px" id="' . $name . '_img" src="' . plugins_url('newsletter') . '/images/nomedia.png" onclick="newsletter_media(\'' . $name . '\')">';
         } else {
-            echo '<img id="' . $name . '_img" src="' . $media[0] . '" onclick="newsletter_media(\'' . $name . '\')">';
+            echo '<img style="width: 200px" id="' . $name . '_img" src="' . $media[0] . '" onclick="newsletter_media(\'' . $name . '\')">';
             echo '<br>';
             echo '<a href="#" onclick="newsletter_media_remove(\'' . $name . '\'); return false">Remove</a>';
-
         }
 
         echo '<input type="hidden" id="' . $name . '_id" name="options[' . $name . '][id]" value="' . $media_id . '" size="5">';
-        echo '<input type="hidden" id="' . $name . '_url" name="options[' . $name . '][url]" value="' . esc_attr($media[0]) . '" size="50">';
-
+        echo '<input type="hidden" id="' . $name . '_url" name="options[' . $name . '][url]" value="' . esc_attr($media_full[0]) . '" size="50">';
     }
 
     function media_input($option, $name, $label) {

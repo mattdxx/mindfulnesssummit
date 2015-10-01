@@ -28,7 +28,8 @@ function Insert_Login_Logout_Toggle($atts) {
 	else {
 		$ReturnString .= "<style type='text/css'>";
 		$ReturnString .= $Custom_CSS;
-		$ReturnString .= "</style>";
+	 	$ReturnString .= EWD_FEUP_Add_Modified_Styles();
+		
 		$ReturnString .= "<div id='ewd-feup-login-form-div'>";
 		if (isset($user_message['Message'])) {$ReturnString .= $user_message['Message'];}
 		$ReturnString .= "<form action='#' method='post' id='ewd-feup-login-form' class='feup-pure-form feup-pure-form-aligned'>";

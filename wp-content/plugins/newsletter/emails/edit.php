@@ -48,21 +48,26 @@ if ($controls->is_action('test') || $controls->is_action('save') || $controls->i
     // Builds the extended options
     $email['options'] = array();
     $email['options']['preferences_status'] = $controls->data['preferences_status'];
-    $email['options']['preferences'] = $controls->data['preferences'];
-    $email['options']['sex'] = $controls->data['sex'];
+    if (isset($controls->data['preferences'])) {
+        $email['options']['preferences'] = $controls->data['preferences'];
+    }
+    if (isset($controls->data['sex'])) {
+        $email['options']['sex'] = $controls->data['sex'];
+    }
+
     $email['options']['status'] = $controls->data['status'];
-    $email['options']['status_operator'] = $controls->data['status_operator'];
+    $email['options']['preferences_status_operator'] = $controls->data['preferences_status_operator'];
     $email['options']['wp_users'] = $controls->data['wp_users'];
 
     $email['options'] = serialize($email['options']);
 
-    if (is_array($controls->data['preferences'])) {
+    if (isset($controls->data['preferences'])) {
         $email['preferences'] = implode(',', $controls->data['preferences']);
     } else {
         $email['preferences'] = '';
     }
 
-    if (is_array($controls->data['sex'])) {
+    if (isset($controls->data['sex'])) {
         $email['sex'] = implode(',', $controls->data['sex']);
     } else {
         $email['sex'] = '';
@@ -80,8 +85,9 @@ if ($controls->is_action('test') || $controls->is_action('save') || $controls->i
         $query .= " and wp_user_id<>0";
     }
 
-    $preferences = $controls->data['preferences'];
-    if (is_array($preferences)) {
+    
+    if (isset($controls->data['preferences'])) {
+        $preferences = $controls->data['preferences'];
 
         // Not set one of the preferences specified
         $operator = $controls->data['preferences_status_operator'] == 0 ? ' or ' : ' and ';
@@ -189,7 +195,7 @@ if ($controls->is_action('test')) {
     }
 }
 
-
+$template = '{message}';
 if ($email['editor'] == 0) {
     $x = strpos($controls->data['message'], '<body');
     // Some time the message in $nc->data is already cleaned up, it depends on action called
@@ -197,6 +203,7 @@ if ($email['editor'] == 0) {
         $x = strpos($controls->data['message'], '>', $x);
         $y = strpos($controls->data['message'], '</body>');
 
+        $template = substr($controls->data['message'], 0, $x) . '{message}' . substr($controls->data['message'], $y);
         $controls->data['message'] = substr($controls->data['message'], $x + 1, $y - $x - 1);
     }
 }
@@ -204,6 +211,7 @@ if ($email['editor'] == 0) {
 
 <script type="text/javascript" src="<?php echo plugins_url('newsletter'); ?>/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript">
+    var template = <?php echo json_encode($template) ?>;
     tinyMCE.init({
         height: 700,
         mode: "specific_textareas",
@@ -235,11 +243,20 @@ if ($email['editor'] == 0) {
             tb_remove();
         }
     });
+
+    function template_refresh() {
+        var d = document.getElementById('options_preview').contentWindow.document;
+        d.open();
+        //d.write(template.replace("{messaggio}", templateEditor.getValue()));
+        d.write(template.replace("{message}", document.getElementById("options-message").value));
+        d.close();
+        jQuery("#options_preview").toggle();
+    }
 </script>
 
 <div class="wrap">
 
-    <?php //$help_url = 'http://www.thenewsletterplugin.com/plugins/newsletter/newsletters-module';   ?>
+    <?php //$help_url = 'http://www.thenewsletterplugin.com/plugins/newsletter/newsletters-module';    ?>
     <?php //include NEWSLETTER_DIR . '/header-new.php';  ?>
 
     <div id="newsletter-title">
@@ -259,7 +276,7 @@ if ($email['editor'] == 0) {
         <?php $controls->init(array('cookie_name' => 'newsletter_emails_edit_tab')); ?>
 
         <p class="submit">
-            <?php if ($email['status'] != 'sending') $controls->button('save', 'Save'); ?>
+            <?php if ($email['status'] != 'sending') $controls->button_save(); ?>
             <?php if ($email['status'] != 'sending' && $email['status'] != 'sent') $controls->button_confirm('test', 'Save and test', 'Save and send test emails to test addresses?'); ?>
 
             <?php if ($email['status'] == 'new') $controls->button_confirm('send', 'Send', 'Start a real delivery?'); ?>
@@ -284,13 +301,23 @@ if ($email['editor'] == 0) {
 
                 <?php $controls->text('subject', 70, 'Subject'); ?>
 
+
+
                 <input id="upload_image_button" type="button" value="Choose or upload an image" />
 
                 <a href="http://www.thenewsletterplugin.com/plugins/newsletter/newsletter-tags" target="_blank"><?php _e('Available tags', 'newsletter-emails') ?></a>
 
                 <br><br>
 
-                <?php $email['editor'] == 0 ? $controls->editor('message', 30) : $controls->textarea_fixed('message', '100%', '700'); ?>
+
+
+                <?php
+                if ($email['editor'] == 0) {
+                    $controls->editor('message', 30);
+                } else {
+                    $controls->textarea_preview('message', '100%', '700');
+                }
+                ?>
 
 
             </div>

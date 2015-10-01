@@ -2,9 +2,9 @@
 Contributors: bungeshea
 Donate link: http://bungeshea.com/donate/
 Tags: code-snippets, snippets, code, php, network, multisite
-Requires at least: 3.3
-Tested up to: 4.2.2
-Stable tag: 2.3.0
+Requires at least: 3.6
+Tested up to: 4.3.2
+Stable tag: 2.4.2
 License: MIT
 License URI: license.txt
 
@@ -115,6 +115,34 @@ That's fantastic! Fork the [repository on GitHub](http://github.com/sheabunge/co
 4. Importing snippets from an XML file
 
 == Changelog ==
+
+= 2.4.2 =
+* Added query variable to activate safe mode
+* Fixed settings not saving
+* Fixed snippet descriptions not displaying on manage menu
+* Added settings to disable description and tag editors
+* Fixed: Load CodeMirror after plugin styles to fix error with Zenburn theme
+* Fixed: Hide snippet scope icons when the scope selector is disabled
+* Fixed description heading on edt snippet menu being hidden when visual editor disabled
+* Updated editor preview updating code to use vanilla JavaScript instead of jQuery
+* Fixed: Deactivate a shared network snippet on all subsites when it looses its sharing status
+
+= 2.4.1 =
+* Fixed CodeMirror themes not being detected on settings page
+
+= 2.4.0 =
+* Added ability to share network snippets to individual sites on WordPress multisite
+* Improved code directory and class structure
+* Remove legacy code for pre-3.6 compatibility
+* Improved code for printing admin messages
+* Updated German translation (Joerg Knoerchen)
+* Added `code_snippets/after_execute_snippet` filter
+* Added class for individual snippets
+* Updated `get_snippets()` function to retrieve individual snippets
+* Removed scope statuses and added fixed tags to indicate scope
+* Changed admin page headers to use `<h1>` tags instead of `<h2>` tags
+* Updated CodeMirror to version 5.6
+* Removed snippet settings page from network admin
 
 = 2.3.0 =
 * Removed nested functions
@@ -347,8 +375,14 @@ __Fixed__
 
 == Upgrade Notice ==
 
+= 2.4.1 =
+Fixed CodeMirror themes not being detected on settings page
+
+= 2.4.0 =
+New snippet sharing feature for multisite networks; new Snippet class
+
 = 2.3.0 =
-Numerious fixes and Russian translation update. Props to @signo and @`achumakov.
+Numerous fixes and Russian translation update. Props to @signo and @achumakov.
 
 = 2.2.3 =
 Fixed error when exporting; snippet scopes can now be imported

@@ -57,7 +57,7 @@ $options_profile = get_option('newsletter_profile');
     <div id="newsletter-title">
         <?php include NEWSLETTER_DIR . '/users/menu.inc.php'; ?>
 
-        <h2>Subscriber Edit</h2>
+        <h2>Editing <?php echo esc_html($controls->data['email'])?></h2>
     </div>
     <div class="newsletter-separator"></div> 
 
@@ -73,6 +73,7 @@ $options_profile = get_option('newsletter_profile');
                 <li><a href="#tabs-preferences">Preferences</a></li>
                 <li><a href="#tabs-profile">Profile</a></li>
                 <li><a href="#tabs-other">Other</a></li>
+                <li><a href="#tabs-newsletters">Newsletters</a></li>
             </ul>
 
             <div id="tabs-general">
@@ -232,10 +233,19 @@ $options_profile = get_option('newsletter_profile');
 
                 </table>
             </div>
+            <div id="tabs-newsletters">
+                <p>Newsletter sent to this subscriber.</p>
+                <?php if (!has_action('newsletter_user_newsletters_tab')) { ?>
+                <div class="tnp-tab-notice">
+                    This panel requires the <a href="http://www.thenewsletterplugin.com/plugins/newsletter/reports-module" target="_blank">Reports Extension 2.2.3</a>.
+
+                </div>
+                <?php } else do_action('newsletter_user_newsletters_tab', $id) ?>
+            </div>
         </div>
 
         <p class="submit">
-            <?php $controls->button('save', 'Save'); ?>
+            <?php $controls->button_save(); ?>
             <?php $controls->button('delete', 'Delete'); ?>
         </p>
 

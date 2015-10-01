@@ -1,6 +1,8 @@
 <?php
 /*
- * Copy this file into
+ * PLEASE USE THE TEMPLATE EDITOR INSIDE THE PLUGIN ADMINISTRATIVE PANEL, THIS FILE WILL BE SHORTLY DEPRECATED.
+ *
+ *  Copy this file into
  *
  *     wp-content/extensions/newsletter/subscription
  *

@@ -1,7 +1,7 @@
 === Newsletter ===
 Tags: newsletter,email,subscription,mass mail,list build,email marketing,direct mailing
-Requires at least: 3.3.0
-Tested up to: 4.2.2
+Requires at least: 3.4.0
+Tested up to: 4.3.1
 Stable tag: trunk
 Contributors: satollo,webagile,michael-travan
 
@@ -29,6 +29,12 @@ send and track e-mails, headache-free. It just works out of box!
 **Set Up Your First Newsletter In Just A Couple Of Clicks**
 [youtube https://www.youtube.com/watch?v=JaxK7XwqvVI]
 
+= Integration with WordPress registration =
+
+* Newsletter subscription check box on standard WordPress registration form
+* Auto confirmation on first login
+* Imports already registered users
+
 = Professional Extensions =
 
 Need *more power*? Feel *something's missing*? The Newsletter Plugin features can be easily extended through 
@@ -36,6 +42,8 @@ our **premium, professional Extensions**! Let us introduce just two of them : )
 
 * [Reports Extension](http://www.thenewsletterplugin.com/plugins/newsletter/reports-module) is a regular WordPress plugin which improves the internal statistics collection system and provides better reports of data collected for each sent email. Neat.
 * [Feed By Mail Extension](http://www.thenewsletterplugin.com/feed-by-mail-extension) generates and sends your newsletters using your blog last posts, even custom ones like events or products. Just sit and watch! 
+* [WooCommerce Extension](http://www.thenewsletterplugin.com/woocommerce-extension) subscribe customers to a mailing list and generate product newletters.
+* [Amazon SES Extension](http://www.thenewsletterplugin.com/amazon-ses-extension-for-the-newsletter-plugin) seamlessly integrate Amazon SES with The Newsletter Plugin. Hassle-free.
 
 = Support =
 
@@ -64,9 +72,64 @@ Thank you, The Newsletter Team
 
 == Screen shots ==
 
-No screen shots are available at this time.
+No screenshots are available at this time.
 
 == Changelog ==
+
+= 3.9.4 =
+
+* CSV export fix
+* Delete button on newsletter list fixed (wrong since version 3.9.3)
+
+= 3.9.3 =
+
+* Added the blog charset to the dagnostic panel
+* Fixed the read count (was due to antispam filter changes)
+* Language domain fixes
+
+= 3.9.2 =
+
+* Fixed the tab separator in CSV export
+* Removed the already subscribed option
+* Removed obsolete code for anchor tracking
+* Added the sent newsletters to the subscriber editing panel
+* Added a sent-to table
+
+= 3.9.1 =
+
+* Enable the tracking key edit
+* Removed the antibot option, active by default
+* First round of changes for translate.wordpress.org
+* Fixed few notices
+* Added deprecation notices for the email.php and email-alternative.php files
+* Fixed the export separator
+* Removed reference to plugin files in URLs to avoid spam filter
+* Removed the selection of Newsletter action URL
+* Removed obsolete files
+
+= 3.9.0 =
+
+* Fixed the new excerpt extraction
+
+= 3.8.9 =
+
+* Fixed few debug notices
+* Improved support for browser without javascript
+* Adding multi subscription support
+* Improved antibot
+* Fixed some debug/deprecated noticies
+* Added support for new beta Report Extension features
+
+= 3.8.8 =
+
+* Unsubscription works now only with JavaScript enabled browser to block bots
+* New way to extract excerpts to avoid third party filters
+* Fixed the image selector for header logo
+* Added preview form subscription message template
+* Added WordPress like metadata on themes
+* Fixed the default theme
+* Changed few theme screeshots
+* Added attribute "layout" to shortcode with value "html5" for tableless form
 
 = 3.8.7 =
 

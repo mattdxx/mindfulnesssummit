@@ -292,8 +292,11 @@ class TCM_Manager {
         $tagsIds=array();
         $categoriesIds=array();
         if($post) {
-            $postId = $post->ID;
-            $postType = $post->post_type;
+            $postId=$tcm->Utils->get($post, 'ID', FALSE);
+            if($postId===FALSE) {
+                $postId=$tcm->Utils->get($post, 'post_ID');
+            }
+            $postType=$tcm->Utils->get($post, 'post_type');
         }
 
         $tcm->Options->clearSnippetsWritten();

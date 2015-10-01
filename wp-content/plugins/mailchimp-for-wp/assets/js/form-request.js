@@ -70,7 +70,7 @@
 		 * Repopulates the form fields
 		 */
 		this.repopulate = function() {
-			populateFields( self.element, request.data );
+			populate( self.element.querySelector('form'), request.data );
 		};
 
 		// Call "init" on window.load event
@@ -94,91 +94,62 @@
 		}
 	}
 
-	/**
-	 * Populate the form elements in a given container from a JSON object
-	 *
-	 * @param DOMElement container
-	 * @param object data
-	 * @param string basename
-	 */
-	function populateFields( container, data, basename ) {
+	/*! populate.js v1.0 by @dannyvankooten | MIT license */
+	;(function(root) {
 
-		for( var key in data ) {
+		/**
+		 * Populate form fields from a JSON object.
+		 *
+		 * @param form object The form element containing your input fields.
+		 * @param data array JSON data to populate the fields with.
+		 * @param basename string Optional basename which is added to `name` attributes
+		 */
+		var populate = function( form, data, basename) {
 
-			var name = key;
-			var value = data[key];
+			for(var key in data) {
 
-			// no need to set empty values
-			if( value == '' ) {
-				continue;
-			}
+				if( ! data.hasOwnProperty( key ) ) {
+					continue;
+				}
 
-			// handle array name attributes
-			if(typeof(basename) !== "undefined") {
-				name = basename + "[" + key + "]";
-			}
+				var name = key;
+				var value = data[key];
 
-			if( value.constructor == Array ) {
-				name += '[]';
-			} else if(typeof value == "object") {
-				populateFields(container, value, name);
-				continue;
-			}
+				// handle array name attributes
+				if(typeof(basename) !== "undefined") {
+					name = basename + "[" + key + "]";
+				}
 
-			// populate field
-			var elements = container.querySelectorAll('input[name="'+ name +'"], select[name="'+ name +'"], textarea[name="'+ name +'"]');
+				if(value.constructor === Array) {
+					name += '[]';
+				} else if(typeof value == "object") {
+					populate( form, value, name);
+					continue;
+				}
 
-			// Dirty: abandon if we did not find the element
-			if( ! elements ) {
-				return;
-			}
-
-			// loop through found elements to set their values
-			for(var i = 0; i < elements.length; i++) {
-
-				var element = elements[i];
+				// only proceed if element is set
+				var element = form.elements.namedItem( name );
+				if( ! element ) {
+					continue;
+				}
 
 				// check element type
-				switch(element.type || element.tagName) {
-					case 'text':
-					case 'email':
-					case 'date':
-					case 'tel':
-					case 'number':
+				switch(element.type || element.constructor ) {
+					default:
 						element.value = value;
-
-						// remove IE placeholder fallback class
-						element.className = element.className.replace('placeholdersjs','');
 						break;
 
-					case 'radio':
-						element.checked = (element.value === value);
-						break;
-
-					case 'checkbox':
-						for(var j = 0; j < value.length; j++) {
-
-							// check element if its in the values array
-							var checked = (element.value === value[j]);
-							if( checked ) {
-								element.checked = (element.value === value[j]);
-								break;
-							}
-
-							// uncheck if it isn't
-							element.checked = false;
+					case RadioNodeList:
+						for( var j=0; j < element.length; j++ ) {
+							element[j].checked = ( value.indexOf(element[j].value) > -1 );
 						}
 						break;
 
 					case 'select-multiple':
 						var values = value.constructor == Array ? value : [value];
 
-						for(var k = 0; k < element.options.length; k++)
-						{
-							for(var l = 0; l < values.length; l++)
-							{
-								element.options[k].selected |= (element.options[k].value == values[l]);
-							}
+						for(var k = 0; k < element.options.length; k++) {
+							element.options[k].selected |= (values.indexOf(element.options[k].value) > -1 );
 						}
 						break;
 
@@ -187,15 +158,25 @@
 						element.value = value.toString() || value;
 						break;
 
-					case 'textarea':
-						element.innerText = value;
-						break;
 				}
+
+
+
 			}
 
+		};
 
+		// Play nice with AMD, CommonJS or a plain global object.
+		if ( typeof define == 'function' && typeof define.amd == 'object' && define.amd ) {
+			define(function() {
+				return populate;
+			});
+		}	else if ( typeof exports === 'object' ) {
+			exports.populate = populate;
+		} else {
+			root.populate = populate;
 		}
 
-	}
+	}(this));
 
 })();

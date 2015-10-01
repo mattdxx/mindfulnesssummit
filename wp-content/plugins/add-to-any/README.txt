@@ -1,17 +1,17 @@
-=== Share Buttons by AddToAny ===
+=== AddToAny Share Buttons ===
 Contributors: micropat, addtoany
 Tags: AddToAny, sharing, share, social, share button, share buttons, social media, media, marketing, bookmark, bookmarks, save, post, posts, page, pages, images, image, admin, analytics, statistics, stats, links, plugin, shortcode, sidebar, widget, responsive, email, e-mail, print, seo, button, woocommerce, ecommerce, e-commerce, amazon, delicious, google, tumblr, linkedin, digg, reddit, facebook, facebook share, facebook like, like, twitter, twitter button, twitter share, tweet, tweet button, google plus, pinterest, pin, pin it, pinit, wanelo, buffer, stumbleupon, bitly, whatsapp, instagram, behance, flickr, foursquare, vimeo, youtube, feed, rss, lockerz, addthis, sociable, share this, sharethis, shareaholic, icon, icons, vector, SVG, floating, floating buttons, wpml, wpmu, Add to Any
 Requires at least: 2.8
 Tested up to: 4.3
-Stable tag: 1.6.5
+Stable tag: 1.6.6
 
-Share buttons for WordPress including AddToAny's universal sharing button, Facebook, Twitter, Google+, Pinterest, WhatsApp and many more.
+Share buttons for WordPress including the AddToAny sharing button, Facebook, Twitter, Google+, Pinterest, WhatsApp, many more, and follow icons too.
 
 == Description ==
 
-The WordPress sharing plugin to help people share, save, and email your posts and pages using any service, such as Facebook, Twitter, Pinterest, Google, Reddit, Tumblr, StumbleUpon, LinkedIn, and well over 100 more sharing and social bookmarking sites.
+The AddToAny WordPress sharing plugin helps people share your posts and pages to any service, such as Facebook, Twitter, Pinterest, Google, WhatsApp, LinkedIn, Tumblr, Reddit, and over 100 more sharing and social media sites & apps.
 
-AddToAny's customizable platform and social share icons let you optimize your site's blog posts & pages for the best social sharing engagement.
+AddToAny is the universal sharing platform, and AddToAny's plugin is the most popular share plugin for WordPress, making sites social media ready since 2006.
 
 = Share Buttons & Follow Buttons =
 
@@ -297,6 +297,11 @@ Upload the plugin directory (including all files and directories within) to the 
 6. Color chooser for your share menus
 
 == Changelog ==
+
+= 1.6.6 =
+* Harden local caching option (thanks pineappleclock)
+* Remove old warning message when template tags seem to be missing (thanks Tenebral, and theme authors everywhere)
+* Adjust gettext calls by switching to single quotes for the text domain argument
 
 = 1.6.5 =
 * Update Google icon

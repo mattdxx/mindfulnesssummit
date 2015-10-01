@@ -137,16 +137,16 @@ function popmake_clean_popup_data_attr( $data_attr ) {
 	if ( empty( $display['responsive_min_width'] ) ) {
 		unset( $display['responsive_min_width'], $display['responsive_min_width_unit'] );
 	}
-	if ( ! strpos( $display['location'], 'left' ) ) {
+	if ( strpos( $display['location'], 'left' ) === false ) {
 		unset( $display['position_left'] );
 	}
-	if ( ! strpos( $display['location'], 'right' ) ) {
+	if ( strpos( $display['location'], 'right' ) === false ) {
 		unset( $display['position_right'] );
 	}
-	if ( ! strpos( $display['location'], 'top' ) ) {
+	if ( strpos( $display['location'], 'top' ) === false ) {
 		unset( $display['position_top'] );
 	}
-	if ( ! strpos( $display['location'], 'bottom' ) ) {
+	if ( strpos( $display['location'], 'bottom' ) === false ) {
 		unset( $display['position_bottom'] );
 	}
 
@@ -573,18 +573,18 @@ function popmake_popup_is_loadable( $popup_id ) {
 		$category_id = $wp_query->get_queried_object_id();
 		if ( ! $sitewide ) {
 			// Load on all categories
-			if ( array_key_exists( 'on_categories', $conditions ) && ! array_key_exists( 'on_specific_categories', $conditions ) ) {
+			if ( array_key_exists( 'on_categorys', $conditions ) && ! array_key_exists( 'on_specific_categorys', $conditions ) ) {
 				$is_loadable = true;
 			} // Load on specific categories
-			elseif ( array_key_exists( 'on_specific_categories', $conditions ) && array_key_exists( 'on_category_' . $category_id, $conditions ) ) {
+			elseif ( array_key_exists( 'on_specific_categorys', $conditions ) && array_key_exists( 'on_category_' . $category_id, $conditions ) ) {
 				$is_loadable = true;
 			}
 		} else {
 			// Exclude on all categories.
-			if ( array_key_exists( 'exclude_on_categories', $conditions ) && ! array_key_exists( 'exclude_on_specific_categories', $conditions ) ) {
+			if ( array_key_exists( 'exclude_on_categorys', $conditions ) && ! array_key_exists( 'exclude_on_specific_categorys', $conditions ) ) {
 				$is_loadable = false;
 			} // Exclude on specific categories.
-			elseif ( array_key_exists( 'exclude_on_specific_categories', $conditions ) && array_key_exists( 'exclude_on_category_' . $category_id, $conditions ) ) {
+			elseif ( array_key_exists( 'exclude_on_specific_categorys', $conditions ) && array_key_exists( 'exclude_on_category_' . $category_id, $conditions ) ) {
 				$is_loadable = false;
 			}
 		}

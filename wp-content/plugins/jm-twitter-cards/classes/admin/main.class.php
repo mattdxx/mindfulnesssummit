@@ -53,8 +53,10 @@ class Main {
 		}
 
 		$options = \jm_tc_get_options();
+        $site = ! empty( $options['twitterSite'] ) ? $options['twitterSite'] : null;
+        $creator = ! empty( $options['twitterCreator'] ) ? $options['twitterCreator'] : null;
 
-		if ( 'tweetpressfr' === strtolower( $options['twitterSite'] ) || 'tweetpressfr' === strtolower( $options['twitterCreator'] ) ) {
+		if ( 'tweetpressfr' === strtolower( $site  ) || 'tweetpressfr' === strtolower( $creator ) ) {
 
 			printf( __( '<div class="error"><p>Cards are broken because you use plugin\'s author account as Twitter site and /or Twitter Creator, please <a href="%s">change it here</a></p></div>' ), esc_url( admin_url( 'admin.php?page=jm_tc' ) ) );
 

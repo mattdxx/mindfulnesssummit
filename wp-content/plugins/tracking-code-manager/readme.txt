@@ -101,6 +101,11 @@ Have a look at the source code of your page (search for: Tracking Code Manager) 
 
 == Changelog ==
 
+= 1.8.1 =
+*Release Date - 13/09/2015*
+
+* [Bugfixes] Fix bugs with "metabox" integration
+
 = 1.8.0 =
 *Release Date - 27/08/2015*
 

@@ -198,7 +198,7 @@
 	$Page_Options[11]['Attribute_Three_Type'] = "";
 ?>
 
-<h3>One Click Setup</h3>
+<h1 class='feup-one-click-title'>One Click Setup</h1>
 <form action='admin.php?page=EWD-FEUP-options&DisplayPage=Dashboard&Action=EWD_FEUP_OneClickInstall' method='post'>
 	
 	<table>
@@ -251,7 +251,7 @@
 	</table>
 
 	<?php 
-		if ($EWD_FEUP_Full_Version == "Yes") {echo "<input type='submit' name='One_Click_Install_Submit' value='Create Pages' />";}
-		else {echo "<input type='submit' name='One_Click_Install_Submit' value='Upgrade to Use!' disabled />";}
+		if ($EWD_FEUP_Full_Version == "Yes") {echo "<input type='submit' class='button button-primary feup-one-click-submit' name='One_Click_Install_Submit' value='Create Pages' />";}
+		else {echo "<input type='submit' class='button button-primary feup-one-click-submit' name='One_Click_Install_Submit' value='Upgrade to Use!' disabled />";}
 	?>
 </form>

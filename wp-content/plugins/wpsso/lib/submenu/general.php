@@ -99,24 +99,16 @@ if ( ! class_exists( 'WpssoSubmenuGeneral' ) && class_exists( 'WpssoAdmin' ) ) {
 					$this->p->util->get_th( 'Description Length', null, 'og_desc_len' ).
 					'<td>'.$this->form->get_input( 'og_desc_len', 'short' ).' characters or less</td>';
 
-					$rows[] = '<tr class="hide_in_basic">'.
-					$this->p->util->get_th( 'Content Starts at 1st Paragraph', null, 'og_desc_strip' ).
-					'<td>'.$this->form->get_checkbox( 'og_desc_strip' ).'</td>';
-
-					$rows[] = '<tr class="hide_in_basic">'.
-					$this->p->util->get_th( 'Use Image Alt if Content is Empty', null, 'og_desc_alt' ).
-					'<td>'.$this->form->get_checkbox( 'og_desc_alt' ).'</td>';
-
 					$rows[] = $this->p->util->get_th( 'Add Hashtags to Descriptions', null, 'og_desc_hashtags' ).
 					'<td>'.$this->form->get_select( 'og_desc_hashtags', 
 						range( 0, $this->p->cf['form']['max_hashtags'] ), 'short', null, true ).' tag names</td>';
 
 					$rows[] = '<tr class="hide_in_basic">'.
-					$this->p->util->get_th( 'Add Page Title in Tags', null, 'og_page_title_tag' ).
+					$this->p->util->get_th( 'Add Page Title in Tags / Hashtags', null, 'og_page_title_tag' ).
 					'<td>'.$this->form->get_checkbox( 'og_page_title_tag' ).'</td>';
 		
 					$rows[] = '<tr class="hide_in_basic">'.
-					$this->p->util->get_th( 'Add Page Ancestor Tags', null, 'og_page_parent_tags' ).
+					$this->p->util->get_th( 'Add Parent Page Tags / Hashtags', null, 'og_page_parent_tags' ).
 					'<td>'.$this->form->get_checkbox( 'og_page_parent_tags' ).'</td>';
 
 					break;
@@ -166,10 +158,6 @@ if ( ! class_exists( 'WpssoSubmenuGeneral' ) && class_exists( 'WpssoAdmin' ) ) {
 					$this->p->util->get_th( 'Force Default Image on Indexes', null, 'og_def_img_on_index' ).
 					'<td>'.$this->form->get_checkbox( 'og_def_img_on_index' ).'</td>';
 	
-					$rows[] = '<tr class="hide_in_basic">'.
-					$this->p->util->get_th( 'Force Default Image on Author Index', null, 'og_def_img_on_author' ).
-					'<td>'.$this->form->get_checkbox( 'og_def_img_on_author' ).'</td>';
-		
 					$rows[] = '<tr class="hide_in_basic">'.
 					$this->p->util->get_th( 'Force Default Image on Search Results', null, 'og_def_img_on_search' ).
 					'<td>'.$this->form->get_checkbox( 'og_def_img_on_search' ).'</td>';
@@ -252,7 +240,8 @@ if ( ! class_exists( 'WpssoSubmenuGeneral' ) && class_exists( 'WpssoAdmin' ) ) {
 
 				case 'pub-pinterest':
 
-					$rows[] = '<td colspan="2" style="padding-bottom:10px;">'.$this->p->msgs->get( 'info-pub-pinterest' ).'</td>';
+					$rows[] = '<td colspan="2" style="padding-bottom:10px;">'.
+						$this->p->msgs->get( 'info-pub-pinterest' ).'</td>';
 
 					$rows[] = $this->p->util->get_th( 'Pinterest Company Page URL', null, 'rp_publisher_url'  ).
 					'<td>'.$this->form->get_input( 'rp_publisher_url', 'wide' ).'</td>';
@@ -272,8 +261,21 @@ if ( ! class_exists( 'WpssoSubmenuGeneral' ) && class_exists( 'WpssoAdmin' ) ) {
 
 				case 'pub-twitter':
 
+					$rows[] = '<td colspan="2" style="padding-bottom:10px;">'.
+						$this->p->msgs->get( 'info-pub-twitter' ).'</td>';
+
 					$rows[] = $this->p->util->get_th( 'Twitter Business @username', 'highlight', 'tc_site' ).
 					'<td>'.$this->form->get_input( 'tc_site' ).'</td>';
+
+					$rows[] = '<tr class="hide_in_basic">'.
+					$this->p->util->get_th( 'Maximum Description Length', null, 'tc_desc_len' ).
+					'<td>'.$this->form->get_input( 'tc_desc_len', 'short' ).' characters or less</td>';
+
+					$rows[] = $this->p->util->get_th( '<em>Summary</em> Card Image Dimensions', null, 'tc_sum_dimensions' ).
+					'<td>'.$this->form->get_image_dimensions_input( 'tc_sum', false, false ).'</td>';
+
+					$rows[] = $this->p->util->get_th( '<em>Large Image</em> Card Image Dimensions', null, 'tc_lrgimg_dimensions' ).
+					'<td>'.$this->form->get_image_dimensions_input( 'tc_lrgimg', false, false ).'</td>';
 
 					break;
 

@@ -19,15 +19,14 @@ class TCM_Utils {
         return TRUE;
         /*
         if (!function_exists('wp_get_current_user')) {
-            require_once(ABSPATH . 'wp-includes/pluggable.php');
+            require_once(ABSPATH.'wp-includes/pluggable.php');
         }
         return (is_multisite() || current_user_can('manage_options'));
         */
     }
     function isPluginPage() {
-        global $tcm;
-        $page=$tcm->Utils->qs('page');
-        $result=(stripos($page, TCM_PLUGIN_SLUG)!==FALSE);
+        $page=$this->qs('page');
+        $result=($this->startsWith($page, TCM_PLUGIN_SLUG));
         return $result;
     }
 
@@ -142,7 +141,7 @@ class TCM_Utils {
                 $result[]=$v;
             }
         } else {
-            $result = $tcm->Options->getCache('Query', $query . '_' . $args['post_type']);
+            $result = $tcm->Options->getCache('Query', $query.'_'.$args['post_type']);
             if (!is_array($result) || count($result) == 0) {
                 $q = NULL;
                 $id = 'ID';
@@ -167,12 +166,12 @@ class TCM_Utils {
                     }
                 }
 
-                $tcm->Options->setCache('Query', $query . '_' . $args['post_type'], $result);
+                $tcm->Options->setCache('Query', $query.'_'.$args['post_type'], $result);
             }
 
             if ($args['all']) {
                 $first = array();
-                $first[] = array('id' => -1, 'name' => '[' . $tcm->Lang->L('All') . ']');
+                $first[] = array('id' => -1, 'name' => '['.$tcm->Lang->L('All').']');
                 $result = array_merge($first, $result);
             }
         }
@@ -180,6 +179,31 @@ class TCM_Utils {
         return $result;
     }
 
+    //send remote request to our server to store tracking and feedback
+    function remotePost($action, $data='') {
+        global $tcm;
+
+        $data['secret']='WYSIWYG';
+        $response=wp_remote_post(TCM_INTELLYWP_ENDPOINT.'?iwpm_action='.$action, array(
+            'method' => 'POST'
+            , 'timeout' => 20
+            , 'redirection' => 5
+            , 'httpversion' => '1.1'
+            , 'blocking' => TRUE
+            , 'body' => $data
+            , 'user-agent' => 'TCM/'.TCM_PLUGIN_VERSION.'; '.get_bloginfo('url')
+        ));
+        $data=json_decode(wp_remote_retrieve_body($response), TRUE);
+        if (is_wp_error($response) || wp_remote_retrieve_response_code($response) != 200
+            || !isset($data['success']) || !$data['success']
+        ) {
+            $tcm->Log->error('ERRORS SENDING REMOTE-POST ACTION=%s DUE TO REASON=%s', $action, $response);
+            $data=FALSE;
+        } else {
+            $tcm->Log->debug('SUCCESSFULLY SENT REMOTE-POST ACTION=%s RESPONSE=%s', $action, $data);
+        }
+        return $data;
+    }
     function remoteGet($uri, $options) {
         $result=FALSE;
         $uri=add_query_arg($options, $uri);
@@ -222,30 +246,6 @@ class TCM_Utils {
         }
         return $result;
     }
-    function remotePost($action, $data = '') {
-        global $tcm;
-
-        $data['secret'] = 'WYSIWYG';
-        $response = wp_remote_post(TCM_INTELLYWP_ENDPOINT . '?iwpm_action=' . $action, array(
-            'method' => 'POST'
-            , 'timeout' => 20
-            , 'redirection' => 5
-            , 'httpversion' => '1.1'
-            , 'blocking' => TRUE
-            , 'body' => $data
-            , 'user-agent' => 'TCM/' . TCM_PLUGIN_VERSION . '; ' . get_bloginfo('url')
-        ));
-        $data = json_decode(wp_remote_retrieve_body($response), TRUE);
-        if (is_wp_error($response) || wp_remote_retrieve_response_code($response) != 200
-            || !isset($data['success']) || !$data['success']
-        ) {
-            $tcm->Log->error('ERRORS SENDING REMOTE-POST ACTION=%s DUE TO REASON=%s', $action, $response);
-            $data = FALSE;
-        } else {
-            $tcm->Log->debug('SUCCESSFULLY SENT REMOTE-POST ACTION=%s RESPONSE=%s', $action, $data);
-        }
-        return $data;
-    }
 
     //wp_parse_args with null correction
     function parseArgs($args, $defaults) {
@@ -276,4 +276,138 @@ class TCM_Utils {
         exit();
         ?>
     <?php }
+
+    function bget($instance, $name, $index=-1) {
+        $v=$this->get($instance, $name, FALSE, $index);
+        $v=$this->isTrue($v);
+        return $v;
+    }
+    function aget($instance, $name, $index=-1) {
+        $v=$this->get($instance, $name, FALSE, $index);
+        $v=$this->toArray($v);
+        return $v;
+    }
+    function get($instance, $name, $default='', $index=-1) {
+        if($this->isEmpty($instance)) {
+            return $default;
+        }
+        $options=array();
+        //assolutamente da non fare altrimenti succede un disastro in quanto i metodi del inputComponent
+        //gli passano come name il valore...insomma un disastro!
+        //$name=$this->toArray($name);
+        //$name=implode('.', $name);
+
+        $result=$default;
+        if(is_array($instance) || is_object($instance)) {
+            if($this->propertyReflect($instance, $name, $options)) {
+                $result=$options['get'];
+            }
+        }
+        if($index>-1) {
+            $result=$this->toArray($result);
+            if(isset($result[$index])) {
+                $result=$result[$index];
+            } else {
+                $result=$default;
+            }
+        }
+        return $result;
+    }
+    function has($instance, $name) {
+        return $this->propertyReflect($instance, $name);
+    }
+    function set(&$instance, $name, $value) {
+        global $lb;
+        $options=array('set'=>$value);
+        $result=$this->propertyReflect($instance, $name, $options);
+        if(!$result) {
+            $lb->Log->error('UNABLE TO SET PROPERTY [%s] OF [%s]', $name, get_class($instance));
+        }
+        return $result;
+    }
+    function iget($array, $name, $default='') {
+        return intval($this->get($array, $name, $default));
+    }
+
+    private function propertyReflect(&$instance, $name, &$options=array()) {
+        if(!is_object($instance) && !is_array($instance)) {
+            return FALSE;
+        }
+
+        if($options===FALSE || !is_array($options)) {
+            $options=array();
+        }
+        $options['has']=FALSE;
+        $options['get']=FALSE;
+
+        $current=$instance;
+        $names=explode('.', $name);
+        $value=FALSE;
+        $result=TRUE;
+        for($i=0; $i<count($names); $i++) {
+            $name=$names[$i];
+            if(!is_object($current) && !is_array($current)) {
+                return FALSE;
+            }
+            if(is_null($current)) {
+                return FALSE;
+            }
+
+            if(is_object($current)) {
+                $r=new ReflectionClass($current);
+                try {
+                    if($r->getProperty($name)!==FALSE) {
+                        $value=$current->$name;
+                    } else {
+                        $result=FALSE;
+                    }
+                } catch(Exception $ex) {
+                    $result=FALSE;
+                }
+            } elseif(is_array($current)) {
+                if(isset($current[$name])) {
+                    $value=$current[$name];
+                } else {
+                    $result=FALSE;
+                }
+            }
+
+            if(!$result) {
+                break;
+            } elseif($i<(count($names)-1)) {
+                $current=$value;
+            } else {
+                $options['get']=$value;
+                if(isset($options['set'])) {
+                    if(is_object($current)) {
+                        $current->$name=$options['set'];
+                    } elseif(is_array($current)) {
+                        $current[$name]=$options['set'];
+                    }
+                }
+            }
+        }
+        return $result;
+    }
+    public function isEmpty($v) {
+        if(!$v) {
+            return TRUE;
+        }
+
+        $result=FALSE;
+        if(is_string($v)) {
+            $result=($v=='');
+        } elseif(is_array($v)) {
+            $result=count($v)==0;
+        } elseif(is_object($v)) {
+            $result=TRUE;
+            foreach($v as $k=>$w) {
+                if(!is_null($w) && $w!=='') {
+                    $result=FALSE;
+                    break;
+                }
+            }
+        }
+        return $result;
+    }
 }

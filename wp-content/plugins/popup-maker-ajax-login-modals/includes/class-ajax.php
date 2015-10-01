@@ -57,7 +57,7 @@ if( ! class_exists( 'PopMake_Ajax_Login_Modals_Ajax' ) ) {
             if( is_wp_error( $user ) ) {
                 $response = array(
                     'success' => false,
-                    'message'  => __( 'Wrong Username or Password!', 'popup-maker-ajax-login-modals' ),
+                    'message'  => __( 'Wrong Email or Password!', 'popup-maker-ajax-login-modals' ),
                 );
             } else {
                 $response = array(
@@ -87,9 +87,15 @@ if( ! class_exists( 'PopMake_Ajax_Login_Modals_Ajax' ) ) {
             }
 
             if( is_wp_error( $user ) ) {
+				
+				$response_error_message = $user->get_error_message();
+				if ($user->get_error_code() == 'existing_user_email')
+					$response_error_message = 
+						'Sorry, that email address is already registered, please <a href="/wp-login.php" onclick="jQuery(\'.popmake-registration-form,.popmake-recovery-form\').slideUp();jQuery(\'.popmake-login-form\').appendTo(jQuery(\'.popmake-login-form\').parent()).slideDown();return false;">login here</a>';
+
                 $response = array(
                     'success' => false,
-                    'message'   => $user->get_error_message(),
+                    'message'   => $response_error_message,
                 );
             }
             else {
@@ -129,9 +135,16 @@ if( ! class_exists( 'PopMake_Ajax_Login_Modals_Ajax' ) ) {
             $user_forgotten = $this->retrieve_password( $username );
             // Check if there were any errors when requesting a new password
             if( is_wp_error( $user_forgotten ) ) {
+				
+				$response_error_message = $user_forgotten->get_error_message();
+				if ($user_forgotten->get_error_code() == 'invalid_email')
+					$response_error_message = 
+						"This email address isn’t registered for a 'Access Pass' - <a href=\"/wp-login.php\" onclick=\"jQuery('.popmake-login-form,.popmake-recovery-form').slideUp();jQuery('.popmake-registration-form').appendTo(jQuery('.popmake-registration-form').parent()).slideDown();return false;\">register here</a>";
+
+				
                 $response = array(
                     'reset'      => false,
-                    'message' => $user_forgotten->get_error_message(),
+                    'message' => $response_error_message,
                 );
             }
             else {
@@ -175,14 +188,21 @@ if( ! class_exists( 'PopMake_Ajax_Login_Modals_Ajax' ) ) {
                 return new WP_Error( 'no_password_reset', __( 'Password reset is not allowed for this user', 'popup-maker-ajax-login-modals' ) );
             else if( is_wp_error( $allow ) )
                 return $allow;
-            $key = $wpdb->get_var( $wpdb->prepare( "SELECT user_activation_key FROM $wpdb->users WHERE user_login = %s", $user_login ) );
-            if( empty( $key ) ) {
-                // Generate something random for a key...
-                $key = wp_generate_password( 20, false );
-                do_action( 'retrieve_password_key', $user_login, $key );
-                // Now insert the new md5 key into the db
-                $wpdb->update( $wpdb->users, array( 'user_activation_key' => $key ), array( 'user_login' => $user_login ) );
+            
+            // Generate something random for a key
+            $key = wp_generate_password( 20, false );
+            do_action( 'retrieve_password_key', $user_login, $key );
+            
+            // Now insert the key, hashed, into the DB.
+            global $wp_hasher;
+            if (empty($wp_hasher)) {
+                require_once ABSPATH . WPINC . '/class-phpass.php';
+                $wp_hasher = new PasswordHash( 8, true );
             }
+            $hashed = $wp_hasher->HashPassword( $key );
+            $wpdb->update( $wpdb->users, array( 'user_activation_key' => $hashed ), array( 'user_login' => $user_login ) );
+            
+
             $message = __( 'Someone requested that the password be reset for the following account:', 'popup-maker-ajax-login-modals' ) . "\r\n\r\n";
             $message .= network_home_url( '/' ) . "\r\n\r\n";
             $message .= sprintf( __( 'Username: %s' ), $user_login ) . "\r\n\r\n";
@@ -209,3 +229,4 @@ if( ! class_exists( 'PopMake_Ajax_Login_Modals_Ajax' ) ) {
 
     }
 } // End if class_exists check
+
