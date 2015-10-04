@@ -2,7 +2,7 @@
 /*
 Plugin Name: Optimize Wordpress
 Description: Optimize wordpress to speed up the whole process
-Version: 1.0
+Version: 1.1
 Author: Stratos Nikolaidis
 Author URI: https://gr.linkedin.com/in/stratosnikolaidis
 Plugin URI: https://gr.linkedin.com/in/stratosnikolaidis
@@ -13,6 +13,10 @@ License: Toptal
 /*
 Prevent Contact Form 7 to reload the contact us forms data, in case the page is cached.
 */
+
+/*
+
+Disabled for now, need to complete tests first
 
 remove_action( 'wp_enqueue_scripts', 'wpcf7_do_enqueue_scripts' );
 
@@ -60,10 +64,24 @@ function wpcf7_enqueue_scripts_with_no_cache() {
 	do_action( 'wpcf7_enqueue_scripts' );
 }
 
+*/
+
+
 /**
- * CACHE:
- *
- * WP_Engine uses their own caching system (which is good) but it's based on database (cache info is stored in database).
- * There will be a dramatic increase of the performarce if you switch on memory cache (perhaps this is all you might need)
- *
-**/
+ * Fix Mandrill reset password issue
+ * Fix provided by @paulveevers
+ */
+add_filter( 'retrieve_password_message', 'forgot_password_email', 10, 2 );
+function forgot_password_email($message, $key) {
+
+  // Replace first open bracket
+  $message = str_replace('<', '', $message);
+
+  // Replace second open bracket
+  $message = str_replace('>', '', $message);
+
+  // Convert line returns to <br>'s
+  $message = str_replace("\r\n", '<br>', $message);
+
+  return $message;
+}
