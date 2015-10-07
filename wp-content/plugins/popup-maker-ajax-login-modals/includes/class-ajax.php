@@ -114,7 +114,6 @@ if( ! class_exists( 'PopMake_Ajax_Login_Modals_Ajax' ) ) {
                 $response = array(
                     'success' => true,
                     'message'   => $message,
-                    'user_id' => $user->ID,
                 );
             }
 

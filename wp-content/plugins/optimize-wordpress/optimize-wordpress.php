@@ -89,7 +89,7 @@ function forgot_password_email($message, $key) {
 /**
  * Disable plugins for specific pages in order to speed up the page load
  */
-add_filter( 'option_active_plugins', 'disable_plugins_on_demand' );
+// add_filter( 'option_active_plugins', 'disable_plugins_on_demand' );
 function disable_plugins_on_demand($plugins){
 	// Template
     // if(strpos($_SERVER['REQUEST_URI'], '/store/') === FALSE AND strpos($_SERVER['REQUEST_URI'], '/wp-admin/') === FALSE) {
@@ -107,31 +107,30 @@ Segment_curl::init(
 	array(
 		"consumer" => "fork_curl",
 		"debug" => true,
-		"max_queue_size" => 10,
+		"max_queue_size" => 5,
 		"batch_size" => 5,
 	)
 );
 
 add_action( 'user_register', 'analytics_on_user_registration', 10, 1 );
 function analytics_on_user_registration( $user_id ) {
-	$user_no = 6;
     // if ( isset( $_POST['first_name'] ) )
     //     update_user_meta($user_id, 'first_name', $_POST['first_name']);
-    if ( true /*$user = get_userdata( $user_id )*/ ) {
+    if ( $user = get_userdata( $user_id ) ) {
     	Segment_curl::identify(
 		    array(
-		       'userId' => '10' . $user_no,
+		       'userId' => $user->ID,
 		       'traits'  => array(
-		           'username'  => 'StratosTester' . $user_no,
-		           'email'     => 'stratos_curl'.$user_no.'@sharklasers.com',
-		           'firstName' => 'Stratos',
-		           'lastName'  => 'Tester' . $user_no,
+					'username'  => $user->user_login,
+					'email'     => $user->user_email,
+					'firstName' => $user->user_firstname,
+					'lastName'  => $user->user_lastname,
 		       	)
 		    )
 		);
     	Segment_curl::track(
 		    array(
-		       	'userId' => '10' . $user_no,
+		       	'userId' => $user->ID,
 				'event' => 'User registered',
 		    )
 		);

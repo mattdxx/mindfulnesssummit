@@ -39,7 +39,7 @@ class Segment_Consumer_ForkCurl extends Segment_QueueConsumer {
     $url = $protocol . $host . $path;
 
     $cmd = "curl -u $secret: -X POST -H 'Content-Type: application/json'";
-    $cmd.= " -d " . $payload . " '" . $url . "'";
+    $cmd.= " -d '" . $payload . "' '" . $url . "'";
 
     if (!$this->debug()) {
       $cmd .= " > /dev/null 2>&1 &";

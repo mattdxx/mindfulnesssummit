@@ -136,25 +136,10 @@
                     message.addClass('error').html('Passwords don\'t match.');
                     return;
                 }
-console.log(ajaxData);
+
                 form_ajax_request(ajaxData, function (results) {
                     // Check the returned data message. If we logged in successfully, then let our users know and remove the popup window.
                     if (results.success === true) {
-
-console.log(results);
-if (ajaxData.register == true) {
-    analytics.track('User registered',
-        {
-            'user_id': results.user_id,
-            'traits': {
-                'username' : ajaxData.user_login,
-                'email'    : ajaxData.user_email,
-                'firstName': ajaxData.fname,
-                'lastName' : ''
-            }
-        }
-    );
-}
 
                         if (results.form !== undefined) {
                             registration_form.replaceWith(results.form);
