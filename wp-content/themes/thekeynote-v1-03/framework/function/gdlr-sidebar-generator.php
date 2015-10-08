@@ -54,6 +54,7 @@
 				// sidebar for footer section
 				$footer_args = apply_filters('gdlr_footer_widget_args', array());
 				$footer_args = wp_parse_args($footer_args, $args);
+				$i = 1;
 				foreach ( $this->footer_widgets as $widget ){
 					if( !is_array($widget) ){
 						$footer_args['name'] = $widget;
@@ -62,19 +63,22 @@
 						$footer_args['name'] = $widget['name'];
 						$footer_args['description'] = $widget['description'];
 					}
-					
+					$footer_args['id'] = 'footer-' . $i;
 					register_sidebar($footer_args);
+					$i++;
 				}
 				
 				// sidebar for content section
 				$sidebar_args = apply_filters('gdlr_sidebar_widget_args', array());
 				$sidebar_args = wp_parse_args($sidebar_args, $args);				
 				$sidebar_args['class'] = 'gdlr-dynamic';
+				$i = 1;
 				foreach ( $this->sidebars as $sidebar ){
 					$sidebar_args['name'] = $sidebar;
 					$sidebar_args['description'] = __('Custom widget area', 'gdlr_translate');
-					
+					$sidebar_args['id'] = 'sidebar-' . $i;
 					register_sidebar($sidebar_args);
+					$i++;
 				}
 				
 			}
