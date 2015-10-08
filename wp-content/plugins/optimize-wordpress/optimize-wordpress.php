@@ -136,3 +136,20 @@ function analytics_on_user_registration( $user_id ) {
 		);
     }
 }
+
+add_action( 'wc_memberships_grant_membership_access_from_purchase', 'tms_track_full_access_pass', 10, 2 );
+function tms_track_full_access_pass( $membership_plan, $args ) {
+
+	// If the tracking library isn't active, stop here
+	if ( !class_exists( 'Segment_Cookie' ) ) {
+		return;
+	}
+
+	// If this isn't the full access pass membership plan, stop
+	if ( !$membership_plan->id == 3737 ) {
+		return;
+	}
+
+	$user_id = $args['user_id'];
+	Segment_Cookie::set_cookie( 'Full Access Pass', json_encode( $user_id ) );
+}
