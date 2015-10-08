@@ -2,7 +2,7 @@
 /*
 Plugin Name: Optimize Wordpress
 Description: Optimize wordpress to speed up the whole process
-Version: 1.1
+Version: 1.3
 Author: Stratos Nikolaidis
 Author URI: https://gr.linkedin.com/in/stratosnikolaidis
 Plugin URI: https://gr.linkedin.com/in/stratosnikolaidis
@@ -84,4 +84,72 @@ function forgot_password_email($message, $key) {
   $message = str_replace("\r\n", '<br>', $message);
 
   return $message;
+}
+
+/**
+ * Disable plugins for specific pages in order to speed up the page load
+ */
+// add_filter( 'option_active_plugins', 'disable_plugins_on_demand' );
+function disable_plugins_on_demand($plugins){
+	// Template
+    // if(strpos($_SERVER['REQUEST_URI'], '/store/') === FALSE AND strpos($_SERVER['REQUEST_URI'], '/wp-admin/') === FALSE) {
+    //     $key = array_search( 'cart66/cart66.php' , $plugins );
+    //     if ( false !== $key ) {
+    //         unset( $plugins[$key] );
+    //     }
+    // }
+    return $plugins;
+}
+
+require_once(dirname(__FILE__) . "/Segment_curl.php");
+Segment_curl::init(
+	"wcHZ0hb6Xk6YaoouR6EKNqWYlxwXn6Hu",
+	array(
+		"consumer" => "fork_curl",
+		"debug" => true,
+		"max_queue_size" => 5,
+		"batch_size" => 5,
+	)
+);
+
+//add_action( 'user_register', 'analytics_on_user_registration', 10, 1 );
+function analytics_on_user_registration( $user_id ) {
+    // if ( isset( $_POST['first_name'] ) )
+    //     update_user_meta($user_id, 'first_name', $_POST['first_name']);
+    if ( $user = get_userdata( $user_id ) ) {
+    	Segment_curl::identify(
+		    array(
+		       'userId' => $user->ID,
+		       'traits'  => array(
+					'username'  => $user->user_login,
+					'email'     => $user->user_email,
+					'firstName' => $user->user_firstname,
+					'lastName'  => $user->user_lastname,
+		       	)
+		    )
+		);
+    	Segment_curl::track(
+		    array(
+		       	'userId' => $user->ID,
+				'event' => 'User registered',
+		    )
+		);
+    }
+}
+
+add_action( 'wc_memberships_grant_membership_access_from_purchase', 'tms_track_full_access_pass', 10, 2 );
+function tms_track_full_access_pass( $membership_plan, $args ) {
+
+	// If the tracking library isn't active, stop here
+	if ( !class_exists( 'Segment_Cookie' ) ) {
+		return;
+	}
+
+	// If this isn't the full access pass membership plan, stop
+	if ( !$membership_plan->id == 3737 ) {
+		return;
+	}
+
+	$user_id = $args['user_id'];
+	Segment_Cookie::set_cookie( 'Full Access Pass', json_encode( $user_id ) );
 }
