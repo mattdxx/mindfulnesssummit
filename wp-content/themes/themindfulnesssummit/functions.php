@@ -92,3 +92,20 @@ function add_facebook_tracking_pixel( $order_id ) {
 <?php
 
 }
+
+/**
+ * When customer makes a purchase, remove the Free Plan if user has that membership
+ */
+add_action( 'wc_memberships_grant_membership_access_from_purchase', 'remove_free_membership_after_purchase', 20, 2 );
+function remove_free_membership_after_purchase( $new_membership_plan, $args ) {
+
+	$memberships = wc_memberships_get_user_memberships( $args['user_id'] );
+	foreach ( $memberships as $membership ) {
+
+		if ( $membership->plan_id == '3734' ){
+			$_membership = wc_memberships_get_user_membership( $membership->id );
+			$_membership->cancel_membership( 'User upgraded to Paid access. Order ID #' . $args['order_id'] );
+		}
+	}
+
+}
