@@ -112,7 +112,7 @@ Segment_curl::init(
 	)
 );
 
-add_action( 'user_register', 'analytics_on_user_registration', 10, 1 );
+//add_action( 'user_register', 'analytics_on_user_registration', 10, 1 );
 function analytics_on_user_registration( $user_id ) {
     // if ( isset( $_POST['first_name'] ) )
     //     update_user_meta($user_id, 'first_name', $_POST['first_name']);
