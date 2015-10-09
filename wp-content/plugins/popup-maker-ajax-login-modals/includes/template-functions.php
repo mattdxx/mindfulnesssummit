@@ -38,7 +38,7 @@ function popmake_alm_footer_links( $which = array() ) {
 
 		case 'recovery':
 			if( popmake_get_popup_ajax_recovery( $popmake_recovery_modal, 'enabled' ) ) { ?>
-				<li><?php _e( 'Lost your password?' ); ?> <a href='<?php echo wp_lostpassword_url(); ?>' class='popmake-<?php echo $popmake_recovery_modal; ?> popswitch-recovery'><?php _e( 'Click here', 'popup-maker-ajax-login-modals' ); ?></a></li><?php
+				<li><?php _e( 'Lost your password?' ); ?> <a href='<?php echo wp_lostpassword_url(); ?>' class='popswitch-recovery'><?php _e( 'Click here', 'popup-maker-ajax-login-modals' ); ?></a></li><?php
 			}
 			break;
 
