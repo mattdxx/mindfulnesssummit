@@ -9,29 +9,16 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		transition: opacity .5s ease-out;
-		-moz-transition: opacity .5s ease-out;
-		-webkit-transition: opacity .5s ease-out;
-		-o-transition: opacity .5s ease-out;
 	}
 
 	.gdlr-image-wrapper {
 		opacity: 1;
 		margin-left: -15px;
 		margin-right: -15px;
+		cursor: pointer;
 	}
 
 	.gdlr-shortcode-wrapper {
-		opacity: 0;
+		display:none;
 	}
-
-	// &:hover {
-	// 	.gdlr-image-wrapper {
-	// 		opacity: 0;
-	// 	}
-
-	// 	.gdlr-shortcode-wrapper {
-	// 		opacity: 1;
-	// 	}
-	// }
 }
