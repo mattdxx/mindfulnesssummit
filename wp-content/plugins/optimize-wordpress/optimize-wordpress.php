@@ -2,7 +2,7 @@
 /*
 Plugin Name: Optimize Wordpress
 Description: Optimize wordpress to speed up the whole process
-Version: 1.3
+Version: 1.4.1
 Author: Stratos Nikolaidis
 Author URI: https://gr.linkedin.com/in/stratosnikolaidis
 Plugin URI: https://gr.linkedin.com/in/stratosnikolaidis
@@ -178,6 +178,6 @@ Yes, it's responsive also. :)
 */
 add_action('wp_enqueue_scripts', 'gdlr_with_imageload_scripts');
 function gdlr_with_imageload_scripts() {
-    wp_enqueue_style('gdlr-with-image', plugin_dir_url(__FILE__).'assets/css/gdlr-with-image.min.css');
-    wp_enqueue_script('gdlr-with-image', plugin_dir_url(__FILE__).'assets/js/gdlr-with-image.min.js', array(), '1.0.0', true);
+    wp_enqueue_style('gdlr-with-image', plugin_dir_url(__FILE__).'assets/css/gdlr-with-image.css');
+    wp_enqueue_script('gdlr-with-image', plugin_dir_url(__FILE__).'assets/js/gdlr-with-image.js', array(), '1.1.1', true);
 }
