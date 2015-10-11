@@ -153,3 +153,31 @@ function tms_track_full_access_pass( $membership_plan, $args ) {
 	$user_id = $args['user_id'];
 	Segment_Cookie::set_cookie( 'Full Access Pass', json_encode( $user_id ) );
 }
+
+
+/*
+How to use the following scripts. Right now, the shortcode [wcm_restrict plans="free-members"] is like this:
+
+<div class="gdlr-item gdlr-column-shortcode">
+    <div class="gdlr-shortcode-wrapper">
+        ...
+
+By using this code, we change it like this:
+
+<div class="gdlr-item gdlr-column-shortcode with-image">
+    <div class="gdlr-image-wrapper">
+        <img src="http://mindsummit.staging.wpengine.com/wp-content/uploads/2015/10/r1.jpg">
+    </div>
+    <div class="gdlr-shortcode-wrapper">
+        ...
+
+And the magic begins. The page by default will display the gdlr-image section, and on hover (or touch) the
+page will fade out the image and replace it with the the gdlr-shortcode section (fade in).
+
+Yes, it's responsive also. :)
+*/
+add_action('wp_enqueue_scripts', 'gdlr_with_imageload_scripts');
+function gdlr_with_imageload_scripts() {
+    wp_enqueue_style('gdlr-with-image', plugin_dir_url(__FILE__).'assets/css/gdlr-with-image.min.css');
+    wp_enqueue_script('gdlr-with-image', plugin_dir_url(__FILE__).'assets/js/gdlr-with-image.min.js', array(), '1.0.0', true);
+}
