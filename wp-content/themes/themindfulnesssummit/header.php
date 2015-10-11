@@ -26,10 +26,10 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php
 	
-	if (is_user_logged_in() && is_page(1631) ) {
-		wp_redirect('/affiliate-area/');
-		exit;
-	}
+		if (is_user_logged_in() && affwp_is_affiliate() && is_page(1631) ) {
+			wp_redirect('/affiliate-area/');
+			exit;
+		}
 	
 		if( !empty($gdlr_post_option) ){ $gdlr_post_option = json_decode($gdlr_post_option, true); }
 
