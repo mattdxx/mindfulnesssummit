@@ -1,7 +1,6 @@
 (function ($) {
 	$('.gdlr-item.gdlr-column-shortcode.with-image')
 		.on('click', function() {
-			console.log('CLICK: .gdlr-item.gdlr-column-shortcode.with-image .gdlr-image-wrapper');
 			var $this = $(this);
 			if ($('.gdlr-image-wrapper', $this).css('display') == 'block') {
 				$this.css('height', $('.gdlr-shortcode-wrapper', $this).height() + 'px');
@@ -10,7 +9,6 @@
 			}
 		})
 		.on('mouseleave', function() {
-			console.log('CLICK: .gdlr-item.gdlr-column-shortcode.with-image .gdlr-shortcode-wrapper');
 			var $this = $(this);
 			if ($('.gdlr-shortcode-wrapper', $this).css('display') == 'block') {
 				$this.css('height', $('.gdlr-image-wrapper', $this).height() + 'px');
