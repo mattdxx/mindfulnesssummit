@@ -22,15 +22,32 @@
 	.gdlr-shortcode-wrapper {
 		display:none;
 	}
+
+	.gdlr-box-with-icon-item.pos-left {
+		.gdlr-button-wrapper {
+			margin: 20px auto;
+			display: block;
+			width: auto;
+			text-align: center;
+		}
+	}
+	&.extra-height {
+		.gdlr-box-with-icon-item.pos-left {
+			padding: 50px !important;
+			.gdlr-button-wrapper {
+				margin: 30px auto;
+			}
+		}
+	}
 }
 
 @media (max-width: 600px) {
-	.gdlr-box-with-icon-item.pos-left {
-	    padding: 15px 20px 10px !important;
-	}
-	.gdlr-button.small {
-	    display: block;
-	    margin: 10px auto;
-	    text-align: center
+	.gdlr-item.gdlr-column-shortcode.with-image, .gdlr-item.gdlr-column-shortcode.with-image.extra-height {
+		.gdlr-box-with-icon-item.pos-left {
+		    padding: 15px 20px 10px !important;
+			.gdlr-button-wrapper {
+				margin: 10px auto;
+			}
+		}
 	}
 }
