@@ -19,7 +19,7 @@
   margin-left: -15px;
   margin-right: -15px;
   cursor: pointer;
-  width: 100%;
+  width: 104%;
 }
 .gdlr-item.gdlr-column-shortcode.with-image .gdlr-shortcode-wrapper {
   display: none;
@@ -44,5 +44,21 @@
   .gdlr-item.gdlr-column-shortcode.with-image .gdlr-box-with-icon-item.pos-left .gdlr-button-wrapper,
   .gdlr-item.gdlr-column-shortcode.with-image.extra-height .gdlr-box-with-icon-item.pos-left .gdlr-button-wrapper {
     margin: 10px auto;
+  }
+  .gdlr-item.gdlr-column-shortcode.with-image .gdlr-image-wrapper,
+  .gdlr-item.gdlr-column-shortcode.with-image.extra-height .gdlr-image-wrapper {
+    width: 106%;
+  }
+}
+@media (max-width: 480px) {
+  .gdlr-item.gdlr-column-shortcode.with-image .gdlr-image-wrapper,
+  .gdlr-item.gdlr-column-shortcode.with-image.extra-height .gdlr-image-wrapper {
+    width: 108%;
+  }
+}
+@media (max-width: 320px) {
+  .gdlr-item.gdlr-column-shortcode.with-image .gdlr-image-wrapper,
+  .gdlr-item.gdlr-column-shortcode.with-image.extra-height .gdlr-image-wrapper {
+    width: 112%;
   }
 }

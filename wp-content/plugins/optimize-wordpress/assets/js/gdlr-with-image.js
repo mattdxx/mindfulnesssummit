@@ -25,6 +25,9 @@
 					    return $element.css("display") == "block";
 				});
 			if ($inner_element.length == 1) {
+				if ($inner_element.hasClass('gdlr-image-wrapper')) {
+					$inner_element.css('width', ($wrapper.width() + 30) + 'px');
+				}
 				$wrapper.css('height', $inner_element.height() + 'px');
 			}
 		});
