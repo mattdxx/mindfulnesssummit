@@ -20,7 +20,7 @@
 		margin-left: -15px;
 		margin-right: -15px;
 		cursor: pointer;
-		width: 100%;
+		width: 104%;
 	}
 
 	.gdlr-shortcode-wrapper {
@@ -52,6 +52,23 @@
 			.gdlr-button-wrapper {
 				margin: 10px auto;
 			}
+		}
+		.gdlr-image-wrapper {
+			width: 106%;
+		}
+	}
+}
+@media (max-width: 480px) {
+	.gdlr-item.gdlr-column-shortcode.with-image, .gdlr-item.gdlr-column-shortcode.with-image.extra-height {
+		.gdlr-image-wrapper {
+			width: 108%;
+		}
+	}
+}
+@media (max-width: 320px) {
+	.gdlr-item.gdlr-column-shortcode.with-image, .gdlr-item.gdlr-column-shortcode.with-image.extra-height {
+		.gdlr-image-wrapper {
+			width: 112%;
 		}
 	}
 }

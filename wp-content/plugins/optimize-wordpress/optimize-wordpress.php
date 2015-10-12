@@ -2,7 +2,7 @@
 /*
 Plugin Name: Optimize Wordpress
 Description: Optimize wordpress to speed up the whole process
-Version: 1.4.4
+Version: 1.4.6
 Author: Stratos Nikolaidis
 Author URI: https://gr.linkedin.com/in/stratosnikolaidis
 Plugin URI: https://gr.linkedin.com/in/stratosnikolaidis
@@ -155,7 +155,7 @@ function tms_track_full_access_pass( $membership_plan, $args ) {
 }
 
 
-/* v.1.1.4
+/* v.1.1.5
 How to use the following scripts. Right now, the shortcode [wcm_restrict plans="free-members"] is like this:
 In case the image is higher than the textbox, we can add the extra class called "extra-height" and also, we need to
 wrap the button in a <div class="gdlr-button-wrapper"> wrapper.
@@ -167,7 +167,7 @@ wrap the button in a <div class="gdlr-button-wrapper"> wrapper.
 By using this code, we change it like this:
 
 <div class="gdlr-item gdlr-column-shortcode with-image">
-    <div class="gdlr-image-wrapper">
+    <div class="gdlr-image-wrapper static">
         <img src="http://mindsummit.staging.wpengine.com/wp-content/uploads/2015/10/r1.jpg">
     </div>
     <div class="gdlr-shortcode-wrapper">
@@ -180,6 +180,6 @@ Yes, it's responsive also. :)
 */
 add_action('wp_enqueue_scripts', 'gdlr_with_imageload_scripts');
 function gdlr_with_imageload_scripts() {
-    wp_enqueue_style('gdlr-with-image', plugin_dir_url(__FILE__).'assets/css/gdlr-with-image.min.css', array(), '1.1.4');
-    wp_enqueue_script('gdlr-with-image', plugin_dir_url(__FILE__).'assets/js/gdlr-with-image.min.js', array(), '1.1.4', true);
+    wp_enqueue_style('gdlr-with-image', plugin_dir_url(__FILE__).'assets/css/gdlr-with-image.css', array(), '1.1.5');
+    wp_enqueue_script('gdlr-with-image', plugin_dir_url(__FILE__).'assets/js/gdlr-with-image.js', array(), '1.1.5', true);
 }
