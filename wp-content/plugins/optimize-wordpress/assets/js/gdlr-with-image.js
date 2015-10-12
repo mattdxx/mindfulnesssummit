@@ -33,6 +33,12 @@
 		resize_gdlr_with_image();
 	});
 	$(document).ready(function() {
-		setTimeout(function() {resize_gdlr_with_image();}, 1000);
+		setTimeout(function() {
+			resize_gdlr_with_image();
+			$('.gdlr-item.gdlr-column-shortcode.with-image .gdlr-image-wrapper.static').each(function() {
+				var $image = $(this);
+				$image.removeClass('static');
+			});
+		}, 1000);
 	});
 }(jQuery));
