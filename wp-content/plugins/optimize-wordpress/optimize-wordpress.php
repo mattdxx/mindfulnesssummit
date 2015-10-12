@@ -2,7 +2,7 @@
 /*
 Plugin Name: Optimize Wordpress
 Description: Optimize wordpress to speed up the whole process
-Version: 1.4.7
+Version: 1.4.8
 Author: Stratos Nikolaidis
 Author URI: https://gr.linkedin.com/in/stratosnikolaidis
 Plugin URI: https://gr.linkedin.com/in/stratosnikolaidis
@@ -155,7 +155,7 @@ function tms_track_full_access_pass( $membership_plan, $args ) {
 }
 
 
-/* v.1.1.6
+/* v.1.1.7
 How to use the following scripts. Right now, the shortcode [wcm_restrict plans="free-members"] is like this:
 In case the image is higher than the textbox, we can add the extra class called "extra-height" and also, we need to
 wrap the button in a <div class="gdlr-button-wrapper"> wrapper.
@@ -178,8 +178,8 @@ page will fade out the image and replace it with the the gdlr-shortcode section 
 
 Yes, it's responsive also. :)
 */
-add_action('wp_enqueue_scripts', 'gdlr_with_imageload_scripts');
+add_action('wp_enqueue_scripts', 'gdlr_with_imageload_scripts', 99);
 function gdlr_with_imageload_scripts() {
-    wp_enqueue_style('gdlr-with-image', plugin_dir_url(__FILE__).'assets/css/gdlr-with-image.min.css', array(), '1.1.6');
-    wp_enqueue_script('gdlr-with-image', plugin_dir_url(__FILE__).'assets/js/gdlr-with-image.min.js', array(), '1.1.6', true);
+    wp_enqueue_style('gdlr-with-image', plugin_dir_url(__FILE__).'assets/css/gdlr-with-image.min.css', array(), '1.1.7');
+    wp_enqueue_script('gdlr-with-image', plugin_dir_url(__FILE__).'assets/js/gdlr-with-image.min.js', array(), '1.1.7', true);
 }
