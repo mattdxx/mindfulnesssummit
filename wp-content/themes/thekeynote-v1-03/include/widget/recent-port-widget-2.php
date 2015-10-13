@@ -21,7 +21,7 @@ if( !class_exists('Goodlayers_Recent_Portfolio2') ){
 
 		// Initialize the widget
 		function __construct() {
-			parent::WP_Widget(
+			parent::__construct(
 				'gdlr-recent-portfolio2-widget', 
 				__('Goodlayers Recent Portfolio 2 Widget','gdlr_translate'), 
 				array('description' => __('A widget that show lastest portfolios in 2nd style', 'gdlr_translate')));  

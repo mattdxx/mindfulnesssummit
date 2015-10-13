@@ -21,7 +21,7 @@ if( !class_exists('Goodlayers_Port_Slider') ){
 
 		// Initialize the widget
 		function __construct() {
-			parent::WP_Widget(
+			parent::__construct(
 				'gdlr-port-slider-widget', 
 				__('Goodlayers Port Slider Widget','gdlr_translate'), 
 				array('description' => __('A widget that show lastest portfolios in slider format', 'gdlr_translate')));  
