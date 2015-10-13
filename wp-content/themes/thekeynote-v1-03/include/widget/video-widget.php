@@ -21,7 +21,7 @@ if( !class_exists('Goodlayers_Video_Widget') ){
 
 		// Initialize the widget
 		function __construct() {
-			parent::WP_Widget(
+			parent::__construct(
 				'gdlr-video-widget', 
 				__('Goodlayers Video Widget','gdlr_translate'), 
 				array('description' => __('A widget that show video specify by url', 'gdlr_translate')));  

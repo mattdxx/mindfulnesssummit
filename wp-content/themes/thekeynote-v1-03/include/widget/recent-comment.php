@@ -21,7 +21,7 @@ if( !class_exists('Goodlayers_Recent_Comment') ){
 
 		// Initialize the widget
 		function __construct() {
-			parent::WP_Widget(
+			parent::__construct(
 				'gdlr-recent-comment-widget', 
 				__('Goodlayers Recent Comment Widget','gdlr_translate'), 
 				array('description' => __('A widget that show lastest comment', 'gdlr_translate')));  
