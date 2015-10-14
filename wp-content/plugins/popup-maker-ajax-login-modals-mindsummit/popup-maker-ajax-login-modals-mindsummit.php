@@ -36,7 +36,7 @@
 			private function hooks()
 			{
 				add_action('user_register', array($this, 'update_user'));
-				add_filter('registration_errors', array($this, 'check_login'));
+				//add_filter('registration_errors', array($this, 'check_login')); //Commented out for now, since check_login() doesn't do anything
 				add_action('wp_enqueue_scripts', array($this, 'fix_js'));
 				add_action('wp_enqueue_scripts', array($this, 'fix_css'));
 				add_action('wp_head', array($this, 'print_variables'));
