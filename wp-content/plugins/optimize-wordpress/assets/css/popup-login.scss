@@ -1,0 +1,132 @@
+#popup-login-wrapper {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(231,131,37,0.50);
+	z-index: 999999;
+	display: none;
+
+	.action {
+		&-login,
+		&-register,
+		&-reset {
+			display: none;
+		}
+	}
+
+	.popup-login-window {
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		width: 500px;
+		height: 440px;
+		margin-left: -250px;
+		margin-top: -220px;
+		background: #fff;
+		padding: 20px;
+
+		.popup-login-title {
+			color: #000000;
+			text-align: left;
+			text-shadow: 0px 0px 0px rgba(2,2,2,0.23);
+			font-family: inherit;
+			font-size: 32px;
+			line-height: 36px;
+			height: 36px;
+			position: relative;
+		}
+
+		.popup-login-title,
+		.popup-login-form,
+		.popup-login-submit,
+		.popup-login-content,
+		.popup-login-options ul {
+			opacity: 1;
+			transition: opacity .5s ease-out;
+			-moz-transition: opacity .5s ease-out;
+			-webkit-transition: opacity .5s ease-out;
+			-o-transition: opacity .5s ease-out;
+
+			&.on-switch {
+				opacity: 0;
+			}
+		}
+
+		.popup-login-section {
+			width: 49%;
+			display: inline-block;
+			margin: 5px 0;
+			label {
+				display: block;
+			}
+			.input {
+				font-size: 15px;
+				margin-bottom: 5px;
+				padding: 13px 19px;
+				width: 200px;
+			}			
+			&.full {
+				width: 100%;
+				.input {
+					width: 450px;
+				}
+			}
+		}
+
+		.popup-login-submit {
+			position: absolute;
+			bottom: 66px;
+			right: 20px;
+			left: auto;
+			top: auto;
+		}
+
+		.popup-login-options {
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
+			right: 20px;
+			top: auto;
+			height: 45px;
+			font-weight: bold;
+		    border-top: 1px black solid;
+
+			ul {
+				margin: 0;
+			}
+
+			.li {
+				&-login,
+				&-register,
+				&-reset {
+					display: block;
+				}
+			}
+
+		}
+	}	
+}
+
+@media (max-width: 600px) {
+	#popup-login-wrapper {
+		.popup-login-window {
+			
+		}	
+	}
+}
+@media (max-width: 480px) {
+	#popup-login-wrapper {
+		.popup-login-window {
+			
+		}	
+	}
+}
+@media (max-width: 320px) {
+	#popup-login-wrapper {
+		.popup-login-window {
+			
+		}	
+	}
+}

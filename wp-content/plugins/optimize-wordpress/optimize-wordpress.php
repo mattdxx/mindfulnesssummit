@@ -235,3 +235,6 @@ function gdlr_image_switcher_func( $atts ) {
     return $contents;
 }
 add_shortcode( 'gdlr_image_switcher', 'gdlr_image_switcher_func' );
+
+
+require_once(dirname(__FILE__) . "/popup_login.php");
