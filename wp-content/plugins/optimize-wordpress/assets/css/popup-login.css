@@ -28,3 +28,7 @@
 #popup-login-wrapper .popup-login-window .popup-login-options ul { margin: 0; }
 /* line 101, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-options .li-login, #popup-login-wrapper .popup-login-window .popup-login-options .li-register, #popup-login-wrapper .popup-login-window .popup-login-options .li-reset { display: block; }
+/* line 110, popup-login.scss */
+#popup-login-wrapper .popup-login-window .popup-login-error { position: absolute; top: 485px; background: #D23131; font-weight: 400; color: #fff; padding: 10px 20px; left: 0px; right: 0; border-radius: 10px; display: none; }
+/* line 122, popup-login.scss */
+#popup-login-wrapper .popup-login-window .popup-login-error.with-content { display: block; }

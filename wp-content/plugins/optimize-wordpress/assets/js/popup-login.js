@@ -1,8 +1,5 @@
 (function ($) {
 
-	$('.action-register', '#popup-login-popup').show();
-	$('.popup-login-options .li-register').hide();
-
 	$('.popup-login-options .popup-login-cta').on('click', function(e) {
 		e.preventDefault();
 		var $this = $(this),
