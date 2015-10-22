@@ -1,5 +1,5 @@
 <?php
-/* v.1.0.0
+/* v.1.0.1
 New popup login procedure.
 
 Yes, it's responsive also. :)
@@ -154,8 +154,8 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 $active_page = 'login';
             }
 
-            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.0', true);
-            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.0');
+            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.1', true);
+            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.1');
         } // register_popup_login_script
 
         public function print_popup_login_script() {
@@ -166,8 +166,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
 <div id="popup-login-wrapper">
     <div id="popup-login-popup" class="popup-login-window">
         <div id="popup-login-logo">
-            <!-- img src="/wp-content/uploads/2015/05/The-Mindfulness-Summit3.png" -->
-            <img src="http://cdn.themindfulnesssummit.com/wp-content/uploads/2015/05/The-Mindfulness-Summit3.png">
+            <img src="/wp-content/uploads/2015/05/The-Mindfulness-Summit3.png">
         </div>
         <div class="popup-login-title">
             <span class="action-login">Login</span>
