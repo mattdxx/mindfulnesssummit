@@ -1,11 +1,8 @@
 <?php
-/* v.0.3.0
+/* v.1.0.0
 New popup login procedure.
 
 Yes, it's responsive also. :)
-
-http://themindfulnesssummit.dev.com/sessions/joseph-goldstein/
-CN9h*!pWVgrJIk7B
 */
 
 # Exit if accessed directly
@@ -19,7 +16,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
         private static $instance;
         private $active_page = 'register';
         private $is_error = false;
-        private $error_message = '';
+        private $error_message = false;
         private $variables = array(
             'login' => array(
                 'email' => '',
@@ -29,47 +26,48 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 'email' => '',
             ),
         );
+        private $action_successful = false;
 
-        public static function instance()
-        {
+        public static function instance() {
             if (!self::$instance)
             {
                 self::$instance = new Popup_Login_Custom_Window();
                 self::$instance->hooks();
             }
             return self::$instance;
-        }
+        } // instance
 
-        private function hooks()
-        {
+        private function hooks() {
             add_action('init', array($this, 'register_popup_login_script'));
             add_action('wp_footer', array($this, 'print_popup_login_script'));
-        }
+        } // hooks
 
         public function register_popup_login_script() {
 
             if (($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['is-popup-login'])) {
 
-                $action = $_POST['action'];
-                if ("login" == strtolower($action)) {
+                $action = strtolower($_POST['action']);
+                if ("login" == $action) {
 
                     $this->active_page = 'login';
                     $this->variables['login']['email'] = $_POST['login']['email'];
 
-                    $creds = array();
-                    $creds['user_login'] = $_POST['login']['email'];
-                    $creds['user_password'] = $_POST['login']['password'];
-                    $creds['remember'] = false;
+                    $creds = array(
+                        'user_login' => $_POST['login']['email'],
+                        'user_password' => $_POST['login']['password'],
+                        'remember' => false,
+                    );
                     $user = wp_signon( $creds, false );
                     if ( is_wp_error($user) ) {
                         $this->is_error = true;
-                        $this->error_message = $user->get_error_message();
+                        $this->error_message = __( $user->get_error_message() );
                     } else {
                         // Crazy part: Wordpress was completing the login process but didn't set the current user. :S
                         wp_set_current_user($user->ID);
+                        $this->action_successful = 'login';
                     }
 
-                } elseif ("register" == strtolower($action)) {
+                } elseif ("register" == $action) {
 
                     $this->active_page = 'register';
                     $this->variables['register']['name'] = $_POST['register']['name'];
@@ -77,51 +75,88 @@ if (!class_exists('Popup_Login_Custom_Window'))
 
                     $user_id = username_exists( $_POST['register']['email'] );
                     if ( !$user_id and email_exists($_POST['register']['email']) == false ) {
+
                         $user_id = wp_create_user( $_POST['register']['email'], $_POST['register']['password'], $_POST['register']['email'] );
                         if ( is_wp_error($user_id) ) {
                             $this->is_error = true;
-                            $this->error_message = $user_id->get_error_message();
+                            $this->error_message = __( $user_id->get_error_message() );
                         } else {
+                            // Let's update the user's information
                             wp_update_user(array(
                                 'ID' => $user_id,
                                 'user_nicename' => $_POST['register']['name'],
                                 'display_name' => $_POST['register']['name'],
                                 ));
+
+                            // Time to login now
+                            $creds = array(
+                                'user_login' => $_POST['register']['email'],
+                                'user_password' => $_POST['register']['password'],
+                                'remember' => false,
+                            );
+                            $user = wp_signon( $creds, false );
+                            if ( is_wp_error($user) ) {
+                                $this->is_error = true;
+                                $this->error_message = __( $user->get_error_message() );
+                            } else {
+                                // Crazy part: Wordpress was completing the login process but didn't set the current user. :S
+                                wp_set_current_user($user->ID);
+                                $this->action_successful = 'register';
+                            }
                         }
                     } else {
-                        $this->is_error = true;
-                        $this->error_message = 'User already exists.';
+                        // Here we need to make sure that the user doesn't click the "reload", because the system will try to re-register the user.
+                        $current_user_ID = get_current_user_id();
+                        if ($user_id != $current_user_ID) {
+                            $this->is_error = true;
+                            $this->error_message = __( 'User already exists' );
+                        }
                     }
 
-                } elseif ("submit" == strtolower($action)) {
+                } elseif ("reset" == $action) {
 
                     $this->active_page = 'reset';
 
-                    $user_id = username_exists( $_POST['register']['email'] );
+                    $user_id = username_exists( $_POST['reset']['email'] );
                     if ( !$user_id ) {
-                        $user_id = email_exists($_POST['register']['email']);
+                        $user_id = email_exists($_POST['reset']['email']);
                     }
                     if ($user_id) {
-                        $random_password = wp_generate_password();
-                        wp_update_user(array(
-                            'ID' => $user_id,
-                            'user_pass' => $random_password,
-                        ));
-                    } else {
-                        $this->is_error = true;
-                        $this->error_message = 'Invalid username or e-mail.';
+
+                        $user = new WP_User( $user_id );
+                        if ( true === ($this->error_message = $this->reset_password( $user )) ) {
+                            // In successfull reset password procedure, we need to display the login once more.
+                            $this->active_page = 'login';
+                        } else {
+                            $this->is_error = true;
+                        }
+                    // } else {
+                    //     $this->is_error = true;
+                    //     $this->error_message = 'Invalid username or e-mail.';
                     }
 
                 } else {
                     // Unknown action, let them show once more the login popup.
                     $this->is_error = true;
-                    $this->error_message = 'Invalid action.';
+                    $this->error_message = __( 'Invalid action.' );
                 }
+
+                // Let's unset the variables, we don't need them any more.
+                unset($_POST['action']);
+                unset($_POST['is-popup-login']);
+                unset($_POST['login']['email']);
+                unset($_POST['login']['password']);
+                unset($_POST['register']['name']);
+                unset($_POST['register']['email']);
+                unset($_POST['register']['password']);
+                unset($_POST['reset']['email']);
+            } elseif (isset($_GET['pop']) && ($_GET['pop'] == 'login')) {
+                $active_page = 'login';
             }
 
-            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '0.0.1', true);
-            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '0.0.1');
-        }
+            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.0', true);
+            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.0');
+        } // register_popup_login_script
 
         public function print_popup_login_script() {
 
@@ -144,15 +179,16 @@ if (!class_exists('Popup_Login_Custom_Window'))
             <span class="action-register">Instantly access the mindfulness summit by finishing your 'free access pass' registration. If you created a password already click login down below.</span>
             <span class="action-reset">You forgot your password? No problem dude. Here we are to help you. Just provide us your username or email and we'll send you a new password! How cool is this?</span>
         </div>
-        <form method="POST">
+        <form method="POST" id="popup-login-form">
             <input type="hidden" name="is-popup-login" value="1">
+            <input type="hidden" name="action" value="<?php echo $this->active_page ?>">
             <div class="popup-login-form">
                 <div class="action-login">
                     <div class="popup-login-section">
                         <label for="login-email">Email</label>
                         <input type="text" name="login[email]" id="login-email" class="input" value="<?php echo $this->variables['login']['email'] ?>" placeholder="Email" autocomplete="off">
                     </div>
-                    <div class="popup-login-section">
+                    <div class="popup-login-section right">
                         <label for="login-password">Password</label>
                         <input type="password" name="login[password]" id="login-password" class="input" value="" placeholder="Password" autocomplete="off">
                     </div>
@@ -166,7 +202,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
                         <label for="register-email">Email</label>
                         <input type="text" name="register[email]" id="register-email" class="input" value="<?php echo $this->variables['register']['email'] ?>" placeholder="Email" autocomplete="off">
                     </div>
-                    <div class="popup-login-section">
+                    <div class="popup-login-section right">
                         <label for="register-password">Password</label>
                         <input type="password" name="register[password]" id="register-password" class="input" value="" placeholder="Password" autocomplete="off">
                     </div>
@@ -179,9 +215,9 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 </div>
             </div>
             <div class="popup-login-submit">
-                <input type="submit" name="action" id="submit" class="button-primary action-login" value="Login">
-                <input type="submit" name="action" id="submit" class="button-primary action-register" value="Register">
-                <input type="submit" name="action" id="submit" class="button-primary action-reset" value="Submit">
+                <input type="submit" name="submit" id="submit-login" class="button-primary action-login" value="Login">
+                <input type="submit" name="submit" id="submit-register" class="button-primary action-register" value="Register">
+                <input type="submit" name="submit" id="submit-reset" class="button-primary action-reset" value="Submit">
             </div>
         </form>
         <div class="popup-login-options">
@@ -191,8 +227,9 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 <li class="li-reset">Lost your password? <a href="#" class="popup-login-cta" data-rel="reset">Click here</a></li>
             </ul>
         </div>
-        <div class="popup-login-error <?php if ($this->is_error): ?>with-content<?php endif ?>">
-            <?php echo $this->error_message ?>
+        <div class="popup-login-error">
+            <span></span>
+            <a href="#" class="popup-login-error-close" title="close">×</a>
         </div>
     </div>
 </div>
@@ -201,15 +238,77 @@ if (!class_exists('Popup_Login_Custom_Window'))
     $(document).ready(function() {
         $('.action-<?php echo $this->active_page ?>', '#popup-login-popup').show();
         $('.popup-login-options .li-<?php echo $this->active_page ?>').hide();
+
+        setTimeout(function() {
+            $('#popup-login-wrapper').fadeIn(600, function() {
+                $('body').addClass('no-scroll');
+            });
+        }, 2000);
+        <?php if ($this->is_error): ?>
+        setTimeout(function() {
+            showError('<?php echo $this->error_message ?>');
+        }, 4000);
+        <?php endif ?>
     });
 }(jQuery));
 </script>
-
 <?php
                 wp_print_styles('popup-login');
                 wp_print_scripts('popup-login');
             }
-        }
+        } // print_popup_login_script
+
+        private function reset_password( $user ) {
+            global $wpdb, $wp_hasher;
+
+            // Redefining user_login ensures we return the right case in the email.
+            $user_login = $user->user_login;
+            $user_email = $user->user_email;
+
+            do_action( 'retreive_password', $user_login );
+            do_action( 'retrieve_password', $user_login );
+            $allow = apply_filters( 'allow_password_reset', true, $user->ID );
+
+            if ( ! $allow ) {
+                return 'Password reset is not allowed for this user';
+            } elseif ( is_wp_error( $allow ) ) {
+                return $allow;
+            }
+
+            // Generate something random for a password reset key.
+            $key = wp_generate_password( 20, false );
+            do_action( 'retrieve_password_key', $user_login, $key );
+
+            // Now insert the key, hashed, into the DB.
+            if ( empty( $wp_hasher ) ) {
+                require_once ABSPATH . WPINC . '/class-phpass.php';
+                $wp_hasher = new PasswordHash( 8, true );
+            }
+            $hashed = time() . ':' . $wp_hasher->HashPassword( $key );
+            $wpdb->update( $wpdb->users, array( 'user_activation_key' => $hashed ), array( 'user_login' => $user_login ) );
+
+            $message = __('Someone requested that the password be reset for the following account:') . "\r\n\r\n";
+            $message .= network_home_url( '/' ) . "\r\n\r\n";
+            $message .= sprintf(__('Username: %s'), $user_login) . "\r\n\r\n";
+            $message .= __('If this was a mistake, just ignore this email and nothing will happen.') . "\r\n\r\n";
+            $message .= __('To reset your password, visit the following address:') . "\r\n\r\n";
+            $message .= '<' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login') . ">\r\n";
+
+            if ( is_multisite() )
+                $blogname = $GLOBALS['current_site']->site_name;
+            else
+                $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
+
+            $title = sprintf( __('[%s] Password Reset'), $blogname );
+            $title = apply_filters( 'retrieve_password_title', $title );
+            $message = apply_filters( 'retrieve_password_message', $message, $key, $user_login, $user );
+
+            if ( $message && !wp_mail( $user_email, wp_specialchars_decode( $title ), $message ) )
+                return __('The e-mail could not be sent.') . "<br />\n" . __('Possible reason: your host may have disabled the mail() function.');
+
+            return true;
+        } // reset_password
+
     } // class Popup_Login_Custom_Window
 } // if class_exists
 
@@ -217,3 +316,46 @@ add_action('plugins_loaded', 'Popup_Login_Custom_Window_Load');
 function Popup_Login_Custom_Window_Load() {
     Popup_Login_Custom_Window::instance();
 }
+
+
+// This part is based on the corresponding Gerasimov Eugene's code. Thanks man!
+if (!class_exists('Popup_Login_PassResetRedir')) {
+    class Popup_Login_PassResetRedir {
+        private static $instance;
+        
+        public static function instance() {
+            if (!self::$instance) {
+                self::$instance = new Popup_Login_PassResetRedir();
+                self::$instance->hooks();
+            }
+            return self::$instance;
+        }
+        
+        private function hooks() {
+            add_action('login_head', array($this, 'redir'));
+        }
+
+        public function redir() {
+            ?>
+<script>
+function redir() {
+    if (document.getElementsByClassName("reset-pass").length > 0) {
+        var message = document.getElementsByClassName("reset-pass")[0].innerHTML;
+        if (message.match(/Your password has been reset/)) {
+            document.getElementsByClassName("reset-pass")[0].innerHTML = 'Your password has been reset. You will be redirected shortly.';
+            window.setTimeout(function(){
+                window.location.href = '/live?pop=login';
+            }, 5000);
+        }
+    }
+}
+window.onload = redir;
+</script>
+            <?php
+        }
+        
+    } // class Popup_Login_PassResetRedir
+} // if (!class_exists('Popup_Login_PassResetRedir'))
+
+preg_match('~^/wp-login.php~', $_SERVER['REQUEST_URI']) and
+    Popup_Login_PassResetRedir::instance();
