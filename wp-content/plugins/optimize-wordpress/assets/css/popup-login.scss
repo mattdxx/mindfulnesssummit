@@ -119,7 +119,6 @@ body.no-scroll {
 					}
 				}
 			}
-
 		}
 
 		.popup-login-error{
@@ -128,7 +127,7 @@ body.no-scroll {
 			background: #D23131;
 			font-weight: 400;
 			color: #fff;
-			padding: 10px 20px;
+			padding: 10px 30px 10px 20px;
 			left: 0px;
 			right: 0;
 			border-radius: 10px;
@@ -139,7 +138,11 @@ body.no-scroll {
 			}
 
 			.popup-login-error-close {
-				float: right;
+				position: absolute;
+				right: 15px;
+				top: 30%;
+				left: auto;
+				bottom: auto;
 				text-decoration: none;
 				font-size: 20px;
 				line-height: 16px;
@@ -152,6 +155,10 @@ body.no-scroll {
 
 			&.with-content {
 				display: block;
+			}
+
+			&.info {
+				background: #4343FF;
 			}
 		}
 	}	
@@ -177,6 +184,9 @@ body.no-scroll {
 			    	display: none;
 		    	}
 	    	}
+			.popup-login-error {
+				top: 440px;
+			}
 		}	
 	}
 }

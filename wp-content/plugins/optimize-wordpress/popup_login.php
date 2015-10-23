@@ -1,5 +1,5 @@
 <?php
-/* v.1.0.1
+/* v.1.0.2
 New popup login procedure.
 
 Yes, it's responsive also. :)
@@ -16,7 +16,8 @@ if (!class_exists('Popup_Login_Custom_Window'))
         private static $instance;
         private $active_page = 'register';
         private $is_error = false;
-        private $error_message = false;
+        private $output_message = false;
+        private $is_info = false;
         private $variables = array(
             'login' => array(
                 'email' => '',
@@ -60,7 +61,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
                     $user = wp_signon( $creds, false );
                     if ( is_wp_error($user) ) {
                         $this->is_error = true;
-                        $this->error_message = __( $user->get_error_message() );
+                        $this->output_message = __( $user->get_error_message() );
                     } else {
                         // Crazy part: Wordpress was completing the login process but didn't set the current user. :S
                         wp_set_current_user($user->ID);
@@ -79,7 +80,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
                         $user_id = wp_create_user( $_POST['register']['email'], $_POST['register']['password'], $_POST['register']['email'] );
                         if ( is_wp_error($user_id) ) {
                             $this->is_error = true;
-                            $this->error_message = __( $user_id->get_error_message() );
+                            $this->output_message = __( $user_id->get_error_message() );
                         } else {
                             // Let's update the user's information
                             wp_update_user(array(
@@ -97,7 +98,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
                             $user = wp_signon( $creds, false );
                             if ( is_wp_error($user) ) {
                                 $this->is_error = true;
-                                $this->error_message = __( $user->get_error_message() );
+                                $this->output_message = __( $user->get_error_message() );
                             } else {
                                 // Crazy part: Wordpress was completing the login process but didn't set the current user. :S
                                 wp_set_current_user($user->ID);
@@ -109,7 +110,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
                         $current_user_ID = get_current_user_id();
                         if ($user_id != $current_user_ID) {
                             $this->is_error = true;
-                            $this->error_message = __( 'User already exists' );
+                            $this->output_message = __( 'User already exists' );
                         }
                     }
 
@@ -122,23 +123,24 @@ if (!class_exists('Popup_Login_Custom_Window'))
                         $user_id = email_exists($_POST['reset']['email']);
                     }
                     if ($user_id) {
-
                         $user = new WP_User( $user_id );
-                        if ( true === ($this->error_message = $this->reset_password( $user )) ) {
+                        if ( true === ($this->output_message = $this->reset_password( $user )) ) {
                             // In successfull reset password procedure, we need to display the login once more.
                             $this->active_page = 'login';
+                            $this->is_info = true;
+                            $this->output_message = 'Password recovery email has been sent, please check your mailbox.';
                         } else {
                             $this->is_error = true;
+                            $this->output_message = 'Could not send the reset email, please try again.';
                         }
                     // } else {
                     //     $this->is_error = true;
-                    //     $this->error_message = 'Invalid username or e-mail.';
+                    //     $this->output_message = 'Invalid username or e-mail.';
                     }
-
                 } else {
                     // Unknown action, let them show once more the login popup.
                     $this->is_error = true;
-                    $this->error_message = __( 'Invalid action.' );
+                    $this->output_message = __( 'Invalid action.' );
                 }
 
                 // Let's unset the variables, we don't need them any more.
@@ -150,17 +152,22 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 unset($_POST['register']['email']);
                 unset($_POST['register']['password']);
                 unset($_POST['reset']['email']);
-            } elseif (isset($_GET['pop']) && ($_GET['pop'] == 'login')) {
-                $active_page = 'login';
             }
 
-            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.1', true);
-            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.1');
+            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.2', true);
+            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.2');
         } // register_popup_login_script
 
         public function print_popup_login_script() {
 
             if (!is_user_logged_in() && ("post" == get_post_type())) {
+
+                if ( $username = ($_COOKIE['popup_email'] !='' ? $_COOKIE['popup_email'] : false) ) {
+                    $this->variables['login']['email'] = $_COOKIE['popup_email'];
+                    $this->active_page = 'login';
+                    unset($_COOKIE['popup_email']);
+                    setcookie('popup_email', null, -1, '/');
+                }
 
 ?>
 <div id="popup-login-wrapper">
@@ -243,10 +250,16 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 $('body').addClass('no-scroll');
             });
         }, 2000);
-        <?php if ($this->is_error): ?>
-        setTimeout(function() {
-            showError('<?php echo $this->error_message ?>');
-        }, 4000);
+        <?php if ($this->is_error || $this->is_info): ?>
+            setTimeout(function() {
+            <?php if ($this->is_error): ?>
+                console.log('showError');
+                showError('<?php echo $this->output_message ?>');
+            <?php else: ?>
+                console.log('showInfo');
+                showInfo('<?php echo $this->output_message ?>');
+            <?php endif ?>
+            }, 4000);
         <?php endif ?>
     });
 }(jQuery));
@@ -321,11 +334,16 @@ function Popup_Login_Custom_Window_Load() {
 if (!class_exists('Popup_Login_PassResetRedir')) {
     class Popup_Login_PassResetRedir {
         private static $instance;
+        private $username;
         
-        public static function instance() {
+        public static function instance($username) {
             if (!self::$instance) {
                 self::$instance = new Popup_Login_PassResetRedir();
+                self::$instance->username = $username;
                 self::$instance->hooks();
+                if ($username) {
+                    setcookie('popup_username', $username, time() + 60*60*24, '/');
+                }
             }
             return self::$instance;
         }
@@ -335,6 +353,14 @@ if (!class_exists('Popup_Login_PassResetRedir')) {
         }
 
         public function redir() {
+            if ( $username = ($_COOKIE['popup_username'] !='' ? $_COOKIE['popup_username'] : false) ) {
+                $user = get_user_by( 'login', $username );
+                if ($user) {
+                    setcookie('popup_email', $user->user_email, time() + 60*60*24, '/');
+                }
+                unset($_COOKIE['popup_username']);
+                setcookie('popup_username', null, -1, '/');
+            }
             ?>
 <script>
 function redir() {
@@ -343,7 +369,7 @@ function redir() {
         if (message.match(/Your password has been reset/)) {
             document.getElementsByClassName("reset-pass")[0].innerHTML = 'Your password has been reset. You will be redirected shortly.';
             window.setTimeout(function(){
-                window.location.href = '/live?pop=login';
+                window.location.href = '/live';
             }, 5000);
         }
     }
@@ -356,5 +382,6 @@ window.onload = redir;
     } // class Popup_Login_PassResetRedir
 } // if (!class_exists('Popup_Login_PassResetRedir'))
 
-preg_match('~^/wp-login.php~', $_SERVER['REQUEST_URI']) and
-    Popup_Login_PassResetRedir::instance();
+if (preg_match('~^/wp-login.php~', $_SERVER['REQUEST_URI'])) {
+    Popup_Login_PassResetRedir::instance( isset($_GET['login']) ? $_GET['login'] : false );
+}
