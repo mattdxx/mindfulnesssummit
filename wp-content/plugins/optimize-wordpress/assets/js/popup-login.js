@@ -1,6 +1,24 @@
 function showError(errorMsg) {
 	var errorElm = jQuery('.popup-login-error'),
 		updateMessage = function() {
+			errorElm.removeClass('info');
+			errorElm.find('span').html(errorMsg);
+			errorElm.fadeIn();
+		}
+	if (errorElm.length > 0) {
+		if ('block' == errorElm.css('display')) {
+			errorElm.fadeOut(400, function() {
+				updateMessage();
+			});
+		} else {
+			updateMessage();
+		}
+	}
+}
+function showInfo(errorMsg) {
+	var errorElm = jQuery('.popup-login-error'),
+		updateMessage = function() {
+			errorElm.addClass('info');
 			errorElm.find('span').html(errorMsg);
 			errorElm.fadeIn();
 		}
@@ -16,7 +34,12 @@ function showError(errorMsg) {
 }
 
 function hideError() {
-	jQuery('.popup-login-error').fadeOut();
+	jQuery('.popup-login-error').fadeOut(400, function() {
+		jQuery('.popup-login-error').removeClass('info');
+	});
+}
+function hideInfo() {
+	hideError();
 }
 
 (function ($) {

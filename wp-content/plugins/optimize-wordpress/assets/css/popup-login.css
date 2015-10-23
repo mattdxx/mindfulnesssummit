@@ -35,22 +35,26 @@ body.no-scroll { overflow: hidden; }
 #popup-login-wrapper .popup-login-window .popup-login-options .li-login, #popup-login-wrapper .popup-login-window .popup-login-options .li-register, #popup-login-wrapper .popup-login-window .popup-login-options .li-reset { display: block; }
 /* line 116, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-options .li-login a.disabled, #popup-login-wrapper .popup-login-window .popup-login-options .li-register a.disabled, #popup-login-wrapper .popup-login-window .popup-login-options .li-reset a.disabled { cursor: not-allowed; pointer-events: none; }
-/* line 125, popup-login.scss */
-#popup-login-wrapper .popup-login-window .popup-login-error { position: absolute; top: 485px; background: #D23131; font-weight: 400; color: #fff; padding: 10px 20px; left: 0px; right: 0; border-radius: 10px; display: none; }
-/* line 137, popup-login.scss */
+/* line 124, popup-login.scss */
+#popup-login-wrapper .popup-login-window .popup-login-error { position: absolute; top: 485px; background: #D23131; font-weight: 400; color: #fff; padding: 10px 30px 10px 20px; left: 0px; right: 0; border-radius: 10px; display: none; }
+/* line 136, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-error span a { display: none; }
-/* line 141, popup-login.scss */
-#popup-login-wrapper .popup-login-window .popup-login-error .popup-login-error-close { float: right; text-decoration: none; font-size: 20px; line-height: 16px; margin-top: 4px; color: #fff; }
-/* line 148, popup-login.scss */
+/* line 140, popup-login.scss */
+#popup-login-wrapper .popup-login-window .popup-login-error .popup-login-error-close { position: absolute; right: 15px; top: 30%; left: auto; bottom: auto; text-decoration: none; font-size: 20px; line-height: 16px; margin-top: 4px; color: #fff; }
+/* line 151, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-error .popup-login-error-close:hover { color: #bebebe; }
-/* line 153, popup-login.scss */
+/* line 156, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-error.with-content { display: block; }
+/* line 160, popup-login.scss */
+#popup-login-wrapper .popup-login-window .popup-login-error.info { background: #4343FF; }
 
-@media (max-width: 600px) { /* line 162, popup-login.scss */
+@media (max-width: 600px) { /* line 169, popup-login.scss */
   #popup-login-wrapper .popup-login-window { position: fixed; left: 0; top: 0; width: 100%; height: 440px; margin-left: 0; margin-top: 0; background: #fff; padding: 20px; border-radius: 0 0 10px 10px; box-sizing: border-box; }
-  /* line 176, popup-login.scss */
-  #popup-login-wrapper .popup-login-window .popup-login-section label { display: none; } }
-@media (max-width: 480px) { /* line 185, popup-login.scss */
+  /* line 183, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-section label { display: none; }
+  /* line 187, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-error { top: 440px; } }
+@media (max-width: 480px) { /* line 195, popup-login.scss */
   #popup-login-wrapper .popup-login-window { padding: 10px; border-radius: 0 0 5px 5px; }
-  /* line 188, popup-login.scss */
+  /* line 198, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-title { font-size: 26px; line-height: 30px; height: 30px; text-align: center; } }
