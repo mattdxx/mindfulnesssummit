@@ -1,5 +1,5 @@
 <?php
-/* v.1.0.4
+/* v.1.0.6
 New popup login procedure.
 
 Yes, it's responsive also. :)
@@ -163,8 +163,8 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 unset($_POST['reset']['email']);
             }
 
-            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.4', true);
-            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.4');
+            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.6', true);
+            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.6');
         } // register_popup_login_script
 
         public function print_popup_login_script() {
