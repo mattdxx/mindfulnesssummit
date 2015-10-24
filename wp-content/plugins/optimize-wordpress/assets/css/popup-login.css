@@ -6,55 +6,87 @@ body.no-scroll { overflow: hidden; }
 /* line 15, popup-login.scss */
 #popup-login-wrapper .action-login, #popup-login-wrapper .action-register, #popup-login-wrapper .action-reset { display: none; }
 /* line 22, popup-login.scss */
-#popup-login-wrapper .popup-login-window { position: fixed; left: 50%; top: 50%; width: 500px; height: 440px; margin-left: -270px; margin-top: -240px; background: #fff; padding: 20px; border-radius: 10px; }
-/* line 34, popup-login.scss */
+#popup-login-wrapper .popup-login-window { position: fixed; left: 50%; top: 50%; width: 500px; height: 430px; margin-left: -270px; margin-top: -240px; background: #fff; padding: 20px; border-radius: 10px; -webkit-box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8); -moz-box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8); -ms-box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8); -o-box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8); }
+/* line 39, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba(2, 2, 2, 0.23); font-family: inherit; font-size: 32px; line-height: 36px; height: 36px; position: relative; }
-/* line 45, popup-login.scss */
+/* line 50, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-title, #popup-login-wrapper .popup-login-window .popup-login-form, #popup-login-wrapper .popup-login-window .popup-login-submit, #popup-login-wrapper .popup-login-window .popup-login-content, #popup-login-wrapper .popup-login-window .popup-login-options ul { opacity: 1; transition: opacity .5s ease-out; -moz-transition: opacity .5s ease-out; -webkit-transition: opacity .5s ease-out; -o-transition: opacity .5s ease-out; }
-/* line 56, popup-login.scss */
-#popup-login-wrapper .popup-login-window .popup-login-title.on-switch, #popup-login-wrapper .popup-login-window .popup-login-form.on-switch, #popup-login-wrapper .popup-login-window .popup-login-submit.on-switch, #popup-login-wrapper .popup-login-window .popup-login-content.on-switch, #popup-login-wrapper .popup-login-window .popup-login-options ul.on-switch { opacity: 0; }
 /* line 61, popup-login.scss */
+#popup-login-wrapper .popup-login-window .popup-login-title.on-switch, #popup-login-wrapper .popup-login-window .popup-login-form.on-switch, #popup-login-wrapper .popup-login-window .popup-login-submit.on-switch, #popup-login-wrapper .popup-login-window .popup-login-content.on-switch, #popup-login-wrapper .popup-login-window .popup-login-options ul.on-switch { opacity: 0; }
+/* line 66, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-section { width: 49%; display: inline-block; margin: 5px 0; }
-/* line 65, popup-login.scss */
+/* line 70, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-section label { display: block; }
-/* line 68, popup-login.scss */
+/* line 73, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-section .input { font-size: 15px; margin-bottom: 5px; padding: 13px 19px; width: 100%; box-sizing: border-box; }
-/* line 75, popup-login.scss */
+/* line 80, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-section.full { width: 100%; }
-/* line 78, popup-login.scss */
-#popup-login-wrapper .popup-login-window .popup-login-section.right { float: right; }
 /* line 83, popup-login.scss */
-#popup-login-wrapper .popup-login-window .popup-login-submit { position: absolute; bottom: 66px; right: 20px; left: auto; top: auto; }
-/* line 90, popup-login.scss */
+#popup-login-wrapper .popup-login-window .popup-login-section.right { float: right; }
+/* line 88, popup-login.scss */
+#popup-login-wrapper .popup-login-window .popup-login-submit { position: absolute; bottom: 56px; right: 20px; left: auto; top: auto; }
+/* line 95, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-submit input[type="submit"]:disabled { cursor: not-allowed; color: #bebebe; }
-/* line 96, popup-login.scss */
-#popup-login-wrapper .popup-login-window .popup-login-options { position: absolute; bottom: 20px; left: 20px; right: 20px; top: auto; height: 45px; font-weight: bold; border-top: 1px black solid; }
-/* line 106, popup-login.scss */
-#popup-login-wrapper .popup-login-window .popup-login-options ul { margin: 0; }
+/* line 101, popup-login.scss */
+#popup-login-wrapper .popup-login-window .popup-login-options { position: absolute; bottom: 10px; left: 20px; right: 20px; top: auto; height: 45px; font-weight: bold; border-top: 1px black solid; }
 /* line 111, popup-login.scss */
-#popup-login-wrapper .popup-login-window .popup-login-options .li-login, #popup-login-wrapper .popup-login-window .popup-login-options .li-register, #popup-login-wrapper .popup-login-window .popup-login-options .li-reset { display: block; }
+#popup-login-wrapper .popup-login-window .popup-login-options ul { margin: 0; }
 /* line 116, popup-login.scss */
+#popup-login-wrapper .popup-login-window .popup-login-options .li-login, #popup-login-wrapper .popup-login-window .popup-login-options .li-register, #popup-login-wrapper .popup-login-window .popup-login-options .li-reset { display: block; }
+/* line 121, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-options .li-login a.disabled, #popup-login-wrapper .popup-login-window .popup-login-options .li-register a.disabled, #popup-login-wrapper .popup-login-window .popup-login-options .li-reset a.disabled { cursor: not-allowed; pointer-events: none; }
-/* line 124, popup-login.scss */
-#popup-login-wrapper .popup-login-window .popup-login-error { position: absolute; top: 485px; background: #D23131; font-weight: 400; color: #fff; padding: 10px 30px 10px 20px; left: 0px; right: 0; border-radius: 10px; display: none; }
-/* line 136, popup-login.scss */
+/* line 129, popup-login.scss */
+#popup-login-wrapper .popup-login-window .popup-login-error { position: absolute; background: rgba(210, 49, 49, 0.9); font-weight: 400; color: #fff; padding: 10px 30px 10px 20px; top: auto; bottom: 10px; left: 10px; right: 10px; border-radius: 10px; display: none; z-index: 10; }
+/* line 144, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-error span a { display: none; }
-/* line 140, popup-login.scss */
-#popup-login-wrapper .popup-login-window .popup-login-error .popup-login-error-close { position: absolute; right: 15px; top: 30%; left: auto; bottom: auto; text-decoration: none; font-size: 20px; line-height: 16px; margin-top: 4px; color: #fff; }
-/* line 151, popup-login.scss */
+/* line 148, popup-login.scss */
+#popup-login-wrapper .popup-login-window .popup-login-error .popup-login-error-close { position: absolute; right: 15px; top: 50%; left: auto; bottom: auto; text-decoration: none; font-size: 20px; margin-top: -16px; color: #fff; }
+/* line 158, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-error .popup-login-error-close:hover { color: #bebebe; }
-/* line 156, popup-login.scss */
+/* line 163, popup-login.scss */
 #popup-login-wrapper .popup-login-window .popup-login-error.with-content { display: block; }
-/* line 160, popup-login.scss */
-#popup-login-wrapper .popup-login-window .popup-login-error.info { background: #4343FF; }
+/* line 167, popup-login.scss */
+#popup-login-wrapper .popup-login-window .popup-login-error.info { background: rgba(67, 67, 255, 0.9); }
 
-@media (max-width: 600px) { /* line 169, popup-login.scss */
+@media (max-width: 600px) { /* line 176, popup-login.scss */
   #popup-login-wrapper .popup-login-window { position: fixed; left: 0; top: 0; width: 100%; height: 440px; margin-left: 0; margin-top: 0; background: #fff; padding: 20px; border-radius: 0 0 10px 10px; box-sizing: border-box; }
-  /* line 183, popup-login.scss */
+  /* line 190, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-section label { display: none; } }
+@media (max-width: 480px) { /* line 199, popup-login.scss */
+  #popup-login-wrapper .popup-login-window { padding: 10px 10px 0 10px; border-radius: 0 0 5px 5px; height: 390px; }
+  /* line 204, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-title { font-size: 26px; line-height: 30px; height: 30px; text-align: center; }
+  /* line 211, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-section { width: 100%; margin: 0; }
+  /* line 214, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-section .input { padding: 8px 14px; }
+  /* line 219, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-submit input[type="submit"] { padding: 8px 14px; margin-bottom: 5px; } }
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) { /* line 240, popup-login.scss */
+  #popup-login-wrapper .popup-login-window { height: 100%; margin-top: 0; top: 0; box-sizing: border-box; }
+  /* line 246, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-section label { display: none; }
-  /* line 187, popup-login.scss */
-  #popup-login-wrapper .popup-login-window .popup-login-error { top: 440px; } }
-@media (max-width: 480px) { /* line 195, popup-login.scss */
-  #popup-login-wrapper .popup-login-window { padding: 10px; border-radius: 0 0 5px 5px; }
-  /* line 198, popup-login.scss */
-  #popup-login-wrapper .popup-login-window .popup-login-title { font-size: 26px; line-height: 30px; height: 30px; text-align: center; } }
+  /* line 250, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-submit input[type="submit"] { position: absolute; bottom: -63px; right: -5px; padding: 12px 16px; z-index: 9; } }
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) { /* line 266, popup-login.scss */
+  #popup-login-wrapper .popup-login-window { height: 100%; margin-top: 0; top: 0; box-sizing: border-box; }
+  /* line 272, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-section label { display: none; }
+  /* line 276, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-submit input[type="submit"] { position: absolute; bottom: -63px; right: -5px; padding: 12px 16px; z-index: 9; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) { /* line 292, popup-login.scss */
+  #popup-login-wrapper .popup-login-window { height: 100%; border-radius: 0; }
+  /* line 296, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-options { bottom: 10px; }
+  /* line 300, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-section { margin: 0; }
+  /* line 303, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-section .input { padding: 8px 14px; }
+  /* line 306, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-submit input[type="submit"] { position: absolute; bottom: -63px; right: -5px; padding: 12px 16px; z-index: 9; }
+  /* line 313, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-error { bottom: 7px; border-radius: 2px; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) { /* line 327, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-section { width: 49%; }
+  /* line 330, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-submit input[type="submit"] { bottom: -54px; } }

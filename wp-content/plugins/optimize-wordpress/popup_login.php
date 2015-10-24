@@ -1,5 +1,5 @@
 <?php
-/* v.1.0.2
+/* v.1.0.3
 New popup login procedure.
 
 Yes, it's responsive also. :)
@@ -133,9 +133,9 @@ if (!class_exists('Popup_Login_Custom_Window'))
                             $this->is_error = true;
                             $this->output_message = 'Could not send the reset email, please try again.';
                         }
-                    // } else {
-                    //     $this->is_error = true;
-                    //     $this->output_message = 'Invalid username or e-mail.';
+                    } else {
+                        $this->is_error = true;
+                        $this->output_message = 'Invalid e-mail.';
                     }
                 } else {
                     // Unknown action, let them show once more the login popup.
@@ -154,8 +154,8 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 unset($_POST['reset']['email']);
             }
 
-            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.2', true);
-            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.2');
+            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.3', true);
+            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.3');
         } // register_popup_login_script
 
         public function print_popup_login_script() {
@@ -215,8 +215,8 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 </div>
                 <div class="action-reset">
                     <div class="popup-login-section full">
-                        <label for="reset-email">Username or Email</label>
-                        <input type="text" name="reset[email]" id="reset-email" class="input" value="" placeholder="Username or Email" autocomplete="off">
+                        <label for="reset-email">Email</label>
+                        <input type="text" name="reset[email]" id="reset-email" class="input" value="" placeholder="Email" autocomplete="off">
                     </div>
                 </div>
             </div>
