@@ -183,7 +183,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
         <div class="popup-login-content">
             <span class="action-login">Login to the mindfulness summit. You will have access to everything in here!</span>
             <span class="action-register">Instantly access the mindfulness summit by finishing your 'free access pass' registration. If you created a password already click login down below.</span>
-            <span class="action-reset">You forgot your password? No problem dude. Here we are to help you. Just provide us your username or email and we'll send you a new password! How cool is this?</span>
+            <span class="action-reset">In case you forgot you password, please submit the form below and we'll send you an email to reset it.</span>
         </div>
         <form method="POST" id="popup-login-form">
             <input type="hidden" name="is-popup-login" value="1">
