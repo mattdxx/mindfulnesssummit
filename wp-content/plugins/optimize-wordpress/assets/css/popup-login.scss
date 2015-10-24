@@ -76,6 +76,23 @@ body.no-scroll {
 				padding: 13px 19px;
 				width: 100%;
 				box-sizing: border-box;
+
+				&::-webkit-input-placeholder {
+				    color: #f4f4f4;
+				}
+				&:-moz-placeholder {
+				    /* FF 4-18 */
+				    color: #f4f4f4;
+				}
+				&::-moz-placeholder {
+				    /* FF 19+ */
+				    color: #f4f4f4;
+				}
+				&:-ms-input-placeholder {
+				    /* IE 10+ */
+				    color: #f4f4f4;
+				}
+
 			}			
 			&.full {
 				width: 100%;
@@ -190,6 +207,23 @@ body.no-scroll {
 	    		label {
 			    	display: none;
 		    	}
+		    	.input {
+					&::-webkit-input-placeholder {
+					    color: inherit;
+					}
+					&:-moz-placeholder {
+					    /* FF 4-18 */
+					    color: inherit;
+					}
+					&::-moz-placeholder {
+					    /* FF 19+ */
+					    color: inherit;
+					}
+					&:-ms-input-placeholder {
+					    /* IE 10+ */
+					    color: inherit;
+					}
+		    	}
 	    	}
 		}	
 	}
@@ -251,8 +285,27 @@ body.no-scroll {
 			top: 0;
 			box-sizing: border-box;
 
-			.popup-login-section label {
-				display: none;
+			.popup-login-section {
+				label {
+					display: none;
+				}
+				.input {
+					&::-webkit-input-placeholder {
+					    color: inherit;
+					}
+					&:-moz-placeholder {
+					    /* FF 4-18 */
+					    color: inherit;
+					}
+					&::-moz-placeholder {
+					    /* FF 19+ */
+					    color: inherit;
+					}
+					&:-ms-input-placeholder {
+					    /* IE 10+ */
+					    color: inherit;
+					}
+				}
 			}
 		}
 	}
@@ -273,8 +326,27 @@ body.no-scroll {
 			box-sizing: border-box;
 			height: 440px;
 
-			.popup-login-section label {
-				display: none;
+			.popup-login-section {
+				label {
+					display: none;
+				}
+				.input {
+					&::-webkit-input-placeholder {
+					    color: inherit;
+					}
+					&:-moz-placeholder {
+					    /* FF 4-18 */
+					    color: inherit;
+					}
+					&::-moz-placeholder {
+					    /* FF 19+ */
+					    color: inherit;
+					}
+					&:-ms-input-placeholder {
+					    /* IE 10+ */
+					    color: inherit;
+					}
+				}
 			}
 
 			.popup-login-error {
