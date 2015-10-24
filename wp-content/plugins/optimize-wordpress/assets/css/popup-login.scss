@@ -196,7 +196,9 @@ body.no-scroll {
 }
 @media (max-width: 480px) {
 	#popup-login-wrapper {
+		overflow: auto;
 		.popup-login-window {
+			position: absolute;
 			padding: 10px 10px 0 10px;
 			border-radius: 0 0 5px 5px;
 			height: 390px;
@@ -220,6 +222,10 @@ body.no-scroll {
 				padding: 8px 14px;
 				margin-bottom: 5px;
 			}
+
+			.popup-login-error {
+				bottom: 55px;
+			}
 		}	
 	}
 }
@@ -237,22 +243,17 @@ body.no-scroll {
   and (max-device-width: 736px) 
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) { 
-	#popup-login-wrapper .popup-login-window {
-		height: 100%;
-		margin-top: 0;
-		top: 0;
-		box-sizing: border-box;
-
-		.popup-login-section label {
-			display: none;
-		}
-
-		.popup-login-submit input[type="submit"] {
+	#popup-login-wrapper {
+		overflow: auto;
+		.popup-login-window {
 			position: absolute;
-			bottom: -63px;
-			right: -5px;
-			padding: 12px 16px;
-			z-index: 9;
+			margin-top: 0;
+			top: 0;
+			box-sizing: border-box;
+
+			.popup-login-section label {
+				display: none;
+			}
 		}
 	}
 }
@@ -263,22 +264,22 @@ body.no-scroll {
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-	#popup-login-wrapper .popup-login-window {
-		height: 100%;
-		margin-top: 0;
-		top: 0;
-		box-sizing: border-box;
-
-		.popup-login-section label {
-			display: none;
-		}
-
-		.popup-login-submit input[type="submit"] {
+	#popup-login-wrapper {
+		overflow: auto;
+		.popup-login-window {
 			position: absolute;
-			bottom: -63px;
-			right: -5px;
-			padding: 12px 16px;
-			z-index: 9;
+			margin-top: 0;
+			top: 0;
+			box-sizing: border-box;
+			height: 440px;
+
+			.popup-login-section label {
+				display: none;
+			}
+
+			.popup-login-error {
+				bottom: 35px;
+			}
 		}
 	}
 }
@@ -289,30 +290,26 @@ body.no-scroll {
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-	#popup-login-wrapper .popup-login-window {
-		height: 100%;
-		border-radius: 0;
-
-		.popup-login-options {
-			bottom: 10px;
-		}
-
-		.popup-login-section {
-			margin: 0;
-		}
-		.popup-login-section .input {
-			padding: 8px 14px;
-		}
-		.popup-login-submit input[type="submit"] {
+	#popup-login-wrapper {
+		overflow: auto;
+		.popup-login-window {
 			position: absolute;
-			bottom: -63px;
-			right: -5px;
-			padding: 12px 16px;
-			z-index: 9;
-		}
-		.popup-login-error {
-			bottom: 7px;
-			border-radius: 2px;
+			height: 400px;
+			border-radius: 0;
+
+			.popup-login-options {
+				bottom: 10px;
+			}
+
+			.popup-login-section {
+				margin: 0;
+			}
+			.popup-login-section .input {
+				padding: 8px 14px;
+			}
+			.popup-login-error {
+				bottom: 35px;
+			}
 		}
 	}
 }
@@ -323,12 +320,20 @@ body.no-scroll {
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-  	#popup-login-wrapper .popup-login-window {
-  		.popup-login-section {
-  			width: 49%;
-  		}
-  		.popup-login-submit input[type="submit"] {
-  			bottom: -54px;
-  		}
-  	}
+	#popup-login-wrapper {
+		overflow: auto;
+		.popup-login-window {
+			position: absolute;
+			height: 350px;
+			border-radius: 0;
+
+			.popup-login-section {
+				width: 49%;
+			}
+
+			.popup-login-submit input[type="submit"] {
+				bottom: -54px;
+			}
+		}
+	}
 }

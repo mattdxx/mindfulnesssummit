@@ -1,8 +1,17 @@
 <?php
-/* v.1.0.3
+/* v.1.0.6
 New popup login procedure.
 
 Yes, it's responsive also. :)
+
+To enable the plugin in live, the following changes need to be applied in the plugins:
+
+- Disable the following plugins:
+  - Popup Maker - AJAX Login Modals
+  - Popup Maker - AJAX Login Modals Fix for MindSummit
+
+- Delete (or disable) the "Register Form" popup from Popup Maker "All popups" page
+
 */
 
 # Exit if accessed directly
@@ -154,8 +163,8 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 unset($_POST['reset']['email']);
             }
 
-            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.3', true);
-            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.3');
+            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.6', true);
+            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.6');
         } // register_popup_login_script
 
         public function print_popup_login_script() {
