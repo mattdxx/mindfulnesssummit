@@ -1,11 +1,19 @@
+var visible = false,
+	popupTimer = {};
 function showError(errorMsg) {
 	var errorElm = jQuery('.popup-login-error'),
 		updateMessage = function() {
 			errorElm.removeClass('info');
 			errorElm.find('span').html(errorMsg);
-			errorElm.fadeIn();
+			errorElm.fadeIn(400, function() {
+				popupTimer = setTimeout(function() {
+					hideError();
+				}, 3000);
+			});
+ 
 		}
 	if (errorElm.length > 0) {
+		clearTimeout(popupTimer);
 		if ('block' == errorElm.css('display')) {
 			errorElm.fadeOut(400, function() {
 				updateMessage();
@@ -20,11 +28,16 @@ function showInfo(errorMsg) {
 		updateMessage = function() {
 			errorElm.addClass('info');
 			errorElm.find('span').html(errorMsg);
-			errorElm.fadeIn();
+			errorElm.fadeIn(600, function() {
+				popupTimer = setTimeout(function() {
+					hideInfo();
+				}, 3000);
+			});
 		}
 	if (errorElm.length > 0) {
+		clearTimeout(popupTimer);
 		if ('block' == errorElm.css('display')) {
-			errorElm.fadeOut(400, function() {
+			errorElm.fadeOut(600, function() {
 				updateMessage();
 			});
 		} else {
@@ -34,7 +47,8 @@ function showInfo(errorMsg) {
 }
 
 function hideError() {
-	jQuery('.popup-login-error').fadeOut(400, function() {
+	clearTimeout(popupTimer);
+	jQuery('.popup-login-error').fadeOut(600, function() {
 		jQuery('.popup-login-error').removeClass('info');
 	});
 }
@@ -90,7 +104,7 @@ function hideInfo() {
 				password = $('#register-password').val().trim(),
 				re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
 
-			if ((name == '') || (name.length < 5)) {
+			if ((name == '') || (name.length < 2)) {
 				cont = false;
 				errMsg = 'Please enter a valid name.';
 			} else if (email == '' || !re.test(email)) {
@@ -101,7 +115,12 @@ function hideInfo() {
 				errMsg = 'Password cannot be empty.';
 			}
 		} else if ('reset' == action) {
-
+			var email = $('#reset-email').val().trim(),
+				re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+			if (email == '' || !re.test(email)) {
+				cont = false;
+				errMsg = 'Please enter a valid email address.';
+			}
 		}
 
 		if (!cont) {
