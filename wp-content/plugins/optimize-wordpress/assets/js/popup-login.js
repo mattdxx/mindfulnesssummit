@@ -62,10 +62,12 @@ function hideInfo() {
 		var $this = $(this),
 			$this_li = $this.parent(),
 			$this_ul = $this_li.parent(),
-			action = $this.data('rel');
+			action = $this.data('rel'),
+			prev_action = $('#popup-login-form input[name="action"]').val();
 
-		$('#popup-login-popup .popup-login-title, #popup-login-popup .popup-login-content, #popup-login-popup .popup-login-form, #popup-login-popup .popup-login-submit, .popup-login-options ul').addClass('on-switch');
-		$('#popup-login-form input[name="action"]').val(action);
+		$('#popup-login-popup .popup-login-title, #popup-login-popup .popup-login-content, #popup-login-popup .popup-login-form, #popup-login-popup .popup-login-submit, .popup-login-options ul').addClass('on-switch'); // Hide the classes
+		$('#' + action + '-email').val($('#' + prev_action + '-email').val()); // Copy the entered email from action to action
+		$('#popup-login-form input[name="action"]').val(action); // Set the new action
 		window.setTimeout(function () {
 			$('#popup-login-popup .action-login, #popup-login-popup .action-register, #popup-login-popup .action-reset').not('#popup-login-popup .action-' + action).hide();
 			$('.popup-login-options .li-login, .popup-login-options .li-register, .popup-login-options .li-reset').not('.popup-login-options .li-' + action).show();

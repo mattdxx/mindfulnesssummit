@@ -83,10 +83,21 @@ if (!class_exists('Popup_Login_Custom_Window'))
                     $this->variables['register']['name'] = $_POST['register']['name'];
                     $this->variables['register']['email'] = $_POST['register']['email'];
 
-                    $user_id = username_exists( $_POST['register']['email'] );
-                    if ( !$user_id and email_exists($_POST['register']['email']) == false ) {
+                    // Create the username as part of the email.
+                    $parts = explode("@", "johndoe@domain.com");
+                    
+                    // Remove all special characters from email
+                    $username = str_replace(' ', '-', $this->variables['register']['email']);
+                    $username = preg_replace('/[^A-Za-z0-9\-]/', '', $username);
+                    $random = rand(10000, 99999);
+                    // Add a random number and try to create the user:
+                    while ( username_exists( $username.'-'. $random ) ) {
+                        $random = rand(10000, 99999);
+                    }
+                    // $user_id = username_exists( $_POST['register']['email'] );
+                    if ( email_exists($_POST['register']['email']) == false ) {
 
-                        $user_id = wp_create_user( $_POST['register']['email'], $_POST['register']['password'], $_POST['register']['email'] );
+                        $user_id = wp_create_user( $username.'-'. $random, $_POST['register']['password'], $_POST['register']['email'] );
                         if ( is_wp_error($user_id) ) {
                             $this->is_error = true;
                             $this->output_message = __( $user_id->get_error_message() );
@@ -119,14 +130,13 @@ if (!class_exists('Popup_Login_Custom_Window'))
                         $current_user_ID = get_current_user_id();
                         if ($user_id != $current_user_ID) {
                             $this->is_error = true;
-                            $this->output_message = __( 'User already exists' );
+                            $this->output_message = __( 'Email already exists' );
                         }
                     }
 
                 } elseif ("reset" == $action) {
 
                     $this->active_page = 'reset';
-
                     $user_id = username_exists( $_POST['reset']['email'] );
                     if ( !$user_id ) {
                         $user_id = email_exists($_POST['reset']['email']);
@@ -161,6 +171,14 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 unset($_POST['register']['email']);
                 unset($_POST['register']['password']);
                 unset($_POST['reset']['email']);
+
+            } elseif (isset($_GET['pop'])) {
+                // Check URL parameters are prioritized:
+                $this->active_page = 'register';
+                $this->variables['register']['name'] = isset($_GET['fullname']) ? $_GET['fullname'] : '';
+                $this->variables['register']['email'] = isset($_GET['email']) ? $_GET['email'] : '';
+                $this->is_error = false;
+                $this->is_info = false;
             }
 
             wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.7', true);
