@@ -68,9 +68,10 @@ remove_action( 'woocommerce_email_customer_details', array( 'WC_Emails', 'email_
 
 /**
  * Add Facebook tracking pixel to Thank You Page
+ *
+ * Actual adding is done in /themes/mindfulnesssummit/woocommerce/checkout/thankyou.php
  */
-add_action( 'woocommerce_thankyou', 'add_facebook_tracking_pixel');
-function add_facebook_tracking_pixel( $order_id ) {
+function add_facebook_tracking_pixel() {
 
 	?>
 	<!-- Facebook Pixel Code -->
@@ -82,7 +83,7 @@ function add_facebook_tracking_pixel( $order_id ) {
 			document,'script','//connect.facebook.net/en_US/fbevents.js');
 
 		fbq('init', '879433708806402');
-		fbq('track', 'Purchase', {value: '79', currency: 'USD'});
+		fbq('track', 'Purchase', {value: '99', currency: 'USD'});
 		fbq('track', 'PageView');
 	</script>
 	<noscript><img height="1" width="1" style="display:none"
