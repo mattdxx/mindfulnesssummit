@@ -31,7 +31,7 @@ function showInfo(errorMsg) {
 			errorElm.fadeIn(600, function() {
 				popupTimer = setTimeout(function() {
 					hideInfo();
-				}, 3000);
+				}, 5000);
 			});
 		}
 	if (errorElm.length > 0) {
