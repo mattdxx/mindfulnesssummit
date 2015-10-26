@@ -24,7 +24,7 @@ body.no-scroll {
 		left: 50%;
 		top: 50%;
 		width: 500px;
-		height: 430px;
+		height: 440px;
 		margin-left: -270px;
 		margin-top: -240px;
 		background: #fff;
@@ -109,9 +109,13 @@ body.no-scroll {
 			left: auto;
 			top: auto;
 
-			input[type="submit"]:disabled {
-				cursor: not-allowed;
-				color: #bebebe;
+			input[type="submit"] {
+				border-radius: 5px;
+
+				&:disabled {
+					cursor: not-allowed;
+					color: #bebebe;
+				}
 			}
 		}
 
@@ -195,7 +199,6 @@ body.no-scroll {
 			left: 0;
 			top: 0;
 			width: 100%;
-			height: 440px;
 			margin-left: 0;
 			margin-top: 0;
 			background: #fff;
@@ -235,7 +238,7 @@ body.no-scroll {
 			position: absolute;
 			padding: 10px 10px 0 10px;
 			border-radius: 0 0 5px 5px;
-			height: 390px;
+			height: 410px;
 
 			.popup-login-title {
 				font-size: 26px;
@@ -324,7 +327,7 @@ body.no-scroll {
 			margin-top: 0;
 			top: 0;
 			box-sizing: border-box;
-			height: 440px;
+			height: 420px;
 
 			.popup-login-section {
 				label {
@@ -396,7 +399,7 @@ body.no-scroll {
 		overflow: auto;
 		.popup-login-window {
 			position: absolute;
-			height: 350px;
+			height: 340px;
 			border-radius: 0;
 
 			.popup-login-section {
