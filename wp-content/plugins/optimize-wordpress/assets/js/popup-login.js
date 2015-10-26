@@ -8,7 +8,7 @@ function showError(errorMsg) {
 			errorElm.fadeIn(400, function() {
 				popupTimer = setTimeout(function() {
 					hideError();
-				}, 3000);
+				}, 5000);
 			});
  
 		}

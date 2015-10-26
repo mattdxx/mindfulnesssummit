@@ -1,5 +1,5 @@
 <?php
-/* v.1.0.10
+/* v.1.0.11
 New popup login procedure.
 
 Yes, it's responsive also. :)
@@ -65,7 +65,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
                     $user = get_user_by_email($_POST['login']['email']);
                     if (!$user) {
                         $this->is_error = true;
-                        $this->output_message = __( 'Invalid email' );
+                        $this->output_message = __( 'This email address is incorrect or has not created an access pass yet. Click the link below to register one.' );
                     } else {
                         $creds = array(
                             'user_login' => $user->user_login,
@@ -75,7 +75,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
                         $user = wp_signon( $creds, false );
                         if ( is_wp_error($user) ) {
                             $this->is_error = true;
-                            $this->output_message = 'The password you entered is incorrect. If you have forgotten your password <a href="#" class="call-reset">click here</a> to reset it';
+                            $this->output_message = 'The password you entered is incorrect. If you have forgotten your password <a href="#" class="call-reset">click here</a> to reset it.';
                         } else {
                             // Crazy part: Wordpress was completing the login process but didn't set the current user. :S
                             wp_set_current_user($user->ID);
@@ -160,7 +160,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
                         }
                     } else {
                         $this->is_error = true;
-                        $this->output_message = 'Invalid e-mail.';
+                        $this->output_message = 'This email address is incorrect or has not created an access pass yet. Click the link below to register one.';
                     }
                 } else {
                     // Unknown action, let them show once more the login popup.
@@ -187,8 +187,8 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 $this->is_info = false;
             }
 
-            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.10', true);
-            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.10');
+            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.11', true);
+            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.11');
         } // register_popup_login_script
 
         public function print_popup_login_script() {
@@ -208,11 +208,11 @@ if (!class_exists('Popup_Login_Custom_Window'))
         <div id="popup-login-logo">
             <img src="/wp-content/uploads/2015/05/The-Mindfulness-Summit3.png">
         </div>
-        <div class="popup-login-title">
+        <!-- div class="popup-login-title">
             <span class="action-login">Login</span>
             <span class="action-register">Register Access Pass</span>
             <span class="action-reset">Recover My Password</span>
-        </div>
+        </div -->
         <div class="popup-login-content">
             <span class="action-login">Login to instantly access the summit. (If you have not created your 'free access pass' by creating a password yet <a href="#" class="call-register">Click here</a> to do that)</span>
             <span class="action-register">Instantly access the summit content and community by creating your ‘free access pass’. Join over 250,000 people who are learning to live with more peace, purpose and fulfilment. (If you’ve created a password already log in by clicking <a href="#" class="call-login">here</a>)</span>
@@ -255,7 +255,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
             </div>
             <div class="popup-login-submit">
                 <input type="submit" name="submit" id="submit-login" class="button-primary action-login" value="Login">
-                <input type="submit" name="submit" id="submit-register" class="button-primary action-register" value="Register">
+                <input type="submit" name="submit" id="submit-register" class="button-primary action-register" value="Register Access Pass">
                 <input type="submit" name="submit" id="submit-reset" class="button-primary action-reset" value="Reset Password">
             </div>
         </form>
