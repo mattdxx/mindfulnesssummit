@@ -1,5 +1,5 @@
 <?php
-/* v.1.0.8
+/* v.1.0.9
 New popup login procedure.
 
 Yes, it's responsive also. :)
@@ -181,8 +181,8 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 $this->is_info = false;
             }
 
-            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.8', true);
-            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.8');
+            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.9', true);
+            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.9');
         } // register_popup_login_script
 
         public function print_popup_login_script() {
@@ -331,7 +331,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
 
             $message = __('Someone requested that the password be reset for the following account:') . "\r\n\r\n";
             $message .= network_home_url( '/' ) . "\r\n\r\n";
-            $message .= sprintf(__('Username: %s'), $user_login) . "\r\n\r\n";
+            $message .= sprintf(__('Email: %s'), $user_email) . "\r\n\r\n";
             $message .= __('If this was a mistake, just ignore this email and nothing will happen.') . "\r\n\r\n";
             $message .= __('To reset your password, visit the following address:') . "\r\n\r\n";
             $message .= '<' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login') . ">\r\n";
