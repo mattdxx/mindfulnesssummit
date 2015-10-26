@@ -1,5 +1,5 @@
 <?php
-/* v.1.0.12
+/* v.1.0.13
 New popup login procedure.
 
 Yes, it's responsive also. :)
@@ -181,18 +181,16 @@ if (!class_exists('Popup_Login_Custom_Window'))
             } elseif (isset($_GET['pop'])) {
                 $this->variables['login']['email'] = isset($_GET['email']) ? $_GET['email'] : '';
                 $this->variables['register']['email'] = isset($_GET['email']) ? $_GET['email'] : '';
-                $this->active_page = 'login';
-                // Check URL parameters are prioritized:
                 $this->variables['register']['name'] = isset($_GET['fullname']) ? $_GET['fullname'] : '';
-                if ($this->variables['register']['name'] != '') {
-                    $this->active_page = 'register';
+                if ('login' == $_GET['pop']) {
+                    $this->active_page = 'login';
                 }
                 $this->is_error = false;
                 $this->is_info = false;
             }
 
-            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.12', true);
-            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.12');
+            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.13', true);
+            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.13');
         } // register_popup_login_script
 
         public function print_popup_login_script() {
