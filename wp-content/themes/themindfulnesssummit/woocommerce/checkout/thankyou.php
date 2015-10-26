@@ -92,3 +92,5 @@ if ( $order ) : ?>
 	<p><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), null ); ?></p>
 
 <?php endif; ?>
+
+<?php add_facebook_tracking_pixel(); ?>
