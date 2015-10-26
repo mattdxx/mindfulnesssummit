@@ -1,5 +1,5 @@
 <?php
-/* v.1.0.6
+/* v.1.0.8
 New popup login procedure.
 
 Yes, it's responsive also. :)
@@ -83,10 +83,21 @@ if (!class_exists('Popup_Login_Custom_Window'))
                     $this->variables['register']['name'] = $_POST['register']['name'];
                     $this->variables['register']['email'] = $_POST['register']['email'];
 
-                    $user_id = username_exists( $_POST['register']['email'] );
-                    if ( !$user_id and email_exists($_POST['register']['email']) == false ) {
+                    // Create the username as part of the email.
+                    $parts = explode("@", "johndoe@domain.com");
+                    
+                    // Remove all special characters from email
+                    $username = str_replace(' ', '-', $this->variables['register']['email']);
+                    $username = preg_replace('/[^A-Za-z0-9\-]/', '', $username);
+                    $random = rand(10000, 99999);
+                    // Add a random number and try to create the user:
+                    while ( username_exists( $username.'-'. $random ) ) {
+                        $random = rand(10000, 99999);
+                    }
+                    // $user_id = username_exists( $_POST['register']['email'] );
+                    if ( email_exists($_POST['register']['email']) == false ) {
 
-                        $user_id = wp_create_user( $_POST['register']['email'], $_POST['register']['password'], $_POST['register']['email'] );
+                        $user_id = wp_create_user( $username.'-'. $random, $_POST['register']['password'], $_POST['register']['email'] );
                         if ( is_wp_error($user_id) ) {
                             $this->is_error = true;
                             $this->output_message = __( $user_id->get_error_message() );
@@ -119,14 +130,13 @@ if (!class_exists('Popup_Login_Custom_Window'))
                         $current_user_ID = get_current_user_id();
                         if ($user_id != $current_user_ID) {
                             $this->is_error = true;
-                            $this->output_message = __( 'User already exists' );
+                            $this->output_message = __( 'Email already exists' );
                         }
                     }
 
                 } elseif ("reset" == $action) {
 
                     $this->active_page = 'reset';
-
                     $user_id = username_exists( $_POST['reset']['email'] );
                     if ( !$user_id ) {
                         $user_id = email_exists($_POST['reset']['email']);
@@ -137,7 +147,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
                             // In successfull reset password procedure, we need to display the login once more.
                             $this->active_page = 'login';
                             $this->is_info = true;
-                            $this->output_message = 'Password recovery email has been sent, please check your mailbox.';
+                            $this->output_message = 'Password recovery email has been sent, check your email (and spam folder).';
                         } else {
                             $this->is_error = true;
                             $this->output_message = 'Could not send the reset email, please try again.';
@@ -161,10 +171,18 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 unset($_POST['register']['email']);
                 unset($_POST['register']['password']);
                 unset($_POST['reset']['email']);
+
+            } elseif (isset($_GET['pop'])) {
+                // Check URL parameters are prioritized:
+                $this->active_page = 'register';
+                $this->variables['register']['name'] = isset($_GET['fullname']) ? $_GET['fullname'] : '';
+                $this->variables['register']['email'] = isset($_GET['email']) ? $_GET['email'] : '';
+                $this->is_error = false;
+                $this->is_info = false;
             }
 
-            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.6', true);
-            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.6');
+            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.8', true);
+            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.8');
         } // register_popup_login_script
 
         public function print_popup_login_script() {
@@ -190,9 +208,9 @@ if (!class_exists('Popup_Login_Custom_Window'))
             <span class="action-reset">Recover My Password</span>
         </div>
         <div class="popup-login-content">
-            <span class="action-login">Login to the mindfulness summit. You will have access to everything in here!</span>
-            <span class="action-register">Instantly access the mindfulness summit by finishing your 'free access pass' registration. If you created a password already click login down below.</span>
-            <span class="action-reset">In case you forgot you password, please submit the form below and we'll send you an email to reset it.</span>
+            <span class="action-login">Login to instantly access the summit. (If you have not created your 'free access pass' by creating a password yet <a href="#" class="call-register">Click here</a> to do that)</span>
+            <span class="action-register">Instantly access the summit content and community by creating your ‘free access pass’. Join over 250,000 people who are learning to live with more peace, purpose and fulfilment. (If you’ve created a password already log in by clicking <a href="#" class="call-login">here</a>)</span>
+            <span class="action-reset">If you have previously created a password when creating a 'free access pass' for the summit, enter your email address below and we will email you a link reset your password. (if not, click <a href="#" class="call-register">here</a> to create your 'free access pass')</span>
         </div>
         <form method="POST" id="popup-login-form">
             <input type="hidden" name="is-popup-login" value="1">
@@ -232,14 +250,14 @@ if (!class_exists('Popup_Login_Custom_Window'))
             <div class="popup-login-submit">
                 <input type="submit" name="submit" id="submit-login" class="button-primary action-login" value="Login">
                 <input type="submit" name="submit" id="submit-register" class="button-primary action-register" value="Register">
-                <input type="submit" name="submit" id="submit-reset" class="button-primary action-reset" value="Submit">
+                <input type="submit" name="submit" id="submit-reset" class="button-primary action-reset" value="Reset Password">
             </div>
         </form>
         <div class="popup-login-options">
             <ul>
-                <li class="li-login">Already have an 'Access Pass'? <a href="#" class="popup-login-cta" data-rel="login">Log in</a></li>
-                <li class="li-register">Don't have an 'Access Pass'? <a href="#" class="popup-login-cta" data-rel="register">Register</a></li>
-                <li class="li-reset">Lost your password? <a href="#" class="popup-login-cta" data-rel="reset">Click here</a></li>
+                <li class="li-login">Already have an 'Access Pass'? Log in <a href="#" class="popup-login-cta" data-rel="login">here</a></li>
+                <li class="li-register">Don't have an 'Access Pass'? Register <a href="#" class="popup-login-cta" data-rel="register">here</a></li>
+                <li class="li-reset">Forgot your password? <a href="#" class="popup-login-cta" data-rel="reset">Click here</a></li>
             </ul>
         </div>
         <div class="popup-login-error">
@@ -253,6 +271,9 @@ if (!class_exists('Popup_Login_Custom_Window'))
     $(document).ready(function() {
         $('.action-<?php echo $this->active_page ?>', '#popup-login-popup').show();
         $('.popup-login-options .li-<?php echo $this->active_page ?>').hide();
+        <?php if('register' == $this->active_page): ?>
+        $('#popup-login-popup .popup-login-title').hide();
+        <?php endif; ?>
 
         setTimeout(function() {
             $('#popup-login-wrapper').fadeIn(600, function() {

@@ -62,18 +62,37 @@ function hideInfo() {
 		var $this = $(this),
 			$this_li = $this.parent(),
 			$this_ul = $this_li.parent(),
-			action = $this.data('rel');
+			action = $this.data('rel'),
+			prev_action = $('#popup-login-form input[name="action"]').val();
 
-		$('#popup-login-popup .popup-login-title, #popup-login-popup .popup-login-content, #popup-login-popup .popup-login-form, #popup-login-popup .popup-login-submit, .popup-login-options ul').addClass('on-switch');
-		$('#popup-login-form input[name="action"]').val(action);
+		$('#popup-login-popup .popup-login-content, #popup-login-popup .popup-login-form, #popup-login-popup .popup-login-submit, .popup-login-options ul').addClass('on-switch'); // Hide the classes
+		if ('register' == action) {
+			$('#popup-login-popup .popup-login-title').slideUp();
+		} else {
+			$('#popup-login-popup .popup-login-title').addClass('on-switch'); // Hide the classes
+		}
+		$('#' + action + '-email').val($('#' + prev_action + '-email').val()); // Copy the entered email from action to action
+		$('#popup-login-form input[name="action"]').val(action); // Set the new action
 		window.setTimeout(function () {
 			$('#popup-login-popup .action-login, #popup-login-popup .action-register, #popup-login-popup .action-reset').not('#popup-login-popup .action-' + action).hide();
 			$('.popup-login-options .li-login, .popup-login-options .li-register, .popup-login-options .li-reset').not('.popup-login-options .li-' + action).show();
 			$('#popup-login-popup .action-' + action).show();
 			$('.popup-login-options .li-' + action).hide();
-			$('#popup-login-popup .popup-login-title, #popup-login-popup .popup-login-content, #popup-login-popup .popup-login-form, #popup-login-popup .popup-login-submit, .popup-login-options ul').removeClass('on-switch');
+			$('#popup-login-popup .popup-login-content, #popup-login-popup .popup-login-form, #popup-login-popup .popup-login-submit, .popup-login-options ul').removeClass('on-switch');
+			if ('register' != action) {
+				$('#popup-login-popup .popup-login-title').removeClass('on-switch');
+				$('#popup-login-popup .popup-login-title').slideDown();
+			}
 		}, 500);
-	})
+	});
+	$('.call-register').on('click', function(e) {
+		e.preventDefault();
+		$('a[data-rel="register"]').click();
+	});
+	$('.call-login').on('click', function(e) {
+		e.preventDefault();
+		$('a[data-rel="login"]').click();
+	});
 
 	$('.popup-login-error-close').on('click', function() {
 		hideError();
