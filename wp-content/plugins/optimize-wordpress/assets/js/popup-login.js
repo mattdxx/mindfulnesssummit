@@ -57,13 +57,15 @@ function hideInfo() {
 }
 
 (function ($) {
-	$('.popup-login-options .popup-login-cta').on('click', function(e) {
+	$('body').on('click', '.popup-login-options .popup-login-cta', function(e) {
 		e.preventDefault();
 		var $this = $(this),
 			$this_li = $this.parent(),
 			$this_ul = $this_li.parent(),
 			action = $this.data('rel'),
 			prev_action = $('#popup-login-form input[name="action"]').val();
+
+		hideError();
 
 		$('#popup-login-popup .popup-login-content, #popup-login-popup .popup-login-form, #popup-login-popup .popup-login-submit, .popup-login-options ul').addClass('on-switch'); // Hide the classes
 		if ('register' == action) {
@@ -85,13 +87,20 @@ function hideInfo() {
 			}
 		}, 500);
 	});
-	$('.call-register').on('click', function(e) {
+	$('body').on('click', '.call-register', function(e) {
 		e.preventDefault();
+		hideError();
 		$('a[data-rel="register"]').click();
 	});
-	$('.call-login').on('click', function(e) {
+	$('body').on('click', '.call-login', function(e) {
 		e.preventDefault();
+		hideError();
 		$('a[data-rel="login"]').click();
+	});
+	$('body').on('click', '.call-reset', function(e) {
+		e.preventDefault();
+		hideError();
+		$('a[data-rel="reset"]').click();
 	});
 
 	$('.popup-login-error-close').on('click', function() {

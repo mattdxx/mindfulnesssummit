@@ -1,5 +1,5 @@
 <?php
-/* v.1.0.9
+/* v.1.0.10
 New popup login procedure.
 
 Yes, it's responsive also. :)
@@ -62,19 +62,25 @@ if (!class_exists('Popup_Login_Custom_Window'))
                     $this->active_page = 'login';
                     $this->variables['login']['email'] = $_POST['login']['email'];
 
-                    $creds = array(
-                        'user_login' => $_POST['login']['email'],
-                        'user_password' => $_POST['login']['password'],
-                        'remember' => false,
-                    );
-                    $user = wp_signon( $creds, false );
-                    if ( is_wp_error($user) ) {
+                    $user = get_user_by_email($_POST['login']['email']);
+                    if (!$user) {
                         $this->is_error = true;
-                        $this->output_message = __( $user->get_error_message() );
+                        $this->output_message = __( 'Invalid email' );
                     } else {
-                        // Crazy part: Wordpress was completing the login process but didn't set the current user. :S
-                        wp_set_current_user($user->ID);
-                        $this->action_successful = 'login';
+                        $creds = array(
+                            'user_login' => $user->user_login,
+                            'user_password' => $_POST['login']['password'],
+                            'remember' => false,
+                        );
+                        $user = wp_signon( $creds, false );
+                        if ( is_wp_error($user) ) {
+                            $this->is_error = true;
+                            $this->output_message = 'The password you entered is incorrect. If you have forgotten your password <a href="#" class="call-reset">click here</a> to reset it';
+                        } else {
+                            // Crazy part: Wordpress was completing the login process but didn't set the current user. :S
+                            wp_set_current_user($user->ID);
+                            $this->action_successful = 'login';
+                        }
                     }
 
                 } elseif ("register" == $action) {
@@ -128,7 +134,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
                     } else {
                         // Here we need to make sure that the user doesn't click the "reload", because the system will try to re-register the user.
                         $current_user_ID = get_current_user_id();
-                        if ($user_id != $current_user_ID) {
+                        if (($user_id == 0) || ($user_id != $current_user_ID)) {
                             $this->is_error = true;
                             $this->output_message = __( 'Email already exists' );
                         }
@@ -181,8 +187,8 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 $this->is_info = false;
             }
 
-            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.9', true);
-            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.9');
+            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.10', true);
+            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.10');
         } // register_popup_login_script
 
         public function print_popup_login_script() {
@@ -331,7 +337,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
 
             $message = __('Someone requested that the password be reset for the following account:') . "\r\n\r\n";
             $message .= network_home_url( '/' ) . "\r\n\r\n";
-            $message .= sprintf(__('Email: %s'), $user_email) . "\r\n\r\n";
+            $message .= sprintf(__('email: %s'), $user_email) . "\r\n\r\n";
             $message .= __('If this was a mistake, just ignore this email and nothing will happen.') . "\r\n\r\n";
             $message .= __('To reset your password, visit the following address:') . "\r\n\r\n";
             $message .= '<' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login') . ">\r\n";
