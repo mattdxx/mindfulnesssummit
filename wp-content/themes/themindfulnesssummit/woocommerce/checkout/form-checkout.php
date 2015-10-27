@@ -25,7 +25,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->get_checkout_url() ); ?>
 
 <h2 class="gdlr-heading-shortcode " style="font-weight: bold;">Donate to get a Full Summit Access Pass</h2>
-Make a discounted donation of USD$79 ($99 after October 15th $149 after Oct 31st) to get a ‘Full Access Pass’ to the mindfulness summit. This includes permanent (forever) access to:
+Make a discounted donation of USD$99 ($149 after Oct 31st) to get a ‘Full Access Pass’ to the mindfulness summit. This includes permanent (forever) access to:
 <ul>
 	<li>All 31 days of video content to download or stream as much as you like</li>
 	<li>All 31 days of full audio versions to download or stream as much as you like</li>

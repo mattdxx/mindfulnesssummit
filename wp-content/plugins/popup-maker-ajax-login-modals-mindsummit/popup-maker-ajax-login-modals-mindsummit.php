@@ -127,5 +127,3 @@
 			PopMake_Ajax_Login_Modals_MindSummit::instance();
 	}
 	add_action('plugins_loaded', 'PopMake_Ajax_Login_Modals_MindSummit_Load');
-	
-?>
