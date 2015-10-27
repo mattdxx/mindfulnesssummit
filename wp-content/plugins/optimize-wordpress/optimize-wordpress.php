@@ -2,7 +2,7 @@
 /*
 Plugin Name: Optimize Wordpress
 Description: Optimize wordpress to speed up the whole process
-Version: 1.5.13
+Version: 1.5.14
 Author: Stratos Nikolaidis
 Author URI: https://gr.linkedin.com/in/stratosnikolaidis
 Plugin URI: https://gr.linkedin.com/in/stratosnikolaidis
