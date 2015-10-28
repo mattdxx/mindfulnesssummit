@@ -270,41 +270,55 @@ body.no-scroll {
 	}
 }
 
-// Some exta customization: iPhone 6+
+// Some exta customization: iPhone 4
 @media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
 	#popup-login-wrapper {
 		overflow: auto;
 		.popup-login-window {
 			position: absolute;
-			margin-top: 0;
-			top: 0;
-			box-sizing: border-box;
+			height: 340px;
+			border-radius: 0;
 
 			.popup-login-section {
-				label {
-					display: none;
-				}
-				.input {
-					&::-webkit-input-placeholder {
-					    color: inherit;
-					}
-					&:-moz-placeholder {
-					    /* FF 4-18 */
-					    color: inherit;
-					}
-					&::-moz-placeholder {
-					    /* FF 19+ */
-					    color: inherit;
-					}
-					&:-ms-input-placeholder {
-					    /* IE 10+ */
-					    color: inherit;
-					}
-				}
+				width: 49%;
+			}
+
+			.popup-login-submit input[type="submit"] {
+				bottom: -54px;
+			}
+		}
+	}
+}
+
+// Some exta customization: iPhone 5
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+	#popup-login-wrapper {
+		overflow: auto;
+		.popup-login-window {
+			position: absolute;
+			height: 400px;
+			border-radius: 0;
+
+			.popup-login-options {
+				bottom: 10px;
+			}
+
+			.popup-login-section {
+				margin: 0;
+			}
+			.popup-login-section .input {
+				padding: 8px 14px;
+			}
+			.popup-login-error {
+				bottom: 35px;
 			}
 		}
 	}
@@ -355,55 +369,41 @@ body.no-scroll {
 	}
 }
 
-// Some exta customization: iPhone 5
+// Some exta customization: iPhone 6+
 @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
 	#popup-login-wrapper {
 		overflow: auto;
 		.popup-login-window {
 			position: absolute;
-			height: 400px;
-			border-radius: 0;
-
-			.popup-login-options {
-				bottom: 10px;
-			}
+			margin-top: 0;
+			top: 0;
+			box-sizing: border-box;
 
 			.popup-login-section {
-				margin: 0;
-			}
-			.popup-login-section .input {
-				padding: 8px 14px;
-			}
-			.popup-login-error {
-				bottom: 35px;
-			}
-		}
-	}
-}
-
-// Some exta customization: iPhone 4
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
-	#popup-login-wrapper {
-		overflow: auto;
-		.popup-login-window {
-			position: absolute;
-			height: 340px;
-			border-radius: 0;
-
-			.popup-login-section {
-				width: 49%;
-			}
-
-			.popup-login-submit input[type="submit"] {
-				bottom: -54px;
+				label {
+					display: none;
+				}
+				.input {
+					&::-webkit-input-placeholder {
+					    color: inherit;
+					}
+					&:-moz-placeholder {
+					    /* FF 4-18 */
+					    color: inherit;
+					}
+					&::-moz-placeholder {
+					    /* FF 19+ */
+					    color: inherit;
+					}
+					&:-ms-input-placeholder {
+					    /* IE 10+ */
+					    color: inherit;
+					}
+				}
 			}
 		}
 	}

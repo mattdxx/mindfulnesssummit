@@ -1,5 +1,5 @@
 <?php
-/* v.1.0.13
+/* v.1.0.15
 New popup login procedure.
 
 Yes, it's responsive also. :)
@@ -50,6 +50,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
         private function hooks() {
             add_action('init', array($this, 'register_popup_login_script'));
             add_action('wp_footer', array($this, 'print_popup_login_script'));
+            // add_action('user_register', array($this, 'subscribe'));
         } // hooks
 
         public function register_popup_login_script() {
@@ -187,10 +188,15 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 }
                 $this->is_error = false;
                 $this->is_info = false;
+            } elseif (isset($_GET['email']) || isset($_GET['fullname'])) {
+                $this->variables['register']['email'] = isset($_GET['email']) ? $_GET['email'] : '';
+                $this->variables['register']['name'] = isset($_GET['fullname']) ? $_GET['fullname'] : '';
+                $this->is_error = false;
+                $this->is_info = false;
             }
 
-            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.13', true);
-            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.13');
+            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.15', true);
+            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.15');
         } // register_popup_login_script
 
         public function print_popup_login_script() {
@@ -358,6 +364,44 @@ if (!class_exists('Popup_Login_Custom_Window'))
 
             return true;
         } // reset_password
+
+        public function subscribe($user_id) {
+
+            // credentials
+            $API_KEY = '1b6ab216f0fa8372bfef36666c479495-us6';
+            $LIST_ID = '56890d6052';
+            
+            // check if email exists
+            if (!isset($_REQUEST['register']['email']) || ('' == $_REQUEST['register']['email']))
+                return;
+            
+            // extract datacenter name
+            $datacenter = '';
+            $splitted_api_key = explode('-', $API_KEY, 2);
+            if (count($splitted_api_key) == 2 and preg_match('/^[a-zA-Z0-9-]+$/', $splitted_api_key[1]))
+                $datacenter = $splitted_api_key[1];
+            if (!$datacenter) // FIXME: here should be a handler
+                return;
+            
+            // request subscription
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            curl_setopt($ch, CURLOPT_URL, "https://$datacenter.api.mailchimp.com/3.0/lists/$LIST_ID/members");
+            curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+            curl_setopt($ch, CURLOPT_USERPWD, "apikey:$API_KEY");
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(array(
+                    'email_address' => $_REQUEST['register']['email'],
+                    'status' => 'subscribed'
+                )));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+            $response = curl_exec($ch);
+            $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+
+            // check response
+            // FIXME: should there be a checker for $http_code and $resonse?
+        }
 
     } // class Popup_Login_Custom_Window
 } // if class_exists
