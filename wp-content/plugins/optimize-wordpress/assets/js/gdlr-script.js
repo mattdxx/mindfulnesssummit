@@ -786,7 +786,7 @@
 
 					slide_nav.css({'width': current_menu_width, 'left': current_pos});
 				});
-				if( current_pos == 0 ){ 
+				if( current_pos == 0 && ($('#gdlr-main-navigation').lengh > 0) ){ 
 					current_pos = $('#gdlr-main-navigation').position().left; 
 					slide_nav.css('left', current_pos);
 				}
