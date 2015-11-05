@@ -83,7 +83,7 @@ function add_facebook_tracking_pixel() {
 			document,'script','//connect.facebook.net/en_US/fbevents.js');
 
 		fbq('init', '879433708806402');
-		fbq('track', 'Purchase', {value: '99', currency: 'USD'});
+		fbq('track', 'Purchase', {value: '149', currency: 'USD'});
 		fbq('track', 'PageView');
 	</script>
 	<noscript><img height="1" width="1" style="display:none"
