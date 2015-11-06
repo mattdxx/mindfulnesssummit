@@ -24,7 +24,7 @@ body.no-scroll {
 		left: 50%;
 		top: 50%;
 		width: 500px;
-		height: 440px;
+		min-height: 300px;
 		margin-left: -270px;
 		margin-top: -240px;
 		background: #fff;
@@ -35,6 +35,11 @@ body.no-scroll {
 		-ms-box-shadow: 0 12px 30px rgba(0,0,0,0.8);
 		-o-box-shadow: 0 12px 30px rgba(0,0,0,0.8);
 		box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+
+		#popup-login-form {
+			margin-bottom: 35px;
+			overflow: hidden;
+		}
 
 		.popup-login-title {
 			color: #000000;
@@ -103,11 +108,7 @@ body.no-scroll {
 		}
 
 		.popup-login-submit {
-			position: absolute;
-			bottom: 56px;
-			right: 20px;
-			left: auto;
-			top: auto;
+			text-align: right;
 
 			input[type="submit"] {
 				border-radius: 5px;
@@ -234,7 +235,11 @@ body.no-scroll {
 			position: absolute;
 			padding: 10px 10px 0 10px;
 			border-radius: 0 0 5px 5px;
-			height: 410px;
+			// height: 410px;
+
+			#popup-login-form {
+				margin-bottom: 55px;
+			}
 
 			.popup-login-title {
 				font-size: 26px;
@@ -280,16 +285,16 @@ body.no-scroll {
 		overflow: auto;
 		.popup-login-window {
 			position: absolute;
-			height: 340px;
+			// height: 340px;
 			border-radius: 0;
 
 			.popup-login-section {
 				width: 49%;
 			}
 
-			.popup-login-submit input[type="submit"] {
-				bottom: -54px;
-			}
+			// .popup-login-submit input[type="submit"] {
+			// 	bottom: -54px;
+			// }
 		}
 	}
 }
@@ -304,7 +309,7 @@ body.no-scroll {
 		overflow: auto;
 		.popup-login-window {
 			position: absolute;
-			height: 400px;
+			// height: 400px;
 			border-radius: 0;
 
 			.popup-login-options {
@@ -337,7 +342,7 @@ body.no-scroll {
 			margin-top: 0;
 			top: 0;
 			box-sizing: border-box;
-			height: 420px;
+			// height: 420px;
 
 			.popup-login-section {
 				label {
