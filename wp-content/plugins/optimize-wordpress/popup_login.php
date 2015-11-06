@@ -1,5 +1,5 @@
 <?php
-/* v.1.0.16
+/* v.1.0.17
 New popup login procedure.
 
 Yes, it's responsive also. :)
@@ -27,6 +27,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
         private $is_error = false;
         private $output_message = false;
         private $is_info = false;
+        private $clear_url_params = false;
         private $variables = array(
             'login' => array(
                 'email' => '',
@@ -81,6 +82,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
                             // Crazy part: Wordpress was completing the login process but didn't set the current user. :S
                             wp_set_current_user($user->ID);
                             $this->action_successful = 'login';
+                            $this->clear_url_params = true;
                         }
                     }
 
@@ -130,6 +132,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
                                 // Crazy part: Wordpress was completing the login process but didn't set the current user. :S
                                 wp_set_current_user($user->ID);
                                 $this->action_successful = 'register';
+                                $this->clear_url_params = true;
                             }
                         }
                     } else {
@@ -155,6 +158,7 @@ if (!class_exists('Popup_Login_Custom_Window'))
                             $this->active_page = 'login';
                             $this->is_info = true;
                             $this->output_message = 'Password recovery email has been sent, check your email (and spam folder).';
+                            $this->clear_url_params = true;
                         } else {
                             $this->is_error = true;
                             $this->output_message = 'Could not send the reset email, please try again.';
@@ -188,15 +192,17 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 }
                 $this->is_error = false;
                 $this->is_info = false;
+                $this->clear_url_params = true;
             } elseif (isset($_GET['email']) || isset($_GET['fullname'])) {
                 $this->variables['register']['email'] = isset($_GET['email']) ? $_GET['email'] : '';
                 $this->variables['register']['name'] = isset($_GET['fullname']) ? $_GET['fullname'] : '';
                 $this->is_error = false;
                 $this->is_info = false;
+                $this->clear_url_params = true;
             }
 
-            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.16', true);
-            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.16');
+            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.17', true);
+            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.17');
         } // register_popup_login_script
 
         public function print_popup_login_script() {
@@ -311,6 +317,16 @@ if (!class_exists('Popup_Login_Custom_Window'))
 <?php
                 wp_print_styles('popup-login');
                 wp_print_scripts('popup-login');
+            }
+
+            if ($this->clear_url_params) {
+                $clear_url = explode('?', $_SERVER['REQUEST_URI']);
+                $new_url = $_SERVER['HTTP_HOST'] . $clear_url[0];
+?>
+<script>
+window.history.pushState({urlPath:'<?php echo $clear_url[0] ?>'},"",'<?php echo $clear_url[0] ?>');
+</script>
+<?php
             }
         } // print_popup_login_script
 
