@@ -1,5 +1,5 @@
 <?php
-/* v.1.0.17
+/* v.1.1.0
 New popup login procedure.
 
 Yes, it's responsive also. :)
@@ -201,8 +201,8 @@ if (!class_exists('Popup_Login_Custom_Window'))
                 $this->clear_url_params = true;
             }
 
-            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.0.17', true);
-            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.0.17');
+            wp_register_script('popup-login', plugin_dir_url(__FILE__).'assets/js/popup-login.js', array(), '1.1.0', true);
+            wp_register_style('popup-login', plugin_dir_url(__FILE__).'assets/css/popup-login.css', array(), '1.1.0');
         } // register_popup_login_script
 
         public function print_popup_login_script() {
@@ -222,55 +222,55 @@ if (!class_exists('Popup_Login_Custom_Window'))
         <div id="popup-login-logo">
             <img src="/wp-content/uploads/2015/05/The-Mindfulness-Summit3.png">
         </div>
-        <!-- div class="popup-login-title">
-            <span class="action-login">Login</span>
-            <span class="action-register">Register Access Pass</span>
-            <span class="action-reset">Recover My Password</span>
-        </div -->
-        <div class="popup-login-content">
-            <span class="action-login">Login to instantly access the summit. (If you have not created your 'free access pass' by creating a password yet <a href="#" class="call-register">Click here</a> to do that)</span>
-            <span class="action-register">Instantly access the summit content and community by creating your ‘free access pass’. Join over 250,000 people who are learning to live with more peace, purpose and fulfilment. (If you’ve created a password already log in by clicking <a href="#" class="call-login">here</a>)</span>
-            <span class="action-reset">If you have previously created a password when creating a 'free access pass' for the summit, enter your email address below and we will email you a link reset your password. (if not, click <a href="#" class="call-register">here</a> to create your 'free access pass')</span>
-        </div>
         <form method="POST" id="popup-login-form">
             <input type="hidden" name="is-popup-login" value="1">
             <input type="hidden" name="action" value="<?php echo $this->active_page ?>">
-            <div class="popup-login-form">
-                <div class="action-login">
-                    <div class="popup-login-section">
-                        <label for="login-email">Email</label>
-                        <input type="text" name="login[email]" id="login-email" class="input" value="<?php echo $this->variables['login']['email'] ?>" placeholder="Email" autocomplete="off">
-                    </div>
-                    <div class="popup-login-section right">
-                        <label for="login-password">Password</label>
-                        <input type="password" name="login[password]" id="login-password" class="input" value="" placeholder="Password" autocomplete="off">
-                    </div>
+
+            <div class="action-login">
+                <div class="popup-login-content">Login to instantly access the summit. (If you have not created your 'free access pass' by creating a password yet <a href="#" class="call-register">Click here</a> to do that)</div>
+                <div class="popup-login-section">
+                    <label for="login-email">Email</label>
+                    <input type="text" name="login[email]" id="login-email" class="input" value="<?php echo $this->variables['login']['email'] ?>" placeholder="Email" autocomplete="off">
                 </div>
-                <div class="action-register">
-                    <div class="popup-login-section full">
-                        <label for="register-name">Name (i.e. First &amp; Last name)</label>
-                        <input type="text" name="register[name]" id="register-name" class="input" value="<?php echo $this->variables['register']['name'] ?>" placeholder="Your First &amp; Last name" autocomplete="off">
-                    </div>
-                    <div class="popup-login-section">
-                        <label for="register-email">Email</label>
-                        <input type="text" name="register[email]" id="register-email" class="input" value="<?php echo $this->variables['register']['email'] ?>" placeholder="Email" autocomplete="off">
-                    </div>
-                    <div class="popup-login-section right">
-                        <label for="register-password">Password</label>
-                        <input type="password" name="register[password]" id="register-password" class="input" value="" placeholder="Password" autocomplete="off">
-                    </div>
+                <div class="popup-login-section right">
+                    <label for="login-password">Password</label>
+                    <input type="password" name="login[password]" id="login-password" class="input" value="" placeholder="Password" autocomplete="off">
                 </div>
+                <div class="popup-login-submit">
+                    <input type="submit" name="submit" id="submit-login" class="button-primary" value="Login">
+                </div>
+            </div>
+
+            <div class="action-register">
+                <div class="popup-login-content">Instantly access the summit content and community by creating your ‘free access pass’. Join over 250,000 people who are learning to live with more peace, purpose and fulfilment. (If you’ve created a password already log in by clicking <a href="#" class="call-login">here</a>)</div>
+                <div class="popup-login-section full">
+                    <label for="register-name">Name (i.e. First &amp; Last name)</label>
+                    <input type="text" name="register[name]" id="register-name" class="input" value="<?php echo $this->variables['register']['name'] ?>" placeholder="Your First &amp; Last name" autocomplete="off">
+                </div>
+                <div class="popup-login-section">
+                    <label for="register-email">Email</label>
+                    <input type="text" name="register[email]" id="register-email" class="input" value="<?php echo $this->variables['register']['email'] ?>" placeholder="Email" autocomplete="off">
+                </div>
+                <div class="popup-login-section right">
+                    <label for="register-password">Password</label>
+                    <input type="password" name="register[password]" id="register-password" class="input" value="" placeholder="Password" autocomplete="off">
+                </div>
+                <div class="popup-login-submit">
+                    <input type="submit" name="submit" id="submit-register" class="button-primary" value="Register Access Pass">
+                </div>
+            </div>
+
+            <div class="action-reset">
+                <div class="popup-login-content">If you have previously created a password when creating a 'free access pass' for the summit, enter your email address below and we will email you a link reset your password. (if not, click <a href="#" class="call-register">here</a> to create your 'free access pass')</div>
                 <div class="action-reset">
                     <div class="popup-login-section full">
                         <label for="reset-email">Email</label>
                         <input type="text" name="reset[email]" id="reset-email" class="input" value="" placeholder="Email" autocomplete="off">
                     </div>
                 </div>
-            </div>
-            <div class="popup-login-submit">
-                <input type="submit" name="submit" id="submit-login" class="button-primary action-login" value="Login">
-                <input type="submit" name="submit" id="submit-register" class="button-primary action-register" value="Register Access Pass">
-                <input type="submit" name="submit" id="submit-reset" class="button-primary action-reset" value="Reset Password">
+                <div class="popup-login-submit">
+                    <input type="submit" name="submit" id="submit-reset" class="button-primary" value="Reset Password">
+                </div>
             </div>
         </form>
         <div class="popup-login-options">

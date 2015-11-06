@@ -57,6 +57,13 @@ function hideInfo() {
 }
 
 (function ($) {
+	var calculate_height = function() {
+		window.setTimeout(function() {
+			var action = $('#popup-login-form input[name="action"]').val();
+			$('#popup-login-form').animate({'height': $('.action-' + action).height() + 'px'}, 400);
+		}, 100);
+	};
+
 	$('body').on('click', '.popup-login-options .popup-login-cta', function(e) {
 		e.preventDefault();
 		var $this = $(this),
@@ -67,25 +74,16 @@ function hideInfo() {
 
 		hideError();
 
-		$('#popup-login-popup .popup-login-content, #popup-login-popup .popup-login-form, #popup-login-popup .popup-login-submit, .popup-login-options ul').addClass('on-switch'); // Hide the classes
-		if ('register' == action) {
-			$('#popup-login-popup .popup-login-title').slideUp();
-		} else {
-			$('#popup-login-popup .popup-login-title').addClass('on-switch'); // Hide the classes
-		}
-		$('#' + action + '-email').val($('#' + prev_action + '-email').val()); // Copy the entered email from action to action
-		$('#popup-login-form input[name="action"]').val(action); // Set the new action
-		window.setTimeout(function () {
-			$('#popup-login-popup .action-login, #popup-login-popup .action-register, #popup-login-popup .action-reset').not('#popup-login-popup .action-' + action).hide();
+		$('.action-' + prev_action).fadeOut(250, function() {
+			$('#' + action + '-email').val($('#' + prev_action + '-email').val()); // Copy the entered email from action to action
+			$('#popup-login-form input[name="action"]').val(action); // Set the new action
+			$('.action-' + action).slideDown(250, function() {
+				calculate_height();
+			});
 			$('.popup-login-options .li-login, .popup-login-options .li-register, .popup-login-options .li-reset').not('.popup-login-options .li-' + action).show();
-			$('#popup-login-popup .action-' + action).show();
 			$('.popup-login-options .li-' + action).hide();
-			$('#popup-login-popup .popup-login-content, #popup-login-popup .popup-login-form, #popup-login-popup .popup-login-submit, .popup-login-options ul').removeClass('on-switch');
-			if ('register' != action) {
-				$('#popup-login-popup .popup-login-title').removeClass('on-switch');
-				$('#popup-login-popup .popup-login-title').slideDown();
-			}
-		}, 500);
+		});
+
 	});
 	$('body').on('click', '.call-register', function(e) {
 		e.preventDefault();
@@ -160,27 +158,12 @@ function hideInfo() {
 		$('.popup-login-options a').addClass('disabled');
 	});
 
-	function resize_popup_login() {
-		// $('.gdlr-item.gdlr-column-shortcode.with-image').each(function() {
-		// 	var $wrapper = $(this);
-		// 		$inner_element = $wrapper.children().filter(function() {
-		// 			var $element = $(this);
-		// 			    return $element.css("display") == "block";
-		// 		});
-		// 	if ($inner_element.length == 1) {
-		// 		if ($inner_element.hasClass('gdlr-image-wrapper')) {
-		// 			$inner_element.css('width', ($wrapper.width() + 30) + 'px');
-		// 		}
-		// 		$wrapper.css('height', $inner_element.height() + 'px');
-		// 	}
-		// });
-	}
 	window.addEventListener('resize', function() {
-		resize_popup_login();
+		calculate_height();
 	});
 	$(document).ready(function() {
 		setTimeout(function() {
-			resize_popup_login();
+			calculate_height();
 		}, 2000);
 	});
 }(jQuery));
