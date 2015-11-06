@@ -85,52 +85,54 @@ body.no-scroll { overflow: hidden; }
   /* line 259, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-submit input[type="submit"] { padding: 8px 14px; margin-bottom: 5px; }
   /* line 264, popup-login.scss */
-  #popup-login-wrapper .popup-login-window .popup-login-error { bottom: 55px; } }
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) { /* line 284, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-error { bottom: 55px; }
+  /* line 268, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-options { left: 10px; right: 10px; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) { /* line 290, popup-login.scss */
   #popup-login-wrapper { overflow: auto; }
-  /* line 286, popup-login.scss */
+  /* line 292, popup-login.scss */
   #popup-login-wrapper .popup-login-window { position: absolute; border-radius: 0; }
-  /* line 291, popup-login.scss */
+  /* line 297, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-section { width: 49%; } }
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) { /* line 308, popup-login.scss */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) { /* line 314, popup-login.scss */
   #popup-login-wrapper { overflow: auto; }
-  /* line 310, popup-login.scss */
+  /* line 316, popup-login.scss */
   #popup-login-wrapper .popup-login-window { position: absolute; border-radius: 0; }
-  /* line 315, popup-login.scss */
+  /* line 321, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-options { bottom: 10px; }
-  /* line 319, popup-login.scss */
-  #popup-login-wrapper .popup-login-window .popup-login-section { margin: 0; }
-  /* line 322, popup-login.scss */
-  #popup-login-wrapper .popup-login-window .popup-login-section .input { padding: 8px 14px; }
   /* line 325, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-section { margin: 0; }
+  /* line 328, popup-login.scss */
+  #popup-login-wrapper .popup-login-window .popup-login-section .input { padding: 8px 14px; }
+  /* line 331, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-error { bottom: 35px; } }
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) { /* line 338, popup-login.scss */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) { /* line 344, popup-login.scss */
   #popup-login-wrapper { overflow: auto; }
-  /* line 340, popup-login.scss */
+  /* line 346, popup-login.scss */
   #popup-login-wrapper .popup-login-window { position: absolute; margin-top: 0; top: 0; box-sizing: border-box; }
-  /* line 348, popup-login.scss */
+  /* line 354, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-section label { display: none; }
-  /* line 352, popup-login.scss */
+  /* line 358, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-section .input::-webkit-input-placeholder { color: inherit; }
-  /* line 355, popup-login.scss */
+  /* line 361, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-section .input:-moz-placeholder { /* FF 4-18 */ color: inherit; }
-  /* line 359, popup-login.scss */
+  /* line 365, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-section .input::-moz-placeholder { /* FF 19+ */ color: inherit; }
-  /* line 363, popup-login.scss */
+  /* line 369, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-section .input:-ms-input-placeholder { /* IE 10+ */ color: inherit; }
-  /* line 370, popup-login.scss */
+  /* line 376, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-error { bottom: 35px; } }
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) { /* line 383, popup-login.scss */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) { /* line 389, popup-login.scss */
   #popup-login-wrapper { overflow: auto; }
-  /* line 385, popup-login.scss */
+  /* line 391, popup-login.scss */
   #popup-login-wrapper .popup-login-window { position: absolute; margin-top: 0; top: 0; box-sizing: border-box; }
-  /* line 392, popup-login.scss */
+  /* line 398, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-section label { display: none; }
-  /* line 396, popup-login.scss */
+  /* line 402, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-section .input::-webkit-input-placeholder { color: inherit; }
-  /* line 399, popup-login.scss */
+  /* line 405, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-section .input:-moz-placeholder { /* FF 4-18 */ color: inherit; }
-  /* line 403, popup-login.scss */
+  /* line 409, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-section .input::-moz-placeholder { /* FF 19+ */ color: inherit; }
-  /* line 407, popup-login.scss */
+  /* line 413, popup-login.scss */
   #popup-login-wrapper .popup-login-window .popup-login-section .input:-ms-input-placeholder { /* IE 10+ */ color: inherit; } }
