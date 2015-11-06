@@ -2,7 +2,7 @@
 /*
 Plugin Name: Optimize Wordpress
 Description: Optimize wordpress to speed up the whole process
-Version: 1.6.1
+Version: 1.6.2
 Author: Stratos Nikolaidis
 Author URI: https://gr.linkedin.com/in/stratosnikolaidis
 Plugin URI: https://gr.linkedin.com/in/stratosnikolaidis
@@ -49,5 +49,5 @@ require_once(dirname(__FILE__) . "/gdlr_image_switcher.php");
 add_action( 'wp_enqueue_scripts', 'theme_name_scripts', 99 );
 function theme_name_scripts() {
 	unset( $GLOBALS['wp_scripts']->registered["gdlr-script"] );
-	wp_enqueue_script( 'script-name', plugin_dir_url(__FILE__).'assets/js/gdlr-script.js', array(), '1.6.1', true );
+	wp_enqueue_script( 'script-name', plugin_dir_url(__FILE__).'assets/js/gdlr-script.js', array(), '1.6.2', true );
 }
