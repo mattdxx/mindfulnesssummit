@@ -54,12 +54,27 @@ if( ! is_user_logged_in() && ! empty( $errors ) ) {
 				<input id="affwp-user-email" class="required" type="email" name="affwp_user_email" value="<?php if( ! empty( $user_email ) ) { echo $user_email; } ?>" title="<?php esc_attr_e( 'Email Address', 'affiliate-wp' ); ?>" />
 			</p>
 
+		<?php else: ?>
 
+			<p>
+				<label for="affwp-user-login"><?php _e( 'Username', 'affiliate-wp' ); ?></label>
+				<?php if (!affwp_is_affiliate()): ?>
+					<?php $current_user = wp_get_current_user(); ?>
+					<input id="affwp-user-login" disabled="disabled" type="text" value="<?php echo $current_user->user_login ?>" title="<?php esc_attr_e( 'Username', 'affiliate-wp' ); ?>" />
+				<?php else: ?>
+					<input id="affwp-user-login" disabled="disabled" type="text" value="<?php if( ! empty( $user_login ) ) { echo $user_login; } ?>" title="<?php esc_attr_e( 'Username', 'affiliate-wp' ); ?>" />
+				<?php endif ?>
+			</p>
+			
 		<?php endif; ?>
 
 			<p>
 				<label for="affwp-payment-email"><?php _e( 'Payment Email', 'affiliate-wp' ); ?></label>
-				<input id="affwp-payment-email" type="email" name="affwp_payment_email" value="<?php if( ! empty( $payment_email ) ) { echo $payment_email; } ?>" title="<?php esc_attr_e( 'Payment Email Address', 'affiliate-wp' ); ?>" />
+				<?php if (is_user_logged_in() && !affwp_is_affiliate()): ?>
+					<input id="affwp-payment-email" type="email" name="affwp_payment_email" value="<?php echo $current_user->user_email ?>" title="<?php esc_attr_e( 'Payment Email Address', 'affiliate-wp' ); ?>" />
+				<?php else: ?>
+					<input id="affwp-payment-email" type="email" name="affwp_payment_email" value="<?php if( ! empty( $payment_email ) ) { echo $payment_email; } ?>" title="<?php esc_attr_e( 'Payment Email Address', 'affiliate-wp' ); ?>" />
+				<?php endif ?>
 			</p>
 
 			<p>
