@@ -29,6 +29,9 @@
 		if (is_user_logged_in() && affwp_is_affiliate() && is_page(1631) ) {
 			wp_redirect('/affiliate-area/');
 			exit;
+		} elseif (is_user_logged_in() && !affwp_is_affiliate() && is_page(3716) ) {
+			wp_redirect('/affiliate-signup/');
+			exit;
 		}
 	
 		if( !empty($gdlr_post_option) ){ $gdlr_post_option = json_decode($gdlr_post_option, true); }
