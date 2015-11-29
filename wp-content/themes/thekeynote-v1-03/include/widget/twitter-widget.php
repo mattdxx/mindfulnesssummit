@@ -21,7 +21,7 @@ if( !class_exists('Goodlayers_Twitter_Widget') ){
 
 		// Initialize the widget
 		function __construct(){
-			parent::WP_Widget('gdlr-twitter-widget', 
+			parent::__construct('gdlr-twitter-widget',
 				__('Goodlayers Twitter','gdlr_translate'), 
 				array('description' => __('A widget that show twitter feeds.', 'gdlr_translate')));  
 		}

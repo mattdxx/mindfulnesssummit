@@ -21,7 +21,7 @@ if( !class_exists('Goodlayers_Popular_Post') ){
 
 		// Initialize the widget
 		function __construct() {
-			parent::WP_Widget(
+			parent::__construct(
 				'gdlr-popular-post-widget', 
 				__('Goodlayers Popular Post Widget','gdlr_translate'), 
 				array('description' => __('A widget that show popular posts ( by comment )', 'gdlr_translate')));  

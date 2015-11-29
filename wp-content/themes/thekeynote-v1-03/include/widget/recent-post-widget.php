@@ -21,7 +21,7 @@ if( !class_exists('Goodlayers_Recent_Post') ){
 
 		// Initialize the widget
 		function __construct() {
-			parent::WP_Widget(
+			parent::__construct(
 				'gdlr-recent-post-widget', 
 				__('Goodlayers Recent Post Widget','gdlr_translate'), 
 				array('description' => __('A widget that show lastest posts', 'gdlr_translate')));  

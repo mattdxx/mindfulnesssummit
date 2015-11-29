@@ -21,7 +21,7 @@ if( !class_exists('Goodlayers_Flickr_Widget') ){
 
 		// Initialize the widget
 		function __construct() {
-			parent::WP_Widget(
+			parent::__construct(
 				'gdlr-flickr-widget', 
 				__('Goodlayers Flickr Widget','gdlr_translate'), 
 				array('description' => __('A widget that show image from flickr', 'gdlr_translate')));  

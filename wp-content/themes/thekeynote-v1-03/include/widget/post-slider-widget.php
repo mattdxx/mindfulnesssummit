@@ -21,7 +21,7 @@ if( !class_exists('Goodlayers_Post_Slider') ){
 
 		// Initialize the widget
 		function __construct() {
-			parent::WP_Widget(
+			parent::__construct(
 				'gdlr-post-slider-widget', 
 				__('Goodlayers Post Slider Widget','gdlr_translate'), 
 				array('description' => __('A widget that show lastest posts in slider format', 'gdlr_translate')));  
