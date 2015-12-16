@@ -206,8 +206,8 @@ if (!class_exists('Popup_Login_Custom_Window'))
         } // register_popup_login_script
 
         public function print_popup_login_script() {
-
-            if (!is_user_logged_in() && ("post" == get_post_type())) {
+            global $post;
+            if (!is_user_logged_in() && ("post" == get_post_type() || 'my-account' == $post->post_name) ) {
 
                 if ( $username = ($_COOKIE['popup_email'] !='' ? $_COOKIE['popup_email'] : false) ) {
                     $this->variables['login']['email'] = $_COOKIE['popup_email'];
